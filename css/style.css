@@ -1,0 +1,15 @@
+@import url(reset_tc_collection.css);
+@import url(carousel.css);
+
+:root {
+  --carousel-width: 800px;
+  --carousel-height: 300px;
+  --fs-carousel-img: 3.5rem;
+
+  --ff: "Roboto", sans-serif;
+}
+
+body {
+  font-family: var(--ff);
+  background-color: rgb(44, 43, 43);
+}

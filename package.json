@@ -1,0 +1,16 @@
+{
+  "name": "keykaps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "deploy": "surge ./dist keykaps.surge.sh",
+    "clean": "rm -rf ./dist ./node_modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
