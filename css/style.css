@@ -1,15 +1,34 @@
 @import url(reset_tc_collection.css);
 @import url(carousel.css);
+@import url(nav.css);
+@import url(welcome.css);
+@import url(products.css);
 
 :root {
+  --clr-body-dark: hsl(212, 14%, 21%);
+  --clr-body-light: hsl(0, 4%, 87%);
+
   --carousel-width: 800px;
   --carousel-height: 300px;
   --fs-carousel-img: 3.5rem;
 
   --ff: "Roboto", sans-serif;
+
+  --padding-general: 4rem;
+  --max-width-general: 1200px;
+  --height-header-desktop: 140px;
 }
 
 body {
   font-family: var(--ff);
-  background-color: rgb(44, 43, 43);
+  background-color: var(--clr-body-dark);
+  color: var(--clr-body-light);
+  /* overflow: hidden; */
+  transition: all 200ms ease;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
