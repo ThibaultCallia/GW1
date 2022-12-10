@@ -3,11 +3,3 @@
   height: calc(100vh - 60px);
   /* How to make height header as variable? */
 }
-
-.welcome__img {
-  height: 700px;
-  z-index: -1;
-  position: absolute;
-  right: -210px;
-  top: -70px;
-}

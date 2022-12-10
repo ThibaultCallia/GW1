@@ -4,10 +4,14 @@ header {
   position: sticky;
   top: 0;
   transition: all 200ms ease;
+  z-index: 20;
 }
 
 .nav-container {
-  width: min(var(--max-width-general), 100vw - 2 * var(--padding-general));
+  width: min(
+    var(--max-width-general),
+    100vw - 2 * var(--padding-general-sides)
+  );
   margin-inline: auto;
   display: flex;
   justify-content: space-between;

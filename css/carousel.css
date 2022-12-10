@@ -1,7 +1,7 @@
 .carousel-container {
   margin-top: 40px;
   height: var(--carousel-height);
-  width: min(var(--carousel-width), 100vw - 2 * var(--padding-general));
+  width: min(var(--carousel-width), 100vw - 2 * var(--padding-general-sides));
 
   margin-inline: auto;
   /* overflow: hidden; */
@@ -12,7 +12,7 @@
 .img-container {
   position: relative;
   height: var(--carousel-height);
-  width: min(var(--carousel-width), 100vw - 2 * var(--padding-general));
+  width: min(var(--carousel-width), 100vw - 2 * var(--padding-general-sides));
 
   /* touch-action: pan-y; */
 }
