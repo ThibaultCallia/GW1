@@ -1,7 +1,7 @@
 .carousel-container {
-  margin-top: 40px;
+  /* margin-top: 40px; */
   height: var(--carousel-height);
-  width: min(var(--carousel-width), 100vw);
+  width: min(var(--carousel-width), 100vw - 2 * var(--padding-general-sides));
 
   margin-inline: auto;
   /* overflow: hidden; */
@@ -9,15 +9,10 @@
   position: relative;
 }
 
-.carousel__list {
-  /* display: flex; */
-  /* margin-left: -800px; */
-}
-
 .img-container {
   position: relative;
   height: var(--carousel-height);
-  width: min(var(--carousel-width), 100vw);
+  width: min(var(--carousel-width), 100vw - 2 * var(--padding-general-sides));
 
   /* touch-action: pan-y; */
 }
@@ -36,6 +31,7 @@
   font-style: italic;
   left: 50%;
   transform: translateX(-50%);
+  color: black;
 }
 .bottom-title {
   bottom: 2%;
@@ -67,8 +63,6 @@
 /* This styling works? */
 .carousel-btn:hover {
   cursor: pointer;
-}
-.carousel-right {
 }
 
 .radios {

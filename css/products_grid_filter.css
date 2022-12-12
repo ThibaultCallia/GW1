@@ -1,0 +1,60 @@
+:root {
+  --clr-product-card-background: hsl(212, 14%, 31%);
+  --padding-filter: 1rem;
+}
+
+/* ------ FILTER ------ */
+
+.products__filter {
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  padding-top: var(--padding-filter);
+  padding-bottom: var(--padding-filter);
+  background-color: var(--clr-body-dark);
+  position: sticky;
+  top: 58px;
+  z-index: 21;
+}
+.filter__list {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.filter__item {
+  padding: 0.25rem 0.5rem;
+}
+
+.filter__item:hover {
+  cursor: pointer;
+}
+
+.active-filter {
+  border: 2px solid white;
+  border-radius: 1rem;
+}
+
+/* ------ GRID ------ */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+/* ------ PRODUCT CARD ------ */
+
+.product-card:hover {
+  cursor: pointer;
+}
+
+.product-card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: var(--clr-product-card-background);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.product-card__img {
+  width: 100%;
+}

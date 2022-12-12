@@ -1,0 +1,5 @@
+.welcome-container {
+  /* border: 2px solid red; */
+  height: calc(100vh - 60px);
+  /* How to make height header as variable? */
+}

@@ -1,15 +1,71 @@
 @import url(reset_tc_collection.css);
 @import url(carousel.css);
+@import url(nav.css);
+@import url(welcome.css);
+@import url(products.css);
+@import url(products_grid_filter.css);
 
 :root {
+  --clr-body-dark: hsl(212, 14%, 21%);
+  --clr-body-light: hsl(0, 4%, 87%);
+
   --carousel-width: 800px;
   --carousel-height: 300px;
   --fs-carousel-img: 3.5rem;
 
   --ff: "Roboto", sans-serif;
+
+  --padding-general-sides: 4rem;
+  --margin-vert-between-sections: 3rem;
+  --max-width-general: 1200px;
+  --height-header-desktop: 140px;
+  
 }
+
+/* ------ GENERAL STYLING AND BODY ------ */
 
 body {
   font-family: var(--ff);
-  background-color: rgb(44, 43, 43);
+  background-color: var(--clr-body-dark);
+  color: var(--clr-body-light);
+  /* overflow: hidden; */
+  transition: all 200ms ease;
+  /* overflow: hidden; */
+}
+
+/* ------ UTILITIES ------ */
+
+/* ------ MAIN CONTAINER ------ */
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* <- welcome -> */
+
+/* <- products -> */
+
+.products__filter {
+  width: 100vw;
+
+  margin-top: var(--margin-vert-between-sections);
+  margin-bottom: var(--margin-vert-between-sections);
+}
+
+.grid-container {
+  width: min(
+    var(--max-width-general),
+    100vw - 2 * var(--padding-general-sides)
+  );
+  margin-inline: auto;
+  margin-top: var(--margin-vert-between-sections);
+  margin-bottom: var(--margin-vert-between-sections);
+}
+.filter__list {
+  width: min(
+    var(--max-width-general),
+    100vw - 2 * var(--padding-general-sides)
+  );
+  margin-inline: auto;
 }
