@@ -1,5 +1,5 @@
 .carousel-container {
-  margin-top: 40px;
+  /* margin-top: 40px; */
   height: var(--carousel-height);
   width: min(var(--carousel-width), 100vw - 2 * var(--padding-general-sides));
 
