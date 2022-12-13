@@ -1,5 +1,27 @@
 .welcome-container {
-  /* border: 2px solid red; */
-  height: calc(100vh - 60px);
+  height: 70vh;
+
   /* How to make height header as variable? */
+  overflow: hidden;
+  border: 1px solid white;
+  width: min(
+    var(--max-width-general),
+    100vw - 2 * var(--padding-general-sides)
+  );
+  margin-inline: auto;
+  overflow: hidden;
+  margin-top: var(--margin-vert-between-sections);
+  position: relative;
+}
+
+.welcome__text {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
 }

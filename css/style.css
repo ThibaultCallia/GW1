@@ -6,7 +6,7 @@
 @import url(products_grid_filter.css);
 
 :root {
-  --clr-body-dark: hsl(212, 14%, 21%);
+  --clr-body-dark: hsl(212, 14%, 27%);
   --clr-body-light: hsl(0, 4%, 87%);
 
   --carousel-width: 800px;
@@ -15,11 +15,10 @@
 
   --ff: "Roboto", sans-serif;
 
-  --padding-general-sides: 4rem;
+  --padding-general-sides: 2rem;
   --margin-vert-between-sections: 3rem;
   --max-width-general: 1200px;
   --height-header-desktop: 140px;
-  
 }
 
 /* ------ GENERAL STYLING AND BODY ------ */
@@ -29,7 +28,7 @@ body {
   background-color: var(--clr-body-dark);
   color: var(--clr-body-light);
   /* overflow: hidden; */
-  transition: all 200ms ease;
+  /* transition: all 200ms ease; */
   /* overflow: hidden; */
 }
 
