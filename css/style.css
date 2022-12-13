@@ -25,8 +25,8 @@
 
 body {
   font-family: var(--ff);
-  background-color: var(--clr-body-dark);
-  color: var(--clr-body-light);
+  background-color: var(--clr-body-light);
+  color: var(--clr-body-dark);
   /* overflow: hidden; */
   /* transition: all 200ms ease; */
   /* overflow: hidden; */
@@ -46,8 +46,6 @@ body {
 /* <- products -> */
 
 .products__filter {
-  width: 100vw;
-
   margin-top: var(--margin-vert-between-sections);
   margin-bottom: var(--margin-vert-between-sections);
 }

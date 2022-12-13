@@ -1,5 +1,5 @@
 header {
-  background-color: var(--clr-body-dark);
+  background-color: var(--clr-body-light);
   font-weight: 700;
   position: sticky;
   top: 0;
@@ -16,7 +16,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--clr-body-dark);
   padding-top: 1rem;
   align-items: center;
 }

@@ -17,6 +17,11 @@
   /* touch-action: pan-y; */
 }
 
+.test-figure {
+  width: 100%;
+  position: relative;
+}
+
 .carousel__img {
   width: 100%;
   height: 100%;
