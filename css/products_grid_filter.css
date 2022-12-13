@@ -17,20 +17,33 @@
 }
 .filter__list {
   display: flex;
-  gap: 0.5rem;
+  gap: 1.5rem;
   align-items: center;
+  justify-content: flex-start;
 }
 .filter__item {
-  padding: 0.25rem 0.5rem;
+  position: relative;
 }
 
 .filter__item:hover {
   cursor: pointer;
 }
 
-.active-filter {
-  border: 2px solid white;
-  border-radius: 1rem;
+.active-filter::after {
+  content: "";
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  top: -17px;
+  border: 10px solid;
+  border-color: rgb(255, 255, 255) #0000 #0000 #0000;
+}
+
+@media (max-width: 470px) {
+  .filter__list {
+    justify-content: space-between;
+    gap: 0rem;
+  }
 }
 
 /* ------ GRID ------ */

@@ -3,7 +3,7 @@
 
   /* How to make height header as variable? */
   overflow: hidden;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   width: min(
     var(--max-width-general),
     100vw - 2 * var(--padding-general-sides)
