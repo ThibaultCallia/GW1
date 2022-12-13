@@ -63,7 +63,7 @@
 
 .product-card {
   border-radius: 0.75rem;
-  /* overflow: hidden; */
+  overflow: hidden;
   background-color: var(--clr-body-light);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -73,9 +73,16 @@
   height: 60%;
   position: relative;
 }
+.carousel {
+  position: relative;
+  display: flex;
+  transition: all 300ms ease;
+}
+
 .test-figure {
   flex-shrink: 0;
 }
+
 .product-card__img {
   width: 100%;
   height: 100%;
@@ -96,4 +103,8 @@
 }
 .left-btn {
   left: 0;
+}
+
+.hidden {
+  display: none;
 }

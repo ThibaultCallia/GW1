@@ -4,6 +4,16 @@ import Filter from "./Filter";
 // const spotlight = new Carousel2(document.querySelector(".carousel-container"));
 const mainFilter = new Filter(document.querySelector(".products__filter"));
 
+/* Test environment for product card carousel ---------
+-------------------------------------------------------*/
+const rightBtn = document.querySelector(".right-btn");
+
+rightBtn.addEventListener("click", slide);
+
+function slide() {
+  document.querySelector(".carousel").style.transform = `translateX(-100%)`;
+}
+
 // document.querySelector(".theme-btn").addEventListener("click", themeSwitch);
 
 // WELCOME
