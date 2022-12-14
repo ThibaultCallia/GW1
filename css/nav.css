@@ -4,7 +4,7 @@ header {
   position: sticky;
   top: 0;
   transition: all 200ms ease;
-  z-index: 20;
+  z-index: 2;
 }
 
 .nav-container {
@@ -35,12 +35,42 @@ header {
 .fa-moon:hover {
   cursor: pointer;
 }
+.mobile-nav-btn {
+  display: none;
+}
+
+.nav-container-mobile {
+  visibility: hidden;
+  position: fixed;
+  right: -300px;
+  top: 60px;
+  width: 200px;
+  height: 100vh;
+  z-index: 50;
+  background-color: var(--clr-body-light);
+  font-size: 1.75rem;
+
+  transition: 0.75s cubic-bezier(0.84, 0.145, 0.18, 0.915);
+
+  padding: 2rem;
+  text-align: right;
+}
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.nav-container-mobile.open {
+  visibility: visible;
+  right: 0;
+  box-shadow: 0 14px 20px 0 rgba(0, 0, 0, 0.2);
+}
 
 @media (max-width: 470px) {
   .full-nav {
     display: none;
   }
-  .mobile-nav {
+  .mobile-nav-btn {
     display: block;
   }
 }

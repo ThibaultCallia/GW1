@@ -8,6 +8,11 @@
     <script src="js/index.js" type="module" defer></script>
 
     <!-- Styles -->
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@3.0.0/dist/flickity.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- Fonts and icons -->
@@ -27,6 +32,13 @@
   </head>
   <body>
     <main>
+      <div class="nav-container-mobile">
+        <ul class="mobile-nav-list">
+          <li>Home</li>
+          <li>Products</li>
+          <li>Contact</li>
+        </ul>
+      </div>
       <header>
         <div class="nav-container">
           <h2 class="logo">KEYKAPS</h2>
@@ -42,7 +54,7 @@
                 <i class="fa-solid fa-cart-shopping"></i>
               </li>
 
-              <li class="mobile-nav"><i class="fa-solid fa-bars"></i></li>
+              <li class="mobile-nav-btn"><i class="fa-solid fa-bars"></i></li>
             </ul>
           </nav>
         </div>
@@ -111,111 +123,31 @@
           </div>
           <div class="grid-container">
             <div class="product-card">
-              <div class="product-img-container one">
-                <div class="carousel-btn right-btn">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </div>
-                <div class="carousel-btn left-btn">
-                  <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div class="carousel">
-                  <figure class="test-figure">
-                    <img
-                      class="product-card__img"
-                      src="images/sliderImages/nuphy1.jpg"
-                      alt=""
-                    />
-                  </figure>
-                  <figure class="test-figure">
-                    <img
-                      class="product-card__img"
-                      src="images/sliderImages/nuphy2.jpg"
-                      alt=""
-                    />
-                  </figure>
-                </div>
-              </div>
-
+              <figure class="">
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/nuphy1.jpg"
+                  alt=""
+                />
+              </figure>
               <p class="product-card__title">Product 1</p>
               <p class="product-card__details">This is a fancy keyboard</p>
               <p class="product-card__price">$399</p>
             </div>
             <div class="product-card">
-              <div class="product-img-container">
-                <figure class="test-figure">
-                  <img
-                    class="product-card__img"
-                    src="images/sliderImages/nuphyHalo.jpg"
-                    alt=""
-                  />
-                </figure>
-                <figure class="test-figure">
-                  <img
-                    class="product-card__img"
-                    src="images/sliderImages/nuphy2.jpg"
-                    alt=""
-                  />
-                </figure>
-              </div>
+              <div class="carousel">
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/nuphy1.jpg"
+                  alt=""
+                />
 
-              <p class="product-card__title">Product 1</p>
-              <p class="product-card__details">This is a fancy keyboard</p>
-              <p class="product-card__price">$399</p>
-            </div>
-            <div class="product-card">
-              <div class="product-img-container">
-                <figure class="test-figure">
-                  <img
-                    class="product-card__img one"
-                    src="images/sliderImages/nuphyAir96.jpg"
-                    alt=""
-                  />
-                </figure>
-                <figure class="test-figure">
-                  <img
-                    class="product-card__img two"
-                    src="images/sliderImages/nuphy2.jpg"
-                    alt=""
-                  />
-                </figure>
-              </div>
-
-              <p class="product-card__title">Product 1</p>
-              <p class="product-card__details">This is a fancy keyboard</p>
-              <p class="product-card__price">$399</p>
-            </div>
-            <div class="product-card">
-              <figure>
                 <img
                   class="product-card__img"
                   src="images/sliderImages/nuphy2.jpg"
                   alt=""
                 />
-              </figure>
-              <p class="product-card__title">Product 1</p>
-              <p class="product-card__details">This is a fancy keyboard</p>
-              <p class="product-card__price">$399</p>
-            </div>
-            <div class="product-card">
-              <figure>
-                <img
-                  class="product-card__img"
-                  src="images/sliderImages/nuphy1.jpg"
-                  alt=""
-                />
-              </figure>
-              <p class="product-card__title">Product 1</p>
-              <p class="product-card__details">This is a fancy keyboard</p>
-              <p class="product-card__price">$399</p>
-            </div>
-            <div class="product-card">
-              <figure>
-                <img
-                  class="product-card__img"
-                  src="images/sliderImages/nuphy1.jpg"
-                  alt=""
-                />
-              </figure>
+              </div>
               <p class="product-card__title">Product 1</p>
               <p class="product-card__details">This is a fancy keyboard</p>
               <p class="product-card__price">$399</p>

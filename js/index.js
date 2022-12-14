@@ -1,18 +1,32 @@
 import Carousel2 from "./carousel2";
 import Filter from "./Filter";
+import Flickity from "flickity";
 
 // const spotlight = new Carousel2(document.querySelector(".carousel-container"));
 const mainFilter = new Filter(document.querySelector(".products__filter"));
 
+var elem = document.querySelector(".carousel");
+var flkty = new Flickity(elem, {
+  // options
+  cellAlign: "left",
+  contain: true,
+});
+
+const mobileNavBtn = document.querySelector(".mobile-nav-btn");
+mobileNavBtn.addEventListener("click", openNav);
+function openNav() {
+  document.querySelector(".nav-container-mobile").classList.toggle("open");
+}
+
 /* Test environment for product card carousel ---------
 -------------------------------------------------------*/
-const rightBtn = document.querySelector(".right-btn");
+// const rightBtn = document.querySelector(".right-btn");
 
-rightBtn.addEventListener("click", slide);
+// rightBtn.addEventListener("click", slide);
 
-function slide() {
-  document.querySelector(".carousel").style.transform = `translateX(-100%)`;
-}
+// function slide() {
+//   document.querySelector(".carousel").style.transform = `translateX(-100%)`;
+// }
 
 // document.querySelector(".theme-btn").addEventListener("click", themeSwitch);
 
