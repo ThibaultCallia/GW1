@@ -73,10 +73,12 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border: 2px solid red;
 }
 .carousel {
   height: 65%;
+}
+.carousel-cell {
+  height: 100%;
 }
 
 @media (max-width: 470px) {
