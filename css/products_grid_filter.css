@@ -86,3 +86,12 @@
     min-height: 300px;
   }
 }
+
+.flickity-button,
+.flickity-prev-next-button {
+  opacity: 0;
+}
+
+.product-card:hover .flickity-button {
+  opacity: 0.5;
+}

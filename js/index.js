@@ -42,7 +42,7 @@ function openNav() {
 
 // document.querySelector(".theme-btn").addEventListener("click", themeSwitch);
 
-// WELCOME
+// WELCOME;
 // const welcomeContainer = document.querySelector(".welcome-container");
 // const left = document.querySelector(".welcome__left");
 // const moveEvent = (e) => {
