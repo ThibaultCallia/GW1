@@ -36,7 +36,7 @@ header {
 .fa-moon:hover {
   cursor: pointer;
 }
-.mobile-nav-btn {
+.mobile-nav-list-item {
   display: none;
 }
 
@@ -83,7 +83,7 @@ header {
   .full-nav {
     display: none;
   }
-  .mobile-nav-btn {
+  .mobile-nav-list-item {
     display: block;
   }
 }
