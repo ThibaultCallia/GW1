@@ -28,6 +28,23 @@ const mobileNavBtn = document.querySelector(".mobile-nav-btn");
 mobileNavBtn.addEventListener("click", openNav);
 function openNav() {
   document.querySelector(".nav-container-mobile").classList.toggle("open");
+  if (
+    document.querySelector(".nav-container-mobile").classList.contains("open")
+  ) {
+    document.body.style.overflow = "hidden";
+    document.querySelector(".overlay").style.opacity = 1;
+  } else {
+    document.body.style.overflow = "auto";
+    document.querySelector(".overlay").style.opacity = 0;
+  }
+
+  // if (
+  //   document.querySelector(".nav-container-mobile").classList.contains("open")
+  // ) {
+  //   document.querySelector("header").style.zIndex = 5;
+  // } else {
+  //   document.querySelector("header").style.zIndex = 2;
+  // }
 }
 
 /* Test environment for product card carousel ---------
