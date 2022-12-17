@@ -25,17 +25,33 @@ var flkty = new Flickity(elem, {
 });
 
 const mobileNavBtn = document.querySelector(".mobile-nav-btn");
-mobileNavBtn.addEventListener("click", openNav);
-function openNav() {
+mobileNavBtn.addEventListener("click", openCloseNav);
+document
+  .querySelector(".mobile-home-btn")
+  .addEventListener("click", openCloseNav);
+
+document.querySelector(".overlay").addEventListener("click", openCloseNav);
+
+function openCloseNav() {
   document.querySelector(".nav-container-mobile").classList.toggle("open");
   if (
     document.querySelector(".nav-container-mobile").classList.contains("open")
   ) {
     document.body.style.overflow = "hidden";
     document.querySelector(".overlay").style.opacity = 1;
+    document.querySelector(".overlay").style.pointerEvents = "all";
+    document.querySelector(".mobile-nav-btn").classList.remove("fa-bars");
+    document
+      .querySelector(".mobile-nav-btn")
+      .classList.add("fa-bars-staggered");
   } else {
     document.body.style.overflow = "auto";
     document.querySelector(".overlay").style.opacity = 0;
+    document.querySelector(".overlay").style.pointerEvents = "none";
+    document.querySelector(".mobile-nav-btn").classList.add("fa-bars");
+    document
+      .querySelector(".mobile-nav-btn")
+      .classList.remove("fa-bars-staggered");
   }
 
   // if (

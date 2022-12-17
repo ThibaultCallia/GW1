@@ -76,6 +76,7 @@ header {
   z-index: 4;
   opacity: 0;
   transition: 0.75s cubic-bezier(0.84, 0.145, 0.18, 0.915);
+  pointer-events: none;
 }
 
 @media (max-width: 470px) {

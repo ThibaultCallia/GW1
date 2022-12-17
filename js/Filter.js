@@ -20,11 +20,6 @@ class Filter {
   }
   filter(filterName) {
     switch (filterName) {
-      case "all":
-        document.querySelectorAll(".product-card").forEach((element) => {
-          element.style.display = "block";
-        });
-        break;
       case "keyboard":
         document.querySelectorAll(".product-card").forEach((element) => {
           element.style.display = "none";
@@ -50,14 +45,11 @@ class Filter {
         });
         break;
       default:
-      case "all":
         document.querySelectorAll(".product-card").forEach((element) => {
           element.style.display = "block";
         });
         break;
     }
-
-    console.log(document.querySelector(`.${filterName}`));
   }
 }
 
