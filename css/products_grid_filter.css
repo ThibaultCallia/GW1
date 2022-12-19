@@ -211,14 +211,11 @@
   transition: 
     var(--transition-bg),
     opacity 100ms linear;
-  transform: scale(1.2, 1.5);
+  transform: scale(1.2, 1.4);
   opacity: 1;
 }
 .product-card:hover .product-price_icon{
   opacity: 0;
-}
-.product-card:hover .product-img{
-  z-index: 10000 ;
 }
 .product-card:hover .card-back{
   opacity: 1;
@@ -227,6 +224,9 @@
 }
 .icons img:hover{
   cursor: pointer;
+}
+.product-card:hover ~ .product-card:not(:hover){
+  z-index: -1;
 }
 
 @keyframes productName {
