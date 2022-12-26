@@ -15,10 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "flickity": "^3.0.0"
-=======
-    "reset-css": "^5.0.1"
->>>>>>> gw_3_productGrid
   }
 }
