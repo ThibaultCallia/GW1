@@ -226,6 +226,10 @@
   cursor: pointer;
 }
 .product-card:hover ~ .product-card:not(:hover){
+    z-index: -1;
+}
+/* fix dit */
+.grid-container:has(.product-card:hover) ~ .products__filter{
   z-index: -1;
 }
 
