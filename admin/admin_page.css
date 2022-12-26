@@ -35,12 +35,12 @@ body{
   padding: 0 40px 50px 40px;
   box-sizing: border-box;
 }
-form .text{
+form .form_input{
   position: relative;
   border-bottom: 2px solid #adadad;
   margin: 50px 0;
 }
-.text input{
+.form_input input{
   width: 100%;
   padding: 0 5px;
   height: 40px;
@@ -49,7 +49,7 @@ form .text{
   background: none;
   outline: none;
 }
-.text label{
+.form_input label{
   position: absolute;
   top: 50%;
   left: 5px;
@@ -59,7 +59,7 @@ form .text{
   pointer-events: none;
   transition: .5s;
 }
-.text span::before{
+.form_input span::before{
   content: '';
   position: absolute;
   top: 40px;
@@ -69,13 +69,13 @@ form .text{
   background: #2d343c;
   transition: .5s;
 }
-.text input:focus ~ label,
-.text input:valid ~ label{
+.form_input input:focus ~ label,
+.form_input input:valid ~ label{
   top: -5px;
   color: #2d343c;
 }
-.text input:focus ~ span::before,
-.text input:valid ~ span::before{
+.form_input input:focus ~ span::before,
+.form_input input:valid ~ span::before{
   width: 100%;
 }
 
