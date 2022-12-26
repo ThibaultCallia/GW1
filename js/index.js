@@ -1,5 +1,6 @@
-// import "./../css/products_grid_filter.scss";
-import Carousel2 from "./carousel2";
+import "../css/style.scss";
+// import "../css/products_grid_filter.scss";
+
 import Filter from "./Filter";
 import Flickity from "flickity";
 

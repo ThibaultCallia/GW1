@@ -58,6 +58,7 @@ body {
   margin-inline: auto;
   margin-top: var(--margin-vert-between-sections);
   margin-bottom: var(--margin-vert-between-sections);
+  margin-top: 7rem;
 }
 .filter__list {
   width: min(

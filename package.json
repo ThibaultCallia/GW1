@@ -9,16 +9,16 @@
     "preview": "vite preview --host",
     "deploy": "surge ./dist keykaps.surge.sh",
     "clean": "rm -rf ./dist ./node_modules",
-    "sass": "node-sass -w sass/ -o css/"
+    "sass": "node-sass -w sass/ -o css/",
+    "sass-dev": "sass --watch --update --style=expanded /css:assets/css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "flickity": "^3.0.0"
-=======
-    "reset-css": "^5.0.1"
->>>>>>> gw_3_productGrid
+  },
+  "devDependencies": {
+    "sass": "^1.57.1"
   }
 }
