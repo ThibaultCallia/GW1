@@ -8,12 +8,17 @@
     "build": "vite build",
     "preview": "vite preview --host",
     "deploy": "surge ./dist keykaps.surge.sh",
-    "clean": "rm -rf ./dist ./node_modules"
+    "clean": "rm -rf ./dist ./node_modules",
+    "sass": "node-sass -w sass/ -o css/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "flickity": "^3.0.0"
+=======
+    "reset-css": "^5.0.1"
+>>>>>>> gw_3_productGrid
   }
 }
