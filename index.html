@@ -8,6 +8,11 @@
     <script src="js/index.js" type="module" defer></script>
 
     <!-- Styles -->
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@3.0.0/dist/flickity.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- Fonts and icons -->
@@ -23,27 +28,50 @@
     ></script>
 
     <!-- Title -->
-    <title>Keykaps</title>
+    <title>#️⃣ Keykaps</title>
   </head>
   <body>
     <main>
+      <div class="overlay"></div>
+      <div class="nav-container-mobile">
+        <ul class="mobile-nav-list">
+          <li><a class="mobile-home-btn" href="#">Home</a></li>
+          <li>Products</li>
+          <li>Contact</li>
+        </ul>
+      </div>
       <header>
         <div class="nav-container">
           <h2 class="logo">KEYKAPS</h2>
           <nav class="main-nav">
             <ul class="nav__list">
-              <li><i class="theme-btn fa-solid fa-sun"></i></li>
-              <li>Home</li>
-              <li>Products</li>
-              <li>Contact</li>
-              <li><i class="fa-solid fa-cart-shopping"></i></li>
+              <li class="full-nav">
+                <i class="theme-btn fa-solid fa-sun"></i>
+              </li>
+              <li class="full-nav">Home</li>
+              <li class="full-nav">Products</li>
+              <li class="full-nav">Contact</li>
+              <li class="full-nav">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </li>
+
+              <li class="mobile-nav-list-item">
+                <i class="mobile-nav-btn fa-solid fa-bars"></i>
+              </li>
             </ul>
           </nav>
         </div>
       </header>
       <div class="main-container">
-        <section class="welcome-container"></section>
-        <section class="carousel-container">
+        <section class="welcome-container">
+          <div class="welcome__text welcome__right">
+            <div class="text-container">
+              <p class="title title1">Anything For</p>
+              <p class="title title2">Mechanical Keyboards</p>
+            </div>
+          </div>
+        </section>
+        <!-- <section class="carousel-container">
           <div class="images">
             <figure class="img-container">
               <img
@@ -86,18 +114,137 @@
               <p class="img-title bottom-title">Nuphy Air 75</p>
             </figure>
           </div>
-        </section>
+        </section> -->
         <section class="products">
           <div class="products__filter">
             <ul class="filter__list">
-              <li class="filter__item">ALL</li>
-              <li class="active-filter filter__item">KEYBOARDS</li>
-              <li class="filter__item">KEYCAPS</li>
-              <li class="filter__item">SWITCHES</li>
+              <li class="active-filter filter__item" data-filter="all">ALL</li>
+              <li class="filter__item" data-filter="keyboard">KEYBOARDS</li>
+              <li class="filter__item" data-filter="keycaps">KEYCAPS</li>
+              <li class="filter__item" data-filter="switches">SWITCHES</li>
             </ul>
           </div>
           <div class="grid-container">
-            <div class="product-card">
+            <div class="product-card keyboard">
+              <figure class="">
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/nuphy1.jpg"
+                  alt=""
+                />
+              </figure>
+              <p class="product-card__title">Product 1</p>
+              <p class="product-card__details">This is a fancy keyboard</p>
+              <p class="product-card__price">$399</p>
+            </div>
+            <div class="product-card keyboard">
+              <div class="carousel">
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/nuphy1.jpg"
+                  alt=""
+                />
+
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/nuphy2.jpg"
+                  alt=""
+                />
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/nuphy3.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="product-card__title">Product 1</p>
+              <p class="product-card__details">This is a fancy keyboard</p>
+              <p class="product-card__price">$399</p>
+            </div>
+            <div class="product-card keycaps">
+              <figure>
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/keycapsBlack.jpg"
+                  alt=""
+                />
+              </figure>
+              <p class="product-card__title">Product 1</p>
+              <p class="product-card__details">This is a fancy keyboard</p>
+              <p class="product-card__price">$399</p>
+            </div>
+            <div class="product-card keycaps">
+              <figure>
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/keykapsBlue.jpg"
+                  alt=""
+                />
+              </figure>
+              <p class="product-card__title">Product 1</p>
+              <p class="product-card__details">This is a fancy keyboard</p>
+              <p class="product-card__price">$399</p>
+            </div>
+            <div class="product-card keycaps">
+              <figure>
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/keykapsGreen.jpg"
+                  alt=""
+                />
+              </figure>
+              <p class="product-card__title">Product 1</p>
+              <p class="product-card__details">This is a fancy keyboard</p>
+              <p class="product-card__price">$399</p>
+            </div>
+            <div class="product-card keycaps">
+              <figure>
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/keycapsBlack.jpg"
+                  alt=""
+                />
+              </figure>
+              <p class="product-card__title">Product 1</p>
+              <p class="product-card__details">This is a fancy keyboard</p>
+              <p class="product-card__price">$399</p>
+            </div>
+            <div class="product-card switches">
+              <figure>
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/switchBrown.jpg"
+                  alt=""
+                />
+              </figure>
+              <p class="product-card__title">Product 1</p>
+              <p class="product-card__details">This is a fancy keyboard</p>
+              <p class="product-card__price">$399</p>
+            </div>
+            <div class="product-card switches">
+              <figure>
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/switchGreen.jpg"
+                  alt=""
+                />
+              </figure>
+              <p class="product-card__title">Product 1</p>
+              <p class="product-card__details">This is a fancy keyboard</p>
+              <p class="product-card__price">$399</p>
+            </div>
+            <div class="product-card switches">
+              <figure>
+                <img
+                  class="product-card__img"
+                  src="images/sliderImages/switchRed.jpg"
+                  alt=""
+                />
+              </figure>
+              <p class="product-card__title">Product 1</p>
+              <p class="product-card__details">This is a fancy keyboard</p>
+              <p class="product-card__price">$399</p>
+            </div>
+            <div class="product-card keyboard">
               <figure>
                 <img
                   class="product-card__img"
@@ -109,7 +256,7 @@
               <p class="product-card__details">This is a fancy keyboard</p>
               <p class="product-card__price">$399</p>
             </div>
-            <div class="product-card">
+            <div class="product-card keyboard">
               <figure>
                 <img
                   class="product-card__img"
@@ -121,91 +268,7 @@
               <p class="product-card__details">This is a fancy keyboard</p>
               <p class="product-card__price">$399</p>
             </div>
-            <div class="product-card">
-              <figure>
-                <img
-                  class="product-card__img"
-                  src="images/sliderImages/nuphy1.jpg"
-                  alt=""
-                />
-              </figure>
-              <p class="product-card__title">Product 1</p>
-              <p class="product-card__details">This is a fancy keyboard</p>
-              <p class="product-card__price">$399</p>
-            </div>
-            <div class="product-card">
-              <figure>
-                <img
-                  class="product-card__img"
-                  src="images/sliderImages/nuphy1.jpg"
-                  alt=""
-                />
-              </figure>
-              <p class="product-card__title">Product 1</p>
-              <p class="product-card__details">This is a fancy keyboard</p>
-              <p class="product-card__price">$399</p>
-            </div>
-            <div class="product-card">
-              <figure>
-                <img
-                  class="product-card__img"
-                  src="images/sliderImages/nuphy1.jpg"
-                  alt=""
-                />
-              </figure>
-              <p class="product-card__title">Product 1</p>
-              <p class="product-card__details">This is a fancy keyboard</p>
-              <p class="product-card__price">$399</p>
-            </div>
-            <div class="product-card">
-              <figure>
-                <img
-                  class="product-card__img"
-                  src="images/sliderImages/nuphy1.jpg"
-                  alt=""
-                />
-              </figure>
-              <p class="product-card__title">Product 1</p>
-              <p class="product-card__details">This is a fancy keyboard</p>
-              <p class="product-card__price">$399</p>
-            </div>
-            <div class="product-card">
-              <figure>
-                <img
-                  class="product-card__img"
-                  src="images/sliderImages/nuphy1.jpg"
-                  alt=""
-                />
-              </figure>
-              <p class="product-card__title">Product 1</p>
-              <p class="product-card__details">This is a fancy keyboard</p>
-              <p class="product-card__price">$399</p>
-            </div>
-            <div class="product-card">
-              <figure>
-                <img
-                  class="product-card__img"
-                  src="images/sliderImages/nuphy1.jpg"
-                  alt=""
-                />
-              </figure>
-              <p class="product-card__title">Product 1</p>
-              <p class="product-card__details">This is a fancy keyboard</p>
-              <p class="product-card__price">$399</p>
-            </div>
-            <div class="product-card">
-              <figure>
-                <img
-                  class="product-card__img"
-                  src="images/sliderImages/nuphy1.jpg"
-                  alt=""
-                />
-              </figure>
-              <p class="product-card__title">Product 1</p>
-              <p class="product-card__details">This is a fancy keyboard</p>
-              <p class="product-card__price">$399</p>
-            </div>
-            <div class="product-card">
+            <div class="product-card keyboard">
               <figure>
                 <img
                   class="product-card__img"

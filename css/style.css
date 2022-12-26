@@ -1,13 +1,13 @@
 @import url(reset_tc_collection.css);
-@import url(carousel.css);
+/* @import url(carousel.css); */
 @import url(nav.css);
 @import url(welcome.css);
-@import url(products.css);
+/* @import url(products.css); */
 @import url(products_grid_filter.css);
 
 :root {
-  --clr-body-dark: hsl(212, 14%, 21%);
-  --clr-body-light: hsl(0, 4%, 87%);
+  --clr-body-dark: hsl(212, 14%, 27%);
+  --clr-body-light: hsl(225, 100%, 98%);
 
   --carousel-width: 800px;
   --carousel-height: 300px;
@@ -15,21 +15,20 @@
 
   --ff: "Roboto", sans-serif;
 
-  --padding-general-sides: 4rem;
+  --padding-general-sides: 2rem;
   --margin-vert-between-sections: 3rem;
   --max-width-general: 1200px;
   --height-header-desktop: 140px;
-  
 }
 
 /* ------ GENERAL STYLING AND BODY ------ */
 
 body {
   font-family: var(--ff);
-  background-color: var(--clr-body-dark);
-  color: var(--clr-body-light);
+  background-color: var(--clr-body-light);
+  color: var(--clr-body-dark);
   /* overflow: hidden; */
-  transition: all 200ms ease;
+  /* transition: all 200ms ease; */
   /* overflow: hidden; */
 }
 
@@ -47,8 +46,6 @@ body {
 /* <- products -> */
 
 .products__filter {
-  width: 100vw;
-
   margin-top: var(--margin-vert-between-sections);
   margin-bottom: var(--margin-vert-between-sections);
 }
