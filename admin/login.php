@@ -1,7 +1,7 @@
 <?php
 $errors = [
   "Foutje",
-  "Niet rechtstreeks naar auth surfen aub!",
+  "Eerst inloggen!",
   "Velden mogen niet leeg zijn",
   "Username en/of password zijn niet juist"
 ];

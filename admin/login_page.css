@@ -32,8 +32,8 @@ body{
   border-bottom: 1px solid silver;
 }
 .login-container p{
-  color: red;
   text-align: center;
+  color: rebeccapurple;
 }
 .login-container form{
   padding: 0 40px 50px 40px;
@@ -44,6 +44,13 @@ form .form_input{
   border-bottom: 2px solid #adadad;
   margin: 50px 0;
 }
+.form_input:has(input[type="text"]){
+  margin-bottom: 80px;
+}
+.form_input:has(input[type="password"]){
+  margin-bottom: 70px;
+}
+
 .form_input input{
   width: 100%;
   padding: 0 5px;
