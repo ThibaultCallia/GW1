@@ -1,4 +1,4 @@
-@import url(reset_tc_collection.css);
+@import url(./../cssMain/reset_tc_collection.css);
 
 *{
     font-family: "Roboto", sans-serif;
@@ -30,6 +30,10 @@ body{
   letter-spacing: 0.15ch;
   padding: 30px 0;
   border-bottom: 1px solid silver;
+}
+.login-container p{
+  color: red;
+  text-align: center;
 }
 .login-container form{
   padding: 0 40px 50px 40px;

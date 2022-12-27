@@ -41,7 +41,7 @@
           <li>Contact</li>
         </ul>
       </div>
-      <header>
+      <header id="header">
         <div class="nav-container">
           <h2 class="logo">KEYKAPS</h2>
           <nav class="main-nav">
@@ -49,9 +49,10 @@
               <li class="full-nav">
                 <i class="theme-btn fa-solid fa-sun"></i>
               </li>
-              <li class="full-nav">Home</li>
-              <li class="full-nav">Products</li>
+              <li class="full-nav"><a href="#">Home</a></li>
+              <li class="full-nav"><a href="#products">Products</a></li>
               <li class="full-nav">Contact</li>
+              <li class="full-nav"><a href="./admin/login.php">Admin</a></li>
               <li class="full-nav">
                 <i class="fa-solid fa-cart-shopping"></i>
               </li>
@@ -116,7 +117,7 @@
             </figure>
           </div>
         </section> -->
-        <section class="products">
+        <section class="products" id="products">
           <div class="products__filter">
             <ul class="filter__list">
               <li class="active-filter filter__item" data-filter="all">ALL</li>
