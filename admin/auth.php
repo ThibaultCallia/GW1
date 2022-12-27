@@ -15,28 +15,29 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 
 // is het de juiste login?
-require("./../../admin/db.php");
+require("./db.php");
 
-$sql = "SELECT id, firstname 
-  FROM users 
+$sql = "SELECT username, password
+  FROM user 
   WHERE username = '" . strtolower($username) . "' 
   AND password= MD5('" . $password . "')
   LIMIT 1";
+var_dump($sql);
 
 $result = $mysqli->query($sql);
 if ($result && $result->num_rows > 0) {
-    // Ja, het is de juiste
-    $user = $result->fetch_assoc();
+  // Ja, het is de juiste
+  $user = $result->fetch_assoc();
 
-    session_start();
-    session_regenerate_id();
-    $_SESSION["loggedin"] = TRUE;
-    $_SESSION["username"] = $username;
-    $_SESSION["id"] = $user["id"];
-    $_SESSION["firstname"] = $user["firstname"];
+  session_start();
+  session_regenerate_id();
+  $_SESSION["loggedin"] = TRUE;
+  $_SESSION["username"] = $username;
+  $_SESSION["id"] = $user["id"];
+  $_SESSION["firstname"] = $user["firstname"];
 
-    header("Location: ./../../admin/admin.php");
-    exit;
+  header("Location: ./../../admin/admin.php");
+  exit;
 }
 
 // Nee, login was fout

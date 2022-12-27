@@ -2,7 +2,7 @@
 $db_host = '127.0.0.1';
 $db_user = 'root';
 $db_password = 'root';
-$db_db = 'php_func_program';
+$db_db = 'keykaps';
 $db_port = 8889;
 
 $mysqli = new mysqli(

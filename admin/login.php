@@ -25,12 +25,12 @@ $errors = [
   <script src="https://kit.fontawesome.com/cdb38844a4.js" crossorigin="anonymous"></script>
 
   <!-- Title -->
-  <title>Login Page</title>
+  <title>Admin Login Page</title>
 </head>
 
 <body>
   <div class="login-container">
-    <h1>Login</h1>
+    <h1>Admin Login</h1>
     <p class="error_text">
       <?php
       if (isset($_GET["error"])) {
@@ -39,12 +39,12 @@ $errors = [
     </p>
     <form method="post" action="./auth.php">
       <div class="form_input">
-        <input type="text" required />
+        <input type="text" name="username" required />
         <span></span>
         <label for="username">Username</label>
       </div>
       <div class="form_input">
-        <input type="password" required />
+        <input type="password" name="password" required />
         <span></span>
         <label for="username">Password</label>
       </div>
