@@ -1,9 +1,12 @@
-@import url(reset_tc_collection.css);
+@import url(./reset_tc_collection.css);
 /* @import url(carousel.css); */
-@import url(nav.css);
-@import url(welcome.css);
+@import url(./../css/nav.css);
+@import url(./../css/welcome.css);
 /* @import url(products.css); */
-@import url(products_grid_filter.css);
+@import url(./../css/products_grid_filter.css);
+@import url(./../css/app.css);
+
+
 
 :root {
   --clr-body-dark: hsl(212, 14%, 27%);
