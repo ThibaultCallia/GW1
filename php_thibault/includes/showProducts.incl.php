@@ -81,11 +81,20 @@ foreach ($products as $product) {
     />
   </figure>
 </div>';
-  $productImages = '<img
+  $firstImageDiv = '<img
     class="product-img"
-    src="./images/' . $product['image1'] . '"
+    src="./images/' . $imgList[0] . '"
     alt=""
   />';
+  $optionalImagesDiv = '';
+  for ($i = 1; $i < count($imgList); $i++) {
+    $optionalImagesDiv = $optionalImagesDiv . '<img
+    class="product-img"
+    src="./images/' . $imgList[$i] . '"
+    alt=""
+  />';
+  }
+
   $productName = '<h3 class="product-name">' . $product['name'] . '</h3>';
   $priceIcon = '<div class="product-price_icon">
     <p class="price">$' . $product['price'] . '</p>
@@ -108,7 +117,8 @@ foreach ($products as $product) {
   echo $priceCard;
   echo '</section>';
   echo '<section class="card-front">';
-  echo $productImages;
+  echo $firstImageDiv;
+  echo $optionalImagesDiv;
   echo $productName;
   echo $priceIcon;
   echo '</section>';
