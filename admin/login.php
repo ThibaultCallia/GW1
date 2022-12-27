@@ -1,9 +1,8 @@
 <?php
 $errors = [
-  "Foutje",
-  "Eerst inloggen!",
-  "Velden mogen niet leeg zijn",
-  "Username en/of password zijn niet juist"
+  "Error",
+  "Please, log in first!",
+  "Incorrect username or password."
 ];
 ?>
 

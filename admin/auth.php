@@ -1,14 +1,15 @@
 <?php
+// rechtsreeks naar auth.php
 // dit is ok, maar als je een lege submit doet, gaat die wel door
-// if (!isset($_POST["username"], $_POST["password"])) {
-//     header("Location: ./../../admin/login.php?error=1");
-//     exit;
-// }
+if (!isset($_POST["username"], $_POST["password"])) {
+  header("Location: ./login.php?error=1");
+  exit;
+}
 
 // dit is goed, checkt of het empty is..
 // if (empty($_POST["username"]) || empty($_POST["password"])) {
-//     header("Location: ./../../admin/login.php?error=2");
-//     exit;
+//   header("Location: ./login.php?error=2");
+//   exit;
 // }
 
 $username = $_POST["username"];
@@ -36,10 +37,10 @@ if ($result && $result->num_rows > 0) {
   $_SESSION["id"] = $user["id"];
   $_SESSION["firstname"] = $user["firstname"];
 
-  header("Location: ./../../admin/admin.php");
+  header("Location: ./admin.php");
   exit;
 }
 
 // Nee, login was fout
-header("Location: ./../../admin/login.php?error=3");
+header("Location: ./login.php?error=2");
 exit;
