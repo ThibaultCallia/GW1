@@ -1,5 +1,5 @@
 export default {
-  css: {
+  cssmap: {
     devSourcemap: true,
   },
 };
