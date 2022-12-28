@@ -84,14 +84,14 @@ foreach ($products as $product) {
   $firstImageDiv = '<img
     class="product-img"
     src="./images/' . $imgList[0] . '"
-    alt=""
+    alt="Image of a ' . $product['name'] . '"
   />';
   $optionalImagesDiv = '';
   for ($i = 1; $i < count($imgList); $i++) {
     $optionalImagesDiv = $optionalImagesDiv . '<img
     class="product-img"
     src="./images/' . $imgList[$i] . '"
-    alt=""
+    alt="Image of a ' . $product['name'] . '"
   />';
   }
 
