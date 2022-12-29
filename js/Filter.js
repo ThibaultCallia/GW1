@@ -24,7 +24,7 @@ class Filter {
         document.querySelectorAll(".product-card").forEach((element) => {
           element.style.display = "none";
         });
-        document.querySelectorAll(".keyboard").forEach((element) => {
+        document.querySelectorAll(".Keyboard").forEach((element) => {
           element.style.display = "block";
         });
         break;

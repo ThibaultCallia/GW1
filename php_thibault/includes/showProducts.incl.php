@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set("Europe/Brussels");
+
 
 // Creating DB variables
 $db_host = '127.0.0.1';
@@ -59,19 +61,19 @@ $mysqli->close();
 // echo '</pre>';
 
 
+// CREATING PRODUCT CARD DIV FOR EACH PRODUCT IN QUERY RESULT
 foreach ($products as $product) {
-  $imgList = [];
-  for ($i = 1; $i < 6; $i++) {
-    if ($product['image' . $i]) {
-      $imgList[] = $product['image' . $i];
-    }
-  }
+
+  // div class = card-bg--------------------------
   $cardBg = '<div class="card-bg"></div>';
+
+  // div class = discount ------------------------
   $discount = "";
   if ($product['discount']) {
     $discount = '<div class="discount">' . $product['discount'] * 100 . '%</div>';
   }
 
+  // div class = ratings ------------------------
   $rating = '<div class="ratings">
     <img src="./images/icons/star-full.svg.svg" alt="" />
     <img src="./images/icons/star-full.svg.svg" alt="" />
@@ -79,7 +81,11 @@ foreach ($products as $product) {
     <img src="./images/icons/star-half.svg.svg" alt="" />
     <img src="./images/icons/star-empty.svg.svg" alt="" />
   </div>';
+
+  // div class = product-description ------------
   $description = '<p class="product-description">' . $product['description'] . '</p>';
+
+  // div class = label---------------------------
   if ($product['colors']) {
     $productColors = explode(',', $product['colors']);
   } else {
@@ -92,10 +98,12 @@ foreach ($products as $product) {
     }
   }
   $labels = '<div class="labels">
-    <button class="label type">' . $product['categoryName'] . '</button>
-    <button class="label brand">' . $product['brandName'] . '</button>'
+      <button class="label type">' . $product['categoryName'] . '</button>
+      <button class="label brand">' . $product['brandName'] . '</button>'
     . $productColorsDiv . '
-  </div>';
+    </div>';
+
+  // div class = price_cart---------------------
   $priceCard = '<div class="price_cart">
   <p class="price">$' . $product['price'] . '</p>
   <figure class="cart">
@@ -105,6 +113,14 @@ foreach ($products as $product) {
     />
   </figure>
 </div>';
+
+  // product images----------------------------
+  $imgList = [];
+  for ($i = 1; $i <= 5; $i++) {
+    if ($product['image' . $i]) {
+      $imgList[] = $product['image' . $i];
+    }
+  }
   $firstImageDiv = '<img
     class="product-img"
     src="./images/' . $imgList[0] . '"
@@ -119,7 +135,10 @@ foreach ($products as $product) {
   />';
   }
 
+  // Product name ----------------------------
   $productName = '<h3 class="product-name">' . $product['name'] . '</h3>';
+
+  // Product price----------------------------
   $priceIcon = '<div class="product-price_icon">
     <p class="price">$' . $product['price'] . '</p>
     <figure class="icons">
@@ -131,6 +150,8 @@ foreach ($products as $product) {
     </figure>
   </div>';
 
+
+  // Creation of product card div-------------
   echo "<div class = 'product-card " . $product['categoryName'] . "'>";
   echo $cardBg;
   echo $discount;
@@ -145,18 +166,12 @@ foreach ($products as $product) {
   echo $optionalImagesDiv;
   echo $productName;
   echo $priceIcon;
-
   echo '</section>';
   echo "</div>";
 }
 
 
 
-
-
-
-
-date_default_timezone_set("Europe/Brussels");
 
 
 
