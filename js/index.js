@@ -25,23 +25,30 @@ document
   .querySelector(".test-btn-sort")
   .addEventListener("click", sortProducts);
 
-function filterProducts(e) {
+function filterProducts() {
   allProducts.forEach((element) => {
-    // brand
+    element.classList.remove("hidden");
 
+    // brand
     if (globalFilter.brand != "") {
+      if (element.dataset.brand != globalFilter.brand) {
+        element.classList.add("hidden");
+      }
     }
-    // colors
+    // colors -> check if arrays overlap
     if (globalFilter.color != "") {
       if (!element.dataset.color.split(",").includes(globalFilter.color)) {
         element.classList.add("hidden");
       }
     }
     // category
-
-    if (!element.classList.contains(globalFilter.category)) {
-      element.classList.add("hidden");
+    if (globalFilter.category != "") {
+      if (!element.classList.contains(globalFilter.category)) {
+        element.classList.add("hidden");
+      }
     }
+
+    // Price
   });
 }
 
