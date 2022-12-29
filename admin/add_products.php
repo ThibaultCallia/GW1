@@ -16,36 +16,45 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Product</title>
+    <link rel="stylesheet" href="./../CSS/add_product.css" />
+    <title>New Products</title>
 </head>
 
 <body>
-    <form method="post" action="./admin.php">
-        <div class="product-container">
+    <div class="form-container">
+        <form method="post" action="./admin.php">
             <!-- The title section -->
-            <div class="title-wrap">
+            <div class="title-wrap wrapper">
                 <h1>Add product</h1>
-                <div class="toggles">
-                    <input type="checkbox" name="isActive" id="active">
-                    <input type="checkbox" name="inSpotlight" id="spotlight">
+                <div class="toggles wrap2">
+                    <div class="toggle-active toggle">
+                        <span>Active</span>
+                        <input type="checkbox" checked id="isActive" name="isActive" value="isActive">
+                        <label for="isActive">Active </label><br>
+                    </div>
+                    <div class="toggle-spotlight toggle">
+                        <span>In spotlight </span>
+                        <input type="checkbox" id="inSpotlight" name="inSpotlight" value="inSpotlight">
+                        <label for="inSpotlight">Spotlight</label><br>
+                    </div>
                 </div>
 
             </div>
             <!-- The product section -->
-            <div class="product-wrap">
+            <div class="product-wrap wrapper">
                 <h2>Product</h2>
-                <div class="product-input">
-                    <div class="form_input">
+                <div class="product-input wrap2">
+                    <div class="form_input form_input-prodname">
                         <input type="text" name="prodname" required />
                         <span></span>
                         <label for="prodname">Product Name</label>
                     </div>
-                    <div class="form_input">
+                    <div class="form_input form_input-price">
                         <input type="number" id="price" name="price" min="0" max="9999.99" step="0.01" required>
                         <span></span>
                         <label for="price">Price</label>
                     </div>
-                    <div class="form_input">
+                    <div class="form_input form_input-description">
                         <input type="text" name="description" required />
                         <span></span>
                         <label for="description">Description</label>
@@ -53,17 +62,17 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
                 </div>
             </div>
             <!-- The filter section -->
-            <div class="filter-wrap">
+            <div class="filter-wrap wrapper">
                 <h2>Filters</h2>
-                <div class="product-input">
-                    <div class="select_input">
+                <div class="filter-input wrap2">
+                    <div class="select_input select_input-brand">
                         <label for="brand-select">Brand</label>
                         <select name="brands" id="brand-select">
                             <option value="">--Please choose an option--</option>
                             <option value="brand1">brand1</option>
                         </select>
                     </div>
-                    <div class="select_input">
+                    <div class="select_input select_input-category">
                         <label for="category-select">Category</label>
                         <select name="categories" id="category-select">
                             <option value="">--Please choose an option--</option>
@@ -125,38 +134,43 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
                 </div>
             </div>
             <!-- The image section -->
-            <div class="img-wrap">
+            <div class="img-wrap wrapper">
                 <h2>Images</h2>
-                <div>
-                    <label for="img1">Image 1:</label><br>
-                    <input type="file" id="img1" name="img1" accept="img/*" required>
+                <div class="images wrap2">
+                    <div>
+                        <label for="img1">Image 1:</label><br>
+                        <input type="file" id="img1" name="img1" accept="img/*" required>
+                    </div>
+                    <!-- The optional image input fields are initially hidden -> JS -->
+                    <div id="optional-imgs" style="display: none;">
+                        <div>
+                            <input type="file" id="img2" name="img2" accept="img/*">
+                        </div>
+                        <div>
+                            <input type="file" id="img3" name="img3" accept="img/*">
+                        </div>
+                        <div>
+                            <input type="file" id="img4" name="img4" accept="img/*">
+                        </div>
+                        <div>
+                            <input type="file" id="img5" name="img5" accept="img/*">
+                        </div>
+                    </div>
+                    <!-- The "Add Image" button -->
+                    <button class="add-img" id="add-img2">Add Image</button>
+                    <button class="add-img" id="add-img3">Add Image</button>
+                    <button class="add-img" id="add-img4">Add Image</button>
+                    <button class="add-img" id="add-img5">Add Image</button>
                 </div>
-                <!-- The optional image input fields are initially hidden -> JS -->
-                <div id="optional-imgs" style="display: none;">
-                    <div>
-                        <input type="file" id="img2" name="img2" accept="img/*">
-                    </div>
-                    <div>
-                        <input type="file" id="img3" name="img3" accept="img/*">
-                    </div>
-                    <div>
-                        <input type="file" id="img4" name="img4" accept="img/*">
-                    </div>
-                    <div>
-                        <input type="file" id="img5" name="img5" accept="img/*">
-                    </div>
-                </div>
-                <!-- The "Add Image" button -->
-                <button class="add-img" id="add-img2">Add Image</button>
-                <button class="add-img" id="add-img3">Add Image</button>
-                <button class="add-img" id="add-img4">Add Image</button>
-                <button class="add-img" id="add-img5">Add Image</button>
 
             </div>
             <!-- Add product button -->
-            <input type="submit" value="Add Product">
-        </div>
-    </form>
+            <div class="submit-btn">
+                <input type="submit" value="Add Product">
+            </div>
+
+        </form>
+    </div>
 </body>
 
 </html>
