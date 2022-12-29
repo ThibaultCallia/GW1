@@ -76,11 +76,21 @@ foreach ($products as $product) {
     <img src="./images/icons/star-empty.svg.svg" alt="" />
   </div>';
   $description = '<p class="product-description">' . $product['description'] . '</p>';
-  $productColors = explode(',', $product['colors']);
+  if ($product['colors']) {
+    $productColors = explode(',', $product['colors']);
+  } else {
+    $productColors = [];
+  }
+  $productColorsDiv = "";
+  if (count($productColors) > 0) {
+    foreach ($productColors as $productColor) {
+      $productColorsDiv = $productColorsDiv . '<button class="label color">' . $productColor . '</button>';
+    }
+  }
   $labels = '<div class="labels">
     <button class="label type">' . $product['categoryName'] . '</button>
-    <button class="label brand">' . $product['brandName'] . '</button>
-    <button class="label color">Dummy Color</button>
+    <button class="label brand">' . $product['brandName'] . '</button>'
+    . $productColorsDiv . '
   </div>';
   $priceCard = '<div class="price_cart">
   <p class="price">$' . $product['price'] . '</p>
