@@ -32,7 +32,7 @@ class Filter {
         document.querySelectorAll(".product-card").forEach((element) => {
           element.style.display = "none";
         });
-        document.querySelectorAll(".switches").forEach((element) => {
+        document.querySelectorAll(".Switches").forEach((element) => {
           element.style.display = "block";
         });
         break;
@@ -40,7 +40,7 @@ class Filter {
         document.querySelectorAll(".product-card").forEach((element) => {
           element.style.display = "none";
         });
-        document.querySelectorAll(".keycaps").forEach((element) => {
+        document.querySelectorAll(".Keycaps").forEach((element) => {
           element.style.display = "block";
         });
         break;
