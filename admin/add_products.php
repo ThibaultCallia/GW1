@@ -7,6 +7,22 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
     exit;
 }
 
+include './db.php';
+
+// voeg nieuw product toe als productnaam bestaat
+if (isset($_POST["prodname"])) {
+    // $sql = "INSERT INTO product(task) VALUES ('" . $_POST["newtask"] . "')";
+    $sql = "INSERT INTO `product` (`id`, `brand_id`, `category_id`, `name`, `description`, `price`, `isActive`, `isSpotlight`, `image1`, `image2`, `image3`, `image4`, `image5`) 
+    VALUES (NULL, '2', '1', '" . $_POST["prodname"] . "', '" . $_POST["description"] . "', '" . $_POST["price"] . "', b'1', b'0', './path/to/path.php', NULL, NULL, NULL, NULL);";
+    $result = $mysqli->query($sql);
+}
+
+// $sql = "SELECT * FROM product";
+// $result = $mysqli->query($sql);
+
+// $todos = $result->fetch_all(MYSQLI_ASSOC);
+
+$mysqli->close();
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +61,7 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
                 <h2>Product</h2>
                 <div class="product-input wrap2">
                     <div class="form_input form_input-prodname">
-                        <input type="text" name="prodname" required />
+                        <input type="text" name="prodname" id="prodname" required />
                         <span></span>
                         <label for="prodname">Product Name</label>
                     </div>
@@ -55,7 +71,7 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
                         <label for="price">Price</label>
                     </div>
                     <div class="form_input form_input-description">
-                        <input type="text" name="description" required />
+                        <input type="text" name="description" id="description" required />
                         <span></span>
                         <label for="description">Description</label>
                     </div>
