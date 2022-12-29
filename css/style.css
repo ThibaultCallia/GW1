@@ -67,3 +67,7 @@ body {
   );
   margin-inline: auto;
 }
+
+.hidden {
+  display: none;
+}

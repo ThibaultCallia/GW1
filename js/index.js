@@ -7,6 +7,24 @@ import Flickity from "flickity";
 // const spotlight = new Carousel2(document.querySelector(".carousel-container"));
 const mainFilter = new Filter(document.querySelector(".products__filter"));
 
+// SubFilters
+const globalFilter = {
+  type: "keyboard",
+  brand: "Nuphy",
+  color: "green",
+};
+const allProducts = document.querySelectorAll(".product-card");
+console.log(allProducts);
+document.querySelector(".test-btn").addEventListener("click", filterProducts);
+function filterProducts() {
+  allProducts.forEach((element) => {
+    element.classList.add("hidden");
+    if (element.dataset.color == "green") {
+      element.classList.remove("hidden");
+    }
+  });
+}
+
 var elem = document.querySelector(".carousel");
 var flkty = new Flickity(elem, {
   // options

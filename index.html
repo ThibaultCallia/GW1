@@ -44,6 +44,7 @@
       <header>
         <div class="nav-container">
           <h2 class="logo">KEYKAPS</h2>
+          <button class="test-btn">BIG ASS TEST BUTTON</button>
           <nav class="main-nav">
             <ul class="nav__list">
               <li class="full-nav">
@@ -120,14 +121,18 @@
           <div class="products__filter">
             <ul class="filter__list">
               <li class="active-filter filter__item" data-filter="all">ALL</li>
-              <li class="filter__item" data-filter="keyboard">KEYBOARDS</li>
-              <li class="filter__item" data-filter="keycaps">KEYCAPS</li>
-              <li class="filter__item" data-filter="switches">SWITCHES</li>
+              <li class="filter__item" data-filter="Keyboard">KEYBOARDS</li>
+              <li class="filter__item" data-filter="Keycaps">KEYCAPS</li>
+              <li class="filter__item" data-filter="Switches">SWITCHES</li>
             </ul>
           </div>
 
           <div class="grid-container">
-            <div class="product-card keyboard">
+            <div
+              class="product-card Keyboard"
+              data-color="Black,Blue"
+              data-brand="Nuphy"
+            >
               <div class="card-bg"></div>
               <div class="discount">%</div>
 
@@ -177,7 +182,7 @@
                 </div>
               </section>
             </div>
-            <div class="product-card">
+            <div class="product-card" data-brand="Nuphy" data-color="blue">
               <div class="card-bg"></div>
               <div class="discount">%</div>
 
@@ -228,7 +233,11 @@
               </section>
             </div>
 
-            <div class="product-card">
+            <div
+              class="product-card"
+              data-brand="Royal Kludge"
+              data-color="green"
+            >
               <div class="card-bg"></div>
               <div class="discount">%</div>
 

@@ -20,7 +20,7 @@ class Filter {
   }
   filter(filterName) {
     switch (filterName) {
-      case "keyboard":
+      case "Keyboard":
         document.querySelectorAll(".product-card").forEach((element) => {
           element.style.display = "none";
         });
@@ -28,7 +28,7 @@ class Filter {
           element.style.display = "block";
         });
         break;
-      case "switches":
+      case "Switches":
         document.querySelectorAll(".product-card").forEach((element) => {
           element.style.display = "none";
         });
@@ -36,7 +36,7 @@ class Filter {
           element.style.display = "block";
         });
         break;
-      case "keycaps":
+      case "Keycaps":
         document.querySelectorAll(".product-card").forEach((element) => {
           element.style.display = "none";
         });
