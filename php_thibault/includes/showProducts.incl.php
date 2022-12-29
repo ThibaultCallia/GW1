@@ -26,16 +26,16 @@ if ($mysqli->connect_error) {
 
 // Show active products query
 $showProductsQuery = 'SELECT 
-p.id, p.name, p.description, image1, image2, image3, image4, image5, isSpotlight, price, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.color_name) as colors
+p.id, p.name, p.description, p.discount, p.image1, p.image2, p.image3, p.image4, p.image5, p.isSpotlight, p.price, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.color_name) as colors
 FROM
 product p
       left JOIN
 brand b ON p.brand_id = b.id
       left JOIN 
 category cat ON p.category_id = cat.id
-	  left JOIN
+	    left JOIN
 product_has_color pc ON p.id = pc.product_id
-	  left JOIN 
+	    left JOIN 
 color col ON pc.color_id = col.id
 WHERE 
   isActive = 1
@@ -54,9 +54,9 @@ if ($result && $result->num_rows > 0) {
 // Closing sql connection
 $mysqli->close();
 
-echo '<pre>';
-var_dump($products);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($products);
+// echo '</pre>';
 
 
 foreach ($products as $product) {
@@ -67,7 +67,11 @@ foreach ($products as $product) {
     }
   }
   $cardBg = '<div class="card-bg"></div>';
-  $discount = '<div class="discount">%</div>';
+  $discount = "";
+  if ($product['discount']) {
+    $discount = '<div class="discount">' . $product['discount'] * 100 . '%</div>';
+  }
+
   $rating = '<div class="ratings">
     <img src="./images/icons/star-full.svg.svg" alt="" />
     <img src="./images/icons/star-full.svg.svg" alt="" />
@@ -127,7 +131,7 @@ foreach ($products as $product) {
     </figure>
   </div>';
 
-  echo "<div class = 'product-card " . $product['brandName'] . "'>";
+  echo "<div class = 'product-card " . $product['categoryName'] . "'>";
   echo $cardBg;
   echo $discount;
   echo '<section class="card-back">';
@@ -146,7 +150,7 @@ foreach ($products as $product) {
   echo "</div>";
 }
 
-// echo '<img src="./images/nuphy1.jpg" alt="">';
+
 
 
 
