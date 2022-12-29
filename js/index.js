@@ -9,18 +9,49 @@ const mainFilter = new Filter(document.querySelector(".products__filter"));
 
 // SubFilters
 const globalFilter = {
-  type: "keyboard",
-  brand: "Nuphy",
-  color: "green",
+  category: "Keyboard",
+  brand: "",
+  color: "Blue",
 };
 const allProducts = document.querySelectorAll(".product-card");
-console.log(allProducts);
-document.querySelector(".test-btn").addEventListener("click", filterProducts);
-function filterProducts() {
+allProducts.forEach((element) => {
+  console.log(element);
+});
+document
+  .querySelector(".test-btn-filter")
+  .addEventListener("click", filterProducts, true);
+
+document
+  .querySelector(".test-btn-sort")
+  .addEventListener("click", sortProducts);
+
+function filterProducts(e) {
   allProducts.forEach((element) => {
-    element.classList.add("hidden");
-    if (element.dataset.color == "green") {
-      element.classList.remove("hidden");
+    // brand
+
+    if (globalFilter.brand != "") {
+    }
+    // colors
+    if (globalFilter.color != "") {
+      if (!element.dataset.color.split(",").includes(globalFilter.color)) {
+        element.classList.add("hidden");
+      }
+    }
+    // category
+
+    if (!element.classList.contains(globalFilter.category)) {
+      element.classList.add("hidden");
+    }
+  });
+}
+
+function sortProducts() {
+  document.querySelector(".grid-container").innerHTML = "";
+  allProducts.forEach((element) => {
+    if (element.classList.contains("Keyboard")) {
+      document
+        .querySelector(".grid-container")
+        .insertAdjacentElement("afterbegin", element);
     }
   });
 }

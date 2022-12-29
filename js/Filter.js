@@ -22,31 +22,31 @@ class Filter {
     switch (filterName) {
       case "Keyboard":
         document.querySelectorAll(".product-card").forEach((element) => {
-          element.style.display = "none";
+          element.classList.add("hidden");
         });
         document.querySelectorAll(".Keyboard").forEach((element) => {
-          element.style.display = "block";
+          element.classList.remove("hidden");
         });
         break;
       case "Switches":
         document.querySelectorAll(".product-card").forEach((element) => {
-          element.style.display = "none";
+          element.classList.add("hidden");
         });
         document.querySelectorAll(".Switches").forEach((element) => {
-          element.style.display = "block";
+          element.classList.remove("hidden");
         });
         break;
       case "Keycaps":
         document.querySelectorAll(".product-card").forEach((element) => {
-          element.style.display = "none";
+          element.classList.add("hidden");
         });
         document.querySelectorAll(".Keycaps").forEach((element) => {
-          element.style.display = "block";
+          element.classList.remove("hidden");
         });
         break;
       default:
         document.querySelectorAll(".product-card").forEach((element) => {
-          element.style.display = "block";
+          element.classList.remove("hidden");
         });
         break;
     }
