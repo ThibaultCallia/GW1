@@ -26,7 +26,7 @@ if ($mysqli->connect_error) {
   exit();
 }
 
-// Show active products query
+// All active products query
 $showProductsQuery = 'SELECT 
 p.id, p.name, p.description, p.discount, p.image1, p.image2, p.image3, p.image4, p.image5, p.isSpotlight, p.price, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.color_name) as colors
 FROM
