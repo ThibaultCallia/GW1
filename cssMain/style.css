@@ -5,11 +5,9 @@
 /* @import url(products.css); */
 @import url(./../css/products_grid_filter.css);
 
-
-
 :root {
   --clr-body-dark: hsl(212, 14%, 27%);
-  --clr-body-light: hsl(225, 100%, 98%);
+  --clr-body-light: hsl(0, 0%, 100%);
 
   --carousel-width: 800px;
   --carousel-height: 300px;
