@@ -11,10 +11,8 @@ include './db.php';
 
 // voeg nieuw product toe als productnaam bestaat
 if (isset($_POST["prodname"])) {
-    // $sql = "INSERT INTO product(task) VALUES ('" . $_POST["newtask"] . "')";
-    $sql = "INSERT INTO `product` (`id`, `brand_id`, `category_id`, `name`, `description`, `price`, `isActive`, `isSpotlight`, `image1`, `image2`, `image3`, `image4`, `image5`) 
-    VALUES (NULL, '2', '1', '" . $_POST["prodname"] . "', '" . $_POST["description"] . "', '" . $_POST["price"] . "', b'1', b'0', './path/to/path.php', NULL, NULL, NULL, NULL);";
-    $result = $mysqli->query($sql);
+    include './data_insert.php';
+    // var_dump($_POST);
 }
 
 // $sql = "SELECT * FROM product";
@@ -38,7 +36,7 @@ $mysqli->close();
 
 <body>
     <div class="form-container">
-        <form method="post" action="./admin.php">
+        <form method="post" action="#">
             <!-- The title section -->
             <div class="title-wrap wrapper">
                 <h1>Add product</h1>
