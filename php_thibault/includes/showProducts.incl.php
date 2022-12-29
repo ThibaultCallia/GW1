@@ -26,15 +26,21 @@ if ($mysqli->connect_error) {
 
 // Show active products query
 $showProductsQuery = 'SELECT 
-product.name, product.description, image1, image2, image3, image4, image5, isSpotlight, price, brand.name as brandName, category.name as categoryName
+p.id, p.name, p.description, image1, image2, image3, image4, image5, isSpotlight, price, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.color_name) as colors
 FROM
-product
+product p
       left JOIN
-brand ON product.brand_id = brand.id
+brand b ON p.brand_id = b.id
       left JOIN 
-category ON product.category_id = category.id
+category cat ON p.category_id = cat.id
+	  left JOIN
+product_has_color pc ON p.id = pc.product_id
+	  left JOIN 
+color col ON pc.color_id = col.id
 WHERE 
-  isActive = 1';
+  isActive = 1
+group by 
+  p.id';
 $result = $mysqli->query($showProductsQuery);
 
 // Creating array with active products
@@ -48,7 +54,10 @@ if ($result && $result->num_rows > 0) {
 // Closing sql connection
 $mysqli->close();
 
+echo '<pre>';
 var_dump($products);
+echo '</pre>';
+
 
 foreach ($products as $product) {
   $imgList = [];
@@ -67,6 +76,7 @@ foreach ($products as $product) {
     <img src="./images/icons/star-empty.svg.svg" alt="" />
   </div>';
   $description = '<p class="product-description">' . $product['description'] . '</p>';
+  $productColors = explode(',', $product['colors']);
   $labels = '<div class="labels">
     <button class="label type">' . $product['categoryName'] . '</button>
     <button class="label brand">' . $product['brandName'] . '</button>
@@ -121,6 +131,7 @@ foreach ($products as $product) {
   echo $optionalImagesDiv;
   echo $productName;
   echo $priceIcon;
+
   echo '</section>';
   echo "</div>";
 }
