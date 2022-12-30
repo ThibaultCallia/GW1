@@ -2,7 +2,7 @@ import "../css/style.css";
 // import "../css/products_grid_filter.scss";
 
 import Filter from "./Filter";
-import Flickity from "flickity";
+// import Flickity from "flickity";
 
 // const spotlight = new Carousel2(document.querySelector(".carousel-container"));
 const mainFilter = new Filter(document.querySelector(".products__filter"));
