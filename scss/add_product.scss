@@ -32,7 +32,8 @@ form{
     .form_input{
         position: relative;
         border-bottom: 2px solid #adadad;
-        margin: 20px 0;
+        margin-bottom: 20px;
+        
       }
       
       .form_input input{
@@ -55,34 +56,18 @@ form{
         pointer-events: none;
         transition: .5s;
       }
-      .form_input span::before{
-        content: '';
-        position: absolute;
-        top: 40px;
-        left: 0;
-        width: 0%;
-        height: 2px;
-        background: #2d343c;
-        transition: .5s;
-      }
-      .form_input input:focus ~ label,
-      .form_input input:valid ~ label{
-        top: -5px;
-        color: #2d343c;
-      }
-      .form_input input:focus ~ span::before,
-      .form_input input:valid ~ span::before{
-        width: 100%;
-      }
+      
 }
 
+// General wrapper css
 .form-container{
-    padding: 4em var(--padding-general-sides);
+    padding: 4em var(--padding-general-sides) 1em var(--padding-general-sides);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60vw;
+    min-width: 500px;
     background: white;
     border-radius: 10px;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
@@ -169,7 +154,40 @@ form{
 
 // product section
 .product-wrap{
+    textarea {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        color: inherit;
+        font: inherit;
+        outline: none;
+        padding: 0;
+        resize: none;
+        width: 100%;
+      }
     align-items: flex-start;
+    .form_input-prodname, .form_input-price{
+        margin-top: 15px;
+        & span::before{
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: #2d343c;
+            transition: .5s;
+        }
+        & input:focus ~ label,
+        & input:valid ~ label{
+            top: -5px;
+            color: #2d343c;
+        }
+        & input:focus ~ span::before,
+        & input:valid ~ span::before{
+            width: 100%;
+        }
+    }
     .form_input-prodname{
         flex-grow: 3;
         flex-basis: 70%;
@@ -180,6 +198,23 @@ form{
     }
     .form_input-description{
         width: 100%;
+    }
+}
+
+// description area
+.form_input-description{
+    textarea{
+        width: 100%;
+        padding: .5em .3em;
+        border: none;
+    }
+    textarea:focus, textarea:valid, textarea:active, textarea::selection{
+        border: none;
+    }
+    textarea::placeholder{
+        color: #adadad;
+        font-size: 17px;
+        left: -5px;
     }
 }
 
@@ -224,6 +259,33 @@ form{
         column-gap: 10px;
     }
     
+}
+
+.img-wrap.wrapper{
+    border: none;
+    padding-bottom: 0;
+    .wrap2{
+        display: flex;
+        flex-flow: column nowrap;
+        row-gap: 5px;
+        button{
+            width: 80px;
+            height: 30px;
+            border: 1px solid;
+            background: #2d343c;
+            border-radius: 25px;
+            font-size: 12px;
+            color: #e9f4fb;
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+            margin: 5px auto auto 0;
+            &:hover{
+                border-color: #2d343c;
+                transition: .5s;
+            }
+        }
+    }
 }
 
 //sumbit button

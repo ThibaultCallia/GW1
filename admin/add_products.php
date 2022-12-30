@@ -70,9 +70,7 @@ $mysqli->close();
                         <label for="price">Price</label>
                     </div>
                     <div class="form_input form_input-description">
-                        <input type="text" name="description" id="description" required />
-                        <span></span>
-                        <label for="description">Description</label>
+                        <textarea rows="6" placeholder="Description..." name="description" id="description" required /></textarea>
                     </div>
                 </div>
             </div>
@@ -112,55 +110,32 @@ $mysqli->close();
             <!-- The image section 1-->
             <div class="img-wrap wrapper">
                 <h2>Images</h2>
-                <div class="images wrap2"> <label for="img1">Image 1:</label><br>
-                    <input type="file" id="img1" name="img1" accept="img/*" required>
-                </div>
-                <div id="optional-imgs" style="display: none;">
-                    <div id="img-container-2" style="display: none;">
+                <div class="images wrap2">
+                    <label id="img-container-1">
+                        <input type="file" id="img1" name="img1" accept="img/*" required>
+                    </label>
+                    <label id="img-container-2" style="display: none;">
                         <input type="file" id="img2" name="img2" accept="img/*">
-                    </div>
-                    <button class="add-img" id="add-img2" onclick="document.getElementById('img-container-2').style.display = 'block'; this.style.display = 'none';">Add Image</button>
-                    <div id="img-container-3" style="display: none;">
+                    </label>
+                    <button class="add-img" id="add-img2" onclick="document.getElementById('img-container-2').style.display = 'block'; document.getElementById('add-img3').style.display = 'inline-block';this.style.display = 'none';">Add Image</button>
+                    <label id="img-container-3" style="display: none;">
                         <input type="file" id="img3" name="img3" accept="img/*">
-                    </div>
-                    <button class="add-img" id="add-img3" onclick="document.getElementById('img-container-3').style.display = 'block'; this.style.display = 'none';">Add Image</button>
-                    <div id="img-container-4" style="display: none;">
+                    </label>
+                    <button style="display: none;" class="add-img" id="add-img3" onclick="document.getElementById('img-container-3').style.display = 'block';document.getElementById('add-img4').style.display = 'inline-block'; this.style.display = 'none';">Add Image</button>
+                    <label id="img-container-4" style="display: none;">
                         <input type="file" id="img4" name="img4" accept="img/*">
-                    </div>
-                    <button class="add-img" id="add-img4" onclick="document.getElementById('img-container-4').style.display = 'block'; this.style.display = 'none';">Add Image</button>
-                    <div id="img-container-5" style="display: none;">
+                    </label>
+                    <button style="display: none;" class="add-img" id="add-img4" onclick="document.getElementById('img-container-4').style.display = 'block';document.getElementById('add-img5').style.display = 'inline-block'; this.style.display = 'none';">Add Image</button>
+                    <label id="img-container-5" style="display: none;">
                         <input type="file" id="img5" name="img5" accept="img/*">
-                    </div>
-                    <button class="add-img" id="add-img5" onclick="document.getElementById('img-container-5').style.display = 'block'; this.style.display = 'none';">Add Image</button>
+                    </label>
+                    <button style="display: none;" class="add-img" id="add-img5" onclick="document.getElementById('img-container-5').style.display = 'block'; this.style.display = 'none';">Add Image</button>
                 </div>
-                <button type="button" id="add-image-button" onclick="document.getElementById('optional-imgs').style.display = 'block'; this.style.display = 'none';">Add Image</button>
             </div>
-            <!-- Image section 2 / with JS -->
-            <div class="img-wrap wrapper">
-                <div class="images wrap2" id="required-img">
-                    <label for="img1">Image 1:</label><br>
-                    <input type="file" id="img1" name="img1" accept="img/*" required>
-                </div>
-                <div id="optional-imgs">
-                    <div id="img-container-2" style="display: none;">
-                        <input type="file" id="img2" name="img2" accept="img/*">
-                    </div>
-                    <div id="img-container-3" style="display: none;">
-                        <input type="file" id="img3" name="img3" accept="img/*">
-                    </div>
-                    <div id="img-container-4" style="display: none;">
-                        <input type="file" id="img4" name="img4" accept="img/*">
-                    </div>
-                    <div id="img-container-5" style="display: none;">
-                        <input type="file" id="img5" name="img5" accept="img/*">
-                    </div>
-                </div>
-                <button type="button" id="add-image-button" onclick="addOptionalImage();">Add Image</button>
+            <!-- Add product button -->
+            <div class="submit-btn">
+                <input type="submit" value="Add Product">
             </div>
-    </div>
-    <!-- Add product button -->
-    <div class="submit-btn">
-        <input type="submit" value="Add Product">
     </div>
 
     </form>
@@ -169,15 +144,12 @@ $mysqli->close();
 
 </html>
 <script>
-    function addOptionalImage() {
-        const optionalImgs = document.querySelectorAll('#optional-imgs > div');
-        const numImgs = optionalImgs.length;
-        if (numImgs < 5) {
-            const imgContainer = document.querySelector('#img-container-' + (numImgs + 1));
-            imgContainer.style.display = 'block';
-        }
-        if (numImgs == 4) {
-            document.querySelector('#add-image-button').style.display = 'none';
-        }
+    // For color buttons to stay clicked
+    function toggleClickedClass(event) {
+        event.target.classList.toggle("clicked");
     }
+    const buttons = document.querySelectorAll(".filter-wrap .colors button label");
+    buttons.forEach((button) =>
+        button.addEventListener("click", toggleClickedClass)
+    );
 </script>
