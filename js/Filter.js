@@ -30,7 +30,7 @@ class Filter {
     });
   }
 
-  generateSubFilter() {
+  generateSubFilter = () => {
     document.querySelectorAll(".subfilter-btn").forEach((element) => {
       element.addEventListener("click", (e) => {
         document
@@ -47,7 +47,7 @@ class Filter {
     document
       .querySelector(".subfilter-btn-clear")
       .addEventListener("click", this.clearFilters);
-  }
+  };
 
   generateSorter() {}
   clearFilters = () => {
