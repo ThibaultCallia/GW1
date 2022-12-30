@@ -3,23 +3,22 @@ import "../css/style.css";
 
 import Filter from "./Filter";
 import Flickity from "flickity";
+import { findCommonElement } from "./helper";
 
 // const spotlight = new Carousel2(document.querySelector(".carousel-container"));
 const mainFilter = new Filter(document.querySelector(".products__filter"));
 
 // SubFilters
 const globalFilter = {
-  category: "Keyboard",
-  brand: "",
-  color: "Blue",
+  category: "Switches",
+  brand: "Nuphy",
+  color: ["Red"],
 };
 const allProducts = document.querySelectorAll(".product-card");
-allProducts.forEach((element) => {
-  console.log(element);
-});
+allProducts.forEach((element) => {});
 document
   .querySelector(".test-btn-filter")
-  .addEventListener("click", filterProducts, true);
+  .addEventListener("click", filterProducts);
 
 document
   .querySelector(".test-btn-sort")
@@ -36,14 +35,15 @@ function filterProducts() {
       }
     }
     // colors -> check if arrays overlap
-    if (globalFilter.color != "") {
-      if (!element.dataset.color.split(",").includes(globalFilter.color)) {
+    if (globalFilter.color.length > 0) {
+      const productColors = element.dataset.color.split(",");
+      if (!findCommonElement(productColors, globalFilter.color)) {
         element.classList.add("hidden");
       }
     }
     // category
     if (globalFilter.category != "") {
-      if (!element.classList.contains(globalFilter.category)) {
+      if (element.dataset.category != globalFilter.category) {
         element.classList.add("hidden");
       }
     }
