@@ -1,4 +1,4 @@
-// import "../css/style.scss";
+import "../css/style.css";
 // import "../css/products_grid_filter.scss";
 
 import "../scss/welcomeTest.scss";
@@ -57,14 +57,6 @@ function openCloseNav() {
       .querySelector(".mobile-nav-btn")
       .classList.remove("fa-bars-staggered");
   }
-
-  // if (
-  //   document.querySelector(".nav-container-mobile").classList.contains("open")
-  // ) {
-  //   document.querySelector("header").style.zIndex = 5;
-  // } else {
-  //   document.querySelector("header").style.zIndex = 2;
-  // }
 }
 
 /* Test environment for product card carousel ---------
