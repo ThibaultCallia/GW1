@@ -42,7 +42,11 @@ body {
 }
 
 /* <- welcome -> */
-
+.welcome-container {
+  height: 100vh;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 /* <- products -> */
 
 .products__filter {
