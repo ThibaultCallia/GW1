@@ -1,4 +1,4 @@
-// import "../css/style.scss";
+import "../css/style.css";
 // import "../css/products_grid_filter.scss";
 
 import Filter from "./Filter";

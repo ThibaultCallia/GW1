@@ -1,0 +1,9 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.product-card {
+  border: 2px solid red;
+}
