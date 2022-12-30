@@ -44,6 +44,11 @@ $mysqli->close();
         </ul>
     </nav>
     <div class="form-container">
+        <?php if (isset($_SESSION['message'])) : ?>
+            <div class="message">
+                <?= $_SESSION['message']; ?>
+            </div>
+        <?php endif; ?>
         <form method="post" action="#">
             <!-- The title section -->
             <div class="title-wrap wrapper">
@@ -80,6 +85,9 @@ $mysqli->close();
                     </div>
                     <div class="form_input form_input-description">
                         <textarea rows="6" placeholder="Description..." name="description" id="description" required /></textarea>
+                        <p class="char-container">
+                        <div class="label"><span id="char-count">0</span> / 500 ch</div>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -148,6 +156,7 @@ $mysqli->close();
     </div>
 
     </form>
+    <?php unset($_SESSION['message']); ?>
     </div>
 </body>
 
@@ -161,4 +170,25 @@ $mysqli->close();
     buttons.forEach((button) =>
         button.addEventListener("click", toggleClickedClass)
     );
+
+    // char count
+    const textarea = document.querySelector('#description');
+    const charCount = document.querySelector('#char-count');
+
+    textarea.addEventListener('input', () => {
+        charCount.textContent = textarea.value.length;
+    });
+    // char count limit
+    const charLimit = 50;
+
+    textarea.addEventListener('input', () => {
+        charCount.textContent = textarea.value.length;
+        if (textarea.value.length > charLimit) {
+            textarea.value = textarea.value.substring(0, charLimit);
+            charCount.textContent = charLimit;
+            charCount.style.color = "red";
+        } else {
+            charCount.style.color = "black";
+        }
+    });
 </script>
