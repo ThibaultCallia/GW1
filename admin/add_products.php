@@ -107,10 +107,10 @@ $mysqli->close();
                     <div class="colors">
                         <?php foreach ($colors as $color) { ?>
                             <button type="button">
-                                <label for="color-<?= $color["color_name"] ?>"><?= $color["color_name"] ?></label>
+                                <label for="<?= $color["color_name"] ?>"><?= $color["color_name"] ?></label>
                             </button>
                             <!-- style="display:none" -->
-                            <input type="checkbox" value="<?= $color["id"] ?>" id="color-<?= $color["color_name"] ?>">
+                            <input type="checkbox" value="<?= $color["id"] ?>" id='<?= $color["color_name"] ?>' name='<?= $color["color_name"] ?>'>
                         <?php } ?>
 
                     </div>
