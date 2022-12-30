@@ -33,7 +33,16 @@ class Filter {
   generateSubFilter = () => {
     document.querySelectorAll(".subfilter-btn").forEach((element) => {
       element.addEventListener("click", (e) => {
-        e.target.nextElementSibling.classList.toggle("hidden");
+        if (e.target.nextElementSibling.classList.contains("hidden")) {
+          document
+            .querySelectorAll(".subfilter__selection")
+            .forEach((element) => {
+              element.classList.add("hidden");
+            });
+          e.target.nextElementSibling.classList.remove("hidden");
+        } else {
+          e.target.nextElementSibling.classList.add("hidden");
+        }
       });
     });
     document
@@ -60,6 +69,11 @@ class Filter {
     // Clearing globalFilter
     this.globalFilter.color = [];
     this.globalFilter.brand = [];
+
+    // close all
+    document.querySelectorAll(".subfilter__selection").forEach((element) => {
+      element.classList.add("hidden");
+    });
     // Filter products
     this.filterProducts();
   };
