@@ -33,11 +33,6 @@ class Filter {
   generateSubFilter = () => {
     document.querySelectorAll(".subfilter-btn").forEach((element) => {
       element.addEventListener("click", (e) => {
-        document
-          .querySelectorAll(".subfilter__selection")
-          .forEach((element) => {
-            element.classList.add("hidden");
-          });
         e.target.nextElementSibling.classList.toggle("hidden");
       });
     });
@@ -81,7 +76,7 @@ class Filter {
     this.globalFilter.brand = [];
     document.querySelectorAll(".brand-checkbox").forEach((element) => {
       if (element.checked) {
-        this.globalFilter.brand.push(element.id.replaceAll("-", " "));
+        this.globalFilter.brand.push(element.id);
       }
     });
     document.querySelectorAll(".subfilter__selection").forEach((element) => {
