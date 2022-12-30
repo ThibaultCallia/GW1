@@ -3,21 +3,9 @@ import "../css/style.css";
 
 import Filter from "./Filter";
 import Flickity from "flickity";
-import { findCommonElement } from "./helper";
 
 // const spotlight = new Carousel2(document.querySelector(".carousel-container"));
 const mainFilter = new Filter(document.querySelector(".products__filter"));
-
-function sortProducts() {
-  document.querySelector(".grid-container").innerHTML = "";
-  allProducts.forEach((element) => {
-    if (element.classList.contains("Keyboard")) {
-      document
-        .querySelector(".grid-container")
-        .insertAdjacentElement("afterbegin", element);
-    }
-  });
-}
 
 var elem = document.querySelector(".carousel");
 var flkty = new Flickity(elem, {
@@ -67,14 +55,6 @@ function openCloseNav() {
       .querySelector(".mobile-nav-btn")
       .classList.remove("fa-bars-staggered");
   }
-
-  // if (
-  //   document.querySelector(".nav-container-mobile").classList.contains("open")
-  // ) {
-  //   document.querySelector("header").style.zIndex = 5;
-  // } else {
-  //   document.querySelector("header").style.zIndex = 2;
-  // }
 }
 
 /* Test environment for product card carousel ---------

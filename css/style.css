@@ -68,6 +68,27 @@ body {
   margin-inline: auto;
 }
 
+/* Temporary filter section - to be moved to filter file */
+
+.subfilter {
+  display: flex;
+
+  justify-content: flex-start;
+  width: min(
+    var(--max-width-general),
+    100vw - 2 * var(--padding-general-sides)
+  );
+  padding-top: 20px;
+  margin-inline: auto;
+  gap: 20px;
+}
+
+.subfilter__selection {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+}
+
 .hidden {
   display: none;
 }

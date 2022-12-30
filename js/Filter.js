@@ -10,7 +10,7 @@ class Filter {
     this.globalFilter = {
       category: "",
       brand: "",
-      color: [],
+      color: ["black", "Blue"],
     };
     this.allProducts = document.querySelectorAll(".product-card");
   }

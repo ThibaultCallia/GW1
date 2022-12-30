@@ -73,58 +73,54 @@
             </div>
           </div>
         </section>
-        <!-- <section class="carousel-container">
-          <div class="images">
-            <figure class="img-container">
-              <img
-                class="carousel__img"
-                src="images/sliderImages/nuphyAir96.jpg"
-                alt=""
-              />
-              <p class="img-title top-title">Nuphy Air 96</p>
-            </figure>
-            <figure class="hidden img-container">
-              <img
-                class="carousel__img"
-                src="images/sliderImages/nuphy3.jpg"
-                alt=""
-              />
-              <p class="img-title top-title">Nuphy 3</p>
-            </figure>
-            <figure class="hidden img-container">
-              <img
-                class="carousel__img"
-                src="images/sliderImages/nuphyCaps.jpg"
-                alt=""
-              />
-              <p class="img-title bottom-title">New Caps</p>
-            </figure>
-            <figure class="hidden img-container">
-              <img
-                class="carousel__img"
-                src="images/sliderImages/nuphy1.jpg"
-                alt=""
-              />
-              <p class="img-title bottom-title">Nuphy Air 60</p>
-            </figure>
-            <figure class="hidden img-container">
-              <img
-                class="carousel__img"
-                src="images/sliderImages/nuphy2.jpg"
-                alt=""
-              />
-              <p class="img-title bottom-title">Nuphy Air 75</p>
-            </figure>
-          </div>
-        </section> -->
         <section class="products">
           <div class="products__filter">
-            <ul class="filter__list">
-              <li class="active-filter filter__item" data-filter="">ALL</li>
-              <li class="filter__item" data-filter="Keyboard">KEYBOARDS</li>
-              <li class="filter__item" data-filter="Keycaps">KEYCAPS</li>
-              <li class="filter__item" data-filter="Switches">SWITCHES</li>
-            </ul>
+            <div class="main-filter">
+              <ul class="filter__list">
+                <li class="active-filter filter__item" data-filter="">ALL</li>
+                <li class="filter__item" data-filter="Keyboard">KEYBOARDS</li>
+                <li class="filter__item" data-filter="Keycaps">KEYCAPS</li>
+                <li class="filter__item" data-filter="Switches">SWITCHES</li>
+              </ul>
+            </div>
+          </div>
+          <div class="subfilter">
+            <div class="subfilter__section">
+              <button class="subfilter-btn">Colors</button>
+              <div class="subfilter__selection">
+                <div class="subfilter__row">
+                  <label for="color-Black">Black</label>
+                  <input type="checkbox" id="color-Black" checked />
+                </div>
+                <div class="subfilter__row">
+                  <label for="color-Blue">Blue</label>
+                  <input class="color-checkbox" type="checkbox" id="Blue" />
+                </div>
+                <div class="subfilter__row">
+                  <label for="color-Red">Red</label>
+                  <input type="checkbox" id="Red" />
+                </div>
+                <div class="subfilter__row">
+                  <label for="color-Yellow">Yellow</label>
+                  <input type="checkbox" id="Yellow" />
+                </div>
+              </div>
+            </div>
+            <div class="subfilter__section">
+              <button class="subfilter-btn">Brand</button>
+              <div class="subfilter__selection">
+                <label for="Brand-Nuphy">Nuphy</label>
+                <input type="checkbox" id="brand-Nuphy" />
+              </div>
+            </div>
+            <div class="subfilter__section">
+              <button class="subfilter-btn">Price</button>
+              <div class="subfilter__selection"></div>
+            </div>
+
+            <button class="subfilter-btn subfilter-btn-go">Filter</button>
+
+            <div class="subfilter__section subfilter__colors"></div>
           </div>
 
           <div class="grid-container">
