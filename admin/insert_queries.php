@@ -43,16 +43,11 @@ $product_id = $row["id"];
 
 $mysqli->close();
 include './select_queries.php';
-// get the ids of all the selected colors
-$selected_colors = [];
+// // insert into table the ids of all the selected colors
 foreach ($colors as $color) {
     if (isset($_POST[$color])) {
-        $selected_colors[] = $_POST[$color];
+        $sql = "INSERT INTO `product_has_color` (`product_id`, `color_id`) 
+        VALUES ('" . $product_id . "', '" . $_POST[$color] . "');";
+        $result = $mysqli->query($sql);
     }
-}
-// insert into table
-foreach ($selected_colors as $clr) {
-    $sql = "INSERT INTO `product_has_color` (`product_id`, `color_id`) 
-    VALUES ('" . $product_id . "', '" . $clr . "');";
-    $result = $mysqli->query($sql);
 }
