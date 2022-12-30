@@ -9,8 +9,8 @@ class Filter {
     this.generateSorter();
     this.globalFilter = {
       category: "",
-      brand: "",
-      color: ["black", "Blue"],
+      brand: [],
+      color: [],
     };
     this.allProducts = document.querySelectorAll(".product-card");
   }
@@ -30,16 +30,74 @@ class Filter {
     });
   }
 
-  generateSubFilter() {}
-  generateSorter() {}
+  generateSubFilter() {
+    document.querySelectorAll(".subfilter-btn").forEach((element) => {
+      element.addEventListener("click", (e) => {
+        document
+          .querySelectorAll(".subfilter__selection")
+          .forEach((element) => {
+            element.classList.add("hidden");
+          });
+        e.target.nextElementSibling.classList.toggle("hidden");
+      });
+    });
+    document
+      .querySelector(".subfilter-btn-go")
+      .addEventListener("click", this.subFilter);
+    document
+      .querySelector(".subfilter-btn-clear")
+      .addEventListener("click", this.clearFilters);
+  }
 
-  filterProducts() {
+  generateSorter() {}
+  clearFilters = () => {
+    // Clearing checkboxes
+    document.querySelectorAll(".color-checkbox").forEach((element) => {
+      if (element.checked) {
+        element.checked = false;
+      }
+    });
+    document.querySelectorAll(".brand-checkbox").forEach((element) => {
+      if (element.checked) {
+        element.checked = false;
+      }
+    });
+    // Clearing globalFilter
+    this.globalFilter.color = [];
+    this.globalFilter.brand = [];
+    // Filter products
+    this.filterProducts();
+  };
+  subFilter = () => {
+    // Colors
+    this.globalFilter.color = [];
+    document.querySelectorAll(".color-checkbox").forEach((element) => {
+      if (element.checked) {
+        this.globalFilter.color.push(element.id);
+      }
+    });
+    this.filterProducts();
+    // Brands
+    this.globalFilter.brand = [];
+    document.querySelectorAll(".brand-checkbox").forEach((element) => {
+      if (element.checked) {
+        this.globalFilter.brand.push(element.id.replaceAll("-", " "));
+      }
+    });
+    document.querySelectorAll(".subfilter__selection").forEach((element) => {
+      element.classList.add("hidden");
+    });
+    this.filterProducts();
+
+    // Price
+  };
+  filterProducts = () => {
     this.allProducts.forEach((element) => {
       element.classList.remove("hidden");
 
       // brand
-      if (this.globalFilter.brand != "") {
-        if (element.dataset.brand != this.globalFilter.brand) {
+      if (this.globalFilter.brand.length > 0) {
+        if (!this.globalFilter.brand.includes(element.dataset.brand)) {
           element.classList.add("hidden");
         }
       }
@@ -59,7 +117,7 @@ class Filter {
 
       // Price
     });
-  }
+  };
 
   sortProducts() {
     document.querySelector(".grid-container").innerHTML = "";

@@ -85,40 +85,51 @@
             </div>
           </div>
           <div class="subfilter">
-            <div class="subfilter__section">
-              <button class="subfilter-btn">Colors</button>
-              <div class="subfilter__selection">
+            <div class="subfilter__section subfilter__colors-section">
+              <button class="subfilter-btn subfilter-btn-colors">Colors</button>
+              <div class="subfilter__selection hidden">
                 <div class="subfilter__row">
-                  <label for="color-Black">Black</label>
-                  <input type="checkbox" id="color-Black" checked />
+                  <label for="Black">Black</label>
+                  <input class="color-checkbox" type="checkbox" id="Black" />
                 </div>
                 <div class="subfilter__row">
-                  <label for="color-Blue">Blue</label>
+                  <label for="Blue">Blue</label>
                   <input class="color-checkbox" type="checkbox" id="Blue" />
                 </div>
                 <div class="subfilter__row">
-                  <label for="color-Red">Red</label>
-                  <input type="checkbox" id="Red" />
+                  <label for="Red">Red</label>
+                  <input class="color-checkbox" type="checkbox" id="Red" />
                 </div>
                 <div class="subfilter__row">
-                  <label for="color-Yellow">Yellow</label>
-                  <input type="checkbox" id="Yellow" />
+                  <label for="Gold">Gold</label>
+                  <input class="color-checkbox" type="checkbox" id="Gold" />
                 </div>
               </div>
             </div>
-            <div class="subfilter__section">
+            <div class="subfilter__section brands-section">
               <button class="subfilter-btn">Brand</button>
-              <div class="subfilter__selection">
-                <label for="Brand-Nuphy">Nuphy</label>
-                <input type="checkbox" id="brand-Nuphy" />
+              <div class="subfilter__selection hidden">
+                <div class="subfilter__row">
+                  <label for="Nuphy">Nuphy</label>
+                  <input class="brand-checkbox" type="checkbox" id="Nuphy" />
+                </div>
+                <div class="subfilter__row">
+                  <label for="Royal Kludge">Royal Kludge</label>
+                  <input
+                    class="brand-checkbox"
+                    type="checkbox"
+                    id="Royal-Kludge"
+                  />
+                </div>
               </div>
             </div>
-            <div class="subfilter__section">
+            <!-- <div class="subfilter__section">
               <button class="subfilter-btn">Price</button>
               <div class="subfilter__selection"></div>
-            </div>
+            </div> -->
 
-            <button class="subfilter-btn subfilter-btn-go">Filter</button>
+            <button class="subfilter-btn-go">Filter</button>
+            <button class="subfilter-btn-clear">Clear all filters</button>
 
             <div class="subfilter__section subfilter__colors"></div>
           </div>

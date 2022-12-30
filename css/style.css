@@ -83,7 +83,13 @@ body {
   gap: 20px;
 }
 
+.subfilter__section {
+  position: relative;
+}
+
 .subfilter__selection {
+  position: absolute;
+  width: max-content;
   display: flex;
   flex-direction: column;
   border: 2px solid red;
