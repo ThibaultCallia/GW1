@@ -45,6 +45,7 @@
       <header id="header">
         <div class="nav-container">
           <h2 class="logo">KEYKAPS</h2>
+
           <nav class="main-nav">
             <ul class="nav__list">
               <li class="full-nav">
@@ -74,62 +75,71 @@
             </div>
           </div>
         </section>
-        <!-- <section class="carousel-container">
-          <div class="images">
-            <figure class="img-container">
-              <img
-                class="carousel__img"
-                src="images/sliderImages/nuphyAir96.jpg"
-                alt=""
-              />
-              <p class="img-title top-title">Nuphy Air 96</p>
-            </figure>
-            <figure class="hidden img-container">
-              <img
-                class="carousel__img"
-                src="images/sliderImages/nuphy3.jpg"
-                alt=""
-              />
-              <p class="img-title top-title">Nuphy 3</p>
-            </figure>
-            <figure class="hidden img-container">
-              <img
-                class="carousel__img"
-                src="images/sliderImages/nuphyCaps.jpg"
-                alt=""
-              />
-              <p class="img-title bottom-title">New Caps</p>
-            </figure>
-            <figure class="hidden img-container">
-              <img
-                class="carousel__img"
-                src="images/sliderImages/nuphy1.jpg"
-                alt=""
-              />
-              <p class="img-title bottom-title">Nuphy Air 60</p>
-            </figure>
-            <figure class="hidden img-container">
-              <img
-                class="carousel__img"
-                src="images/sliderImages/nuphy2.jpg"
-                alt=""
-              />
-              <p class="img-title bottom-title">Nuphy Air 75</p>
-            </figure>
-          </div>
-        </section> -->
-        <section class="products" id="products">
+        <section class="products">
           <div class="products__filter">
-            <ul class="filter__list">
-              <li class="active-filter filter__item" data-filter="all">ALL</li>
-              <li class="filter__item" data-filter="keyboard">KEYBOARDS</li>
-              <li class="filter__item" data-filter="keycaps">KEYCAPS</li>
-              <li class="filter__item" data-filter="switches">SWITCHES</li>
-            </ul>
+            <div class="main-filter">
+              <ul class="filter__list">
+                <li class="active-filter filter__item" data-filter="">ALL</li>
+                <li class="filter__item" data-filter="Keyboard">KEYBOARDS</li>
+                <li class="filter__item" data-filter="Keycaps">KEYCAPS</li>
+                <li class="filter__item" data-filter="Switches">SWITCHES</li>
+              </ul>
+            </div>
+          </div>
+          <div class="subfilter">
+            <div class="subfilter__section subfilter__colors-section">
+              <button class="subfilter-btn subfilter-btn-colors">Colors</button>
+              <div class="subfilter__selection hidden">
+                <div class="subfilter__row">
+                  <label for="Black">Black</label>
+                  <input class="color-checkbox" type="checkbox" id="1" />
+                </div>
+                <div class="subfilter__row">
+                  <label for="Blue">Blue</label>
+                  <input class="color-checkbox" type="checkbox" id="4" />
+                </div>
+                <div class="subfilter__row">
+                  <label for="Red">Red</label>
+                  <input class="color-checkbox" type="checkbox" id="8" />
+                </div>
+                <div class="subfilter__row">
+                  <label for="Gold">Gold</label>
+                  <input class="color-checkbox" type="checkbox" id="11" />
+                </div>
+              </div>
+            </div>
+            <div class="subfilter__section brands-section">
+              <button class="subfilter-btn">Brand</button>
+              <div class="subfilter__selection hidden">
+                <div class="subfilter__row">
+                  <label for="Nuphy">Nuphy</label>
+                  <input class="brand-checkbox" type="checkbox" id="2" />
+                </div>
+                <div class="subfilter__row">
+                  <label for="Royal Kludge">Royal Kludge</label>
+                  <input class="brand-checkbox" type="checkbox" id="1" />
+                </div>
+              </div>
+            </div>
+            <!-- <div class="subfilter__section">
+              <button class="subfilter-btn">Price</button>
+              <div class="subfilter__selection"></div>
+            </div> -->
+
+            <button class="subfilter-btn-go">Filter</button>
+            <button class="subfilter-btn-clear">Clear all filters</button>
+
+            <div class="subfilter__section subfilter__colors"></div>
           </div>
 
           <div class="grid-container">
-            <div class="product-card keyboard">
+            <div
+              class="product-card Keyboard"
+              data-category="Keyboard"
+              data-color="1,4"
+              data-brand="2"
+              data-price="299"
+            >
               <div class="card-bg"></div>
               <div class="discount">%</div>
 
@@ -166,7 +176,7 @@
                   src="./images/welcome/kb-rk84.webp"
                   alt="Royal Kludge 84"
                 />
-                <h3 class="product-name">Royal Kludge RK84</h3>
+                <h3 class="product-name">Keyboard Nuphy Black,blue</h3>
                 <div class="product-price_icon">
                   <p class="price">$399</p>
                   <figure class="icons">
@@ -179,7 +189,12 @@
                 </div>
               </section>
             </div>
-            <div class="product-card">
+            <div
+              class="product-card Keyboard"
+              data-category="Keyboard"
+              data-brand="2"
+              data-color="4"
+            >
               <div class="card-bg"></div>
               <div class="discount">%</div>
 
@@ -216,7 +231,7 @@
                   src="./images/welcome/kb-rk84.webp"
                   alt="Royal Kludge 849"
                 />
-                <h3 class="product-name">Royal Kludge RK84</h3>
+                <h3 class="product-name">Keyboard Nuphy Blue</h3>
                 <div class="product-price_icon">
                   <p class="price">$399</p>
                   <figure class="icons">
@@ -230,7 +245,12 @@
               </section>
             </div>
 
-            <div class="product-card">
+            <div
+              class="product-card Keyboard"
+              data-category="Keyboard"
+              data-brand="1"
+              data-color="5"
+            >
               <div class="card-bg"></div>
               <div class="discount">%</div>
 
@@ -267,7 +287,7 @@
                   src="./images/welcome/kb-rk84.webp"
                   alt="Royal Kludge 84"
                 />
-                <h3 class="product-name">Royal Kludge RK84</h3>
+                <h3 class="product-name">Keyboard Royal Kludge Green</h3>
                 <div class="product-price_icon">
                   <p class="price">$399</p>
                   <figure class="icons">
@@ -281,7 +301,12 @@
               </section>
             </div>
 
-            <div class="product-card">
+            <div
+              class="product-card"
+              data-color="11"
+              data-brand="2"
+              data-category="Keycaps"
+            >
               <div class="card-bg"></div>
               <div class="discount">%</div>
 
@@ -318,7 +343,7 @@
                   src="./images/welcome/kb-rk84.webp"
                   alt="Royal Kludge 84"
                 />
-                <h3 class="product-name">Royal Kludge RK84</h3>
+                <h3 class="product-name">Keycaps Nuphy Gold</h3>
                 <div class="product-price_icon">
                   <p class="price">$399</p>
                   <figure class="icons">
@@ -332,7 +357,12 @@
               </section>
             </div>
 
-            <div class="product-card">
+            <div
+              class="product-card"
+              data-color="3,4,1"
+              data-brand="1"
+              data-category="Switches"
+            >
               <div class="card-bg"></div>
               <div class="discount">%</div>
 
@@ -369,7 +399,7 @@
                   src="./images/welcome/kb-rk84.webp"
                   alt="Royal Kludge 84"
                 />
-                <h3 class="product-name">Royal Kludge RK84</h3>
+                <h3 class="product-name">Switches Kludge White, Blue,Black</h3>
                 <div class="product-price_icon">
                   <p class="price">$399</p>
                   <figure class="icons">
@@ -383,7 +413,12 @@
               </section>
             </div>
 
-            <div class="product-card">
+            <div
+              class="product-card"
+              data-color="9,4"
+              data-brand="2"
+              data-category="Keycaps"
+            >
               <div class="card-bg"></div>
               <div class="discount">%</div>
 
@@ -420,7 +455,7 @@
                   src="./images/welcome/kb-rk84.webp"
                   alt="Royal Kludge 84"
                 />
-                <h3 class="product-name">Royal Kludge RK84</h3>
+                <h3 class="product-name">Keycaps nuphy pink,blue</h3>
                 <div class="product-price_icon">
                   <p class="price">$399</p>
                   <figure class="icons">
@@ -434,7 +469,12 @@
               </section>
             </div>
 
-            <div class="product-card">
+            <div
+              class="product-card"
+              data-color="11,12"
+              data-brand="2"
+              data-category="Keyboard"
+            >
               <div class="card-bg"></div>
               <div class="discount">%</div>
 
@@ -471,7 +511,7 @@
                   src="./images/welcome/kb-rk84.webp"
                   alt="Royal Kludge 84"
                 />
-                <h3 class="product-name">Royal Kludge RK84</h3>
+                <h3 class="product-name">Keyboard Nuphy Gold,Silver</h3>
                 <div class="product-price_icon">
                   <p class="price">$399</p>
                   <figure class="icons">
@@ -485,7 +525,12 @@
               </section>
             </div>
 
-            <div class="product-card">
+            <div
+              class="product-card"
+              data-color="8"
+              data-brand="2"
+              data-category="Switches"
+            >
               <div class="card-bg"></div>
               <div class="discount">%</div>
 
@@ -522,7 +567,7 @@
                   src="./images/welcome/kb-rk84.webp"
                   alt="Royal Kludge 84"
                 />
-                <h3 class="product-name">Royal Kludge RK84</h3>
+                <h3 class="product-name">Switches Nuphy red</h3>
                 <div class="product-price_icon">
                   <p class="price">$399</p>
                   <figure class="icons">
@@ -536,7 +581,12 @@
               </section>
             </div>
 
-            <div class="product-card">
+            <div
+              class="product-card"
+              data-color="8,7"
+              data-category="Switches"
+              data-brand="1"
+            >
               <div class="card-bg"></div>
               <div class="discount">%</div>
 
@@ -573,7 +623,7 @@
                   src="./images/welcome/kb-rk84.webp"
                   alt="Royal Kludge 84"
                 />
-                <h3 class="product-name">Royal Kludge RK84</h3>
+                <h3 class="product-name">Switchs Royal Kludge red,orange</h3>
                 <div class="product-price_icon">
                   <p class="price">$399</p>
                   <figure class="icons">

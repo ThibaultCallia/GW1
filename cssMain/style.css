@@ -69,3 +69,33 @@ body {
   );
   margin-inline: auto;
 }
+
+/* Temporary filter section - to be moved to filter file */
+
+.subfilter {
+  display: flex;
+
+  justify-content: flex-start;
+  width: min(
+    var(--max-width-general),
+    100vw - 2 * var(--padding-general-sides)
+  );
+  padding-top: 20px;
+  margin-inline: auto;
+  gap: 20px;
+}
+
+.subfilter__section {
+  position: relative;
+}
+
+.subfilter__selection {
+  position: absolute;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}

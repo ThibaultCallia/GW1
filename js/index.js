@@ -55,14 +55,6 @@ function openCloseNav() {
       .querySelector(".mobile-nav-btn")
       .classList.remove("fa-bars-staggered");
   }
-
-  // if (
-  //   document.querySelector(".nav-container-mobile").classList.contains("open")
-  // ) {
-  //   document.querySelector("header").style.zIndex = 5;
-  // } else {
-  //   document.querySelector("header").style.zIndex = 2;
-  // }
 }
 
 /* Test environment for product card carousel ---------
