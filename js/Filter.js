@@ -1,8 +1,18 @@
+import { findCommonElement } from "./helper";
+
 class Filter {
   constructor(container) {
     this.container = container;
     this.ref = this.container.querySelector(".filter__list");
     this.generateFilter();
+    this.generateSubFilter();
+    this.generateSorter();
+    this.globalFilter = {
+      category: "",
+      brand: "",
+      color: [],
+    };
+    this.allProducts = document.querySelectorAll(".product-card");
   }
 
   //   ISSUE: when activating, other filter items shift width of added border -> how to fix this?
@@ -14,42 +24,52 @@ class Filter {
         });
         e.target.classList.add("active-filter");
 
-        this.filter(e.target.dataset.filter);
+        this.globalFilter.category = e.target.dataset.filter;
+        this.filterProducts();
       });
     });
   }
-  filter(filterName) {
-    switch (filterName) {
-      case "Keyboard":
-        document.querySelectorAll(".product-card").forEach((element) => {
+
+  generateSubFilter() {}
+  generateSorter() {}
+
+  filterProducts() {
+    this.allProducts.forEach((element) => {
+      element.classList.remove("hidden");
+
+      // brand
+      if (this.globalFilter.brand != "") {
+        if (element.dataset.brand != this.globalFilter.brand) {
           element.classList.add("hidden");
-        });
-        document.querySelectorAll(".Keyboard").forEach((element) => {
-          element.classList.remove("hidden");
-        });
-        break;
-      case "Switches":
-        document.querySelectorAll(".product-card").forEach((element) => {
+        }
+      }
+      // colors -> check if arrays overlap
+      if (this.globalFilter.color.length > 0) {
+        const productColors = element.dataset.color.split(",");
+        if (!findCommonElement(productColors, this.globalFilter.color)) {
           element.classList.add("hidden");
-        });
-        document.querySelectorAll(".Switches").forEach((element) => {
-          element.classList.remove("hidden");
-        });
-        break;
-      case "Keycaps":
-        document.querySelectorAll(".product-card").forEach((element) => {
+        }
+      }
+      // category
+      if (this.globalFilter.category != "") {
+        if (element.dataset.category != this.globalFilter.category) {
           element.classList.add("hidden");
-        });
-        document.querySelectorAll(".Keycaps").forEach((element) => {
-          element.classList.remove("hidden");
-        });
-        break;
-      default:
-        document.querySelectorAll(".product-card").forEach((element) => {
-          element.classList.remove("hidden");
-        });
-        break;
-    }
+        }
+      }
+
+      // Price
+    });
+  }
+
+  sortProducts() {
+    document.querySelector(".grid-container").innerHTML = "";
+    allProducts.forEach((element) => {
+      if (element.classList.contains("Keyboard")) {
+        document
+          .querySelector(".grid-container")
+          .insertAdjacentElement("afterbegin", element);
+      }
+    });
   }
 }
 

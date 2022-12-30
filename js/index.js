@@ -8,50 +8,6 @@ import { findCommonElement } from "./helper";
 // const spotlight = new Carousel2(document.querySelector(".carousel-container"));
 const mainFilter = new Filter(document.querySelector(".products__filter"));
 
-// SubFilters
-const globalFilter = {
-  category: "Switches",
-  brand: "Nuphy",
-  color: ["Red"],
-};
-const allProducts = document.querySelectorAll(".product-card");
-allProducts.forEach((element) => {});
-document
-  .querySelector(".test-btn-filter")
-  .addEventListener("click", filterProducts);
-
-document
-  .querySelector(".test-btn-sort")
-  .addEventListener("click", sortProducts);
-
-function filterProducts() {
-  allProducts.forEach((element) => {
-    element.classList.remove("hidden");
-
-    // brand
-    if (globalFilter.brand != "") {
-      if (element.dataset.brand != globalFilter.brand) {
-        element.classList.add("hidden");
-      }
-    }
-    // colors -> check if arrays overlap
-    if (globalFilter.color.length > 0) {
-      const productColors = element.dataset.color.split(",");
-      if (!findCommonElement(productColors, globalFilter.color)) {
-        element.classList.add("hidden");
-      }
-    }
-    // category
-    if (globalFilter.category != "") {
-      if (element.dataset.category != globalFilter.category) {
-        element.classList.add("hidden");
-      }
-    }
-
-    // Price
-  });
-}
-
 function sortProducts() {
   document.querySelector(".grid-container").innerHTML = "";
   allProducts.forEach((element) => {
