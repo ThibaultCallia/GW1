@@ -187,8 +187,43 @@ form{
 .filter-wrap{
     .select_input{
         flex-grow: 1;
-        flex-basis: 50%;
+        flex-basis: 45%;
     }
+    .colors{
+        display: flex;
+        // flex-basis: 20px;
+        gap: 10px;
+        row-gap: 5px;
+        flex-wrap: wrap;
+        button:has(label) {
+            font-size: 0.75rem;
+            padding: 0.4em 0.9em;
+            margin: 0.25em;
+            border-radius: 1em;
+            border: none;
+            outline: none;
+            background: #dddddd;
+            cursor: default;
+            label{
+                cursor: pointer;
+            }
+          }
+        button:has(label:hover) {
+            transform: scale(1.02);
+            background: #c5c5c5;
+            transition: transform 50ms ease;
+        }
+        button:has(label.clicked) {
+            transform: scale(1.02);
+            background: #b5b5b5;
+            transition: transform 50ms ease;
+        }
+    }
+    .wrap2 {
+        display: flex;
+        column-gap: 10px;
+    }
+    
 }
 
 //sumbit button
@@ -216,4 +251,8 @@ form{
         border-color: #2d343c;
         transition: .5s;
       }
+}
+
+.filter-wrap input[type="checkbox"]{
+    display: none;
 }

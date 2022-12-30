@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../CSS/add_product.css" />
+    <link rel="stylesheet" href="./../CSS/select.css" />
+    <script src="./add-products.js" type="module"></script>
+    <title>TEST New Products</title>
+  </head>
+
+  <body>
+    <div class="form-container">
+      <form method="post" action="#">
+        <!-- The title section -->
+        <div class="title-wrap wrapper">
+          <h1>Add product</h1>
+          <div class="toggles wrap2">
+            <div class="toggle-active toggle">
+              <span>Active</span>
+              <input
+                type="checkbox"
+                checked
+                id="isActive"
+                name="isActive"
+                value="isActive"
+              />
+              <label for="isActive">Active </label><br />
+            </div>
+            <div class="toggle-spotlight toggle">
+              <span>In spotlight </span>
+              <input
+                type="checkbox"
+                id="inSpotlight"
+                name="inSpotlight"
+                value="inSpotlight"
+              />
+              <label for="inSpotlight">Spotlight</label><br />
+            </div>
+          </div>
+        </div>
+        <!-- The product section -->
+        <div class="product-wrap wrapper">
+          <h2>Product</h2>
+
+          <div class="product-input wrap2">
+            <div class="form_input form_input-prodname">
+              <input type="text" name="prodname" id="prodname" />
+              <span></span>
+              <label for="prodname">Product Name</label>
+            </div>
+            <div class="form_input form_input-price">
+              <input
+                type="number"
+                id="price"
+                name="price"
+                min="0"
+                max="9999.99"
+                step="0.01"
+              />
+              <span></span>
+              <label for="price">Price</label>
+            </div>
+            <div class="form_input form_input-description">
+              <input type="text" name="description" id="description" />
+              <span></span>
+              <label for="description">Description</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- The filter section -->
+        <div class="filter-wrap wrapper">
+          <h2>Filters</h2>
+          <div class="filter-input wrap2">
+            <div class="select_input select_input-brand">
+              <label for="brand-select">Brand</label>
+              <select name="brands" id="brand-select">
+                <option value="1">Nuphy</option>
+                <option value="2">Royal Kludge</option>
+              </select>
+            </div>
+            <div class="select_input select_input-category">
+              <label for="category-select">Category</label>
+              <select name="categories" id="category-select">
+                <option value="1">Keyboard</option>
+                <option value="2">Keycaps</option>
+                <option value="3">Switches</option>
+              </select>
+            </div>
+            <div class="colors">
+              <button type="button">
+                <label for="color-black">black</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-black" />
+              <button type="button">
+                <label for="color-bleck">bleck</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-bleck" />
+              <button type="button">
+                <label for="color-gray">gray</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-gray" />
+              <button type="button">
+                <label for="color-white">white</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-white" />
+              <button type="button">
+                <label for="color-silver">silver</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-silver" />
+              <button type="button">
+                <label for="color-gold">gold</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-gold" />
+              <button type="button">
+                <label for="color-blue">blue</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-blue" />
+              <button type="button">
+                <label for="color-green">green</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-green" />
+              <button type="button">
+                <label for="color-red">red</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-red" />
+              <button type="button">
+                <label for="color-pink">pink</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-pink" />
+              <button type="button">
+                <label for="color-purple">purple</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-purple" />
+              <button type="button">
+                <label for="color-orange">orange</label>
+              </button>
+              <!-- style="display:none" -->
+              <input type="checkbox" value="1" id="color-orange" />
+            </div>
+          </div>
+        </div>
+        <!-- The image section -->
+        <div class="img-wrap wrapper">
+          <h2>Images</h2>
+          <div class="images wrap2">
+            <label for="img1">Image 1:</label><br />
+            <input type="file" id="img1" name="img1" accept="img/*" required />
+          </div>
+          <div id="optional-imgs" style="display: none">
+            <div id="img-container-2" style="display: none">
+              <input type="file" id="img2" name="img2" accept="img/*" />
+            </div>
+            <button
+              class="add-img"
+              id="add-img2"
+              style="display: inline-block"
+              onclick="document.getElementById('img-container-2').style.display = 'block'; this.style.display = 'none';"
+            >
+              Add Image
+            </button>
+            <div id="img-container-3" style="display: none">
+              <input type="file" id="img3" name="img3" accept="img/*" />
+            </div>
+            <button
+              class="add-img"
+              id="add-img3"
+              style="display: none"
+              onclick="document.getElementById('img-container-3').style.display = 'block'; this.style.display = 'none';"
+            >
+              Add Image
+            </button>
+            <div id="img-container-4" style="display: none">
+              <input type="file" id="img4" name="img4" accept="img/*" />
+            </div>
+            <button
+              class="add-img"
+              id="add-img4"
+              style="display: none"
+              onclick="document.getElementById('img-container-4').style.display = 'block'; this.style.display = 'none';"
+            >
+              Add Image
+            </button>
+            <div id="img-container-5" style="display: none">
+              <input type="file" id="img5" name="img5" accept="img/*" />
+            </div>
+            <button
+              class="add-img"
+              id="add-img5"
+              style="display: none"
+              onclick="document.getElementById('img-container-5').style.display = 'block'; this.style.display = 'none';"
+            >
+              Add Image
+            </button>
+          </div>
+        </div>
+        <!-- Image section 2 / with JS -->
+        <div class="img-wrap wrapper">
+          <div id="required-img">
+            <label for="img1">Image 1:</label><br />
+            <input type="file" id="img1" name="img1" accept="img/*" required />
+          </div>
+          <div id="optional-imgs">
+            <div id="img-container-2" style="display: none">
+              <input type="file" id="img2" name="img2" accept="img/*" />
+            </div>
+            <div id="img-container-3" style="display: none">
+              <input type="file" id="img3" name="img3" accept="img/*" />
+            </div>
+            <div id="img-container-4" style="display: none">
+              <input type="file" id="img4" name="img4" accept="img/*" />
+            </div>
+            <div id="img-container-5" style="display: none">
+              <input type="file" id="img5" name="img5" accept="img/*" />
+            </div>
+          </div>
+          <button
+            type="button"
+            id="add-image-button"
+            onclick="addOptionalImage();"
+          >
+            Add Image
+          </button>
+        </div>
+        <!-- Add product button -->
+        <div class="submit-btn">
+          <input type="submit" value="Add Product" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
