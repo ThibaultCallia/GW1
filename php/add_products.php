@@ -7,12 +7,12 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
     exit;
 }
 
-include './db.php';
-include './select_queries.php';
+include './includes/db.php';
+include './includes/select_queries.php';
 
 // voeg nieuw product toe als productnaam bestaat
 if (isset($_POST["prodname"])) {
-    include './insert_queries.php';
+    include './includes/insert_queries.php';
     // var_dump($_POST);
 }
 
@@ -35,15 +35,7 @@ $mysqli->close();
 </head>
 
 <body>
-    <nav class="main">
-        <ul>
-            <li><a href="./../index.html">Keykaps</a></li>
-            <div class="rechts">
-                <li><a href="./admin.php">Admin Page</a></li>
-                <li><a href="./logout.php">Log Out</a></li>
-            </div>
-        </ul>
-    </nav>
+    <?php include './includes/nav.php'; ?>
     <div class="form-container">
         <?php if (isset($_SESSION['message'])) : ?>
             <div class="message">

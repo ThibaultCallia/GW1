@@ -37,7 +37,7 @@ if ($result && $result->num_rows > 0) {
   $_SESSION["id"] = $user["id"];
   $_SESSION["firstname"] = $user["firstname"];
 
-  header("Location: ./admin.php");
+  header("Location: ./../admin.php");
   exit;
 }
 

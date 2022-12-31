@@ -21,15 +21,7 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
 </head>
 
 <body>
-    <nav class="main">
-        <ul>
-            <li><a href="./../index.html">Keykaps</a></li>
-            <div class="rechts">
-                <li><a href="./admin.php">Admin Page</a></li>
-                <li><a href="./logout.php">Log Out</a></li>
-            </div>
-        </ul>
-    </nav>
+    <?php include './includes/nav.php'; ?>
     <main class="admin">
         <section class="welcome">
             <h1>Hallo <?= $_SESSION["username"] ?></h1>
