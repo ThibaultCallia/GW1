@@ -311,6 +311,33 @@ form{
         flex-grow: 1;
         flex-basis: 45%;
     }
+    button.add{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 25px;
+        opacity: 0;
+        cursor: pointer;
+        outline: none;
+        &:hover span{
+            border-color: #2d343c;
+            transition: .5s;
+            opacity: 1;
+        }
+        span{
+            opacity: 1;
+            width: 30px;
+            text-align: center;
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 6
+        }
+    }
     .colors{
         display: flex;
         // flex-basis: 20px;
