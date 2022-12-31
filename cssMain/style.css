@@ -101,3 +101,15 @@ body {
 .hidden {
   display: none;
 }
+
+.logo-carousel {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.brand-logo {
+  height: 50px;
+  aspect-ratio: 8/2;
+  object-fit: contain;
+}
