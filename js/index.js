@@ -1,5 +1,7 @@
-import "../css/style.css";
+// import "../css/style.scss";
 // import "../css/products_grid_filter.scss";
+
+import "../scss/welcomeTest.scss";
 
 import Filter from "./Filter";
 // import Flickity from "flickity";
