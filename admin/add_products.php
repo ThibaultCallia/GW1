@@ -27,6 +27,7 @@ $mysqli->close();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./../CSS/add_product.css" />
     <link rel="stylesheet" href="./../CSS/select.css" />
     <script src="./add-products.js" type="module"></script>
@@ -52,7 +53,7 @@ $mysqli->close();
         <form method="post" action="#">
             <!-- The title section -->
             <div class="title-wrap wrapper">
-                <h1>Add product</h1>
+                <h1>New product</h1>
                 <div class="toggles wrap2">
                     <div class="toggle-active toggle">
                         <span>Active</span>
@@ -103,6 +104,9 @@ $mysqli->close();
                                 <option value="<?= $brand["id"] ?>"><?= $brand["name"] ?></option>
                             <?php } ?>
                         </select>
+                        <button class="add add-brand">
+                            <span class="material-symbols-outlined">add_circle</span>
+                        </button>
                     </div>
                     <div class="select_input select_input-category">
                         <label for="category-select">Category</label>
@@ -111,6 +115,9 @@ $mysqli->close();
                                 <option value="<?= $category["id"] ?>"><?= $category["name"] ?></option>
                             <?php } ?>
                         </select>
+                        <button class="add add-cat">
+                            <span class="material-symbols-outlined">add_circle</span>
+                        </button>
                     </div>
                     <div class="colors">
                         <?php foreach ($colors as $color) { ?>
@@ -120,7 +127,9 @@ $mysqli->close();
                             <!-- style="display:none" -->
                             <input type="checkbox" value="<?= $color["id"] ?>" id='<?= $color["color_name"] ?>' name='<?= $color["color_name"] ?>'>
                         <?php } ?>
-
+                        <button class="add add-col">
+                            <span class="add material-symbols-outlined">add_circle</span>
+                        </button>
                     </div>
                 </div>
             </div>
