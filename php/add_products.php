@@ -12,8 +12,9 @@ include './includes/select_queries.php';
 
 // voeg nieuw product toe als productnaam bestaat
 if (isset($_POST["prodname"])) {
+    // als we producten toevoegen die al in de DB staan, of andere zaken die we op uniek gezet hebben, moeten we hier eig controleren
+
     include './includes/insert_queries.php';
-    // var_dump($_POST);
 }
 
 

@@ -17,6 +17,7 @@ $password = $_POST["password"];
 
 // is het de juiste login?
 require("./db.php");
+// db closed?
 
 $sql = "SELECT username, password
   FROM user 
@@ -24,6 +25,7 @@ $sql = "SELECT username, password
   AND password= MD5('" . $password . "')
   LIMIT 1";
 var_dump($sql);
+// vardump ----------------
 
 $result = $mysqli->query($sql);
 if ($result && $result->num_rows > 0) {
@@ -34,6 +36,7 @@ if ($result && $result->num_rows > 0) {
   session_regenerate_id();
   $_SESSION["loggedin"] = TRUE;
   $_SESSION["username"] = $username;
+  // Adhv deze session variables kunnen we wel elke soort user al dan niet checken op admin toegang
   $_SESSION["id"] = $user["id"];
   $_SESSION["firstname"] = $user["firstname"];
 

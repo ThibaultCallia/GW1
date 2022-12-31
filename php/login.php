@@ -39,6 +39,7 @@ $errors = [
     <form method="post" action="./includes/auth.php">
       <div class="form_input">
         <input type="text" name="username" required />
+        <!-- required kan worden weggehaald door devtools. Best de check in php dubbel -->
         <span></span>
         <label for="username">Username</label>
       </div>

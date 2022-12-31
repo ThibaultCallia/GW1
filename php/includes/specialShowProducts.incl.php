@@ -58,7 +58,6 @@ class Products
 
     public function spotlightProducts()
     {
-        
     }
 }
 
