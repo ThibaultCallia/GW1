@@ -141,3 +141,7 @@ class Filter {
 }
 
 export default Filter;
+
+// When clicking filter, filter should already start -> no "go" Btn.
+// new SubFilterBtn should be created -> will autom insert into activeFilter section
+//
