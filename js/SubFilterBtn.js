@@ -28,6 +28,8 @@ class SubFilterBtn {
     When creating a button: first look through array
     and display block. If no such filter exists
     create new one.
+    -> Alternative, you delete filters and always 
+    recreate them.
     */
   }
 }
