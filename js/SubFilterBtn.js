@@ -20,7 +20,7 @@ class SubFilterBtn {
 GlobalFilter, launch filter function and delete himself from parent div
 --->>> how to access GlobalFilter from within class? Custom Event?
 ---->>> this.GlobalFilter from Filter should be static? Can be accessed by other classes
-
+we'll see
 */
 
 export default SubFilterBtn;
