@@ -21,6 +21,15 @@ class SubFilterBtn {
   generateClear() {
     // this.ref.querySelector().addEventlistener("click", clear);
   }
+  delete() {
+    /* 
+    IDEA: never delete buttons but look for them 
+    in de activeFiltersArray and add hidden. 
+    When creating a button: first look through array
+    and display block. If no such filter exists
+    create new one.
+    */
+  }
 }
 
 /* When clicking on cross icon in filter, it must remove this id from 
