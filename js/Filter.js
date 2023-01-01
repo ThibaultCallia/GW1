@@ -1,4 +1,5 @@
 import { findCommonElement } from "./helper";
+import SubFilterBtn from "./SubfilterBtn";
 
 class Filter {
   static globalFilter = {
@@ -12,7 +13,6 @@ class Filter {
     this.generateFilter();
     this.generateSubFilter();
     this.generateSorter();
-
     this.allProducts = document.querySelectorAll(".product-card");
   }
 
@@ -46,6 +46,8 @@ class Filter {
         }
       });
     });
+    // CHANGE LOGIC TO FILTER WHEN LABEL IS CHECKED OR UNCHECKED
+    // ADD TO LOGIC THAT ACTIVE FILTER BTN IS ADDED
     document
       .querySelector(".subfilter-btn-go")
       .addEventListener("click", this.subFilter);
@@ -56,6 +58,7 @@ class Filter {
 
   generateSorter() {}
   clearFilters = () => {
+    // ADD TO LOGIC THAT ACTIVE FILTERS MUST BE REMOVED
     // Clearing checkboxes
     document.querySelectorAll(".color-checkbox").forEach((element) => {
       if (element.checked) {
@@ -86,7 +89,6 @@ class Filter {
         Filter.globalFilter.color.push(element.id);
       }
     });
-    this.filterProducts();
     // Brands
     Filter.globalFilter.brand = [];
     document.querySelectorAll(".brand-checkbox").forEach((element) => {
@@ -102,6 +104,7 @@ class Filter {
     // Price
   };
   filterProducts = () => {
+    new SubFilterBtn("filter");
     this.allProducts.forEach((element) => {
       element.classList.remove("hidden");
 

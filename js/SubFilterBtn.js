@@ -1,18 +1,25 @@
 class SubFilterBtn {
+  static activeFilters = {
+    colors: [],
+    brands: [],
+  };
+
   constructor(filter) {
     this.filter = filter;
-    this.generateClear();
+    // this.generateClear();
     this.ref = this.init();
   }
   init() {
+    // if color -> acvtiveFIlters.color add
+    // if brand...
     document
       .querySelector(".subfilter-active")
-      .insertAdjacentHTML("beforeend", `<div class = "placeholder" ></div>`);
+      .insertAdjacentHTML("beforeend", `<button class="testBTN">test</button>`);
 
     return "look for last inserted element and return";
   }
   generateClear() {
-    this.ref.querySelector().addEventlistener("click", clear);
+    // this.ref.querySelector().addEventlistener("click", clear);
   }
 }
 
