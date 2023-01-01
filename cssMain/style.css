@@ -75,17 +75,21 @@ body {
 
 /* Temporary filter section - to be moved to filter file */
 
-.subfilter {
-  display: flex;
-
-  justify-content: flex-start;
+.subfilter-container {
+  border: 1px solid red;
   width: min(
     var(--max-width-general),
     100vw - 2 * var(--padding-general-sides)
   );
-  padding-top: 20px;
   margin-inline: auto;
+}
+
+.subfilter {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 15px;
   gap: 20px;
+  /* NO PIXELS? */
 }
 
 .subfilter__section {
@@ -97,14 +101,6 @@ body {
   width: max-content;
   display: flex;
   flex-direction: column;
-}
-
-.hidden {
-  display: none;
-}
-
-.subfilter__section {
-  position: relative;
 }
 
 .general-subfilter-btn {
@@ -120,11 +116,12 @@ body {
   border-radius: 0.25rem;
   height: max-content;
   background-color: var(--clr-body-light);
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 .subfilter__row-container {
   padding-inline: 1rem;
   max-height: 200px;
+  /* CHANGE THIS? */
   overflow-y: scroll;
   padding-right: 3rem;
 }
@@ -142,4 +139,17 @@ body {
 
 .grid-container {
   height: 60vh;
+  /* CHANGE THIS */
+}
+.subfilter-active {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* CHANGE THIS */
+  min-height: 30px;
+  /* CHANGE THIS */
+}
+
+.hidden {
+  display: none;
 }
