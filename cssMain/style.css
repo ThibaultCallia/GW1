@@ -102,3 +102,40 @@ body {
 .hidden {
   display: none;
 }
+
+.subfilter__section {
+  position: relative;
+}
+
+.general-subfilter-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid black;
+  font-family: var(--ff);
+}
+
+.subfilter__selection {
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0.25rem;
+  height: max-content;
+  background-color: var(--clr-body-light);
+  margin-top: 1rem;
+}
+.subfilter__row-container {
+  padding-inline: 1rem;
+  max-height: 200px;
+  overflow-y: scroll;
+  padding-right: 3rem;
+}
+
+.subfilter__clear {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+
+  border-bottom: 1px solid gray;
+}
+.subfilter__clear > span {
+  cursor: pointer;
+  padding-left: 1rem;
+}
