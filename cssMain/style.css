@@ -139,3 +139,7 @@ body {
   cursor: pointer;
   padding-left: 1rem;
 }
+
+.grid-container {
+  height: 60vh;
+}
