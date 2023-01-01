@@ -108,6 +108,7 @@ body {
   border-radius: 0.25rem;
   border: 1px solid black;
   font-family: var(--ff);
+  cursor: pointer;
 }
 
 .subfilter__selection {

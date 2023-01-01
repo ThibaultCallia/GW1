@@ -1,17 +1,18 @@
 import { findCommonElement } from "./helper";
 
 class Filter {
+  static globalFilter = {
+    category: "",
+    brand: [],
+    color: [],
+  };
   constructor(container) {
     this.container = container;
     this.ref = this.container.querySelector(".filter__list");
     this.generateFilter();
     this.generateSubFilter();
     this.generateSorter();
-    this.globalFilter = {
-      category: "",
-      brand: [],
-      color: [],
-    };
+
     this.allProducts = document.querySelectorAll(".product-card");
   }
 
@@ -24,7 +25,7 @@ class Filter {
         });
         e.target.classList.add("active-filter");
 
-        this.globalFilter.category = e.target.dataset.filter;
+        Filter.globalFilter.category = e.target.dataset.filter;
         this.filterProducts();
       });
     });
@@ -67,8 +68,8 @@ class Filter {
       }
     });
     // Clearing globalFilter
-    this.globalFilter.color = [];
-    this.globalFilter.brand = [];
+    Filter.globalFilter.color = [];
+    Filter.globalFilter.brand = [];
 
     // close all
     document.querySelectorAll(".subfilter__selection").forEach((element) => {
@@ -79,18 +80,18 @@ class Filter {
   };
   subFilter = () => {
     // Colors
-    this.globalFilter.color = [];
+    Filter.globalFilter.color = [];
     document.querySelectorAll(".color-checkbox").forEach((element) => {
       if (element.checked) {
-        this.globalFilter.color.push(element.id);
+        Filter.globalFilter.color.push(element.id);
       }
     });
     this.filterProducts();
     // Brands
-    this.globalFilter.brand = [];
+    Filter.globalFilter.brand = [];
     document.querySelectorAll(".brand-checkbox").forEach((element) => {
       if (element.checked) {
-        this.globalFilter.brand.push(element.id);
+        Filter.globalFilter.brand.push(element.id);
       }
     });
     document.querySelectorAll(".subfilter__selection").forEach((element) => {
@@ -105,21 +106,21 @@ class Filter {
       element.classList.remove("hidden");
 
       // brand
-      if (this.globalFilter.brand.length > 0) {
-        if (!this.globalFilter.brand.includes(element.dataset.brand)) {
+      if (Filter.globalFilter.brand.length > 0) {
+        if (!Filter.globalFilter.brand.includes(element.dataset.brand)) {
           element.classList.add("hidden");
         }
       }
       // colors -> check if arrays overlap
-      if (this.globalFilter.color.length > 0) {
+      if (Filter.globalFilter.color.length > 0) {
         const productColors = element.dataset.color.split(",");
-        if (!findCommonElement(productColors, this.globalFilter.color)) {
+        if (!findCommonElement(productColors, Filter.globalFilter.color)) {
           element.classList.add("hidden");
         }
       }
       // category
-      if (this.globalFilter.category != "") {
-        if (element.dataset.category != this.globalFilter.category) {
+      if (Filter.globalFilter.category != "") {
+        if (element.dataset.category != Filter.globalFilter.category) {
           element.classList.add("hidden");
         }
       }
