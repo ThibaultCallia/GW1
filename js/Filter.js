@@ -10,14 +10,14 @@ class Filter {
   constructor(container) {
     this.container = container;
     this.ref = this.container.querySelector(".filter__list");
-    this.generateFilter();
-    this.generateSubFilter();
+    this.generateFilterBtns();
+    this.generateSubFilterBtns();
     this.generateSorter();
     this.allProducts = document.querySelectorAll(".product-card");
   }
 
   //   ISSUE: when activating, other filter items shift width of added border -> how to fix this?
-  generateFilter() {
+  generateFilterBtns() {
     this.ref.querySelectorAll(".filter__item").forEach((element) => {
       element.addEventListener("click", (e) => {
         this.ref.querySelectorAll(".filter__item").forEach((element) => {
@@ -31,7 +31,7 @@ class Filter {
     });
   }
 
-  generateSubFilter = () => {
+  generateSubFilterBtns = () => {
     document.querySelectorAll(".subfilter-btn").forEach((element) => {
       element.addEventListener("click", (e) => {
         if (e.target.nextElementSibling.classList.contains("hidden")) {
@@ -48,15 +48,21 @@ class Filter {
     });
     // CHANGE LOGIC TO FILTER WHEN LABEL IS CHECKED OR UNCHECKED
     // ADD TO LOGIC THAT ACTIVE FILTER BTN IS ADDED
-    document
-      .querySelector(".subfilter-btn-go")
-      .addEventListener("click", this.subFilter);
+    // document
+    //   .querySelector(".subfilter-btn-go")
+    //   .addEventListener("click", this.subFilter);
     document
       .querySelector(".subfilter-btn-clear")
       .addEventListener("click", this.clearFilters);
+    document.querySelectorAll(".color-checkbox").forEach((element) => {
+      element.addEventListener("change", this.subFilter);
+    });
+    document.querySelectorAll(".brand-checkbox").forEach((element) => {
+      element.addEventListener("change", this.subFilter);
+    });
+    // CHANGE TO SINGLE CHECKBOX CLASS?
   };
 
-  generateSorter() {}
   clearFilters = () => {
     // ADD TO LOGIC THAT ACTIVE FILTERS MUST BE REMOVED
     // Clearing checkboxes
@@ -96,15 +102,14 @@ class Filter {
         Filter.globalFilter.brand.push(element.id);
       }
     });
-    document.querySelectorAll(".subfilter__selection").forEach((element) => {
-      element.classList.add("hidden");
-    });
+    // document.querySelectorAll(".subfilter__selection").forEach((element) => {
+    //   element.classList.add("hidden");
+    // });
     this.filterProducts();
 
     // Price
   };
   filterProducts = () => {
-    new SubFilterBtn("filter");
     this.allProducts.forEach((element) => {
       element.classList.remove("hidden");
 
@@ -132,6 +137,7 @@ class Filter {
     });
   };
 
+  generateSorter() {}
   sortProducts() {
     document.querySelector(".grid-container").innerHTML = "";
     allProducts.forEach((element) => {
