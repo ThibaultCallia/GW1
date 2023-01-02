@@ -10,7 +10,7 @@ class Filter {
   };
   static filterWalkieTalkie = [];
   static elementsPerPage = 20;
-  static sort = "priceLH";
+  static sortOption = "priceHL";
 
   constructor(container) {
     this.container = container;
@@ -220,10 +220,20 @@ class Filter {
       .addEventListener("click", this.sortProducts);
   }
   sortProducts = () => {
+    // this way works but as it always empties html en fills again, it tends to be wonky
+    // certainly at startup, it should be smooth
+    // Although it doesnt matter as first screen is keyboard
     document.querySelector(".grid-container").innerHTML = "";
-    this.allProducts = [].slice.call(this.allProducts).sort(function (a, b) {
-      return parseInt(a.dataset.price) <= parseInt(b.dataset.price) ? 1 : -1;
-    });
+    if (Filter.sortOption === "priceLH") {
+      this.allProducts = [].slice.call(this.allProducts).sort(function (a, b) {
+        return parseInt(a.dataset.price) >= parseInt(b.dataset.price) ? 1 : -1;
+      });
+    } else if (Filter.sortOption === "priceHL") {
+      this.allProducts = [].slice.call(this.allProducts).sort(function (a, b) {
+        return parseInt(a.dataset.price) <= parseInt(b.dataset.price) ? 1 : -1;
+      });
+    }
+
     let counter = 0;
     this.allProducts.forEach((element) => {
       if (
