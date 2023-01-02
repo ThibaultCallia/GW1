@@ -154,7 +154,6 @@ class Filter {
       // Delete div from DOM
       SubFilterBtn.activeFilters.colors.find((x) => x.id == targetId).delete();
     }
-    console.log(Filter.globalFilter);
   };
   toggleActiveBrandBtn = (e) => {
     if (e.target.checked) {

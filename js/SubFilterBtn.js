@@ -37,10 +37,7 @@ class SubFilterBtn {
       SubFilterBtn.activeFilters.brands.filter((x) => x.id !== this.id);
   }
   singleBtnDelete = () => {
-    console.log(
-      document.querySelectorAll(".color-checkbox").find((x) => x.id == this.id)
-        .checked
-    );
+    document.querySelector(`#${this.id}`).checked = false;
     Filter.filterWalkieTalkie[0].subFilter();
     this.delete();
   };
