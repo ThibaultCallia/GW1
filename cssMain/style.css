@@ -76,7 +76,6 @@ body {
 /* Temporary filter section - to be moved to filter file */
 
 .subfilter-container {
-  border: 1px solid red;
   width: min(
     var(--max-width-general),
     100vw - 2 * var(--padding-general-sides)
@@ -145,10 +144,27 @@ body {
 .subfilter-active {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   /* CHANGE THIS */
   min-height: 30px;
   /* CHANGE THIS */
+}
+
+.active-filter-btn {
+  font-size: smaller;
+  background-color: lightgray;
+  font-weight: 500;
+  color: black;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 0.25rem;
+  gap: 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.active-filter-btn:hover {
+  background-color: rgb(183, 182, 182);
 }
 
 .hidden {
