@@ -190,7 +190,6 @@ class Filter {
   filterProducts = () => {
     this.allProducts.forEach((element) => {
       element.classList.remove("hidden");
-
       // brand
       if (Filter.globalFilter.brand.length > 0) {
         if (!Filter.globalFilter.brand.includes(element.dataset.brand)) {

@@ -18,10 +18,16 @@ class SubFilterBtn {
     this.ref.addEventListener("click", this.singleBtnDelete);
   }
   init = () => {
+    if (
+      SubFilterBtn.activeFilters.colors.length === 0 &&
+      SubFilterBtn.activeFilters.brands.length === 0
+    ) {
+      document.querySelector(".subfilter-btn-clear").classList.remove("hidden");
+    }
     // Create button
     document.querySelector(".subfilter-active").insertAdjacentHTML(
       "beforeend",
-      `<div class="active-filter-btn">
+      `<div class="active-filter-btn visibleBtns">
         <span>${this.filter}</span>
         <span>x</span>
       </div>`
@@ -35,6 +41,12 @@ class SubFilterBtn {
       SubFilterBtn.activeFilters.colors.filter((x) => x.id !== this.id);
     SubFilterBtn.activeFilters.brands =
       SubFilterBtn.activeFilters.brands.filter((x) => x.id !== this.id);
+    if (
+      SubFilterBtn.activeFilters.colors.length === 0 &&
+      SubFilterBtn.activeFilters.brands.length === 0
+    ) {
+      document.querySelector(".subfilter-btn-clear").classList.add("hidden");
+    }
   }
   singleBtnDelete = () => {
     document.querySelector(`#${this.id}`).checked = false;
