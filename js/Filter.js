@@ -7,6 +7,8 @@ class Filter {
     brand: [],
     color: [],
   };
+  static filterWalkieTalkie = [];
+
   constructor(container) {
     this.container = container;
     this.ref = this.container.querySelector(".filter__list");
@@ -14,6 +16,8 @@ class Filter {
     this.generateSubFilterBtns();
     this.generateSorter();
     this.allProducts = document.querySelectorAll(".product-card");
+    // way for subFilterBtns to communicate to Filter
+    Filter.filterWalkieTalkie.push(this);
   }
 
   generateFilterBtns() {
@@ -59,11 +63,7 @@ class Filter {
           });
       }
     });
-    // CHANGE LOGIC TO FILTER WHEN LABEL IS CHECKED OR UNCHECKED
-    // ADD TO LOGIC THAT ACTIVE FILTER BTN IS ADDED
-    // document
-    //   .querySelector(".subfilter-btn-go")
-    //   .addEventListener("click", this.subFilter);
+
     document
       .querySelector(".subfilter-btn-clear")
       .addEventListener("click", this.clearFilters);
@@ -85,7 +85,6 @@ class Filter {
   };
 
   clearFilters = () => {
-    // ADD TO LOGIC THAT ACTIVE FILTERS MUST BE REMOVED
     // Clearing checkboxes
     document.querySelectorAll(".color-checkbox").forEach((element) => {
       if (element.checked) {
@@ -100,62 +99,70 @@ class Filter {
     // Clearing globalFilter
     Filter.globalFilter.color = [];
     Filter.globalFilter.brand = [];
-
     // close all
     document.querySelectorAll(".subfilter__selection").forEach((element) => {
       element.classList.add("hidden");
     });
+    // Delete all SubfilterBtn DOM elements
+    for (const key in SubFilterBtn.activeFilters) {
+      SubFilterBtn.activeFilters[key].forEach((element) => {
+        element.delete();
+      });
+    }
     // Filter products
     this.filterProducts();
   };
   clearColors = () => {
+    // All checkboxes on false colors
     document.querySelectorAll(".color-checkbox").forEach((element) => {
       if (element.checked) {
         element.checked = false;
       }
     });
+    // Delete all activeFilter btns colors
+    SubFilterBtn.activeFilters.colors.forEach((element) => {
+      element.delete();
+    });
+    // Empty GlobalFilter color
     Filter.globalFilter.color = [];
+    // Run filter
     this.filterProducts();
   };
   clearBrands = () => {
+    // All checkboxes on false brands
     document.querySelectorAll(".brand-checkbox").forEach((element) => {
       if (element.checked) {
         element.checked = false;
       }
     });
+    // Delete all activeFilter btns brands
+    SubFilterBtn.activeFilters.brands.forEach((element) => {
+      element.delete();
+    });
+    // Empty GlobalFilter brand
     Filter.globalFilter.brand = [];
+    // run filter
     this.filterProducts();
   };
   toggleActiveColorBtn = (e) => {
     if (e.target.checked) {
-      SubFilterBtn.activeFilters.colors.push(
-        new SubFilterBtn(e.target.id, e.target.nextElementSibling.innerHTML)
-      );
+      // In fact SubFilterBtn class should choose where to put new btn.
+
+      new SubFilterBtn(e.target.id, e.target.nextElementSibling.innerHTML);
     } else {
       const targetId = e.target.id;
       // Delete div from DOM
       SubFilterBtn.activeFilters.colors.find((x) => x.id == targetId).delete();
-
-      // Delete class instance from SubFilterBtn.activeFilters
-
-      SubFilterBtn.activeFilters.colors =
-        SubFilterBtn.activeFilters.colors.filter((x) => x.id !== targetId);
     }
+    console.log(Filter.globalFilter);
   };
   toggleActiveBrandBtn = (e) => {
     if (e.target.checked) {
-      SubFilterBtn.activeFilters.brands.push(
-        new SubFilterBtn(e.target.id, e.target.nextElementSibling.innerHTML)
-      );
+      new SubFilterBtn(e.target.id, e.target.nextElementSibling.innerHTML);
     } else {
       const targetId = e.target.id;
       // Delete div from DOM
       SubFilterBtn.activeFilters.brands.find((x) => x.id == targetId).delete();
-
-      // Delete class instance from SubFilterBtn.activeFilters
-
-      SubFilterBtn.activeFilters.brands =
-        SubFilterBtn.activeFilters.brands.filter((x) => x.id !== targetId);
     }
   };
 
@@ -223,7 +230,3 @@ class Filter {
 }
 
 export default Filter;
-
-// When clicking filter, filter should already start -> no "go" Btn.
-// new SubFilterBtn should be created -> will autom insert into activeFilter section
-//

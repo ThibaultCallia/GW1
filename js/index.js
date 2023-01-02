@@ -1,5 +1,4 @@
 import Filter from "./Filter";
-import SubFilterBtn from "./SubfilterBtn";
 
 // import Flickity from "flickity";
 
