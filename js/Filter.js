@@ -75,7 +75,7 @@ class Filter {
       .addEventListener("click", this.clearBrands);
     document.querySelectorAll(".color-checkbox").forEach((element) => {
       element.addEventListener("change", this.subFilter);
-      element.addEventListener("change", this.changeActiveColorBtn);
+      element.addEventListener("change", this.toggleActiveColorBtn);
     });
     document.querySelectorAll(".brand-checkbox").forEach((element) => {
       element.addEventListener("change", this.subFilter);
@@ -125,7 +125,7 @@ class Filter {
     Filter.globalFilter.brand = [];
     this.filterProducts();
   };
-  changeActiveColorBtn = (e) => {
+  toggleActiveColorBtn = (e) => {
     if (e.target.checked) {
       SubFilterBtn.activeFilters.colors.push(
         new SubFilterBtn(e.target.id, e.target.nextElementSibling.innerHTML)
@@ -133,10 +133,13 @@ class Filter {
       console.log(SubFilterBtn.activeFilters.colors);
     } else {
       const targetId = e.target.id;
+      // Delete div from DOM
       SubFilterBtn.activeFilters.colors.find((x) => x.id == targetId).delete();
-      console.log(
-        SubFilterBtn.activeFilters.colors.filter((x) => x.id !== targetId)
-      );
+
+      // Delete class instance from SubFilterBtn.activeFilters
+
+      SubFilterBtn.activeFilters.colors =
+        SubFilterBtn.activeFilters.colors.filter((x) => x.id !== targetId);
     }
   };
 
