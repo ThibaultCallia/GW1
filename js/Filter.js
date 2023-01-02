@@ -79,6 +79,7 @@ class Filter {
     });
     document.querySelectorAll(".brand-checkbox").forEach((element) => {
       element.addEventListener("change", this.subFilter);
+      element.addEventListener("change", this.toggleActiveBrandBtn);
     });
     // CHANGE TO SINGLE CHECKBOX CLASS?
   };
@@ -130,7 +131,6 @@ class Filter {
       SubFilterBtn.activeFilters.colors.push(
         new SubFilterBtn(e.target.id, e.target.nextElementSibling.innerHTML)
       );
-      console.log(SubFilterBtn.activeFilters.colors);
     } else {
       const targetId = e.target.id;
       // Delete div from DOM
@@ -140,6 +140,22 @@ class Filter {
 
       SubFilterBtn.activeFilters.colors =
         SubFilterBtn.activeFilters.colors.filter((x) => x.id !== targetId);
+    }
+  };
+  toggleActiveBrandBtn = (e) => {
+    if (e.target.checked) {
+      SubFilterBtn.activeFilters.brands.push(
+        new SubFilterBtn(e.target.id, e.target.nextElementSibling.innerHTML)
+      );
+    } else {
+      const targetId = e.target.id;
+      // Delete div from DOM
+      SubFilterBtn.activeFilters.brands.find((x) => x.id == targetId).delete();
+
+      // Delete class instance from SubFilterBtn.activeFilters
+
+      SubFilterBtn.activeFilters.brands =
+        SubFilterBtn.activeFilters.brands.filter((x) => x.id !== targetId);
     }
   };
 
