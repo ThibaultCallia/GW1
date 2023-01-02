@@ -1,27 +1,29 @@
 import Filter from "./Filter";
+import SubFilterBtn from "./SubfilterBtn";
+
 // import Flickity from "flickity";
 
 // const spotlight = new Carousel2(document.querySelector(".carousel-container"));
 const mainFilter = new Filter(document.querySelector(".products__filter"));
 
 var elem = document.querySelector(".carousel");
-var flkty = new Flickity(elem, {
-  // options
-  cellAlign: "left",
-  contain: true,
-  pageDots: false,
-  dragThreshold: 10,
-  imagesLoaded: true,
-  setGallerySize: false,
-  arrowShape: {
-    x0: 15,
-    x1: 60,
-    y1: 40,
-    x2: 70,
-    y2: 40,
-    x3: 40,
-  },
-});
+// var flkty = new Flickity(elem, {
+//   // options
+//   cellAlign: "left",
+//   contain: true,
+//   pageDots: false,
+//   dragThreshold: 10,
+//   imagesLoaded: true,
+//   setGallerySize: false,
+//   arrowShape: {
+//     x0: 15,
+//     x1: 60,
+//     y1: 40,
+//     x2: 70,
+//     y2: 40,
+//     x3: 40,
+//   },
+// });
 
 const mobileNavBtn = document.querySelector(".mobile-nav-btn");
 mobileNavBtn.addEventListener("click", openCloseNav);

@@ -1,39 +1,44 @@
 class SubFilterBtn {
   static activeFilters = {
-    color: [],
-    brand: [],
+    colors: [],
+    brands: [],
   };
   // Exactly same as GlobalFilter. Need both?
 
-  constructor(filter) {
+  constructor(id, filter) {
     // What will Filter class be able to give as variables?
     // What does subfilterBtn need?
     // name
     // If button X is pressed -> how will Filter know which exact
     // subfilter is deleted?
-
+    this.id = id;
     this.filter = filter;
     this.ref = this.init();
   }
-  init() {
+  init = () => {
     // if color -> acvtiveFIlters.color add this object (and thus ref)
     // if brand...
 
     // Create button
-    document
-      .querySelector(".subfilter-active")
-      .insertAdjacentHTML("beforeend", `<button class="testBTN">test</button>`);
+    document.querySelector(".subfilter-active").insertAdjacentHTML(
+      "beforeend",
+      `<div class="active-filter-btn">
+        <span>${this.filter}</span>
+        <span>x</span>
+      </div>`
+    );
 
     //create clear event listener
-    document
-      .querySelector("placeholder")
-      .addEventListener("click", this.delete);
+    // document
+    //   .querySelector("placeholder")
+    //   .addEventListener("click", this.delete);
     // return ref
-    return "look for last inserted element and return";
-  }
+    return document.querySelector(".subfilter-active").lastChild;
+  };
 
   delete() {
     this.ref.parentNode.removeChild(this.ref);
+
     // filter must now run as well.
     // Either do this in main Filter and have it
     // thisObject.delete() as well

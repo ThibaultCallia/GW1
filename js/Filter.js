@@ -1,5 +1,5 @@
 import { findCommonElement } from "./helper";
-import SubFilterBtn from "./SubfilterBtn";
+import SubFilterBtn from "./SubFilterBtn.js";
 
 class Filter {
   static globalFilter = {
@@ -75,6 +75,7 @@ class Filter {
       .addEventListener("click", this.clearBrands);
     document.querySelectorAll(".color-checkbox").forEach((element) => {
       element.addEventListener("change", this.subFilter);
+      element.addEventListener("change", this.changeActiveColorBtn);
     });
     document.querySelectorAll(".brand-checkbox").forEach((element) => {
       element.addEventListener("change", this.subFilter);
@@ -107,7 +108,6 @@ class Filter {
     this.filterProducts();
   };
   clearColors = () => {
-    console.log("test");
     document.querySelectorAll(".color-checkbox").forEach((element) => {
       if (element.checked) {
         element.checked = false;
@@ -125,6 +125,21 @@ class Filter {
     Filter.globalFilter.brand = [];
     this.filterProducts();
   };
+  changeActiveColorBtn = (e) => {
+    if (e.target.checked) {
+      SubFilterBtn.activeFilters.colors.push(
+        new SubFilterBtn(e.target.id, e.target.nextElementSibling.innerHTML)
+      );
+      console.log(SubFilterBtn.activeFilters.colors);
+    } else {
+      const targetId = e.target.id;
+      SubFilterBtn.activeFilters.colors.find((x) => x.id == targetId).delete();
+      console.log(
+        SubFilterBtn.activeFilters.colors.filter((x) => x.id !== targetId)
+      );
+    }
+  };
+
   subFilter = () => {
     // Colors
     Filter.globalFilter.color = [];
@@ -176,16 +191,16 @@ class Filter {
   };
 
   generateSorter() {}
-  sortProducts() {
-    document.querySelector(".grid-container").innerHTML = "";
-    allProducts.forEach((element) => {
-      if (element.classList.contains("Keyboard")) {
-        document
-          .querySelector(".grid-container")
-          .insertAdjacentElement("afterbegin", element);
-      }
-    });
-  }
+  // sortProducts() {
+  //   document.querySelector(".grid-container").innerHTML = "";
+  //   allProducts.forEach((element) => {
+  //     if (element.classList.contains("Keyboard")) {
+  //       document
+  //         .querySelector(".grid-container")
+  //         .insertAdjacentElement("afterbegin", element);
+  //     }
+  //   });
+  // }
 }
 
 export default Filter;
