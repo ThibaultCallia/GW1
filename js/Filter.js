@@ -46,6 +46,20 @@ class Filter {
         }
       });
     });
+    document.body.addEventListener("click", (e) => {
+      if (
+        !document
+          .elementsFromPoint(e.clientX, e.clientY)
+          .find((x) => x.classList.contains("subfilter__selection")) &&
+        !e.target.classList.contains("general-subfilter-btn")
+      ) {
+        document
+          .querySelectorAll(".subfilter__selection")
+          .forEach((element) => {
+            element.classList.add("hidden");
+          });
+      }
+    });
     // CHANGE LOGIC TO FILTER WHEN LABEL IS CHECKED OR UNCHECKED
     // ADD TO LOGIC THAT ACTIVE FILTER BTN IS ADDED
     // document
