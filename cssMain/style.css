@@ -167,6 +167,14 @@ body {
   background-color: rgb(183, 182, 182);
 }
 
+/* Temp section for sort */
+
+.testBtn {
+  cursor: pointer;
+  border: 1px solid red;
+  padding: 0.5rem 1.5rem;
+}
+
 .hidden {
   display: none;
 }

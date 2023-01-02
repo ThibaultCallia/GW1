@@ -1,3 +1,4 @@
+import Flickity from "flickity";
 import { findCommonElement } from "./helper";
 import SubFilterBtn from "./SubFilterBtn.js";
 
@@ -8,6 +9,8 @@ class Filter {
     color: [],
   };
   static filterWalkieTalkie = [];
+  static elementsPerPage = 10;
+  static sort = "priceLH";
 
   constructor(container) {
     this.container = container;
@@ -18,6 +21,7 @@ class Filter {
     this.allProducts = document.querySelectorAll(".product-card");
     // way for subFilterBtns to communicate to Filter
     Filter.filterWalkieTalkie.push(this);
+    this.sortProducts();
   }
 
   generateFilterBtns() {
@@ -180,9 +184,6 @@ class Filter {
         Filter.globalFilter.brand.push(element.id);
       }
     });
-    // document.querySelectorAll(".subfilter__selection").forEach((element) => {
-    //   element.classList.add("hidden");
-    // });
     this.filterProducts();
 
     // Price
@@ -209,22 +210,30 @@ class Filter {
           element.classList.add("hidden");
         }
       }
-
-      // Price
     });
+    this.sortProducts();
   };
 
-  generateSorter() {}
-  // sortProducts() {
-  //   document.querySelector(".grid-container").innerHTML = "";
-  //   allProducts.forEach((element) => {
-  //     if (element.classList.contains("Keyboard")) {
-  //       document
-  //         .querySelector(".grid-container")
-  //         .insertAdjacentElement("afterbegin", element);
-  //     }
-  //   });
-  // }
+  generateSorter() {
+    document
+      .querySelector(".testBtn")
+      .addEventListener("click", this.sortProducts);
+  }
+  sortProducts = () => {
+    document.querySelector(".grid-container").innerHTML = "";
+    let counter = 0;
+    this.allProducts.forEach((element) => {
+      if (
+        !element.classList.contains("hidden") &&
+        counter < Filter.elementsPerPage
+      ) {
+        document
+          .querySelector(".grid-container")
+          .insertAdjacentElement("beforeend", element);
+        counter++;
+      }
+    });
+  };
 }
 
 export default Filter;
