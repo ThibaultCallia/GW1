@@ -16,7 +16,6 @@ class Filter {
     this.allProducts = document.querySelectorAll(".product-card");
   }
 
-  //   ISSUE: when activating, other filter items shift width of added border -> how to fix this?
   generateFilterBtns() {
     this.ref.querySelectorAll(".filter__item").forEach((element) => {
       element.addEventListener("click", (e) => {
@@ -68,6 +67,12 @@ class Filter {
     document
       .querySelector(".subfilter-btn-clear")
       .addEventListener("click", this.clearFilters);
+    document
+      .querySelector(".subfilter__clear-color")
+      .addEventListener("click", this.clearColors);
+    document
+      .querySelector(".subfilter__clear-brand")
+      .addEventListener("click", this.clearBrands);
     document.querySelectorAll(".color-checkbox").forEach((element) => {
       element.addEventListener("change", this.subFilter);
     });
@@ -99,6 +104,25 @@ class Filter {
       element.classList.add("hidden");
     });
     // Filter products
+    this.filterProducts();
+  };
+  clearColors = () => {
+    console.log("test");
+    document.querySelectorAll(".color-checkbox").forEach((element) => {
+      if (element.checked) {
+        element.checked = false;
+      }
+    });
+    Filter.globalFilter.color = [];
+    this.filterProducts();
+  };
+  clearBrands = () => {
+    document.querySelectorAll(".brand-checkbox").forEach((element) => {
+      if (element.checked) {
+        element.checked = false;
+      }
+    });
+    Filter.globalFilter.brand = [];
     this.filterProducts();
   };
   subFilter = () => {
