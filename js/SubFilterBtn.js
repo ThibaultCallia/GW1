@@ -18,6 +18,7 @@ class SubFilterBtn {
     this.ref.addEventListener("click", this.singleBtnDelete);
   }
   init = () => {
+    // Check if "clear all" btn should be visible
     if (
       SubFilterBtn.activeFilters.colors.length === 0 &&
       SubFilterBtn.activeFilters.brands.length === 0
@@ -36,11 +37,14 @@ class SubFilterBtn {
   };
 
   delete() {
+    // Remove Btn from DOM
     this.ref.parentNode.removeChild(this.ref);
+    // delete filter from activeFilter Object
     SubFilterBtn.activeFilters.colors =
       SubFilterBtn.activeFilters.colors.filter((x) => x.id !== this.id);
     SubFilterBtn.activeFilters.brands =
       SubFilterBtn.activeFilters.brands.filter((x) => x.id !== this.id);
+    // check if "clear All" should be deleted as well
     if (
       SubFilterBtn.activeFilters.colors.length === 0 &&
       SubFilterBtn.activeFilters.brands.length === 0
@@ -49,8 +53,13 @@ class SubFilterBtn {
     }
   }
   singleBtnDelete = () => {
+    // MAIN FILTER-----
+    // Uncheck checkbox within filter
     document.querySelector(`#${this.id}`).checked = false;
+    // Rerun filter function in main Filter
     Filter.filterWalkieTalkie[0].subFilter();
+    // SUB FILTER-----
+    // Delete btn
     this.delete();
   };
 }
