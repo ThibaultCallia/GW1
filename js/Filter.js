@@ -9,7 +9,7 @@ class Filter {
     color: [],
   };
   static filterWalkieTalkie = [];
-  static elementsPerPage = 10;
+  static elementsPerPage = 20;
   static sort = "priceLH";
 
   constructor(container) {
@@ -221,6 +221,9 @@ class Filter {
   }
   sortProducts = () => {
     document.querySelector(".grid-container").innerHTML = "";
+    this.allProducts = [].slice.call(this.allProducts).sort(function (a, b) {
+      return parseInt(a.dataset.price) <= parseInt(b.dataset.price) ? 1 : -1;
+    });
     let counter = 0;
     this.allProducts.forEach((element) => {
       if (
