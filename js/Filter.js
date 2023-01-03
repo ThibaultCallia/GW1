@@ -3,7 +3,7 @@ import { findCommonElement } from "./helper";
 import SubFilterBtn from "./SubFilterBtn.js";
 
 /**
- * Creates the filter
+ * Creates the filter <br>
  * Styling is done by scss
  */
 class Filter {
