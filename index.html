@@ -38,7 +38,7 @@
       <div class="nav-container-mobile">
         <ul class="mobile-nav-list">
           <li><a class="mobile-home-btn" href="#">Home</a></li>
-          <li>Products</li>
+          <li><a class="mobile-home-btn" href="#products">Products</a></li>
           <li>Contact</li>
         </ul>
       </div>
@@ -86,7 +86,7 @@
             alt=""
           />
         </section>
-        <section class="products">
+        <section class="products" id="products">
           <div class="products__filter">
             <div class="main-filter">
               <ul class="filter__list">
@@ -173,7 +173,7 @@
                   </div>
                 </div>
               </div>
-              <div class="testBtn">
+              <div class="hidden testBtn">
                 <button>test</button>
                 <div class="subfilter__row">
                   <input class="sort-checkbox" type="checkbox" id="s1" />
@@ -272,7 +272,9 @@
                 </p>
                 <div class="labels">
                   <button class="label type">Keyboard</button>
-                  <button class="label brand">Royal Kludge</button>
+                  <button data-brand="b1" class="label brand">
+                    Royal Kludge
+                  </button>
                   <button class="label color">Blue</button>
                 </div>
                 <div class="price_cart">
@@ -306,7 +308,7 @@
             </div>
 
             <div
-              class="product-card Keyboard"
+              class="product-card"
               data-category="Keyboard"
               data-brand="b1"
               data-color="c5"
