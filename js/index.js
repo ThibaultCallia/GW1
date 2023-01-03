@@ -9,7 +9,7 @@ import Filter from "./Filter";
 
 // const spotlight = new Carousel2(document.querySelector(".carousel-container"));
 
-const mainFilter = new Filter(document.querySelector(".products__filter"));
+const mainFilter = new Filter();
 
 // var flkty = new Flickity(elem, {
 //   // options
