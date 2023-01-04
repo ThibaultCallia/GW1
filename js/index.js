@@ -84,3 +84,27 @@ function openCloseNav() {
 // document.onmousemove = (e) => moveEvent(e);
 
 // ---------- MODAL -------->
+// Get the modal
+const modal = document.querySelector(".product-modal");
+
+// Get productCard that opens the modal
+const productCard = document.querySelector(".product-card");
+
+// Get element that closes the modal
+const closer = document.querySelector(".product-modal .close");
+
+// Open the modal on click
+productCard.onclick = () => {
+  modal.style.display = "block";
+};
+
+// Close the modal
+closer.onclick = () => {
+  modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+  if (!event.target == modal) {
+    modal.style.display = "none";
+  }
+};

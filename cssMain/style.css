@@ -4,6 +4,7 @@
 /* @import url(products.css); */
 @import url(./../css/products_grid_filter.css);
 @import url(./../CSS/product-card.css);
+@import '../CSS/filter.css';
 
 :root {
   --clr-body-dark: hsl(212, 14%, 27%);
