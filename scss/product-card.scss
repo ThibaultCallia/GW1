@@ -78,9 +78,9 @@ section.card-front{
         }
     }
 }
-section.product-modal{
-    display: none;
-}
+// section.product-modal{
+//     display: none;
+// }
 
 // modal only on bigger screens
 @media only screen and (min-width: 604px){
@@ -316,3 +316,8 @@ section.product-modal{
 //     button.see-all{
 //     }
 // }
+
+
+.hidden{
+    display: none;
+}
