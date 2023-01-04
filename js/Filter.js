@@ -1,4 +1,3 @@
-import Flickity from "flickity";
 import { findCommonElement } from "./helper";
 import SubFilterBtn from "./SubFilterBtn.js";
 
@@ -37,7 +36,6 @@ class Filter {
     this.allProducts = document.querySelectorAll(".product-card");
     // way for subFilterBtns to communicate to Filter
     Filter.filterWalkieTalkie.push(this);
-    this.sortProducts();
   }
 
   generateFilterBtns() {
@@ -280,21 +278,19 @@ class Filter {
 
   generateSorter() {
     document
-      .querySelector(".testBtn")
-      .addEventListener("click", this.sortProducts);
+      .querySelector("#sort")
+      .addEventListener("change", this.sortProducts);
   }
 
   /**
    * @property {function} sortProducts
    * Checks global sortOption (either standard one or chosen by user) and sorts allProducts array accordingly <br>
    * inserts HTML in this order. <br>
-   * It has a standard max of products shows on page. This can be increased by user.
    * @returns {void}
    */
-  sortProducts = () => {
-    // this way works but as it always empties html en fills again, it tends to be wonky
-    // certainly at startup, it should be smooth
-    // Although it doesnt matter as first screen is keyboard
+  sortProducts = (e) => {
+    Filter.sortOption = e.target.value;
+    console.log(Filter.sortOption);
 
     switch (Filter.sortOption) {
       case "priceLH":
@@ -335,20 +331,24 @@ class Filter {
           });
         break;
       default:
+        console.log("test");
         break;
     }
 
-    let counter = 0;
+    console.log(this.allProducts);
+
+    // let counter = 0;
     document.querySelector(".grid-container").innerHTML = "";
+
     this.allProducts.forEach((element) => {
       if (
-        !element.classList.contains("hidden") &&
-        counter < Filter.elementsPerPage
+        !element.classList.contains("hidden")
+        // && counter < Filter.elementsPerPage
       ) {
         document
           .querySelector(".grid-container")
           .insertAdjacentElement("beforeend", element);
-        counter++;
+        // counter++;
       }
     });
   };
