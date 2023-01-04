@@ -5,6 +5,7 @@
 @import "../css/products_grid_filter.css";
 @import "../css/filter.css";
 @import "../CSS/test.css";
+@import "../CSS/product-card.css";
 
 :root {
   --clr-body-dark: hsl(212, 14%, 27%);
