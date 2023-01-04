@@ -3,7 +3,7 @@
 @import url(./../css/welcome.css);
 /* @import url(products.css); */
 @import url(./../css/products_grid_filter.css);
-@import url(./../css/filter.css);
+@import url(./../CSS/product-card.css);
 
 :root {
   --clr-body-dark: hsl(212, 14%, 27%);
@@ -54,16 +54,6 @@ body {
   margin-bottom: var(--margin-vert-between-sections);
 }
 
-.grid-container {
-  width: min(
-    var(--max-width-general),
-    100vw - 2 * var(--padding-general-sides)
-  );
-  margin-inline: auto;
-  margin-top: var(--margin-vert-between-sections);
-  margin-bottom: var(--margin-vert-between-sections);
-  margin-top: 7rem;
-}
 .filter__list {
   width: min(
     var(--max-width-general),
