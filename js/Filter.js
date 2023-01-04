@@ -1,4 +1,3 @@
-import Flickity from "flickity";
 import { findCommonElement } from "./helper";
 import SubFilterBtn from "./SubFilterBtn.js";
 
@@ -19,7 +18,7 @@ class Filter {
 
   static filterWalkieTalkie = [];
   static elementsPerPage = 20;
-  static sortOption = "priceLH";
+  static sortOption = "dateNO";
 
   /**
    * @property {HTMLref} ref points to where main filter location is in website
@@ -37,7 +36,6 @@ class Filter {
     this.allProducts = document.querySelectorAll(".product-card");
     // way for subFilterBtns to communicate to Filter
     Filter.filterWalkieTalkie.push(this);
-    this.sortProducts();
   }
 
   generateFilterBtns() {
@@ -280,43 +278,77 @@ class Filter {
 
   generateSorter() {
     document
-      .querySelector(".testBtn")
-      .addEventListener("click", this.sortProducts);
+      .querySelector("#sort")
+      .addEventListener("change", this.sortProducts);
   }
 
   /**
    * @property {function} sortProducts
    * Checks global sortOption (either standard one or chosen by user) and sorts allProducts array accordingly <br>
    * inserts HTML in this order. <br>
-   * It has a standard max of products shows on page. This can be increased by user.
    * @returns {void}
    */
-  sortProducts = () => {
-    // this way works but as it always empties html en fills again, it tends to be wonky
-    // certainly at startup, it should be smooth
-    // Although it doesnt matter as first screen is keyboard
+  sortProducts = (e) => {
+    Filter.sortOption = e.target.value;
+    console.log(Filter.sortOption);
 
-    if (Filter.sortOption === "priceLH") {
-      this.allProducts = [].slice.call(this.allProducts).sort(function (a, b) {
-        return parseInt(a.dataset.price) >= parseInt(b.dataset.price) ? 1 : -1;
-      });
-    } else if (Filter.sortOption === "priceHL") {
-      this.allProducts = [].slice.call(this.allProducts).sort(function (a, b) {
-        return parseInt(a.dataset.price) <= parseInt(b.dataset.price) ? 1 : -1;
-      });
+    switch (Filter.sortOption) {
+      case "priceLH":
+        this.allProducts = [].slice
+          .call(this.allProducts)
+          .sort(function (a, b) {
+            return parseInt(a.dataset.price) >= parseInt(b.dataset.price)
+              ? 1
+              : -1;
+          });
+        break;
+
+      case "priceHL":
+        this.allProducts = [].slice
+          .call(this.allProducts)
+          .sort(function (a, b) {
+            return parseInt(a.dataset.price) <= parseInt(b.dataset.price)
+              ? 1
+              : -1;
+          });
+        break;
+      case "dateON":
+        this.allProducts = [].slice
+          .call(this.allProducts)
+          .sort(function (a, b) {
+            return parseInt(a.dataset.order) >= parseInt(b.dataset.order)
+              ? 1
+              : -1;
+          });
+        break;
+      case "dateNO":
+        this.allProducts = [].slice
+          .call(this.allProducts)
+          .sort(function (a, b) {
+            return parseInt(a.dataset.order) <= parseInt(b.dataset.order)
+              ? 1
+              : -1;
+          });
+        break;
+      default:
+        console.log("test");
+        break;
     }
 
-    let counter = 0;
+    console.log(this.allProducts);
+
+    // let counter = 0;
     document.querySelector(".grid-container").innerHTML = "";
+
     this.allProducts.forEach((element) => {
       if (
-        !element.classList.contains("hidden") &&
-        counter < Filter.elementsPerPage
+        !element.classList.contains("hidden")
+        // && counter < Filter.elementsPerPage
       ) {
         document
           .querySelector(".grid-container")
           .insertAdjacentElement("beforeend", element);
-        counter++;
+        // counter++;
       }
     });
   };

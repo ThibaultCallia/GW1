@@ -172,16 +172,15 @@
                   </div>
                 </div>
               </div>
-              <div class="hidden testBtn">
-                <button>test</button>
-                <div class="subfilter__row">
-                  <input class="sort-checkbox" type="checkbox" id="s1" />
-                  <label for="s1">Price low to high</label>
-                </div>
-                <div class="subfilter__row">
-                  <input class="sort-checkbox" type="checkbox" id="s2" />
-                  <label for="s2">Price high to low</label>
-                </div>
+
+              <div class="sortDiv">
+                <label for="sort">Sort:</label>
+                <select name="sort" id="sort">
+                  <option value="priceHL">Price, high to low</option>
+                  <option value="priceLH">Price, low to high</option>
+                  <option value="dateON">Date, old to new</option>
+                  <option value="dateNO">Date, new to old</option>
+                </select>
               </div>
             </div>
             <div class="subfilter-active">
@@ -195,8 +194,96 @@
               class="product-card"
               data-category="Keyboard"
               data-color="c1,c4"
+              data-brand="b1"
+              data-price="499"
+              data-order="1"
+            >
+              <section class="card-front">
+                <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
+                <div class="description">
+                  <span>Royal Kludge</span>
+                  <h3 class="name">Royal Kludge RK84 black blue</h3>
+                  <div class="ratings">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="price">€499</h4>
+                </div>
+                <!-- <div class="labels">
+                  <button class="label type">Keyboard</button>
+                  <button class="label brand">Royal Kludge</button>
+                  <button class="label color">white</button>
+                </div> -->
+              </section>
+              <section class="product-modal">
+                <div class="product-details">
+                  <span class="close">&times;</span>
+                  <div class="images">
+                    <img src="./images/welcome/kb-rk84.webp" alt="" />
+                    <figure>
+                      <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
+                      <img src="./images/sliderImages/nuphy1.jpg" alt="" />
+                      <img src="./images/sliderImages/switchBrown.jpg" alt="" />
+                      <img src="./images/sliderImages/nuphy3.jpg" alt="" />
+                    </figure>
+                  </div>
+                  <div class="text">
+                    <div class="product">
+                      <h3 class="name">Nuphy 1</h3>
+                      <span class="title brand">ROYAL KLUDGE</span>
+                    </div>
+                    <div class="price-container">
+                      <div class="price-wrapper wrap">
+                        <span class="title">PRICE</span>
+                        <h4 class="price">$59.00</h4>
+                      </div>
+                      <div class="amount-wrapper wrap">
+                        <span class="title">QUANTITY</span>
+                        <div class="counter">
+                          <span class="minus">-</span>
+                          <span class="amount">1</span>
+                          <span class="plus">+</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="description">
+                      <span class="title">DESCRIPTION</span>
+                      <p class="description">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Placeat voluptate dicta doloribus dolor animi
+                        eveniet sint assumenda illo iste optio. Beatae, sapiente
+                        officia quae consequuntur nobis consequatur repellendus
+                        dolor amet?
+                      </p>
+                    </div>
+                    <div class="ratings">
+                      <span class="title">RATINGS</span>
+                      <figure>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </figure>
+                    </div>
+                    <div class="total-price">
+                      <span class="title">TOTAL PRICE</span>
+                      <h4>419.30</h4>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="product-card"
+              data-category="Keyboard"
+              data-color="c1,c4"
               data-brand="b2"
               data-price="399"
+              data-order="2"
             >
               <section class="card-front">
                 <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
@@ -282,7 +369,8 @@
               data-category="Keyboard"
               data-color="c1,c4"
               data-brand="b2"
-              data-price="399"
+              data-price="599"
+              data-order="3"
             >
               <section class="card-front">
                 <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
@@ -296,7 +384,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                   </div>
-                  <h4 class="price">€399</h4>
+                  <h4 class="price">€599</h4>
                 </div>
                 <!-- <div class="labels">
                   <button class="label type">Keyboard</button>
@@ -368,7 +456,8 @@
               data-category="Keyboard"
               data-color="c1,c4"
               data-brand="b2"
-              data-price="399"
+              data-price="699"
+              data-order="4"
             >
               <section class="card-front">
                 <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
@@ -382,7 +471,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                   </div>
-                  <h4 class="price">€399</h4>
+                  <h4 class="price">€699</h4>
                 </div>
                 <!-- <div class="labels">
                   <button class="label type">Keyboard</button>
@@ -454,7 +543,8 @@
               data-category="Keyboard"
               data-color="c1,c4"
               data-brand="b2"
-              data-price="399"
+              data-price="899"
+              data-order="5"
             >
               <section class="card-front">
                 <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
@@ -468,7 +558,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                   </div>
-                  <h4 class="price">€399</h4>
+                  <h4 class="price">€899</h4>
                 </div>
                 <!-- <div class="labels">
                   <button class="label type">Keyboard</button>
@@ -540,7 +630,8 @@
               data-category="Keyboard"
               data-color="c1,c4"
               data-brand="b2"
-              data-price="399"
+              data-price="1099"
+              data-order="6"
             >
               <section class="card-front">
                 <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
@@ -554,523 +645,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                   </div>
-                  <h4 class="price">€399</h4>
-                </div>
-                <!-- <div class="labels">
-                  <button class="label type">Keyboard</button>
-                  <button class="label brand">Royal Kludge</button>
-                  <button class="label color">white</button>
-                </div> -->
-              </section>
-              <section class="product-modal">
-                <div class="product-details">
-                  <span class="close">&times;</span>
-                  <div class="images">
-                    <img src="./images/welcome/kb-rk84.webp" alt="" />
-                    <figure>
-                      <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy1.jpg" alt="" />
-                      <img src="./images/sliderImages/switchBrown.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy3.jpg" alt="" />
-                    </figure>
-                  </div>
-                  <div class="text">
-                    <div class="product">
-                      <h3 class="name">Nuphy 1</h3>
-                      <span class="title brand">ROYAL KLUDGE</span>
-                    </div>
-                    <div class="price-container">
-                      <div class="price-wrapper wrap">
-                        <span class="title">PRICE</span>
-                        <h4 class="price">$59.00</h4>
-                      </div>
-                      <div class="amount-wrapper wrap">
-                        <span class="title">QUANTITY</span>
-                        <div class="counter">
-                          <span class="minus">-</span>
-                          <span class="amount">1</span>
-                          <span class="plus">+</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="description">
-                      <span class="title">DESCRIPTION</span>
-                      <p class="description">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Placeat voluptate dicta doloribus dolor animi
-                        eveniet sint assumenda illo iste optio. Beatae, sapiente
-                        officia quae consequuntur nobis consequatur repellendus
-                        dolor amet?
-                      </p>
-                    </div>
-                    <div class="ratings">
-                      <span class="title">RATINGS</span>
-                      <figure>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </figure>
-                    </div>
-                    <div class="total-price">
-                      <span class="title">TOTAL PRICE</span>
-                      <h4>419.30</h4>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-            <div
-              class="product-card"
-              data-category="Keyboard"
-              data-color="c1,c4"
-              data-brand="b2"
-              data-price="399"
-            >
-              <section class="card-front">
-                <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
-                <div class="description">
-                  <span>Royal Kludge</span>
-                  <h3 class="name">Royal Kludge RK84</h3>
-                  <div class="ratings">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <h4 class="price">€399</h4>
-                </div>
-                <!-- <div class="labels">
-                  <button class="label type">Keyboard</button>
-                  <button class="label brand">Royal Kludge</button>
-                  <button class="label color">white</button>
-                </div> -->
-              </section>
-              <section class="product-modal">
-                <div class="product-details">
-                  <span class="close">&times;</span>
-                  <div class="images">
-                    <img src="./images/welcome/kb-rk84.webp" alt="" />
-                    <figure>
-                      <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy1.jpg" alt="" />
-                      <img src="./images/sliderImages/switchBrown.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy3.jpg" alt="" />
-                    </figure>
-                  </div>
-                  <div class="text">
-                    <div class="product">
-                      <h3 class="name">Nuphy 1</h3>
-                      <span class="title brand">ROYAL KLUDGE</span>
-                    </div>
-                    <div class="price-container">
-                      <div class="price-wrapper wrap">
-                        <span class="title">PRICE</span>
-                        <h4 class="price">$59.00</h4>
-                      </div>
-                      <div class="amount-wrapper wrap">
-                        <span class="title">QUANTITY</span>
-                        <div class="counter">
-                          <span class="minus">-</span>
-                          <span class="amount">1</span>
-                          <span class="plus">+</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="description">
-                      <span class="title">DESCRIPTION</span>
-                      <p class="description">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Placeat voluptate dicta doloribus dolor animi
-                        eveniet sint assumenda illo iste optio. Beatae, sapiente
-                        officia quae consequuntur nobis consequatur repellendus
-                        dolor amet?
-                      </p>
-                    </div>
-                    <div class="ratings">
-                      <span class="title">RATINGS</span>
-                      <figure>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </figure>
-                    </div>
-                    <div class="total-price">
-                      <span class="title">TOTAL PRICE</span>
-                      <h4>419.30</h4>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-            <div
-              class="product-card"
-              data-category="Keyboard"
-              data-color="c1,c4"
-              data-brand="b2"
-              data-price="399"
-            >
-              <section class="card-front">
-                <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
-                <div class="description">
-                  <span>Royal Kludge</span>
-                  <h3 class="name">Royal Kludge RK84</h3>
-                  <div class="ratings">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <h4 class="price">€399</h4>
-                </div>
-                <!-- <div class="labels">
-                  <button class="label type">Keyboard</button>
-                  <button class="label brand">Royal Kludge</button>
-                  <button class="label color">white</button>
-                </div> -->
-              </section>
-              <section class="product-modal">
-                <div class="product-details">
-                  <span class="close">&times;</span>
-                  <div class="images">
-                    <img src="./images/welcome/kb-rk84.webp" alt="" />
-                    <figure>
-                      <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy1.jpg" alt="" />
-                      <img src="./images/sliderImages/switchBrown.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy3.jpg" alt="" />
-                    </figure>
-                  </div>
-                  <div class="text">
-                    <div class="product">
-                      <h3 class="name">Nuphy 1</h3>
-                      <span class="title brand">ROYAL KLUDGE</span>
-                    </div>
-                    <div class="price-container">
-                      <div class="price-wrapper wrap">
-                        <span class="title">PRICE</span>
-                        <h4 class="price">$59.00</h4>
-                      </div>
-                      <div class="amount-wrapper wrap">
-                        <span class="title">QUANTITY</span>
-                        <div class="counter">
-                          <span class="minus">-</span>
-                          <span class="amount">1</span>
-                          <span class="plus">+</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="description">
-                      <span class="title">DESCRIPTION</span>
-                      <p class="description">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Placeat voluptate dicta doloribus dolor animi
-                        eveniet sint assumenda illo iste optio. Beatae, sapiente
-                        officia quae consequuntur nobis consequatur repellendus
-                        dolor amet?
-                      </p>
-                    </div>
-                    <div class="ratings">
-                      <span class="title">RATINGS</span>
-                      <figure>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </figure>
-                    </div>
-                    <div class="total-price">
-                      <span class="title">TOTAL PRICE</span>
-                      <h4>419.30</h4>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-            <div
-              class="product-card"
-              data-category="Keyboard"
-              data-color="c1,c4"
-              data-brand="b2"
-              data-price="399"
-            >
-              <section class="card-front">
-                <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
-                <div class="description">
-                  <span>Royal Kludge</span>
-                  <h3 class="name">Royal Kludge RK84</h3>
-                  <div class="ratings">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <h4 class="price">€399</h4>
-                </div>
-                <!-- <div class="labels">
-                  <button class="label type">Keyboard</button>
-                  <button class="label brand">Royal Kludge</button>
-                  <button class="label color">white</button>
-                </div> -->
-              </section>
-              <section class="product-modal">
-                <div class="product-details">
-                  <span class="close">&times;</span>
-                  <div class="images">
-                    <img src="./images/welcome/kb-rk84.webp" alt="" />
-                    <figure>
-                      <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy1.jpg" alt="" />
-                      <img src="./images/sliderImages/switchBrown.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy3.jpg" alt="" />
-                    </figure>
-                  </div>
-                  <div class="text">
-                    <div class="product">
-                      <h3 class="name">Nuphy 1</h3>
-                      <span class="title brand">ROYAL KLUDGE</span>
-                    </div>
-                    <div class="price-container">
-                      <div class="price-wrapper wrap">
-                        <span class="title">PRICE</span>
-                        <h4 class="price">$59.00</h4>
-                      </div>
-                      <div class="amount-wrapper wrap">
-                        <span class="title">QUANTITY</span>
-                        <div class="counter">
-                          <span class="minus">-</span>
-                          <span class="amount">1</span>
-                          <span class="plus">+</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="description">
-                      <span class="title">DESCRIPTION</span>
-                      <p class="description">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Placeat voluptate dicta doloribus dolor animi
-                        eveniet sint assumenda illo iste optio. Beatae, sapiente
-                        officia quae consequuntur nobis consequatur repellendus
-                        dolor amet?
-                      </p>
-                    </div>
-                    <div class="ratings">
-                      <span class="title">RATINGS</span>
-                      <figure>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </figure>
-                    </div>
-                    <div class="total-price">
-                      <span class="title">TOTAL PRICE</span>
-                      <h4>419.30</h4>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-            <div
-              class="product-card"
-              data-category="Keyboard"
-              data-color="c1,c4"
-              data-brand="b2"
-              data-price="399"
-            >
-              <section class="card-front">
-                <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
-                <div class="description">
-                  <span>Royal Kludge</span>
-                  <h3 class="name">Royal Kludge RK84</h3>
-                  <div class="ratings">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <h4 class="price">€399</h4>
-                </div>
-                <!-- <div class="labels">
-                  <button class="label type">Keyboard</button>
-                  <button class="label brand">Royal Kludge</button>
-                  <button class="label color">white</button>
-                </div> -->
-              </section>
-              <section class="product-modal">
-                <div class="product-details">
-                  <span class="close">&times;</span>
-                  <div class="images">
-                    <img src="./images/welcome/kb-rk84.webp" alt="" />
-                    <figure>
-                      <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy1.jpg" alt="" />
-                      <img src="./images/sliderImages/switchBrown.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy3.jpg" alt="" />
-                    </figure>
-                  </div>
-                  <div class="text">
-                    <div class="product">
-                      <h3 class="name">Nuphy 1</h3>
-                      <span class="title brand">ROYAL KLUDGE</span>
-                    </div>
-                    <div class="price-container">
-                      <div class="price-wrapper wrap">
-                        <span class="title">PRICE</span>
-                        <h4 class="price">$59.00</h4>
-                      </div>
-                      <div class="amount-wrapper wrap">
-                        <span class="title">QUANTITY</span>
-                        <div class="counter">
-                          <span class="minus">-</span>
-                          <span class="amount">1</span>
-                          <span class="plus">+</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="description">
-                      <span class="title">DESCRIPTION</span>
-                      <p class="description">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Placeat voluptate dicta doloribus dolor animi
-                        eveniet sint assumenda illo iste optio. Beatae, sapiente
-                        officia quae consequuntur nobis consequatur repellendus
-                        dolor amet?
-                      </p>
-                    </div>
-                    <div class="ratings">
-                      <span class="title">RATINGS</span>
-                      <figure>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </figure>
-                    </div>
-                    <div class="total-price">
-                      <span class="title">TOTAL PRICE</span>
-                      <h4>419.30</h4>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-            <div
-              class="product-card"
-              data-category="Keyboard"
-              data-color="c1,c4"
-              data-brand="b2"
-              data-price="399"
-            >
-              <section class="card-front">
-                <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
-                <div class="description">
-                  <span>Royal Kludge</span>
-                  <h3 class="name">Royal Kludge RK84</h3>
-                  <div class="ratings">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <h4 class="price">€399</h4>
-                </div>
-                <!-- <div class="labels">
-                  <button class="label type">Keyboard</button>
-                  <button class="label brand">Royal Kludge</button>
-                  <button class="label color">white</button>
-                </div> -->
-              </section>
-              <section class="product-modal">
-                <div class="product-details">
-                  <span class="close">&times;</span>
-                  <div class="images">
-                    <img src="./images/welcome/kb-rk84.webp" alt="" />
-                    <figure>
-                      <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy1.jpg" alt="" />
-                      <img src="./images/sliderImages/switchBrown.jpg" alt="" />
-                      <img src="./images/sliderImages/nuphy3.jpg" alt="" />
-                    </figure>
-                  </div>
-                  <div class="text">
-                    <div class="product">
-                      <h3 class="name">Nuphy 1</h3>
-                      <span class="title brand">ROYAL KLUDGE</span>
-                    </div>
-                    <div class="price-container">
-                      <div class="price-wrapper wrap">
-                        <span class="title">PRICE</span>
-                        <h4 class="price">$59.00</h4>
-                      </div>
-                      <div class="amount-wrapper wrap">
-                        <span class="title">QUANTITY</span>
-                        <div class="counter">
-                          <span class="minus">-</span>
-                          <span class="amount">1</span>
-                          <span class="plus">+</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="description">
-                      <span class="title">DESCRIPTION</span>
-                      <p class="description">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Placeat voluptate dicta doloribus dolor animi
-                        eveniet sint assumenda illo iste optio. Beatae, sapiente
-                        officia quae consequuntur nobis consequatur repellendus
-                        dolor amet?
-                      </p>
-                    </div>
-                    <div class="ratings">
-                      <span class="title">RATINGS</span>
-                      <figure>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </figure>
-                    </div>
-                    <div class="total-price">
-                      <span class="title">TOTAL PRICE</span>
-                      <h4>419.30</h4>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-            <div
-              class="product-card"
-              data-category="Keyboard"
-              data-color="c1,c4"
-              data-brand="b2"
-              data-price="399"
-            >
-              <section class="card-front">
-                <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
-                <div class="description">
-                  <span>Royal Kludge</span>
-                  <h3 class="name">Royal Kludge RK84</h3>
-                  <div class="ratings">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <h4 class="price">€399</h4>
+                  <h4 class="price">€1099</h4>
                 </div>
                 <!-- <div class="labels">
                   <button class="label type">Keyboard</button>
