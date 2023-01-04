@@ -1,9 +1,37 @@
-import Flickity from "flickity";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Filter.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Filter.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import Flickity from "flickity";
 import { findCommonElement } from "./helper";
 import SubFilterBtn from "./SubFilterBtn.js";
 
 /**
- * Creates the filter <br>
+ * Creates the filter &lt;br>
  * Styling is done by scss
  */
 class Filter {
@@ -73,7 +101,7 @@ class Filter {
       if (
         !document
           .elementsFromPoint(e.clientX, e.clientY)
-          .find((x) => x.classList.contains("subfilter__selection")) &&
+          .find((x) => x.classList.contains("subfilter__selection")) &amp;&amp;
         !e.target.classList.contains("general-subfilter-btn")
       ) {
         document
@@ -106,11 +134,11 @@ class Filter {
 
   /**
    * @property {function} clearFilters
-   * clears all checkboxes <br>
-   * clear globalFilter <br>
-   * close all open subfilter options <br>
-   * close all open subfilter options <br>
-   * delete all dom elements (by looping over activefilters within SubfilterBtn class and evoke delete()) <br>
+   * clears all checkboxes &lt;br>
+   * clear globalFilter &lt;br>
+   * close all open subfilter options &lt;br>
+   * close all open subfilter options &lt;br>
+   * delete all dom elements (by looping over activefilters within SubfilterBtn class and evoke delete()) &lt;br>
    * Finally filters products again
    *
    * @returns {void}
@@ -188,9 +216,9 @@ class Filter {
   };
   /**
    * @property {function} toggleActiveColorBtn
-   * toggles this specific filter Btn on or off <br>
-   * checks whether e.target is checked. <br>
-   * If yes -> new SubFilterBtn <br>
+   * toggles this specific filter Btn on or off &lt;br>
+   * checks whether e.target is checked. &lt;br>
+   * If yes -> new SubFilterBtn &lt;br>
    * If no -> find this Btn in activeFilters and call delete().
    * @returns {void}
    */
@@ -222,7 +250,7 @@ class Filter {
 
   /**
    * @property {function} subFilter
-   * Loops over checked and unchecked checkboxes of both Color and Brand and alters GlobalFilter accordingly <br>
+   * Loops over checked and unchecked checkboxes of both Color and Brand and alters GlobalFilter accordingly &lt;br>
    * Then it calls filterProducts function
    * @returns {void}
    */
@@ -248,7 +276,7 @@ class Filter {
 
   /**
    * @property {function} filterProducts
-   * For all filters (color, brand, main category), it add or removes "hidden" class according to info in globalFilter object <br>
+   * For all filters (color, brand, main category), it add or removes "hidden" class according to info in globalFilter object &lt;br>
    * Then it call sortProducts -> this step is still unsure
    * @returns {void}
    */
@@ -286,8 +314,8 @@ class Filter {
 
   /**
    * @property {function} sortProducts
-   * Checks global sortOption (either standard one or chosen by user) and sorts allProducts array accordingly <br>
-   * inserts HTML in this order. <br>
+   * Checks global sortOption (either standard one or chosen by user) and sorts allProducts array accordingly &lt;br>
+   * inserts HTML in this order. &lt;br>
    * It has a standard max of products shows on page. This can be increased by user.
    * @returns {void}
    */
@@ -302,7 +330,7 @@ class Filter {
       });
     } else if (Filter.sortOption === "priceHL") {
       this.allProducts = [].slice.call(this.allProducts).sort(function (a, b) {
-        return parseInt(a.dataset.price) <= parseInt(b.dataset.price) ? 1 : -1;
+        return parseInt(a.dataset.price) &lt;= parseInt(b.dataset.price) ? 1 : -1;
       });
     }
 
@@ -310,8 +338,8 @@ class Filter {
     document.querySelector(".grid-container").innerHTML = "";
     this.allProducts.forEach((element) => {
       if (
-        !element.classList.contains("hidden") &&
-        counter < Filter.elementsPerPage
+        !element.classList.contains("hidden") &amp;&amp;
+        counter &lt; Filter.elementsPerPage
       ) {
         document
           .querySelector(".grid-container")
@@ -321,9 +349,32 @@ class Filter {
     });
   };
   /*
-    If counter <= elementsPerPage -> all products are shown so "show more" not needed
+    If counter &lt;= elementsPerPage -> all products are shown so "show more" not needed
 
   */
 }
 
 export default Filter;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Filter.html">Filter</a></li><li><a href="SubFilterBtn.html">SubFilterBtn</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Tue Jan 03 2023 13:54:51 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

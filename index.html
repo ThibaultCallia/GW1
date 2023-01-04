@@ -38,7 +38,7 @@
       <div class="nav-container-mobile">
         <ul class="mobile-nav-list">
           <li><a class="mobile-home-btn" href="#">Home</a></li>
-          <li>Products</li>
+          <li><a class="mobile-home-btn" href="#products">Products</a></li>
           <li>Contact</li>
         </ul>
       </div>
@@ -86,7 +86,7 @@
             alt=""
           />
         </section>
-        <section class="products">
+        <section class="products" id="products">
           <div class="products__filter">
             <div class="main-filter">
               <ul class="filter__list">
@@ -97,59 +97,107 @@
               </ul>
             </div>
           </div>
-          <div class="subfilter">
-            <div class="subfilter__section subfilter__colors-section">
-              <button class="subfilter-btn subfilter-btn-colors">Colors</button>
-              <div class="subfilter__selection hidden">
+          <div class="subfilter-container">
+            <div class="subfilter">
+              <div class="subfilter__section subfilter__colors-section">
+                <button
+                  class="general-subfilter-btn subfilter-btn subfilter-btn-colors"
+                >
+                  Colors
+                </button>
+                <div class="hidden subfilter__selection">
+                  <div class="subfilter__clear">
+                    <span class="subfilter__clear-color">Clear</span>
+                  </div>
+                  <div class="subfilter__row-container">
+                    <div class="subfilter__row">
+                      <input class="color-checkbox" type="checkbox" id="c1" />
+                      <label for="c1">Black</label>
+                    </div>
+                    <div class="subfilter__row">
+                      <input class="color-checkbox" type="checkbox" id="c3" />
+                      <label for="c3">White</label>
+                    </div>
+                    <div class="subfilter__row">
+                      <input class="color-checkbox" type="checkbox" id="c4" />
+                      <label for="c4">Blue</label>
+                    </div>
+                    <div class="subfilter__row">
+                      <input class="color-checkbox" type="checkbox" id="c8" />
+                      <label for="c8">Red</label>
+                    </div>
+                    <div class="subfilter__row">
+                      <input class="color-checkbox" type="checkbox" id="c11" />
+                      <label for="c11">Gold</label>
+                    </div>
+                    <div class="subfilter__row">
+                      <input class="color-checkbox" type="checkbox" id="c9" />
+                      <label for="c9">Pink</label>
+                    </div>
+                    <div class="subfilter__row">
+                      <input class="color-checkbox" type="checkbox" id="c5" />
+                      <label for="c5">Green</label>
+                    </div>
+                    <div class="subfilter__row">
+                      <input class="color-checkbox" type="checkbox" id="c6" />
+                      <label for="c6">Yellow</label>
+                    </div>
+                    <div class="subfilter__row">
+                      <input class="color-checkbox" type="checkbox" id="c7" />
+                      <label for="c7">Orange</label>
+                    </div>
+                    <div class="subfilter__row">
+                      <input class="color-checkbox" type="checkbox" id="c10" />
+                      <label for="c10">Purple</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="subfilter__section subfilter__brands-section">
+                <button class="general-subfilter-btn subfilter-btn">
+                  Brand
+                </button>
+                <div class="subfilter__selection hidden">
+                  <div class="subfilter__clear">
+                    <span class="subfilter__clear-brand">Clear</span>
+                  </div>
+                  <div class="subfilter__row-container">
+                    <div class="subfilter__row">
+                      <input class="brand-checkbox" type="checkbox" id="b2" />
+                      <label for="b2">Nuphy</label>
+                    </div>
+                    <div class="subfilter__row">
+                      <input class="brand-checkbox" type="checkbox" id="b1" />
+                      <label for="b1">Royal Kludge</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="hidden testBtn">
+                <button>test</button>
                 <div class="subfilter__row">
-                  <label for="Black">Black</label>
-                  <input class="color-checkbox" type="checkbox" id="1" />
+                  <input class="sort-checkbox" type="checkbox" id="s1" />
+                  <label for="s1">Price low to high</label>
                 </div>
                 <div class="subfilter__row">
-                  <label for="Blue">Blue</label>
-                  <input class="color-checkbox" type="checkbox" id="4" />
-                </div>
-                <div class="subfilter__row">
-                  <label for="Red">Red</label>
-                  <input class="color-checkbox" type="checkbox" id="8" />
-                </div>
-                <div class="subfilter__row">
-                  <label for="Gold">Gold</label>
-                  <input class="color-checkbox" type="checkbox" id="11" />
+                  <input class="sort-checkbox" type="checkbox" id="s2" />
+                  <label for="s2">Price high to low</label>
                 </div>
               </div>
             </div>
-            <div class="subfilter__section brands-section">
-              <button class="subfilter-btn">Brand</button>
-              <div class="subfilter__selection hidden">
-                <div class="subfilter__row">
-                  <label for="Nuphy">Nuphy</label>
-                  <input class="brand-checkbox" type="checkbox" id="2" />
-                </div>
-                <div class="subfilter__row">
-                  <label for="Royal Kludge">Royal Kludge</label>
-                  <input class="brand-checkbox" type="checkbox" id="1" />
-                </div>
-              </div>
+            <div class="subfilter-active">
+              <button class="hidden active-filter-btn subfilter-btn-clear">
+                Clear All
+              </button>
             </div>
-            <!-- <div class="subfilter__section">
-              <button class="subfilter-btn">Price</button>
-              <div class="subfilter__selection"></div>
-            </div> -->
-
-            <button class="subfilter-btn-go">Filter</button>
-            <button class="subfilter-btn-clear">Clear all filters</button>
-
-            <div class="subfilter__section subfilter__colors"></div>
           </div>
-
           <div class="grid-container">
             <div
               class="product-card Keyboard"
               data-category="Keyboard"
-              data-color="1,4"
-              data-brand="2"
-              data-price="299"
+              data-color="c1,c4"
+              data-brand="b2"
+              data-price="399"
             >
               <div class="card-bg"></div>
               <div class="discount">%</div>
@@ -203,8 +251,9 @@
             <div
               class="product-card Keyboard"
               data-category="Keyboard"
-              data-brand="2"
-              data-color="4"
+              data-brand="b2"
+              data-color="c4"
+              data-price="500"
             >
               <div class="card-bg"></div>
               <div class="discount">%</div>
@@ -223,11 +272,13 @@
                 </p>
                 <div class="labels">
                   <button class="label type">Keyboard</button>
-                  <button class="label brand">Royal Kludge</button>
-                  <button class="label color">white</button>
+                  <button data-brand="b1" class="label brand">
+                    Royal Kludge
+                  </button>
+                  <button class="label color">Blue</button>
                 </div>
                 <div class="price_cart">
-                  <p class="price">$399</p>
+                  <p class="price">$500</p>
                   <figure class="cart">
                     <img
                       src="./images/icons/shopping-cart.svg.svg"
@@ -244,7 +295,7 @@
                 />
                 <h3 class="product-name">Keyboard Nuphy Blue</h3>
                 <div class="product-price_icon">
-                  <p class="price">$399</p>
+                  <p class="price">$500</p>
                   <figure class="icons">
                     <img src="./images/icons/heart.svg.svg" alt="heart icon" />
                     <img
@@ -257,10 +308,11 @@
             </div>
 
             <div
-              class="product-card Keyboard"
+              class="product-card"
               data-category="Keyboard"
-              data-brand="1"
-              data-color="5"
+              data-brand="b1"
+              data-color="c5"
+              data-price="500"
             >
               <div class="card-bg"></div>
               <div class="discount">%</div>
@@ -283,7 +335,7 @@
                   <button class="label color">white</button>
                 </div>
                 <div class="price_cart">
-                  <p class="price">$399</p>
+                  <p class="price">$500</p>
                   <figure class="cart">
                     <img
                       src="./images/icons/shopping-cart.svg.svg"
@@ -300,7 +352,7 @@
                 />
                 <h3 class="product-name">Keyboard Royal Kludge Green</h3>
                 <div class="product-price_icon">
-                  <p class="price">$399</p>
+                  <p class="price">$500</p>
                   <figure class="icons">
                     <img src="./images/icons/heart.svg.svg" alt="heart icon" />
                     <img
@@ -314,9 +366,10 @@
 
             <div
               class="product-card"
-              data-color="11"
-              data-brand="2"
+              data-color="c11"
+              data-brand="b2"
               data-category="Keycaps"
+              data-price="700"
             >
               <div class="card-bg"></div>
               <div class="discount">%</div>
@@ -339,7 +392,7 @@
                   <button class="label color">white</button>
                 </div>
                 <div class="price_cart">
-                  <p class="price">$399</p>
+                  <p class="price">$700</p>
                   <figure class="cart">
                     <img
                       src="./images/icons/shopping-cart.svg.svg"
@@ -356,7 +409,7 @@
                 />
                 <h3 class="product-name">Keycaps Nuphy Gold</h3>
                 <div class="product-price_icon">
-                  <p class="price">$399</p>
+                  <p class="price">$700</p>
                   <figure class="icons">
                     <img src="./images/icons/heart.svg.svg" alt="heart icon" />
                     <img
@@ -370,9 +423,10 @@
 
             <div
               class="product-card"
-              data-color="3,4,1"
-              data-brand="1"
+              data-color="c3,c4,c1"
+              data-brand="b1"
               data-category="Switches"
+              data-price="900"
             >
               <div class="card-bg"></div>
               <div class="discount">%</div>
@@ -395,7 +449,7 @@
                   <button class="label color">white</button>
                 </div>
                 <div class="price_cart">
-                  <p class="price">$399</p>
+                  <p class="price">$900</p>
                   <figure class="cart">
                     <img
                       src="./images/icons/shopping-cart.svg.svg"
@@ -412,7 +466,7 @@
                 />
                 <h3 class="product-name">Switches Kludge White, Blue,Black</h3>
                 <div class="product-price_icon">
-                  <p class="price">$399</p>
+                  <p class="price">$900</p>
                   <figure class="icons">
                     <img src="./images/icons/heart.svg.svg" alt="heart icon" />
                     <img
@@ -426,9 +480,10 @@
 
             <div
               class="product-card"
-              data-color="9,4"
-              data-brand="2"
+              data-color="c9,c4"
+              data-brand="b2"
               data-category="Keycaps"
+              data-price="20"
             >
               <div class="card-bg"></div>
               <div class="discount">%</div>
@@ -451,7 +506,7 @@
                   <button class="label color">white</button>
                 </div>
                 <div class="price_cart">
-                  <p class="price">$399</p>
+                  <p class="price">$20</p>
                   <figure class="cart">
                     <img
                       src="./images/icons/shopping-cart.svg.svg"
@@ -468,7 +523,7 @@
                 />
                 <h3 class="product-name">Keycaps nuphy pink,blue</h3>
                 <div class="product-price_icon">
-                  <p class="price">$399</p>
+                  <p class="price">$20</p>
                   <figure class="icons">
                     <img src="./images/icons/heart.svg.svg" alt="heart icon" />
                     <img
@@ -482,9 +537,10 @@
 
             <div
               class="product-card"
-              data-color="11,12"
-              data-brand="2"
+              data-color="c11,c12"
+              data-brand="b2"
               data-category="Keyboard"
+              data-price="50"
             >
               <div class="card-bg"></div>
               <div class="discount">%</div>
@@ -507,7 +563,7 @@
                   <button class="label color">white</button>
                 </div>
                 <div class="price_cart">
-                  <p class="price">$399</p>
+                  <p class="price">$50</p>
                   <figure class="cart">
                     <img
                       src="./images/icons/shopping-cart.svg.svg"
@@ -524,7 +580,7 @@
                 />
                 <h3 class="product-name">Keyboard Nuphy Gold,Silver</h3>
                 <div class="product-price_icon">
-                  <p class="price">$399</p>
+                  <p class="price">$50</p>
                   <figure class="icons">
                     <img src="./images/icons/heart.svg.svg" alt="heart icon" />
                     <img
@@ -538,9 +594,10 @@
 
             <div
               class="product-card"
-              data-color="8"
-              data-brand="2"
+              data-color="c8"
+              data-brand="b2"
               data-category="Switches"
+              data-price="100"
             >
               <div class="card-bg"></div>
               <div class="discount">%</div>
@@ -563,7 +620,7 @@
                   <button class="label color">white</button>
                 </div>
                 <div class="price_cart">
-                  <p class="price">$399</p>
+                  <p class="price">$100</p>
                   <figure class="cart">
                     <img
                       src="./images/icons/shopping-cart.svg.svg"
@@ -580,7 +637,7 @@
                 />
                 <h3 class="product-name">Switches Nuphy red</h3>
                 <div class="product-price_icon">
-                  <p class="price">$399</p>
+                  <p class="price">$100</p>
                   <figure class="icons">
                     <img src="./images/icons/heart.svg.svg" alt="heart icon" />
                     <img
@@ -594,9 +651,10 @@
 
             <div
               class="product-card"
-              data-color="8,7"
+              data-color="c8,c7"
               data-category="Switches"
-              data-brand="1"
+              data-brand="b1"
+              data-price="299"
             >
               <div class="card-bg"></div>
               <div class="discount">%</div>
@@ -619,7 +677,7 @@
                   <button class="label color">white</button>
                 </div>
                 <div class="price_cart">
-                  <p class="price">$399</p>
+                  <p class="price">$299</p>
                   <figure class="cart">
                     <img
                       src="./images/icons/shopping-cart.svg.svg"
@@ -636,7 +694,287 @@
                 />
                 <h3 class="product-name">Switchs Royal Kludge red,orange</h3>
                 <div class="product-price_icon">
-                  <p class="price">$399</p>
+                  <p class="price">$299</p>
+                  <figure class="icons">
+                    <img src="./images/icons/heart.svg.svg" alt="heart icon" />
+                    <img
+                      src="./images/icons/shopping-cart.svg.svg"
+                      alt="shopping cart icon"
+                    />
+                  </figure>
+                </div>
+              </section>
+            </div>
+            <div
+              class="product-card"
+              data-color="c8,c7"
+              data-category="Switches"
+              data-brand="b1"
+              data-price="299"
+            >
+              <div class="card-bg"></div>
+              <div class="discount">%</div>
+
+              <section class="card-back">
+                <div class="ratings">
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-half.svg.svg" alt="" />
+                  <img src="./images/icons/star-empty.svg.svg" alt="" />
+                </div>
+                <p class="product-description">
+                  Lorem ipsum dolor sit amet consectetur lorem, ipsum.
+                  Adipisicing elit.
+                </p>
+                <div class="labels">
+                  <button class="label type">Keyboard</button>
+                  <button class="label brand">Royal Kludge</button>
+                  <button class="label color">white</button>
+                </div>
+                <div class="price_cart">
+                  <p class="price">$299</p>
+                  <figure class="cart">
+                    <img
+                      src="./images/icons/shopping-cart.svg.svg"
+                      alt="shopping cart icon"
+                    />
+                  </figure>
+                </div>
+              </section>
+              <section class="card-front">
+                <img
+                  class="product-img"
+                  src="./images/welcome/kb-rk84.webp"
+                  alt="Royal Kludge 84"
+                />
+                <h3 class="product-name">Switchs Royal Kludge red,orange</h3>
+                <div class="product-price_icon">
+                  <p class="price">$299</p>
+                  <figure class="icons">
+                    <img src="./images/icons/heart.svg.svg" alt="heart icon" />
+                    <img
+                      src="./images/icons/shopping-cart.svg.svg"
+                      alt="shopping cart icon"
+                    />
+                  </figure>
+                </div>
+              </section>
+            </div>
+            <div
+              class="product-card"
+              data-color="c8,c7"
+              data-category="Switches"
+              data-brand="b1"
+              data-price="299"
+            >
+              <div class="card-bg"></div>
+              <div class="discount">%</div>
+
+              <section class="card-back">
+                <div class="ratings">
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-half.svg.svg" alt="" />
+                  <img src="./images/icons/star-empty.svg.svg" alt="" />
+                </div>
+                <p class="product-description">
+                  Lorem ipsum dolor sit amet consectetur lorem, ipsum.
+                  Adipisicing elit.
+                </p>
+                <div class="labels">
+                  <button class="label type">Keyboard</button>
+                  <button class="label brand">Royal Kludge</button>
+                  <button class="label color">white</button>
+                </div>
+                <div class="price_cart">
+                  <p class="price">$299</p>
+                  <figure class="cart">
+                    <img
+                      src="./images/icons/shopping-cart.svg.svg"
+                      alt="shopping cart icon"
+                    />
+                  </figure>
+                </div>
+              </section>
+              <section class="card-front">
+                <img
+                  class="product-img"
+                  src="./images/welcome/kb-rk84.webp"
+                  alt="Royal Kludge 84"
+                />
+                <h3 class="product-name">Switchs Royal Kludge red,orange</h3>
+                <div class="product-price_icon">
+                  <p class="price">$299</p>
+                  <figure class="icons">
+                    <img src="./images/icons/heart.svg.svg" alt="heart icon" />
+                    <img
+                      src="./images/icons/shopping-cart.svg.svg"
+                      alt="shopping cart icon"
+                    />
+                  </figure>
+                </div>
+              </section>
+            </div>
+            <div
+              class="product-card"
+              data-color="c8,c7"
+              data-category="Switches"
+              data-brand="b1"
+              data-price="299"
+            >
+              <div class="card-bg"></div>
+              <div class="discount">%</div>
+
+              <section class="card-back">
+                <div class="ratings">
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-half.svg.svg" alt="" />
+                  <img src="./images/icons/star-empty.svg.svg" alt="" />
+                </div>
+                <p class="product-description">
+                  Lorem ipsum dolor sit amet consectetur lorem, ipsum.
+                  Adipisicing elit.
+                </p>
+                <div class="labels">
+                  <button class="label type">Keyboard</button>
+                  <button class="label brand">Royal Kludge</button>
+                  <button class="label color">white</button>
+                </div>
+                <div class="price_cart">
+                  <p class="price">$299</p>
+                  <figure class="cart">
+                    <img
+                      src="./images/icons/shopping-cart.svg.svg"
+                      alt="shopping cart icon"
+                    />
+                  </figure>
+                </div>
+              </section>
+              <section class="card-front">
+                <img
+                  class="product-img"
+                  src="./images/welcome/kb-rk84.webp"
+                  alt="Royal Kludge 84"
+                />
+                <h3 class="product-name">Switchs Royal Kludge red,orange</h3>
+                <div class="product-price_icon">
+                  <p class="price">$299</p>
+                  <figure class="icons">
+                    <img src="./images/icons/heart.svg.svg" alt="heart icon" />
+                    <img
+                      src="./images/icons/shopping-cart.svg.svg"
+                      alt="shopping cart icon"
+                    />
+                  </figure>
+                </div>
+              </section>
+            </div>
+            <div
+              class="product-card"
+              data-color="c8,c7"
+              data-category="Switches"
+              data-brand="b1"
+              data-price="299"
+            >
+              <div class="card-bg"></div>
+              <div class="discount">%</div>
+
+              <section class="card-back">
+                <div class="ratings">
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-half.svg.svg" alt="" />
+                  <img src="./images/icons/star-empty.svg.svg" alt="" />
+                </div>
+                <p class="product-description">
+                  Lorem ipsum dolor sit amet consectetur lorem, ipsum.
+                  Adipisicing elit.
+                </p>
+                <div class="labels">
+                  <button class="label type">Keyboard</button>
+                  <button class="label brand">Royal Kludge</button>
+                  <button class="label color">white</button>
+                </div>
+                <div class="price_cart">
+                  <p class="price">$299</p>
+                  <figure class="cart">
+                    <img
+                      src="./images/icons/shopping-cart.svg.svg"
+                      alt="shopping cart icon"
+                    />
+                  </figure>
+                </div>
+              </section>
+              <section class="card-front">
+                <img
+                  class="product-img"
+                  src="./images/welcome/kb-rk84.webp"
+                  alt="Royal Kludge 84"
+                />
+                <h3 class="product-name">Switchs Royal Kludge red,orange</h3>
+                <div class="product-price_icon">
+                  <p class="price">$299</p>
+                  <figure class="icons">
+                    <img src="./images/icons/heart.svg.svg" alt="heart icon" />
+                    <img
+                      src="./images/icons/shopping-cart.svg.svg"
+                      alt="shopping cart icon"
+                    />
+                  </figure>
+                </div>
+              </section>
+            </div>
+            <div
+              class="product-card"
+              data-color="c8,c7"
+              data-category="Switches"
+              data-brand="b1"
+              data-price="299"
+            >
+              <div class="card-bg"></div>
+              <div class="discount">%</div>
+
+              <section class="card-back">
+                <div class="ratings">
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-full.svg.svg" alt="" />
+                  <img src="./images/icons/star-half.svg.svg" alt="" />
+                  <img src="./images/icons/star-empty.svg.svg" alt="" />
+                </div>
+                <p class="product-description">
+                  Lorem ipsum dolor sit amet consectetur lorem, ipsum.
+                  Adipisicing elit.
+                </p>
+                <div class="labels">
+                  <button class="label type">Keyboard</button>
+                  <button class="label brand">Royal Kludge</button>
+                  <button class="label color">white</button>
+                </div>
+                <div class="price_cart">
+                  <p class="price">$299</p>
+                  <figure class="cart">
+                    <img
+                      src="./images/icons/shopping-cart.svg.svg"
+                      alt="shopping cart icon"
+                    />
+                  </figure>
+                </div>
+              </section>
+              <section class="card-front">
+                <img
+                  class="product-img"
+                  src="./images/welcome/kb-rk84.webp"
+                  alt="Royal Kludge 84"
+                />
+                <h3 class="product-name">Switchs Royal Kludge red,orange</h3>
+                <div class="product-price_icon">
+                  <p class="price">$299</p>
                   <figure class="icons">
                     <img src="./images/icons/heart.svg.svg" alt="heart icon" />
                     <img

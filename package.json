@@ -12,13 +12,15 @@
     "clean": "rm -rf ./dist ./node_modules ./package-lock.json",
     "sass": "sass ./scss:CSS --watch --style=compressed",
     "clean:maps": "find /c/0_Programming/Full_Stack_Development/Groepswerken/GW1/css -name '*.css.map' -delete",
-    "clean:css": "find /c/0_Programming/Full_Stack_Development/Groepswerken/GW1/css -name '*.css' -delete"
+    "clean:css": "find /c/0_Programming/Full_Stack_Development/Groepswerken/GW1/css -name '*.css' -delete",
+    "doc": "jsdoc -c jsdoc.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "flickity": "^3.0.0"
+    "flickity": "^3.0.0",
+    "jsdoc": "^4.0.0"
   },
   "devDependencies": {
     "sass": "^1.57.1"
