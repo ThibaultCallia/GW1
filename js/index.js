@@ -77,3 +77,5 @@ function openCloseNav() {
 // };
 
 // document.onmousemove = (e) => moveEvent(e);
+
+// ---------- MODAL -------->
