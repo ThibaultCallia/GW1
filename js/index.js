@@ -4,7 +4,9 @@
  * 2. creates Filter instance
  * 3. Adds nav monile functionality
  */
+
 import Filter from "./Filter";
+
 // import Flickity from "flickity";
 
 // const spotlight = new Carousel2(document.querySelector(".carousel-container"));
