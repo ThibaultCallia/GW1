@@ -85,26 +85,32 @@ function openCloseNav() {
 
 // ---------- MODAL -------->
 // Get the modal
-const modal = document.querySelector(".product-modal");
-
+const modals = document.querySelectorAll(".product-modal")[0];
 // Get productCard that opens the modal
-const productCard = document.querySelector(".product-card");
-
+const productCards = document.querySelectorAll(".product-card")[0];
 // Get element that closes the modal
-const closer = document.querySelector(".product-modal .close");
+const closers = document.querySelectorAll(".product-modal .close")[0];
 
 // Open the modal on click
-productCard.onclick = () => {
-  modal.style.display = "block";
+productCards.onclick = () => {
+  modals.style.display = "block";
 };
-
 // Close the modal
-closer.onclick = () => {
-  modal.style.display = "none";
+closers.onclick = () => {
+  modals.style.display = "none";
 };
 
 window.onclick = function (event) {
-  if (!event.target == modal) {
-    modal.style.display = "none";
+  if (!event.target == modals) {
+    modals.style.display = "none";
   }
 };
+
+document.querySelectorAll(".product-card").forEach((element) => {
+  element.addEventListener("click", openModel);
+});
+function openModel(e) {
+  console.log(
+    document.elementsFromPoint(e.clientX, e.clientY).map((x) => x.classList)
+  );
+}
