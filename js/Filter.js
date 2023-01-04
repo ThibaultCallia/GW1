@@ -19,7 +19,7 @@ class Filter {
 
   static filterWalkieTalkie = [];
   static elementsPerPage = 20;
-  static sortOption = "priceLH";
+  static sortOption = "dateNO";
 
   /**
    * @property {HTMLref} ref points to where main filter location is in website
@@ -296,14 +296,46 @@ class Filter {
     // certainly at startup, it should be smooth
     // Although it doesnt matter as first screen is keyboard
 
-    if (Filter.sortOption === "priceLH") {
-      this.allProducts = [].slice.call(this.allProducts).sort(function (a, b) {
-        return parseInt(a.dataset.price) >= parseInt(b.dataset.price) ? 1 : -1;
-      });
-    } else if (Filter.sortOption === "priceHL") {
-      this.allProducts = [].slice.call(this.allProducts).sort(function (a, b) {
-        return parseInt(a.dataset.price) <= parseInt(b.dataset.price) ? 1 : -1;
-      });
+    switch (Filter.sortOption) {
+      case "priceLH":
+        this.allProducts = [].slice
+          .call(this.allProducts)
+          .sort(function (a, b) {
+            return parseInt(a.dataset.price) >= parseInt(b.dataset.price)
+              ? 1
+              : -1;
+          });
+        break;
+
+      case "priceHL":
+        this.allProducts = [].slice
+          .call(this.allProducts)
+          .sort(function (a, b) {
+            return parseInt(a.dataset.price) <= parseInt(b.dataset.price)
+              ? 1
+              : -1;
+          });
+        break;
+      case "dateON":
+        this.allProducts = [].slice
+          .call(this.allProducts)
+          .sort(function (a, b) {
+            return parseInt(a.dataset.order) >= parseInt(b.dataset.order)
+              ? 1
+              : -1;
+          });
+        break;
+      case "dateNO":
+        this.allProducts = [].slice
+          .call(this.allProducts)
+          .sort(function (a, b) {
+            return parseInt(a.dataset.order) <= parseInt(b.dataset.order)
+              ? 1
+              : -1;
+          });
+        break;
+      default:
+        break;
     }
 
     let counter = 0;

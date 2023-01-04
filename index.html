@@ -173,16 +173,16 @@
                   </div>
                 </div>
               </div>
-              <div class="testBtn">
-                <button>Sort</button>
-                <div class="subfilter__row">
-                  <input class="sort-checkbox" type="checkbox" id="s1" />
-                  <label for="s1">Price low to high</label>
-                </div>
-                <div class="subfilter__row">
-                  <input class="sort-checkbox" type="checkbox" id="s2" />
-                  <label for="s2">Price high to low</label>
-                </div>
+
+              <div class="sortDiv">
+                <label for="sort">Sort:</label>
+
+                <select name="sort" id="sort">
+                  <option value="PriceHL">Price, high to low</option>
+                  <option value="PriceLH">Price, low to high</option>
+                  <option value="dateON">Date, old to new</option>
+                  <option value="dateNO">Date, new to old</option>
+                </select>
               </div>
             </div>
             <div class="subfilter-active">
@@ -194,6 +194,7 @@
           <div class="grid-container">
             <div
               class="product-card Keyboard"
+              data-order="1"
               data-category="Keyboard"
               data-color="c1,c4"
               data-brand="b2"
@@ -250,6 +251,7 @@
             </div>
             <div
               class="product-card Keyboard"
+              data-order="2"
               data-category="Keyboard"
               data-brand="b2"
               data-color="c4"
@@ -309,6 +311,7 @@
 
             <div
               class="product-card"
+              data-order="3"
               data-category="Keyboard"
               data-brand="b1"
               data-color="c5"
@@ -366,6 +369,7 @@
 
             <div
               class="product-card"
+              data-order="4"
               data-color="c11"
               data-brand="b2"
               data-category="Keycaps"
@@ -423,6 +427,7 @@
 
             <div
               class="product-card"
+              data-order="5"
               data-color="c3,c4,c1"
               data-brand="b1"
               data-category="Switches"
@@ -480,6 +485,7 @@
 
             <div
               class="product-card"
+              data-order="6"
               data-color="c9,c4"
               data-brand="b2"
               data-category="Keycaps"
@@ -537,6 +543,7 @@
 
             <div
               class="product-card"
+              data-order="7"
               data-color="c11,c12"
               data-brand="b2"
               data-category="Keyboard"
@@ -594,6 +601,7 @@
 
             <div
               class="product-card"
+              data-order="8"
               data-color="c8"
               data-brand="b2"
               data-category="Switches"
@@ -651,6 +659,7 @@
 
             <div
               class="product-card"
+              data-order="9"
               data-color="c8,c7"
               data-category="Switches"
               data-brand="b1"
@@ -707,6 +716,7 @@
             </div>
             <div
               class="product-card"
+              data-order="10"
               data-color="c8,c7"
               data-category="Switches"
               data-brand="b1"
@@ -763,6 +773,7 @@
             </div>
             <div
               class="product-card"
+              data-order="11"
               data-color="c8,c7"
               data-category="Switches"
               data-brand="b1"
@@ -819,6 +830,7 @@
             </div>
             <div
               class="product-card"
+              data-order="12"
               data-color="c8,c7"
               data-category="Switches"
               data-brand="b1"
@@ -875,6 +887,7 @@
             </div>
             <div
               class="product-card"
+              data-order="13"
               data-color="c8,c7"
               data-category="Switches"
               data-brand="b1"
@@ -931,6 +944,7 @@
             </div>
             <div
               class="product-card"
+              data-order="14"
               data-color="c8,c7"
               data-category="Switches"
               data-brand="b1"
