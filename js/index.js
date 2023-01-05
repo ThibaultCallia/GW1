@@ -100,6 +100,20 @@ closers.addEventListener("click", () => {
   modals.close();
 });
 
+document.body.addEventListener("click", closeOnClick);
+function closeOnClick(e) {
+  if (
+    e.clientX < modals.getBoundingClientRect().x ||
+    e.clientY < modals.getBoundingClientRect().y ||
+    e.clientX >
+      modals.getBoundingClientRect().x + modals.getBoundingClientRect().width ||
+    e.clientY >
+      modals.getBoundingClientRect().y + modals.getBoundingClientRect().height
+  ) {
+    modals.close();
+  }
+}
+
 // Open the modal on click
 // productCards.onclick = () => {
 //   modals.classList.remove("hidden");
