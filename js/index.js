@@ -5,6 +5,11 @@
  * 3. Adds nav monile functionality
  */
 
+// import Swiper JS
+import Swiper from "swiper";
+// import Swiper styles
+import "swiper/css";
+
 import Filter from "./Filter";
 
 // import Flickity from "flickity";
@@ -30,6 +35,8 @@ const mainFilter = new Filter();
 //     x3: 40,
 //   },
 // });
+
+const swiper = new Swiper(".swiper");
 
 // Mobile nav
 const mobileNavBtn = document.querySelector(".mobile-nav-btn");
@@ -109,9 +116,9 @@ window.onclick = function (e) {
   }
 };
 
-document.querySelectorAll(".product-card").forEach((element) => {
-  element.addEventListener("click", openModel);
-});
+// document.querySelectorAll(".product-card").forEach((element) => {
+//   element.addEventListener("click", openModel);
+// });
 // function openModel(e) {
 //   console.log(
 //     document.elementsFromPoint(e.clientX, e.clientY).map((x) => x.classList)
