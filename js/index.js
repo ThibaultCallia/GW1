@@ -93,25 +93,33 @@ const productCards = document.querySelector(".card-front");
 // Get element that closes the modal
 const closers = document.querySelector(".close");
 
-// Open the modal on click
-productCards.onclick = () => {
-  modals.classList.remove("hidden");
-};
-// Close the modal
-closers.onclick = (e) => {
-  modals.classList.add("hidden");
-};
-
-window.onclick = function (e) {
-  console.log(modals.getBoundingClientRect());
-  if (e.target == modals) {
-    modals.classList.add("hidden");
-  }
-};
-
-document.querySelectorAll(".product-card").forEach((element) => {
-  element.addEventListener("click", openModel);
+productCards.addEventListener("click", () => {
+  modals.showModal();
 });
+closers.addEventListener("click", () => {
+  modals.close();
+});
+
+// Open the modal on click
+// productCards.onclick = () => {
+//   modals.classList.remove("hidden");
+// };
+
+// Close the modal
+// closers.onclick = (e) => {
+//   modals.classList.add("hidden");
+// };
+
+// window.onclick = function (e) {
+//   console.log(modals.getBoundingClientRect());
+//   if (e.target == modals) {
+//     modals.classList.add("hidden");
+//   }
+// };
+
+// document.querySelectorAll(".product-card").forEach((element) => {
+//   element.addEventListener("click", openModel);
+// });
 // function openModel(e) {
 //   console.log(
 //     document.elementsFromPoint(e.clientX, e.clientY).map((x) => x.classList)
