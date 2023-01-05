@@ -98,8 +98,10 @@ productCards.addEventListener("click", () => {
 });
 closers.addEventListener("click", () => {
   modals.close();
+  console.dir(modals);
 });
 
+// ISSUE: ZET IF STATEMENT ERBIJ IF MODALS.OPEN == TRUE
 document.body.addEventListener("click", closeOnClick);
 function closeOnClick(e) {
   if (
