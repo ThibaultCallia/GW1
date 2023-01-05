@@ -273,7 +273,6 @@ class Filter {
         }
       }
     });
-    this.sortProducts();
   };
 
   generateSorter() {
