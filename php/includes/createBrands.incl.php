@@ -30,4 +30,8 @@ $mysqli->close();
 
 // CREATING SUBFILTER BRANDS SECTION
 foreach ($brands as $brand) {
+  echo  '<div class="subfilter__row">
+        <input class="brand-checkbox" type="checkbox" id="b' . $brand['brandId'] . '" />
+        <label for="b' . $brand['brandId'] . '">' . $brand['brandName'] . '</label>
+        </div>';
 }

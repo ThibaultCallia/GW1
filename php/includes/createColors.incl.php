@@ -32,5 +32,10 @@ $mysqli->close();
 
 
 // CREATING SUBFILTER COLORS SECTION
+
 foreach ($colors as $color) {
+  echo  '<div class="subfilter__row">
+        <input class="color-checkbox" type="checkbox" id="c' . $color['colorId'] . '" />
+        <label for="c' . $color['colorId'] . '">' . $color['colorName'] . '</label>
+        </div>';
 }
