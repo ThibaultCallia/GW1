@@ -158,6 +158,15 @@ $mysqli->close();
 
     </form>
     <?php unset($_SESSION['message']); ?>
+    <dialog class="popup">
+        <img src="./../images/admin/tick.png" alt="tick icon">
+        <h2>Submitted</h2>
+        <p>Your product has been added to the database. Would you like to add another product?</p>
+        <div class="btns">
+            <button type="button">YES</button>
+            <button type="button">NO</button>
+        </div>
+    </dialog>
     </div>
 </body>
 
