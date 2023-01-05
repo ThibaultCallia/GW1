@@ -10,7 +10,7 @@ product p
     LEFT JOIN 
       brand b ON p.brand_id = b.id
 WHERE 
-  p.isActive = 1
+  p.isActive = 1 AND b.id is not NULL
 ORDER BY 
   brandName;';
 

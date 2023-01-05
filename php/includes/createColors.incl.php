@@ -12,7 +12,7 @@ product p
     LEFT JOIN 
       color c ON pc.color_id = c.id
 WHERE 
-  p.isActive = 1
+  p.isActive = 1 AND c.id is not NULL
 ORDER BY 
   colorName;';
 
