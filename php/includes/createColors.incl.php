@@ -1,24 +1,20 @@
 <?php
 
-include('includes/db.php');
+include('./db.php');
 
 // All active products query
 $colorsQuery = 'SELECT 
-p.id, p.name, p.description, p.discount, p.image1, p.image2, p.image3, p.image4, p.image5, p.isSpotlight, p.price, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.color_name) as colors
-FROM
+DISTINCT c.id as colorId, c.color_name as colorName 
+FROM 
 product p
-      left JOIN
-brand b ON p.brand_id = b.id
-      left JOIN 
-category cat ON p.category_id = cat.id
-	    left JOIN
-product_has_color pc ON p.id = pc.product_id
-	    left JOIN 
-color col ON pc.color_id = col.id
+    LEFT JOIN 
+      product_has_color pc ON p.id = pc.product_id
+    LEFT JOIN 
+      color c ON pc.color_id = c.id
 WHERE 
-  isActive = 1
-group by 
-  p.id';
+  p.isActive = 1
+ORDER BY 
+  colorName;';
 
 // Query output into variable
 $result = $mysqli->query($colorsQuery);
