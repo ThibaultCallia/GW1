@@ -69,3 +69,16 @@ body {
 .hidden {
   display: none;
 }
+
+footer {
+  background-color: var(--clr-body-dark);
+  height: 50px;
+  display: grid;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+}
