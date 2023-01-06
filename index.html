@@ -111,7 +111,11 @@
                     <span class="subfilter__clear-color">Clear</span>
                   </div>
                   <div class="subfilter__row-container">
-                    <!-- include php colors -->
+                    <!-- include php colors 
+                      <?php
+                      include('./assets/php/includes/createColors.incl.php');
+                      ?>
+                    -->
                     <div class="subfilter__row">
                       <input class="color-checkbox" type="checkbox" id="c1" />
                       <label for="c1">Black</label>
@@ -165,7 +169,11 @@
                     <span class="subfilter__clear-brand">Clear</span>
                   </div>
                   <div class="subfilter__row-container">
-                    <!-- include php brands -->
+                    <!-- include php brands 
+                      <?php
+                    include('./assets/php/includes/createBrands.incl.php');
+                    ?>
+                    -->
 
                     <div class="subfilter__row">
                       <input class="brand-checkbox" type="checkbox" id="b2" />
@@ -196,6 +204,11 @@
             </div>
           </div>
           <div class="grid-container">
+            <!-- include show all products
+              <?php
+              include('./assets/php/includes/showProducts.incl.php');
+              ?>
+            -->
             <div
               class="product-card"
               data-category="Switches"

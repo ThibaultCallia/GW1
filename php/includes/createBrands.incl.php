@@ -1,6 +1,6 @@
 <?php
 
-include('./db.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/assets/php/includes/db.php');
 
 // All active products query
 $brandsQuery = 'SELECT 
