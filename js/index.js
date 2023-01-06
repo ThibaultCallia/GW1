@@ -119,14 +119,38 @@ const productCards = document.querySelector(".card-front");
 // Get element that closes the modal
 const closers = document.querySelector(".close");
 
+productCards.addEventListener("click", () => {
+  modals.showModal();
+});
+closers.addEventListener("click", () => {
+  modals.close();
+  console.dir(modals);
+});
+
+// ISSUE: ZET IF STATEMENT ERBIJ IF MODALS.OPEN == TRUE
+document.body.addEventListener("click", closeOnClick);
+function closeOnClick(e) {
+  if (
+    e.clientX < modals.getBoundingClientRect().x ||
+    e.clientY < modals.getBoundingClientRect().y ||
+    e.clientX >
+      modals.getBoundingClientRect().x + modals.getBoundingClientRect().width ||
+    e.clientY >
+      modals.getBoundingClientRect().y + modals.getBoundingClientRect().height
+  ) {
+    modals.close();
+  }
+}
+
 // Open the modal on click
-productCards.onclick = () => {
-  modals.classList.remove("hidden");
-};
+// productCards.onclick = () => {
+//   modals.classList.remove("hidden");
+// };
+
 // Close the modal
-closers.onclick = (e) => {
-  modals.classList.add("hidden");
-};
+// closers.onclick = (e) => {
+//   modals.classList.add("hidden");
+// };
 
 window.onclick = function (e) {
   if (e.target == modals) {
