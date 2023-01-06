@@ -69,3 +69,9 @@ body {
 .hidden {
   display: none;
 }
+
+.testClass {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}

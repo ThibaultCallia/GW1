@@ -103,15 +103,14 @@ closers.onclick = (e) => {
 };
 
 window.onclick = function (e) {
-  console.log(modals.getBoundingClientRect());
   if (e.target == modals) {
     modals.classList.add("hidden");
   }
 };
 
-document.querySelectorAll(".product-card").forEach((element) => {
-  element.addEventListener("click", openModel);
-});
+// document.querySelectorAll(".product-card").forEach((element) => {
+//   element.addEventListener("click", openModel);
+// });
 // function openModel(e) {
 //   console.log(
 //     document.elementsFromPoint(e.clientX, e.clientY).map((x) => x.classList)

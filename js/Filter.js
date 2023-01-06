@@ -99,7 +99,8 @@ class Filter {
       element.addEventListener("change", this.subFilter);
       element.addEventListener("change", this.toggleActiveBrandBtn);
     });
-    // CHANGE TO SINGLE CHECKBOX CLASS?
+
+    document.addEventListener("customFilterEvent", this.updateFilterCount);
   };
 
   /**
@@ -240,8 +241,6 @@ class Filter {
       }
     });
     this.filterProducts();
-
-    // Price
   };
 
   /**
@@ -272,6 +271,10 @@ class Filter {
           element.classList.add("hidden");
         }
       }
+    });
+
+    document.querySelectorAll(".filterCount").forEach((element) => {
+      element.dispatchEvent(new Event("customFilterEvent"));
     });
   };
 
@@ -334,8 +337,6 @@ class Filter {
         break;
     }
 
-    console.log(this.allProducts);
-
     // let counter = 0;
     document.querySelector(".grid-container").innerHTML = "";
 
@@ -350,6 +351,10 @@ class Filter {
         // counter++;
       }
     });
+  };
+
+  updateFilterCount = (e) => {
+    console.log(e);
   };
   /*
     If counter <= elementsPerPage -> all products are shown so "show more" not needed
