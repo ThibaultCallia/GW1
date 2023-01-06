@@ -32,13 +32,24 @@ const mainFilter = new Filter();
 // });
 
 // Mobile nav
-const mobileNavBtn = document.querySelector(".mobile-nav-btn");
-mobileNavBtn.addEventListener("click", openCloseNav);
+document
+  .querySelector(".mobile-nav-btn")
+  .addEventListener("click", openCloseMobileNav);
 document
   .querySelector(".mobile-home-btn")
-  .addEventListener("click", openCloseNav);
-document.querySelector(".overlay").addEventListener("click", openCloseNav);
-function openCloseNav() {
+  .addEventListener("click", openCloseMobileNav);
+document
+  .querySelector(".mobile-products-btn")
+  .addEventListener("click", openCloseMobileNav);
+document
+  .querySelector(".overlay")
+  .addEventListener("click", openCloseMobileNav);
+
+document.querySelectorAll(".logo-btn").forEach((element) => {
+  element.addEventListener("click", closeMobileNav);
+});
+
+function openCloseMobileNav() {
   document.querySelector(".nav-container-mobile").classList.toggle("open");
   if (
     document.querySelector(".nav-container-mobile").classList.contains("open")
@@ -51,6 +62,21 @@ function openCloseNav() {
       .querySelector(".mobile-nav-btn")
       .classList.add("fa-bars-staggered");
   } else {
+    document.body.style.overflow = "auto";
+    document.querySelector(".overlay").style.opacity = 0;
+    document.querySelector(".overlay").style.pointerEvents = "none";
+    document.querySelector(".mobile-nav-btn").classList.add("fa-bars");
+    document
+      .querySelector(".mobile-nav-btn")
+      .classList.remove("fa-bars-staggered");
+  }
+}
+
+function closeMobileNav() {
+  if (
+    document.querySelector(".nav-container-mobile").classList.contains("open")
+  ) {
+    document.querySelector(".nav-container-mobile").classList.remove("open");
     document.body.style.overflow = "auto";
     document.querySelector(".overlay").style.opacity = 0;
     document.querySelector(".overlay").style.pointerEvents = "none";

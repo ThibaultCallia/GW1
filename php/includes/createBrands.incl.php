@@ -1,16 +1,16 @@
 <?php
 
-include('./db.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.php');
 
 // All active products query
 $brandsQuery = 'SELECT 
 DISTINCT b.id as brandId, b.name as brandName 
 FROM 
 product p
-    LEFT JOIN 
+    INNER JOIN 
       brand b ON p.brand_id = b.id
 WHERE 
-  p.isActive = 1
+  p.isActive = 1 
 ORDER BY 
   brandName;';
 

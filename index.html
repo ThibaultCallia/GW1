@@ -44,14 +44,20 @@
       <div class="nav-container-mobile">
         <ul class="mobile-nav-list">
           <li><a class="mobile-home-btn" href="#">Home</a></li>
-          <li><a class="mobile-home-btn" href="#products">Products</a></li>
+          <li><a class="mobile-products-btn" href="#products">Products</a></li>
           <li>Contact</li>
         </ul>
       </div>
       <header id="header">
         <div class="nav-container">
           <div class="logo-container">
-            <h2 class="logo">KEYKAPS</h2>
+            <a class="logo-btn" href="#"
+              ><img
+                class="logo-art"
+                src="./images/welcome/keykaps-logo.jpg"
+                alt=""
+            /></a>
+            <a class="logo-btn" href="#"><h2 class="logo">KEYKAPS</h2></a>
           </div>
           <nav class="main-nav">
             <ul class="nav__list">
@@ -102,7 +108,6 @@
           </div>
           <div class="subfilter-container">
             <div class="subfilter">
-              <!-- include php colors -->
               <div class="subfilter__section subfilter__colors-section">
                 <button
                   class="general-subfilter-btn subfilter-btn subfilter-btn-colors"
@@ -120,6 +125,11 @@
                         <label for="c1">Black</label>
                       </div>
                       <span class="filterCount"></span>
+                    <!-- include php colors 
+                      <?php
+                      ?>
+                      include('./assets/php/includes/createColors.incl.php');
+                    -->
                     </div>
                     <div class="subfilter__row testClass">
                       <div class="filterAndLabel">
@@ -197,7 +207,6 @@
                 </div>
               </div>
 
-              <!-- include php brands -->
               <div class="subfilter__section subfilter__brands-section">
                 <button class="general-subfilter-btn subfilter-btn">
                   Brand
@@ -213,6 +222,11 @@
                         <label for="b2">Nuphy</label>
                       </div>
                       <span class="filterCount"></span>
+                    <!-- include php brands 
+                      <?php
+                    include('./assets/php/includes/createBrands.incl.php');
+                    ?>
+                    -->
                     </div>
                     <div class="subfilter__row testClass">
                       <div class="filterAndLabel">
@@ -242,6 +256,11 @@
             </div>
           </div>
           <div class="grid-container">
+            <!-- include show all products
+              <?php
+              include('./assets/php/includes/showProducts.incl.php');
+              ?>
+            -->
             <div
               class="product-card"
               data-category="Switches"
@@ -524,6 +543,362 @@
                 <div class="description">
                   <div class="prod-name">
                     <span>Nuphy white</span>
+                    <h3 class="name">Keycap blauw</h3>
+                  </div>
+                  <div class="ratings">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="price">€499</h4>
+                </div>
+                <!-- <div class="labels">
+                  <button class="label type">Keyboard</button>
+                  <button class="label brand">Royal Kludge</button>
+                  <button class="label color">white</button>
+                </div> -->
+              </section>
+              <section class="product-modal hidden">
+                <div class="product-details">
+                  <span class="close">&times;</span>
+                  <div class="images">
+                    <img src="./images/welcome/kb-rk84.webp" alt="" />
+                    <figure>
+                      <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
+                      <img src="./images/sliderImages/nuphy1.jpg" alt="" />
+                      <img src="./images/sliderImages/switchBrown.jpg" alt="" />
+                      <img src="./images/sliderImages/nuphy3.jpg" alt="" />
+                    </figure>
+                  </div>
+                  <div class="text">
+                    <div class="product">
+                      <h3 class="name">Nuphy 1</h3>
+                      <span class="title brand">ROYAL KLUDGE</span>
+                    </div>
+                    <div class="price-container">
+                      <div class="price-wrapper wrap">
+                        <span class="title">PRICE</span>
+                        <h4 class="price">$59.00</h4>
+                      </div>
+                      <div class="amount-wrapper wrap">
+                        <span class="title">QUANTITY</span>
+                        <div class="counter">
+                          <span class="minus">-</span>
+                          <span class="amount">1</span>
+                          <span class="plus">+</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="description">
+                      <span class="title">DESCRIPTION</span>
+                      <p class="description">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Placeat voluptate dicta doloribus dolor animi
+                        eveniet sint assumenda illo iste optio. Beatae, sapiente
+                        officia quae consequuntur nobis consequatur repellendus
+                        dolor amet?
+                      </p>
+                    </div>
+                    <div class="ratings">
+                      <span class="title">RATINGS</span>
+                      <figure>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </figure>
+                    </div>
+                    <div class="total-price">
+                      <span class="title">TOTAL PRICE</span>
+                      <h4>419.30</h4>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="product-card"
+              data-category="Keycaps"
+              data-color="c1,c4"
+              data-brand="b1"
+              data-price="499"
+              data-order="1"
+            >
+              <section class="card-front">
+                <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
+                <div class="description">
+                  <div class="prod-name">
+                    <span>Royal Kludge</span>
+                    <h3 class="name">Keycap blauw</h3>
+                  </div>
+                  <div class="ratings">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="price">€499</h4>
+                </div>
+                <!-- <div class="labels">
+                  <button class="label type">Keyboard</button>
+                  <button class="label brand">Royal Kludge</button>
+                  <button class="label color">white</button>
+                </div> -->
+              </section>
+              <section class="product-modal hidden">
+                <div class="product-details">
+                  <span class="close">&times;</span>
+                  <div class="images">
+                    <img src="./images/welcome/kb-rk84.webp" alt="" />
+                    <figure>
+                      <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
+                      <img src="./images/sliderImages/nuphy1.jpg" alt="" />
+                      <img src="./images/sliderImages/switchBrown.jpg" alt="" />
+                      <img src="./images/sliderImages/nuphy3.jpg" alt="" />
+                    </figure>
+                  </div>
+                  <div class="text">
+                    <div class="product">
+                      <h3 class="name">Nuphy 1</h3>
+                      <span class="title brand">ROYAL KLUDGE</span>
+                    </div>
+                    <div class="price-container">
+                      <div class="price-wrapper wrap">
+                        <span class="title">PRICE</span>
+                        <h4 class="price">$59.00</h4>
+                      </div>
+                      <div class="amount-wrapper wrap">
+                        <span class="title">QUANTITY</span>
+                        <div class="counter">
+                          <span class="minus">-</span>
+                          <span class="amount">1</span>
+                          <span class="plus">+</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="description">
+                      <span class="title">DESCRIPTION</span>
+                      <p class="description">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Placeat voluptate dicta doloribus dolor animi
+                        eveniet sint assumenda illo iste optio. Beatae, sapiente
+                        officia quae consequuntur nobis consequatur repellendus
+                        dolor amet?
+                      </p>
+                    </div>
+                    <div class="ratings">
+                      <span class="title">RATINGS</span>
+                      <figure>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </figure>
+                    </div>
+                    <div class="total-price">
+                      <span class="title">TOTAL PRICE</span>
+                      <h4>419.30</h4>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="product-card"
+              data-category="Keycaps"
+              data-color="c1,c4"
+              data-brand="b1"
+              data-price="499"
+              data-order="1"
+            >
+              <section class="card-front">
+                <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
+                <div class="description">
+                  <div class="prod-name">
+                    <span>Royal Kludge</span>
+                    <h3 class="name">Keycap blauw</h3>
+                  </div>
+                  <div class="ratings">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="price">€499</h4>
+                </div>
+                <!-- <div class="labels">
+                  <button class="label type">Keyboard</button>
+                  <button class="label brand">Royal Kludge</button>
+                  <button class="label color">white</button>
+                </div> -->
+              </section>
+              <section class="product-modal hidden">
+                <div class="product-details">
+                  <span class="close">&times;</span>
+                  <div class="images">
+                    <img src="./images/welcome/kb-rk84.webp" alt="" />
+                    <figure>
+                      <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
+                      <img src="./images/sliderImages/nuphy1.jpg" alt="" />
+                      <img src="./images/sliderImages/switchBrown.jpg" alt="" />
+                      <img src="./images/sliderImages/nuphy3.jpg" alt="" />
+                    </figure>
+                  </div>
+                  <div class="text">
+                    <div class="product">
+                      <h3 class="name">Nuphy 1</h3>
+                      <span class="title brand">ROYAL KLUDGE</span>
+                    </div>
+                    <div class="price-container">
+                      <div class="price-wrapper wrap">
+                        <span class="title">PRICE</span>
+                        <h4 class="price">$59.00</h4>
+                      </div>
+                      <div class="amount-wrapper wrap">
+                        <span class="title">QUANTITY</span>
+                        <div class="counter">
+                          <span class="minus">-</span>
+                          <span class="amount">1</span>
+                          <span class="plus">+</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="description">
+                      <span class="title">DESCRIPTION</span>
+                      <p class="description">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Placeat voluptate dicta doloribus dolor animi
+                        eveniet sint assumenda illo iste optio. Beatae, sapiente
+                        officia quae consequuntur nobis consequatur repellendus
+                        dolor amet?
+                      </p>
+                    </div>
+                    <div class="ratings">
+                      <span class="title">RATINGS</span>
+                      <figure>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </figure>
+                    </div>
+                    <div class="total-price">
+                      <span class="title">TOTAL PRICE</span>
+                      <h4>419.30</h4>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="product-card"
+              data-category="Keycaps"
+              data-color="c1,c4"
+              data-brand="b1"
+              data-price="499"
+              data-order="1"
+            >
+              <section class="card-front">
+                <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
+                <div class="description">
+                  <div class="prod-name">
+                    <span>Royal Kludge</span>
+                    <h3 class="name">Keycap blauw</h3>
+                  </div>
+                  <div class="ratings">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h4 class="price">€499</h4>
+                </div>
+                <!-- <div class="labels">
+                  <button class="label type">Keyboard</button>
+                  <button class="label brand">Royal Kludge</button>
+                  <button class="label color">white</button>
+                </div> -->
+              </section>
+              <section class="product-modal hidden">
+                <div class="product-details">
+                  <span class="close">&times;</span>
+                  <div class="images">
+                    <img src="./images/welcome/kb-rk84.webp" alt="" />
+                    <figure>
+                      <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
+                      <img src="./images/sliderImages/nuphy1.jpg" alt="" />
+                      <img src="./images/sliderImages/switchBrown.jpg" alt="" />
+                      <img src="./images/sliderImages/nuphy3.jpg" alt="" />
+                    </figure>
+                  </div>
+                  <div class="text">
+                    <div class="product">
+                      <h3 class="name">Nuphy 1</h3>
+                      <span class="title brand">ROYAL KLUDGE</span>
+                    </div>
+                    <div class="price-container">
+                      <div class="price-wrapper wrap">
+                        <span class="title">PRICE</span>
+                        <h4 class="price">$59.00</h4>
+                      </div>
+                      <div class="amount-wrapper wrap">
+                        <span class="title">QUANTITY</span>
+                        <div class="counter">
+                          <span class="minus">-</span>
+                          <span class="amount">1</span>
+                          <span class="plus">+</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="description">
+                      <span class="title">DESCRIPTION</span>
+                      <p class="description">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Placeat voluptate dicta doloribus dolor animi
+                        eveniet sint assumenda illo iste optio. Beatae, sapiente
+                        officia quae consequuntur nobis consequatur repellendus
+                        dolor amet?
+                      </p>
+                    </div>
+                    <div class="ratings">
+                      <span class="title">RATINGS</span>
+                      <figure>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </figure>
+                    </div>
+                    <div class="total-price">
+                      <span class="title">TOTAL PRICE</span>
+                      <h4>419.30</h4>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div
+              class="product-card"
+              data-category="Keycaps"
+              data-color="c1,c4"
+              data-brand="b1"
+              data-price="499"
+              data-order="1"
+            >
+              <section class="card-front">
+                <img src="./images/welcome/kb-rk84.webp" alt="RK84" />
+                <div class="description">
+                  <div class="prod-name">
+                    <span>Royal Kludge</span>
                     <h3 class="name">Keycap blauw</h3>
                   </div>
                   <div class="ratings">
