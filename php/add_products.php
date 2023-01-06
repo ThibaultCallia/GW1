@@ -30,7 +30,9 @@ $mysqli->close();
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./../CSS/add_product.css" />
     <link rel="stylesheet" href="./../CSS/select.css" />
-    <script src="./add-products.js" type="module"></script>
+    <link rel="stylesheet" href="./../cssMain/hidden.css" />
+    <script src="https://kit.fontawesome.com/cdb38844a4.js" crossorigin="anonymous"></script>
+    <script src="./../js/admin.js" type="module"></script>
     <title>New Products</title>
 </head>
 
@@ -95,10 +97,9 @@ $mysqli->close();
                             <?php foreach ($brands as $brand) { ?>
                                 <option value="<?= $brand["id"] ?>"><?= $brand["name"] ?></option>
                             <?php } ?>
+                            <option value="0">- Add new brand -</option>
                         </select>
-                        <button class="add add-brand">
-                            <span class="material-symbols-outlined">add_circle</span>
-                        </button>
+                        <input type="text" class="newBrand hidden" name="newBrand">
                     </div>
                     <div class="select_input select_input-category">
                         <label for="category-select">Category</label>
@@ -106,21 +107,32 @@ $mysqli->close();
                             <?php foreach ($categories as $category) { ?>
                                 <option value="<?= $category["id"] ?>"><?= $category["name"] ?></option>
                             <?php } ?>
+                            <option value="0">- Add new category -</option>
                         </select>
-                        <button class="add add-cat">
-                            <span class="material-symbols-outlined">add_circle</span>
-                        </button>
+                        <input type="text" class="newCat hidden" name="newCat">
+                    </div>
+                    <div class="ratings">
+                        <span class="title">Ratings</span>
+                        <figure>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </figure>
                     </div>
                     <div class="colors">
                         <?php foreach ($colors as $color) { ?>
                             <button type="button">
                                 <label for="<?= $color["color_name"] ?>"><?= $color["color_name"] ?></label>
                             </button>
-                            <!-- style="display:none" -->
                             <input type="checkbox" value="<?= $color["id"] ?>" id='<?= $color["color_name"] ?>' name='<?= $color["color_name"] ?>'>
                         <?php } ?>
-                        <button class="add add-col">
-                            <span class="add material-symbols-outlined">add_circle</span>
+                        <input type="text" class="hidden" id="newCol1" name="newCol1">
+                        <input type="text" class="hidden" id="newCol2" name="newCol2">
+                        <input type="text" class="hidden" id="newCol3" name="newCol3">
+                        <button type="button" class="addNewCol">
+                            <label for="newCol">Add new color</label>
                         </button>
                     </div>
                 </div>
@@ -163,33 +175,5 @@ $mysqli->close();
 
 </html>
 <script>
-    // For color buttons to stay clicked
-    function toggleClickedClass(event) {
-        event.target.classList.toggle("clicked");
-    }
-    const buttons = document.querySelectorAll(".filter-wrap .colors button label");
-    buttons.forEach((button) =>
-        button.addEventListener("click", toggleClickedClass)
-    );
 
-    // char count
-    const textarea = document.querySelector('#description');
-    const charCount = document.querySelector('#char-count');
-
-    textarea.addEventListener('input', () => {
-        charCount.textContent = textarea.value.length;
-    });
-    // char count limit
-    const charLimit = 50;
-
-    textarea.addEventListener('input', () => {
-        charCount.textContent = textarea.value.length;
-        if (textarea.value.length > charLimit) {
-            textarea.value = textarea.value.substring(0, charLimit);
-            charCount.textContent = charLimit;
-            charCount.style.color = "red";
-        } else {
-            charCount.style.color = "black";
-        }
-    });
 </script>

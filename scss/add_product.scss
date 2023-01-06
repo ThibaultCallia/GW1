@@ -307,19 +307,20 @@ form{
 
 // filter section
 .filter-wrap{
-    .select_input{
-        flex-grow: 1;
-        flex-basis: 45%;
+    .select_input,label{
+        width: 30%;
+    }
+    .ratings{
+        width: 20%;
     }
     button.add{
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 25px;
-        height: 25px;
+        width: 0;
+        height: 0;
         border-radius: 25px;
-        opacity: 0;
         cursor: pointer;
         outline: none;
         &:hover span{
@@ -430,5 +431,9 @@ form{
 }
 
 .filter-wrap input[type="checkbox"]{
+    display: none;
+}
+
+.hidden{
     display: none;
 }
