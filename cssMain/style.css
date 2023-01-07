@@ -1,8 +1,6 @@
 @import "./reset_tc_collection.css";
 @import "../css/nav.css";
 @import "../css/welcome.css";
-/* @import url(products.css); */
-@import "../css/products_grid_filter.css";
 @import "../css/filter.css";
 @import "../CSS/product-card.css";
 
@@ -74,3 +72,23 @@ body {
   gap: 40px;
   justify-content: space-between;
 }
+
+.welcome__text {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.title {
+  text-align: center;
+  font-size: 3rem;
+}
+.welcome__image {
+  height: 600px;
+}
+
+/* @media (max-width: 1140px) {
+  .welcome-container {
+    flex-direction: column;
+  }
+} */
