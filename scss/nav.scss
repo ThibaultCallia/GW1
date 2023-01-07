@@ -21,8 +21,17 @@ header {
   padding-top: 1rem;
   align-items: center;
 }
+
+.logo-container{
+  display: flex;
+  gap: 10PX;
+  align-items: center;
+}
 .logo {
   font-size: 1.75rem;
+}
+.logo-art{
+  height: 30px;
 }
 
 .nav__list {
@@ -34,6 +43,9 @@ header {
   cursor: pointer;
 }
 .fa-moon:hover {
+  cursor: pointer;
+}
+.fa-bars:hover {
   cursor: pointer;
 }
 .mobile-nav-list-item {

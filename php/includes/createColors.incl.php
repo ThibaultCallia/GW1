@@ -1,18 +1,18 @@
 <?php
 
-include('./db.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.php');
 
 // All active products query
 $colorsQuery = 'SELECT 
 DISTINCT c.id as colorId, c.color_name as colorName 
 FROM 
 product p
-    LEFT JOIN 
+    INNER JOIN 
       product_has_color pc ON p.id = pc.product_id
-    LEFT JOIN 
+    INNER JOIN 
       color c ON pc.color_id = c.id
 WHERE 
-  p.isActive = 1
+  p.isActive = 1 
 ORDER BY 
   colorName;';
 

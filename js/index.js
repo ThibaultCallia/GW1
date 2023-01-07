@@ -32,13 +32,24 @@ const mainFilter = new Filter();
 // });
 
 // Mobile nav
-const mobileNavBtn = document.querySelector(".mobile-nav-btn");
-mobileNavBtn.addEventListener("click", openCloseNav);
+document
+  .querySelector(".mobile-nav-btn")
+  .addEventListener("click", openCloseMobileNav);
 document
   .querySelector(".mobile-home-btn")
-  .addEventListener("click", openCloseNav);
-document.querySelector(".overlay").addEventListener("click", openCloseNav);
-function openCloseNav() {
+  .addEventListener("click", openCloseMobileNav);
+document
+  .querySelector(".mobile-products-btn")
+  .addEventListener("click", openCloseMobileNav);
+document
+  .querySelector(".overlay")
+  .addEventListener("click", openCloseMobileNav);
+
+document.querySelectorAll(".logo-btn").forEach((element) => {
+  element.addEventListener("click", closeMobileNav);
+});
+
+function openCloseMobileNav() {
   document.querySelector(".nav-container-mobile").classList.toggle("open");
   if (
     document.querySelector(".nav-container-mobile").classList.contains("open")
@@ -51,6 +62,21 @@ function openCloseNav() {
       .querySelector(".mobile-nav-btn")
       .classList.add("fa-bars-staggered");
   } else {
+    document.body.style.overflow = "auto";
+    document.querySelector(".overlay").style.opacity = 0;
+    document.querySelector(".overlay").style.pointerEvents = "none";
+    document.querySelector(".mobile-nav-btn").classList.add("fa-bars");
+    document
+      .querySelector(".mobile-nav-btn")
+      .classList.remove("fa-bars-staggered");
+  }
+}
+
+function closeMobileNav() {
+  if (
+    document.querySelector(".nav-container-mobile").classList.contains("open")
+  ) {
+    document.querySelector(".nav-container-mobile").classList.remove("open");
     document.body.style.overflow = "auto";
     document.querySelector(".overlay").style.opacity = 0;
     document.querySelector(".overlay").style.pointerEvents = "none";
@@ -93,25 +119,32 @@ const productCards = document.querySelector(".card-front");
 // Get element that closes the modal
 const closers = document.querySelector(".close");
 
-// Open the modal on click
-productCards.onclick = () => {
-  modals.classList.remove("hidden");
-};
-// Close the modal
-closers.onclick = (e) => {
-  modals.classList.add("hidden");
-};
-
-window.onclick = function (e) {
-  console.log(modals.getBoundingClientRect());
-  if (e.target == modals) {
-    modals.classList.add("hidden");
-  }
-};
-
-document.querySelectorAll(".product-card").forEach((element) => {
-  element.addEventListener("click", openModel);
+productCards.addEventListener("click", () => {
+  modals.showModal();
 });
+closers.addEventListener("click", () => {
+  modals.close();
+  console.dir(modals);
+});
+
+// ISSUE: ZET IF STATEMENT ERBIJ IF MODALS.OPEN == TRUE
+// document.body.addEventListener("click", closeOnClick);
+// function closeOnClick(e) {
+//   if (
+//     e.clientX < modals.getBoundingClientRect().x ||
+//     e.clientY < modals.getBoundingClientRect().y ||
+//     e.clientX >
+//       modals.getBoundingClientRect().x + modals.getBoundingClientRect().width ||
+//     e.clientY >
+//       modals.getBoundingClientRect().y + modals.getBoundingClientRect().height
+//   ) {
+//     modals.close();
+//   }
+// }
+
+// document.querySelectorAll(".product-card").forEach((element) => {
+//   element.addEventListener("click", openModel);
+// });
 // function openModel(e) {
 //   console.log(
 //     document.elementsFromPoint(e.clientX, e.clientY).map((x) => x.classList)

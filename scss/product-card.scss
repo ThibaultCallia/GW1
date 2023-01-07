@@ -10,7 +10,6 @@
     --dark-bg: rgb(240, 240, 240);
     --margin-vert-between-sections: 3rem;
 }
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght600;700;800;900&display=swap');
 
 .grid-container{
     display: grid;
@@ -18,7 +17,7 @@
     column-gap: 1.2rem;
     row-gap: 1.2rem;
     width: min(var(--max-width-general),100vw - 2 * var(--padding-general-sides));
-    margin-top: var(--margin-vert-between-sections);
+    margin-top: 15px;
     margin-bottom: var(--margin-vert-between-sections);
     margin-inline: auto;
 }
@@ -45,23 +44,28 @@ section.card-front{
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
     transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     img{
         width: 100%;
-        height: 50%;
+        height: 55%;
         border-radius: var(--br-img);
         object-fit: cover;
     }
 
     .description{
-        height: 45%;
+        height: 40%;
         text-align: start;
         display: flex;
         flex-direction: column;
         text-align: center;
         justify-content: space-between;
+        align-items: center;
         .prod-name{
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 5px;
             // padding-top: 5px;
             // padding-bottom: 15px;
@@ -69,19 +73,29 @@ section.card-front{
             span{
                 color: #606063;
                 font-size: 12px;
+                width: fit-content;
             }
             .name{
+                width: auto;
                 color:#1a1a1a;
                 font-weight: 700;
                 font-size: 20px;
-                height: fit-content;
+                height: 100%;
+                line-height: 1;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
             }
         }
-        i{
-            font-size: 12px;
-            color: #1a1a1a;
+        .ratings{
+            width: fit-content;
+            i{
+                font-size: 12px;
+                color: #1a1a1a;
+            }
         }
         .price{
+            width: fit-content;
             font-size: 20px;
             font-weight: 700;
             color: #626262;
@@ -92,19 +106,25 @@ section.card-front{
 //     display: none;
 // }
 
+
 // modal only on bigger screens
 @media only screen and (min-width: 604px){
-    section.product-modal{
-        position: fixed;
+    dialog.product-modal{
+        border: 1px solid lightgray;
+        background: #e0e0e0;
+        box-shadow:  8px 8px 50px #bcbcbc, -8px -8px 50px #ffffff;
         z-index: 3;
+        position: fixed;
         left: 50%;
         top: 50%;
         transform: translate(-50%,-45%);
-        width: 60vw;
+        width: 80vw;
         max-width: 1100px;
         min-width: 800px;
-        height: 65vh;
-        overflow: auto; /* Enable scroll if needed */
+        min-height: fit-content;
+        height: 55vh;
+        max-height: 800px;
+        // overflow: auto; /* Enable scroll if needed */
         
         .product-details{
             position: absolute;
@@ -226,9 +246,9 @@ section.card-front{
     .grid-container {
       display: flex;
       flex-direction: column;
-      margin: var();
       width: 100vw;
       margin: var(--margin-vert-between-sections) 0;
+      margin-top: 15px;
       gap: 4em;
       
       .product-card{
@@ -241,13 +261,44 @@ section.card-front{
             border: none;
             box-shadow: none;
             img{
-                height: 70%;
+                height: 72%;
                 border-radius: 0;
-              }
-              .description{
-                  padding: 10px 12px;
-              }
-          }
+            }
+            .description{
+                padding: 10px 12px;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: flex-start;
+                column-gap: 5%;
+                row-gap: 0;
+                .prod-name{
+                    width: 70%;
+                    display: flex;
+                    align-items: flex-start;
+                    span{
+
+                    }
+                    .name{
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        text-align: left;
+                    }
+                }
+                .ratings{
+                    width: 25%;
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-right: 5px;
+                }
+                .price{
+                    padding-right: 5px;
+                    width: 100%;
+                    text-align: right;
+                    vertical-align: top;
+                }
+            }
+        }
       }
     }
 }
@@ -327,7 +378,3 @@ section.card-front{
 //     }
 // }
 
-
-.hidden{
-    display: none;
-}
