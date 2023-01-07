@@ -144,3 +144,9 @@
     padding: 0.5rem 1.5rem;
     margin-left: auto;
   }
+
+  .testClass {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+  }
