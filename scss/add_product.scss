@@ -312,6 +312,23 @@ form{
     }
     .ratings{
         width: 20%;
+        input{
+            display: none;
+        }
+        figure{
+            user-select: none;
+
+            i{
+                color: #adadad;
+                &:hover{
+                    color: #fdcc0d;
+
+                }
+            }
+            i.yellow{
+                color: #fdcc0d;
+            }
+        }
     }
     button.add{
         display: flex;

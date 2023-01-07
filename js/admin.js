@@ -48,11 +48,10 @@ categorySelect.addEventListener("change", catInput);
 function brandInput() {
   const selectedValue = brandSelect.options[brandSelect.selectedIndex].value;
   if (selectedValue == "0") {
-    // console.log("test if");
     document.querySelector(".newBrand").classList.remove("hidden");
   } else {
-    // console.log("test else");
-    document.querySelector(".newBrand").classList.add("hidden");
+    document.querySelector(".newBrand").reset();
+    // document.querySelector(".newBrand").classList.add("hidden");
   }
 }
 function catInput() {
@@ -85,4 +84,29 @@ btn.addEventListener("click", function () {
     newCol3.classList.remove("hidden");
     btn.classList.add("hidden");
   }
+});
+
+// ----------- make the ratings stars yellow ---------------
+const stars = document.querySelectorAll(".ratings i");
+const radios = document.querySelectorAll(".ratings input");
+stars.forEach((star) => {
+  star.addEventListener("click", (e) => {
+    // uncheck all radios
+    radios.forEach((radio) => {
+      radio.checked = false;
+    });
+
+    // make all stars grey again
+    stars.forEach((star) => {
+      star.classList.remove("yellow");
+    });
+
+    // check clicked star
+    star.parentNode.previousSibling.checked = true;
+
+    // make clicked star and his previous stars yellow
+    for (let i = 1; i <= e.target.id.charAt(1); i++) {
+      document.querySelector(`.ratings i#s${i}`).classList.add("yellow");
+    }
+  });
 });

@@ -114,11 +114,11 @@ $mysqli->close();
                     <div class="ratings">
                         <span class="title">Ratings</span>
                         <figure>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <input type="radio" id="star1" name="rating1" value="1" /><label for="star1"><i id="s1" class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating2" value="2" /><label for="star2"><i id="s2" class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating3" value="3" /><label for="star3"><i id="s3" class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating4" value="4" /><label for="star4"><i id="s4" class="fas fa-star"></i></label>
+                            <input type="radio" id="star5" name="rating5" value="5" /><label for="star5"><i id="s5" class="fas fa-star"></i></label>
                         </figure>
                     </div>
                     <div class="colors">
