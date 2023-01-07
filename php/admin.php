@@ -7,12 +7,6 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
     exit;
 }
 
-include './includes/db.php';
-include './includes/select.php';
-// include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.php');
-// include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/select.php');
-
-$mysqli->close();
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +17,7 @@ $mysqli->close();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../CSS/add_product.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <title>Admin Page</title>
 </head>
 
@@ -38,46 +33,9 @@ $mysqli->close();
                 <p>Products</p>
             </div>
             <div class="product-grid">
-            <?php foreach ($activeProds as $activeProd) { ?>
-                    <section class="card-front">
-                        <div class="toggle">
-                            <input type="checkbox" <?= $product["isActive"] == 1 ? "checked" : "" ?>id="isActive" name="isActive" value="isActive">
-                            <label for="isActive">Active</label><br>
-                        </div>
-                        <img src="./../images/products/blabla.png" alt="RK84" />
-                        <div class="prodname"><?= $activeProd["name"] ?></div>
-                        <div class="price-rat">
-                            <h4 class="price"><?= $activeProd["price"] ?></h4>
-                            <div class="ratings">
-                                <?php
-                                for ($i = 1; $i <= 5; $i++) {
-                                    if ($activeProd["price"] == $i) {
-                                        for ($y = 1; $y <= $i; $y++) {
-                                            echo "<i class="fas fa-star yellow"></i>";
-                                        }
-                                        for ($g = 5; $g > $i; $g--) {
-                                            echo "<i class="fas fa-star"></i>";
-                                        }
-                                        break;
-                                    }
-                                }
-                                ?>
-                            </div>
-                        </div>
-                        <div class="labels">
-                            <button class="label type"><?= $activeProd["brandName"] ?></button>
-                            <button class="label brand"><?= $activeProd["categoryName"] ?></button>
-                            <?php $colors = explode(",", $activeProd["colors"]);
-                            foreach ($colors as $color){ ?>
-                                <button class="label color"><?= $color ?></button>
-                            <?php }
-                            ?>
-                        </div>
-                        <div class="description">
-                        <?= $activeProd["description"] ?>
-                        </div>
-                    </section>
-                <?php } ?>
+                <?php
+                include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/admin-products.php');
+                ?>
                 <section class="card-front">
                     <div class="toggle">
                         <input type="checkbox" checked id="isActive" name="isActive" value="isActive">

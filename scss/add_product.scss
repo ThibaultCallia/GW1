@@ -87,8 +87,6 @@ main.admin{
         h1{
             font-size: 200px;
             font-weight: 900;
-            color: red;
-            
         }
         a{
             background-color: white;
@@ -106,14 +104,42 @@ main.admin{
     }
     section.products{
         .product-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            column-gap: 1.2rem;
+            row-gap: 1.2rem;
+            width: min(var(--max-width-general),100vw - 2 * var(--padding-general-sides));
+            margin-top: 15px;
+            margin-bottom: var(--margin-vert-between-sections);
+            margin-inline: auto;
             .card-front{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+                max-width: 100%;
+                min-width: 250px;
+                height: 350px;
                 border: 1px red solid;
                 display:flex;
                 flex-direction: column;
-                .toggle{}
+                justify-content: space-evenly;
+                border: 1px solid #c2c2c2;
+                border-radius: var(--br);
+                cursor: pointer;
+                box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+                transition: all 0.2s ease;
+                .toggle{
+                    align-self: flex-end;
+                }
                 img{}
-                .prodName{}
+                .prodName{
+                    font-size: larger;
+                    font-weight: 600;
+                }
                 .price-rat{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
                     .ratings{
                         i{
                             color: #adadad;
@@ -124,6 +150,9 @@ main.admin{
                     }
                 }
                 .labels{
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
                     button.label{
                         font-size: .75rem;
                         padding: .4em .9em;
