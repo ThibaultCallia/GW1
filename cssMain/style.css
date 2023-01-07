@@ -80,3 +80,6 @@ body {
 .subfilter-active {
   min-height: 40px;
 }
+.subfilter__selection {
+  --animate-duration: 0.2s;
+}

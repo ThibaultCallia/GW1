@@ -1,5 +1,6 @@
 import { findCommonElement } from "./helper";
 import SubFilterBtn from "./SubFilterBtn.js";
+import "animate.css";
 
 /**
  * Creates the filter <br>
@@ -63,6 +64,7 @@ class Filter {
               element.classList.add("hidden");
             });
           e.target.nextElementSibling.classList.remove("hidden");
+          e.target.nextElementSibling.classList.add("animate__fadeIn");
         } else {
           e.target.nextElementSibling.classList.add("hidden");
         }
