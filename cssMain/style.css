@@ -66,19 +66,17 @@ body {
 }
 /* Temporary welcome*/
 
-.welcome__image-container {
-  border: 2px solid red;
-  height: 200px;
-  width: 400px;
-  background-image: url(../images/welcome/keykapsWelcome.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+/* gap between filter name and count */
+.subfilter__row {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+}
+.subfilter__row-container {
+  padding-right: 10px;
 }
 
-.title {
-  text-align: center;
-  font-size: 3rem;
-}
-.welcome__image {
-  width: 400px;
+/* Minimum space for active bns to appear */
+.subfilter-active {
+  min-height: 40px;
 }

@@ -15,3 +15,20 @@
   display: flex;
   align-items: center;
 }
+
+.welcome__image-container {
+  border: 2px solid red;
+  height: 200px;
+  width: 400px;
+  background-image: url(../images/welcome/keykapsWelcome.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+}
+.welcome__image {
+  width: 400px;
+}
