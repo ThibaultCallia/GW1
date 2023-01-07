@@ -32,10 +32,26 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
             <div class="product-section-bar">
                 <p>Products</p>
             </div>
-            <div class="product-grid">
-                <?php
-                include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/admin-products.php');
-                ?>
+            <div class="product-sections">
+                <h2 for="KB">Keyboard</h2>
+                <table id="KB">
+                    <tr>
+                        <th>Active</th>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Brand</th>
+                        <th>Colors</th>
+                        <th>Rating</th>
+                        <th>Spotlight</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <?php
+                        include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/admin-products.php');
+                        ?>
+                    </tr>
+                </table>
             </div>
         </section>
     </main>
