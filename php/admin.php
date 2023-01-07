@@ -7,8 +7,10 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
     exit;
 }
 
-include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/select.php');
+include './includes/db.php';
+include './includes/select.php';
+// include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.php');
+// include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/select.php');
 
 $mysqli->close();
 ?>
@@ -36,8 +38,48 @@ $mysqli->close();
                 <p>Products</p>
             </div>
             <div class="product-grid">
+            <?php foreach ($activeProds as $activeProd) { ?>
+                    <section class="card-front">
+                        <div class="toggle">
+                            <input type="checkbox" <?= $product["isActive"] == 1 ? "checked" : "" ?>id="isActive" name="isActive" value="isActive">
+                            <label for="isActive">Active</label><br>
+                        </div>
+                        <img src="./../images/products/blabla.png" alt="RK84" />
+                        <div class="prodname"><?= $activeProd["name"] ?></div>
+                        <div class="price-rat">
+                            <h4 class="price"><?= $activeProd["price"] ?></h4>
+                            <div class="ratings">
+                                <?php
+                                for ($i = 1; $i <= 5; $i++) {
+                                    if ($activeProd["price"] == $i) {
+                                        for ($y = 1; $y <= $i; $y++) {
+                                            echo "<i class="fas fa-star yellow"></i>";
+                                        }
+                                        for ($g = 5; $g > $i; $g--) {
+                                            echo "<i class="fas fa-star"></i>";
+                                        }
+                                        break;
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <button class="label type"><?= $activeProd["brandName"] ?></button>
+                            <button class="label brand"><?= $activeProd["categoryName"] ?></button>
+                            <?php $colors = explode(",", $activeProd["colors"]);
+                            foreach ($colors as $color){ ?>
+                                <button class="label color"><?= $color ?></button>
+                            <?php }
+                            ?>
+                        </div>
+                        <div class="description">
+                        <?= $activeProd["description"] ?>
+                        </div>
+                    </section>
+                <?php } ?>
                 <section class="card-front">
-                    <div class="toggle-active toggle">
+                    <div class="toggle">
                         <input type="checkbox" checked id="isActive" name="isActive" value="isActive">
                         <label for="isActive">Active </label><br>
                     </div>

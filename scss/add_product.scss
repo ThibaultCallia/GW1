@@ -87,6 +87,8 @@ main.admin{
         h1{
             font-size: 200px;
             font-weight: 900;
+            color: red;
+            
         }
         a{
             background-color: white;
@@ -99,6 +101,46 @@ main.admin{
                 transform: scale(1.05);
                 transition: all ease-out 350ms;
                 box-shadow: 15px 15px 20px rgba(1, 1, 1, 0.05);
+            }
+        }
+    }
+    section.products{
+        .product-grid{
+            .card-front{
+                border: 1px red solid;
+                display:flex;
+                flex-direction: column;
+                .toggle{}
+                img{}
+                .prodName{}
+                .price-rat{
+                    .ratings{
+                        i{
+                            color: #adadad;
+                        }
+                        i.yellow{
+                            color:#fdcc0d;
+                        }
+                    }
+                }
+                .labels{
+                    button.label{
+                        font-size: .75rem;
+                        padding: .4em .9em;
+                        margin: 0.25em;
+                        border-radius: 1em;
+                        border: none;
+                        outline: none;
+                        background: #dddddd;
+                        cursor: pointer;
+                        &:hover{
+                            transform: scale(1.02);
+                            background: #c5c5c5;
+                            transition: transform 50ms ease;
+                          }
+                      }
+                }
+                .description{}
             }
         }
     }
