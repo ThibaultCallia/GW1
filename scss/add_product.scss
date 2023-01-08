@@ -115,6 +115,7 @@ main.admin{
             50% { border-color: orange }
           }
         .btns{
+            margin-top: .5em;
             display: flex;
             width: 100%;
             padding: 0 var(--padding-general-sides);
@@ -148,10 +149,11 @@ main.admin{
             
             th,
             td {
-                padding: 15px;
+                padding: 10px;
                 background-color: rgba(255,255,255,0.2);
                 color: rgb(0, 0, 0);
                 text-align: left;
+                vertical-align: middle;
             }
             
             thead {
@@ -168,12 +170,15 @@ main.admin{
                         text-align: end;
                     }
                 th {
-                    background-color: #55608f;
+                    background-color: #679cc0;
+                    font-weight: bold;
+                    padding: 10px 10px;
                 }
             }
             
             tbody {
                 .toggle{
+                    width: 25px;
                     input[type="checkbox"] {
                         pointer-events: none;
                      }
