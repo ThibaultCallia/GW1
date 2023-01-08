@@ -10,7 +10,7 @@ p.isSpotlight as spotlight, p.isActive as active, p.rating as rating, p.price as
 b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.color_name) as colors 
 FROM product p left JOIN brand b ON p.brand_id = b.id left JOIN category cat ON p.category_id = cat.id 
 left JOIN product_has_color pc ON p.id = pc.product_id left JOIN color col ON pc.color_id = col.id 
-WHERE cat.name = '" . $cat . "' GROUP BY p.id ORDER BY `p`.`id` DESC";
+WHERE cat.name = 'Keyboard' GROUP BY p.id ORDER BY `p`.`id` DESC";
     $result = $mysqli->query($sql);
 
     $products = $result->fetch_all(MYSQLI_ASSOC);
