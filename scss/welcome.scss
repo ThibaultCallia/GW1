@@ -12,7 +12,10 @@
   overflow: hidden;
   margin-top: var(--margin-vert-between-sections);
   position: relative;
+  display: flex;
+  align-items: center;
 }
+
 
 .welcome__text {
   height: 100%;
@@ -24,23 +27,9 @@
   text-align: center;
   font-size: 3rem;
 }
-
 .welcome__image {
   height: 400px;
 }
 
-.logo-art{
-  height: 30px;
-}
 
-.logo-container{
-  display: flex;
-  gap: 10PX;
-  align-items: center;
-}
-
-.welcome-container{
-  display: flex;
-  align-items: center;
-}
 

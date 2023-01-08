@@ -1,8 +1,6 @@
 @import "./reset_tc_collection.css";
 @import "../css/nav.css";
 @import "../css/welcome.css";
-/* @import url(products.css); */
-@import "../css/products_grid_filter.css";
 @import "../css/filter.css";
 @import "../CSS/product-card.css";
 
@@ -67,10 +65,4 @@ body {
 
 .hidden {
   display: none;
-}
-
-.testClass {
-  display: flex;
-  gap: 40px;
-  justify-content: space-between;
 }

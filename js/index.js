@@ -128,35 +128,19 @@ closers.addEventListener("click", () => {
 });
 
 // ISSUE: ZET IF STATEMENT ERBIJ IF MODALS.OPEN == TRUE
-document.body.addEventListener("click", closeOnClick);
-function closeOnClick(e) {
-  if (
-    e.clientX < modals.getBoundingClientRect().x ||
-    e.clientY < modals.getBoundingClientRect().y ||
-    e.clientX >
-      modals.getBoundingClientRect().x + modals.getBoundingClientRect().width ||
-    e.clientY >
-      modals.getBoundingClientRect().y + modals.getBoundingClientRect().height
-  ) {
-    modals.close();
-  }
-}
-
-// Open the modal on click
-// productCards.onclick = () => {
-//   modals.classList.remove("hidden");
-// };
-
-// Close the modal
-// closers.onclick = (e) => {
-//   modals.classList.add("hidden");
-// };
-
-window.onclick = function (e) {
-  if (e.target == modals) {
-    modals.classList.add("hidden");
-  }
-};
+// document.body.addEventListener("click", closeOnClick);
+// function closeOnClick(e) {
+//   if (
+//     e.clientX < modals.getBoundingClientRect().x ||
+//     e.clientY < modals.getBoundingClientRect().y ||
+//     e.clientX >
+//       modals.getBoundingClientRect().x + modals.getBoundingClientRect().width ||
+//     e.clientY >
+//       modals.getBoundingClientRect().y + modals.getBoundingClientRect().height
+//   ) {
+//     modals.close();
+//   }
+// }
 
 // document.querySelectorAll(".product-card").forEach((element) => {
 //   element.addEventListener("click", openModel);

@@ -33,6 +33,8 @@ body {
 // nav bar: admin and add product page
 nav.main{
     background-color: white;
+    position: fixed;
+    z-index: 5;
     height: var(--nav-bar-height);
     display: flex;
     justify-content: center;
@@ -40,8 +42,8 @@ nav.main{
     border-top: .4px solid #2d343c;
     border-bottom: .4px solid #2d343c;
     ul{
-        width: 60vw;
-        min-width: 500px;
+        width: 100vw;
+        padding: 0 var(--padding-general-sides);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -53,6 +55,7 @@ nav.main{
             height: 100%;
         }
         li{
+            width: fit-content;
             height: 100%;
             display: flex;
             align-items: center;
@@ -76,7 +79,7 @@ nav.main{
 main.admin{
     section.welcome{
         width: 100%;
-        height: calc(100vh - var(--nav-bar-height));
+        height: 100vh;
         border-bottom: .4px solid #2d343c;
         display: flex;
         flex-direction: column;
@@ -84,24 +87,141 @@ main.admin{
         align-items: center;
         text-align: center;
 
-        h1{
-            font-size: 200px;
-            font-weight: 900;
-        }
-        a{
-            background-color: white;
-            border-radius: .5em;
-            padding: 1em 2.5em;
-            font-size: x-large;
+        h1 {
+            padding: 0 0 0 var(--padding-general-sides);
+            font-size: 120px;
+            margin-bottom: .5em;
             font-weight: 700;
-            box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
-            &:hover{
-                transform: scale(1.05);
-                transition: all ease-out 350ms;
-                box-shadow: 15px 15px 20px rgba(1, 1, 1, 0.05);
+            font-family: 'Courier Prime', monospace;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid orange; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .05em; /* Adjust as needed */
+            animation: 
+              typing 3.5s steps(30, end),
+              blink-caret .5s step-end infinite;
+          }
+          
+          /* The typing effect */
+          @keyframes typing {
+            from { width: 0 }
+            to { width: 80% }
+          }
+          
+          /* The typewriter cursor effect */
+          @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange }
+          }
+        .btns{
+            margin-top: .5em;
+            display: flex;
+            width: 100%;
+            padding: 0 var(--padding-general-sides);
+            justify-content: center;
+            column-gap: 5em;
+            a{
+                background-color: white;
+                border-radius: .5em;
+                padding: 1em 2.5em;
+                font-size: x-large;
+                font-weight: 700;
+                box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+                &:hover{
+                    transform: scale(1.05);
+                    transition: all ease-out 350ms;
+                    box-shadow: 15px 15px 20px rgba(1, 1, 1, 0.05);
+                }
             }
         }
     }
+    section.products{
+        min-height: calc(100vh - var(--nav-bar-height));
+        position: relative;
+        .product-sections {
+            margin: var(--padding-general-sides);
+            table {
+                width: 100%;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                margin-bottom: 2em;
+            }
+            
+            th,
+            td {
+                padding: 10px;
+                background-color: rgba(255,255,255,0.2);
+                color: rgb(0, 0, 0);
+                text-align: left;
+                vertical-align: middle;
+            }
+            
+            thead {
+                    position: sticky;
+                    top: calc(var(--nav-bar-height) - 2px);
+                    z-index: 4;
+                    h2{
+                        width: max-content;
+                        height: 0;
+                        position: absolute;
+                        top: 38px;
+                        left: -57px;
+                        transform: rotate(-90deg);
+                        text-align: end;
+                    }
+                th {
+                    background-color: #679cc0;
+                    font-weight: bold;
+                    padding: 10px 10px;
+                }
+            }
+            
+            tbody {
+                .toggle{
+                    width: 25px;
+                    input[type="checkbox"] {
+                        pointer-events: none;
+                     }
+                     
+                }
+                button{
+                    &:has(label) {
+                        font-size: 0.75rem;
+                        padding: 0.4em 0.9em;
+                        margin: 0.25em;
+                        border-radius: 1em;
+                        border: none;
+                        outline: none;
+                        background: #dddddd;
+                        cursor: default;
+                        label{
+                            cursor: pointer;
+                        }
+                      }
+                    &:has(label:hover) {
+                        transform: scale(1.02);
+                        background: #c5c5c5;
+                        transition: transform 50ms ease;
+                    }
+                    &:has(label.clicked) {
+                        transform: scale(1.02);
+                        background: #b5b5b5;
+                        transition: transform 50ms ease;
+                    }
+                }
+                .ratings{
+                    min-width: 91px;
+                    i{
+                        color: #adadad;
+                    }
+                    i.yellow{
+                        color: #fdcc0d;
+                    }
+                }
+            }
+        }
+        
+}
 }
 
 // overgenomen van login form
@@ -111,9 +231,9 @@ form{
         border-bottom: 2px solid #adadad;
         margin-bottom: 20px;
         
-      }
-      
-      .form_input input{
+    }
+    
+    .form_input input{
         width: 100%;
         padding: 0 5px;
         height: 40px;
@@ -122,8 +242,8 @@ form{
         background: none;
         outline: none;
         flex-grow: 1;
-      }
-      .form_input label{
+    }
+    .form_input label{
         position: absolute;
         top: 50%;
         left: 5px;
@@ -132,7 +252,7 @@ form{
         font-size: 16px;
         pointer-events: none;
         transition: .5s;
-      }
+    }
       
 }
 
@@ -148,7 +268,7 @@ form{
     background: white;
     border-radius: 10px;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
-
+    
     // wrapper of section (h2 + wrap2)
     .wrapper{
         display: flex;
@@ -157,7 +277,7 @@ form{
         row-gap: var(--padding-general-sides);
         border-bottom: 1px lightgray solid;
         padding: 1em 0;
-
+        
         // wrapper of section form fields
         .wrap2{
             display: flex;
@@ -189,53 +309,49 @@ form{
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            span{
-                font-weight: 700;
-                margin-bottom: 3px;
+            input[type=checkbox]{
+                height: 0;
+                width: 0;
+                visibility: hidden;
+            }
+            label {
+                cursor: pointer;
+                text-indent: -9999px;
+                width: calc(var(--toggle-size)*2);
+                height: var(--toggle-size);
+                background: grey;
+                display: block;
+                border-radius: var(--toggle-size);
+                position: relative;
+            }
+            
+            label:after {
+                content: '';
+                position: absolute;
+                top: calc(var(--toggle-size)/20);
+                left: calc(var(--toggle-size)/20);
+                width: calc(var(--toggle-size)/10*9);
+                height: calc(var(--toggle-size)/10*9);
+                background: #fff;
+                border-radius: calc(var(--toggle-size)/10*9);
+                transition: 0.3s;
+            }
+            
+            input:checked + label {
+                background: #bada55;
+            }
+            
+            input:checked + label:after {
+                left: calc(100% - calc(var(--toggle-size)/20));
+                transform: translateX(-100%);
+            }
+            
+            label:active:after {
+                width: calc(var(--toggle-size)/10*13);
             }
         }
     }
-    input[type=checkbox]{
-        height: 0;
-        width: 0;
-        visibility: hidden;
-    }
     
-    label {
-        cursor: pointer;
-        text-indent: -9999px;
-        width: calc(var(--toggle-size)*2);
-        height: var(--toggle-size);
-        background: grey;
-        display: block;
-        border-radius: var(--toggle-size);
-        position: relative;
-    }
-    
-    label:after {
-        content: '';
-        position: absolute;
-        top: calc(var(--toggle-size)/20);
-        left: calc(var(--toggle-size)/20);
-        width: calc(var(--toggle-size)/10*9);
-        height: calc(var(--toggle-size)/10*9);
-        background: #fff;
-        border-radius: calc(var(--toggle-size)/10*9);
-        transition: 0.3s;
-    }
-    
-    input:checked + label {
-        background: #bada55;
-    }
-    
-    input:checked + label:after {
-        left: calc(100% - calc(var(--toggle-size)/20));
-        transform: translateX(-100%);
-    }
-    
-    label:active:after {
-        width: calc(var(--toggle-size)/10*13);
-    }
     
 }
 
@@ -307,19 +423,37 @@ form{
 
 // filter section
 .filter-wrap{
-    .select_input{
-        flex-grow: 1;
-        flex-basis: 45%;
+    .select_input,label{
+        width: 30%;
+    }
+    .ratings{
+        min-width: 91px;
+        input{
+            display: none;
+        }
+        figure{
+            user-select: none;
+
+            i{
+                color: #adadad;
+                &:hover{
+                    color: #fdcc0d;
+
+                }
+            }
+            i.yellow{
+                color: #fdcc0d;
+            }
+        }
     }
     button.add{
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 25px;
-        height: 25px;
+        width: 0;
+        height: 0;
         border-radius: 25px;
-        opacity: 0;
         cursor: pointer;
         outline: none;
         &:hover span{
@@ -430,5 +564,9 @@ form{
 }
 
 .filter-wrap input[type="checkbox"]{
+    display: none;
+}
+
+.hidden{
     display: none;
 }

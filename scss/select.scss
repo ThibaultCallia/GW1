@@ -21,3 +21,16 @@
     }
 }
 
+.select_input{
+    select{
+        button.add{
+            z-index: 10;
+            transform: scale(0.01);
+            position: relative;
+            top:0;
+            left: 0;
+        }
+
+    }
+}
+
