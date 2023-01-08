@@ -48,7 +48,7 @@ class SubFilterBtn {
       "beforeend",
       `<div class="active-filter-btn visibleBtns">
         <span>${this.filter}</span>
-        <span>x</span>
+        <span>&times;</span>
       </div>`
     );
     return document.querySelector(".subfilter-active").lastChild;

@@ -1,35 +1,34 @@
 .welcome-container {
-  height: 70vh;
+  
 
   /* How to make height header as variable? */
-  overflow: hidden;
+  
   /* border: 1px solid white; */
   width: min(
     var(--max-width-general),
     100vw - 2 * var(--padding-general-sides)
   );
   margin-inline: auto;
-  overflow: hidden;
+  // overflow: hidden;
   margin-top: var(--margin-vert-between-sections);
   position: relative;
   display: flex;
   align-items: center;
 }
 
-
-.welcome__text {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  place-items: center;
+.welcome__image-container {
+  border: 2px solid red;
+  height: 200px;
+  width: 400px;
+  background-image: url(../images/welcome/keykapsWelcome.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 .title {
   text-align: center;
   font-size: 3rem;
 }
 .welcome__image {
-  height: 400px;
+  width: 400px;
 }
-
-
-

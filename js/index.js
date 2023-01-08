@@ -6,10 +6,7 @@
  */
 
 import Filter from "./Filter";
-
-// import Flickity from "flickity";
-
-// const spotlight = new Carousel2(document.querySelector(".carousel-container"));
+import "animate.css";
 
 const mainFilter = new Filter();
 

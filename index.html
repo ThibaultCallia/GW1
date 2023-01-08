@@ -81,11 +81,13 @@
               <p class="title title2">Mechanical Keyboards</p>
             </div>
           </div>
-          <img
-            class="welcome__image"
-            src="images/welcome/keykapsWelcome.jpg"
-            alt=""
-          />
+          <div class="welcome__image-container">
+            <!-- <img
+              class="welcome__image"
+              src="images/welcome/keykapsWelcome.jpg"
+              alt=""
+            /> -->
+          </div>
         </section>
         <section class="products" id="products">
           <div class="products__filter">
@@ -106,9 +108,11 @@
                 <button
                   class="general-subfilter-btn subfilter-btn subfilter-btn-colors"
                 >
-                  Colors
+                  Colors <i class="fa-solid fa-chevron-down"></i>
                 </button>
-                <div class="hidden subfilter__selection">
+                <div
+                  class="hidden subfilter__selection animate__animated animate__fadeIn"
+                >
                   <div class="subfilter__clear">
                     <span class="subfilter__clear-color">Clear</span>
                   </div>
@@ -118,35 +122,35 @@
                       ?>
                       include('./assets/php/includes/createColors.incl.php');
                     -->
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input class="color-checkbox" type="checkbox" id="c1" />
                         <label for="c1">Black</label>
                       </div>
                       <span class="filterCount"></span>
                     </div>
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input class="color-checkbox" type="checkbox" id="c3" />
                         <label for="c3">White</label>
                       </div>
                       <span class="filterCount"></span>
                     </div>
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input class="color-checkbox" type="checkbox" id="c4" />
                         <label for="c4">Blue</label>
                       </div>
                       <span class="filterCount"></span>
                     </div>
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input class="color-checkbox" type="checkbox" id="c8" />
                         <label for="c8">Red</label>
                       </div>
                       <span class="filterCount"></span>
                     </div>
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input
                           class="color-checkbox"
@@ -158,35 +162,35 @@
                       <span class="filterCount"></span>
                     </div>
 
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input class="color-checkbox" type="checkbox" id="c9" />
                         <label for="c9">Pink</label>
                       </div>
                       <span class="filterCount"></span>
                     </div>
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input class="color-checkbox" type="checkbox" id="c5" />
                         <label for="c5">Green</label>
                       </div>
                       <span class="filterCount"></span>
                     </div>
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input class="color-checkbox" type="checkbox" id="c6" />
                         <label for="c6">Yellow</label>
                       </div>
                       <span class="filterCount"></span>
                     </div>
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input class="color-checkbox" type="checkbox" id="c7" />
                         <label for="c7">Orange</label>
                       </div>
                       <span class="filterCount"></span>
                     </div>
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input
                           class="color-checkbox"
@@ -203,9 +207,11 @@
 
               <div class="subfilter__section subfilter__brands-section">
                 <button class="general-subfilter-btn subfilter-btn">
-                  Brand
+                  Brands <i class="fa-solid fa-chevron-down"></i>
                 </button>
-                <div class="subfilter__selection hidden">
+                <div
+                  class="subfilter__selection hidden animate__animated animate__fadeIn"
+                >
                   <div class="subfilter__clear">
                     <span class="subfilter__clear-brand">Clear</span>
                   </div>
@@ -215,14 +221,14 @@
                       include('./assets/php/includes/createBrands.incl.php');
                       ?>
                     -->
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input class="brand-checkbox" type="checkbox" id="b2" />
                         <label for="b2">Nuphy</label>
                       </div>
                       <span class="filterCount"></span>
                     </div>
-                    <div class="subfilter__row testClass">
+                    <div class="subfilter__row">
                       <div class="filterAndLabel">
                         <input class="brand-checkbox" type="checkbox" id="b1" />
                         <label for="b1">Royal Kludge</label>
@@ -233,13 +239,54 @@
                 </div>
               </div>
               <div class="sortDiv">
-                <label for="sort">Sort:</label>
-                <select name="sort" id="sort">
-                  <option value="priceHL">Price, high to low</option>
-                  <option value="priceLH">Price, low to high</option>
-                  <option value="dateON">Date, old to new</option>
-                  <option value="dateNO">Date, new to old</option>
-                </select>
+                <div class="subfilter__section subfilter__sort-section">
+                  <button class="general-subfilter-btn subfilter-btn">
+                    Sort <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                  <div
+                    class="hidden subfilter__selection sort__selection animate__animated animate__fadeIn"
+                  >
+                    <div class="subfilter__row-container sort__row-container">
+                      <div class="subfilter__row">
+                        <label for="dateNO">Date, new to old</label>
+                        <input
+                          class="sort-radio"
+                          type="radio"
+                          id="dateNO"
+                          name="sort"
+                          checked
+                        />
+                      </div>
+                      <div class="subfilter__row">
+                        <label for="dateON">Date, Old to New</label>
+                        <input
+                          class="sort-radio"
+                          type="radio"
+                          id="dateON"
+                          name="sort"
+                        />
+                      </div>
+                      <div class="subfilter__row">
+                        <label for="priceLH">Price, Low to High</label>
+                        <input
+                          class="sort-radio"
+                          type="radio"
+                          id="priceLH"
+                          name="sort"
+                        />
+                      </div>
+                      <div class="subfilter__row">
+                        <label for="priceHL">Price, High to Low</label>
+                        <input
+                          class="sort-radio"
+                          type="radio"
+                          id="priceHL"
+                          name="sort"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="subfilter-active">
