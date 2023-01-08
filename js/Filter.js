@@ -1,5 +1,6 @@
 import { findCommonElement } from "./helper";
 import SubFilterBtn from "./SubFilterBtn.js";
+import "animate.css";
 
 /**
  * Creates the filter <br>
@@ -11,7 +12,7 @@ class Filter {
    * @type {{category: string, brand: Array, color:Array}}
    */
   static globalFilter = {
-    category: "",
+    category: "All",
     brand: [],
     color: [],
   };
@@ -33,9 +34,10 @@ class Filter {
     this.generateFilterBtns();
     this.generateSubFilterBtns();
     this.generateSorter();
-    this.allProducts = document.querySelectorAll(".product-card");
-    // way for subFilterBtns to communicate to Filter
+    this.allProducts = [...document.querySelectorAll(".product-card")];
+    this.allProductsArray = [...this.allProducts];
     Filter.filterWalkieTalkie.push(this);
+    this.updateFilterCount();
   }
 
   generateFilterBtns() {
@@ -56,14 +58,17 @@ class Filter {
     document.querySelectorAll(".subfilter-btn").forEach((element) => {
       element.addEventListener("click", (e) => {
         if (e.target.nextElementSibling.classList.contains("hidden")) {
+          arrowSwitch(e, "allClose");
           document
             .querySelectorAll(".subfilter__selection")
             .forEach((element) => {
               element.classList.add("hidden");
             });
           e.target.nextElementSibling.classList.remove("hidden");
+          arrowSwitch(e, "open");
         } else {
           e.target.nextElementSibling.classList.add("hidden");
+          arrowSwitch(e, "close");
         }
       });
     });
@@ -74,6 +79,7 @@ class Filter {
           .find((x) => x.classList.contains("subfilter__selection")) &&
         !e.target.classList.contains("general-subfilter-btn")
       ) {
+        arrowSwitch(e, "allClose");
         document
           .querySelectorAll(".subfilter__selection")
           .forEach((element) => {
@@ -99,7 +105,25 @@ class Filter {
       element.addEventListener("change", this.subFilter);
       element.addEventListener("change", this.toggleActiveBrandBtn);
     });
-    // CHANGE TO SINGLE CHECKBOX CLASS?
+
+    function arrowSwitch(e, direction) {
+      if (direction === "close") {
+        e.target.querySelector(".fa-solid").classList.add("fa-chevron-down");
+        e.target.querySelector(".fa-solid").classList.remove("fa-chevron-up");
+      } else if (direction === "open") {
+        e.target.querySelector(".fa-solid").classList.add("fa-chevron-up");
+        e.target.querySelector(".fa-solid").classList.remove("fa-chevron-down");
+      } else if (direction === "allClose") {
+        document
+          .querySelectorAll(".general-subfilter-btn")
+          .forEach((element) => {
+            element
+              .querySelector(".fa-solid")
+              .classList.remove("fa-chevron-up");
+            element.querySelector(".fa-solid").classList.add("fa-chevron-down");
+          });
+      }
+    }
   };
 
   /**
@@ -240,8 +264,6 @@ class Filter {
       }
     });
     this.filterProducts();
-
-    // Price
   };
 
   /**
@@ -267,18 +289,19 @@ class Filter {
         }
       }
       // category
-      if (Filter.globalFilter.category != "") {
+      if (Filter.globalFilter.category != "All") {
         if (element.dataset.category != Filter.globalFilter.category) {
           element.classList.add("hidden");
         }
       }
     });
+    this.updateFilterCount();
   };
 
   generateSorter() {
-    document
-      .querySelector("#sort")
-      .addEventListener("change", this.sortProducts);
+    document.querySelectorAll(".sort-radio").forEach((element) => {
+      element.addEventListener("change", this.sortProducts);
+    });
   }
 
   /**
@@ -288,69 +311,113 @@ class Filter {
    * @returns {void}
    */
   sortProducts = (e) => {
-    Filter.sortOption = e.target.value;
-    console.log(Filter.sortOption);
-
+    Filter.sortOption = e.target.id;
     switch (Filter.sortOption) {
       case "priceLH":
-        this.allProducts = [].slice
-          .call(this.allProducts)
-          .sort(function (a, b) {
-            return parseInt(a.dataset.price) >= parseInt(b.dataset.price)
-              ? 1
-              : -1;
-          });
+        this.allProducts = this.allProducts.sort(function (a, b) {
+          return parseInt(a.dataset.price) >= parseInt(b.dataset.price)
+            ? 1
+            : -1;
+        });
         break;
 
       case "priceHL":
-        this.allProducts = [].slice
-          .call(this.allProducts)
-          .sort(function (a, b) {
-            return parseInt(a.dataset.price) <= parseInt(b.dataset.price)
-              ? 1
-              : -1;
-          });
+        this.allProducts = this.allProducts.sort(function (a, b) {
+          return parseInt(a.dataset.price) <= parseInt(b.dataset.price)
+            ? 1
+            : -1;
+        });
         break;
       case "dateON":
-        this.allProducts = [].slice
-          .call(this.allProducts)
-          .sort(function (a, b) {
-            return parseInt(a.dataset.order) >= parseInt(b.dataset.order)
-              ? 1
-              : -1;
-          });
+        this.allProducts = this.allProducts.sort(function (a, b) {
+          return parseInt(a.dataset.order) >= parseInt(b.dataset.order)
+            ? 1
+            : -1;
+        });
         break;
       case "dateNO":
-        this.allProducts = [].slice
-          .call(this.allProducts)
-          .sort(function (a, b) {
-            return parseInt(a.dataset.order) <= parseInt(b.dataset.order)
-              ? 1
-              : -1;
-          });
+        this.allProducts = this.allProducts.sort(function (a, b) {
+          return parseInt(a.dataset.order) <= parseInt(b.dataset.order)
+            ? 1
+            : -1;
+        });
         break;
       default:
         console.log("test");
         break;
     }
 
-    console.log(this.allProducts);
-
-    // let counter = 0;
     document.querySelector(".grid-container").innerHTML = "";
 
     this.allProducts.forEach((element) => {
-      if (
-        !element.classList.contains("hidden")
-        // && counter < Filter.elementsPerPage
-      ) {
-        document
-          .querySelector(".grid-container")
-          .insertAdjacentElement("beforeend", element);
-        // counter++;
-      }
+      document
+        .querySelector(".grid-container")
+        .insertAdjacentElement("beforeend", element);
     });
   };
+
+  updateFilterCount = () => {
+    document.querySelectorAll(".subfilter__row").forEach((element) => {
+      element.classList.remove("disabled");
+    });
+    document.querySelectorAll(".color-checkbox").forEach((element) => {
+      element.disabled = false;
+    });
+    document.querySelectorAll(".brand-checkbox").forEach((element) => {
+      element.disabled = false;
+    });
+    document.querySelectorAll(".filterCount").forEach((element) => {
+      const id = element.parentElement.querySelector(".color-checkbox")?.id
+        ? element.parentElement.querySelector(".color-checkbox").id
+        : element.parentElement.querySelector(".brand-checkbox").id;
+      const updatedCount = this.countFilters(id);
+      if (
+        updatedCount === 0 &&
+        !element.parentElement.firstElementChild.firstElementChild.checked
+      ) {
+        element.parentElement.classList.add("disabled");
+        element.parentElement.querySelector(
+          ".filterAndLabel"
+        ).firstElementChild.disabled = true;
+      }
+      element.innerHTML = `${updatedCount}`;
+      // console.log(updatedCount);
+    });
+  };
+
+  countFilters(id) {
+    let count = 0;
+    let arr =
+      Filter.globalFilter.category === "All"
+        ? [...this.allProductsArray]
+        : this.allProductsArray.filter(
+            (x) => x.dataset.category === Filter.globalFilter.category
+          );
+    // in case of colors:  filter arr on active brand and then each color id
+    if (id.startsWith("c")) {
+      if (Filter.globalFilter.brand.length > 0) {
+        arr = arr.filter((x) =>
+          Filter.globalFilter.brand.includes(x.dataset.brand)
+        );
+      }
+      arr = arr.filter((x) => x.dataset.color.split(",").includes(id));
+      count = arr.length;
+    }
+    // in case of brands: filter arr on active colors and then each brand id
+    else if (id.startsWith("b")) {
+      if (Filter.globalFilter.color.length > 0) {
+        arr = arr.filter((x) =>
+          findCommonElement(
+            Filter.globalFilter.color,
+            x.dataset.color.split(",")
+          )
+        );
+      }
+      arr = arr.filter((x) => x.dataset.brand === id);
+      count = arr.length;
+    }
+    return count;
+  }
   /*
     If counter <= elementsPerPage -> all products are shown so "show more" not needed
 

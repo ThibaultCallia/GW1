@@ -1,7 +1,7 @@
 <?php
 
-require('includes/db.php');
-// include('includes/db.php');??
+include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.php');
+// include('includes/db.php');
 
 
 // All active products query
