@@ -58,15 +58,17 @@ class Filter {
     document.querySelectorAll(".subfilter-btn").forEach((element) => {
       element.addEventListener("click", (e) => {
         if (e.target.nextElementSibling.classList.contains("hidden")) {
+          arrowSwitch(e, "all");
           document
             .querySelectorAll(".subfilter__selection")
             .forEach((element) => {
               element.classList.add("hidden");
             });
           e.target.nextElementSibling.classList.remove("hidden");
-          e.target.nextElementSibling.classList.add("animate__fadeIn");
+          arrowSwitch(e, "open");
         } else {
           e.target.nextElementSibling.classList.add("hidden");
+          arrowSwitch(e, "close");
         }
       });
     });
@@ -77,6 +79,7 @@ class Filter {
           .find((x) => x.classList.contains("subfilter__selection")) &&
         !e.target.classList.contains("general-subfilter-btn")
       ) {
+        arrowSwitch(e, "all");
         document
           .querySelectorAll(".subfilter__selection")
           .forEach((element) => {
@@ -103,7 +106,24 @@ class Filter {
       element.addEventListener("change", this.toggleActiveBrandBtn);
     });
 
-    document.addEventListener("customFilterEvent", this.updateFilterCount);
+    function arrowSwitch(e, direction) {
+      if (direction === "close") {
+        e.target.querySelector(".fa-solid").classList.add("fa-chevron-down");
+        e.target.querySelector(".fa-solid").classList.remove("fa-chevron-up");
+      } else if (direction === "open") {
+        e.target.querySelector(".fa-solid").classList.add("fa-chevron-up");
+        e.target.querySelector(".fa-solid").classList.remove("fa-chevron-down");
+      } else if (direction === "all") {
+        document
+          .querySelectorAll(".general-subfilter-btn")
+          .forEach((element) => {
+            element
+              .querySelector(".fa-solid")
+              .classList.remove("fa-chevron-up");
+            element.querySelector(".fa-solid").classList.add("fa-chevron-down");
+          });
+      }
+    }
   };
 
   /**
