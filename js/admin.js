@@ -50,8 +50,8 @@ function brandInput() {
   if (selectedValue == "0") {
     document.querySelector(".newBrand").classList.remove("hidden");
   } else {
-    document.querySelector(".newBrand").reset();
-    // document.querySelector(".newBrand").classList.add("hidden");
+    document.querySelector(".newBrand").value = "";
+    document.querySelector(".newBrand").classList.add("hidden");
   }
 }
 function catInput() {

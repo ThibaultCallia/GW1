@@ -1,5 +1,6 @@
 <?php
 
+// ----- ADD PRODUCTS PAGE --------
 // Brand options
 $sql = "SELECT DISTINCT * FROM `brand` ORDER BY `brand`.`name` ASC";
 $result = $mysqli->query($sql);

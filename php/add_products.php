@@ -39,11 +39,6 @@ $mysqli->close();
 <body>
     <?php include './includes/nav.php'; ?>
     <div class="form-container">
-        <?php if (isset($_SESSION['message'])) : ?>
-            <div class="message">
-                <?= $_SESSION['message']; ?>
-            </div>
-        <?php endif; ?>
         <form method="post" action="#">
             <!-- The title section -->
             <div class="title-wrap wrapper">
