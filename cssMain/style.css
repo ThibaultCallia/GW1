@@ -145,7 +145,7 @@ body {
 
   border-radius: 0.25rem;
   width: 100%;
-  height: 50%;
+  height: 55%;
 }
 
 .swiper-wrapper {
@@ -158,7 +158,4 @@ body {
   /* height: auto !important; */
   /* object-fit: cover !important; */
   /* object-position: center !important; */
-}
-
-.swiper-slide > img {
 }

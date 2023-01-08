@@ -15,25 +15,22 @@ import "animate.css";
 
 const mainFilter = new Filter();
 
-// var flkty = new Flickity(elem, {
-//   // options
-//   cellAlign: "left",
-//   contain: true,
-//   pageDots: false,
-//   dragThreshold: 10,
-//   imagesLoaded: true,
-//   setGallerySize: false,
-//   arrowShape: {
-//     x0: 15,
-//     x1: 60,
-//     y1: 40,
-//     x2: 70,
-//     y2: 40,
-//     x3: 40,
-//   },
-// });
+let init = false;
+var swiper = Swiper;
 
-const swiper = new Swiper(".swiper");
+function swiperCard() {
+  if (window.innerWidth <= 500) {
+    if (!init) {
+      init = true;
+      swiper = new Swiper(".swiper");
+    }
+  } else if (init) {
+    swiper.destroy();
+    init = false;
+  }
+}
+swiperCard();
+window.addEventListener("resize", swiperCard);
 
 // Mobile nav
 document
