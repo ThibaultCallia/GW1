@@ -20,7 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "animate.css": "^4.1.1",
-    "jsdoc": "^4.0.0"
+    "jsdoc": "^4.0.0",
     "swiper": "^8.4.5"
   },
   "devDependencies": {
