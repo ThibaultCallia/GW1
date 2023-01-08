@@ -279,9 +279,9 @@ class Filter {
   };
 
   generateSorter() {
-    document
-      .querySelector("#sort")
-      .addEventListener("change", this.sortProducts);
+    document.querySelectorAll(".sort-radio").forEach((element) => {
+      element.addEventListener("change", this.sortProducts);
+    });
   }
 
   /**
@@ -291,7 +291,7 @@ class Filter {
    * @returns {void}
    */
   sortProducts = (e) => {
-    Filter.sortOption = e.target.value;
+    Filter.sortOption = e.target.id;
     switch (Filter.sortOption) {
       case "priceLH":
         this.allProducts = this.allProducts.sort(function (a, b) {
