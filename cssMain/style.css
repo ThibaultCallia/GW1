@@ -127,3 +127,11 @@ body {
 .sort__selection {
   right: 0;
 }
+
+.grid-container {
+  min-height: 350px;
+}
+
+.disabled {
+  color: lightgray;
+}

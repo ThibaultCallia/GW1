@@ -357,11 +357,29 @@ class Filter {
   };
 
   updateFilterCount = () => {
+    document.querySelectorAll(".subfilter__row").forEach((element) => {
+      element.classList.remove("disabled");
+    });
+    document.querySelectorAll(".color-checkbox").forEach((element) => {
+      element.disabled = false;
+    });
+    document.querySelectorAll(".brand-checkbox").forEach((element) => {
+      element.disabled = false;
+    });
     document.querySelectorAll(".filterCount").forEach((element) => {
       const id = element.parentElement.querySelector(".color-checkbox")?.id
         ? element.parentElement.querySelector(".color-checkbox").id
         : element.parentElement.querySelector(".brand-checkbox").id;
       const updatedCount = this.countFilters(id);
+      if (
+        updatedCount === 0 &&
+        !element.parentElement.firstElementChild.firstElementChild.checked
+      ) {
+        element.parentElement.classList.add("disabled");
+        element.parentElement.querySelector(
+          ".filterAndLabel"
+        ).firstElementChild.disabled = true;
+      }
       element.innerHTML = `${updatedCount}`;
       // console.log(updatedCount);
     });
