@@ -58,7 +58,7 @@ class Filter {
     document.querySelectorAll(".subfilter-btn").forEach((element) => {
       element.addEventListener("click", (e) => {
         if (e.target.nextElementSibling.classList.contains("hidden")) {
-          arrowSwitch(e, "all");
+          arrowSwitch(e, "allClose");
           document
             .querySelectorAll(".subfilter__selection")
             .forEach((element) => {
@@ -79,7 +79,7 @@ class Filter {
           .find((x) => x.classList.contains("subfilter__selection")) &&
         !e.target.classList.contains("general-subfilter-btn")
       ) {
-        arrowSwitch(e, "all");
+        arrowSwitch(e, "allClose");
         document
           .querySelectorAll(".subfilter__selection")
           .forEach((element) => {
@@ -113,7 +113,7 @@ class Filter {
       } else if (direction === "open") {
         e.target.querySelector(".fa-solid").classList.add("fa-chevron-up");
         e.target.querySelector(".fa-solid").classList.remove("fa-chevron-down");
-      } else if (direction === "all") {
+      } else if (direction === "allClose") {
         document
           .querySelectorAll(".general-subfilter-btn")
           .forEach((element) => {
