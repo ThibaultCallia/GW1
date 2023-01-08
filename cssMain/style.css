@@ -135,3 +135,7 @@ body {
 .disabled {
   color: lightgray;
 }
+
+.general-subfilter-btn {
+  color: var(--clr-body-dark);
+}
