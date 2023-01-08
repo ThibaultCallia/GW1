@@ -26,9 +26,9 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import Flickity from "flickity";
-import { findCommonElement } from "./helper";
+            <pre class="prettyprint source linenums"><code>import { findCommonElement } from "./helper";
 import SubFilterBtn from "./SubFilterBtn.js";
+import "animate.css";
 
 /**
  * Creates the filter &lt;br>
@@ -40,14 +40,14 @@ class Filter {
    * @type {{category: string, brand: Array, color:Array}}
    */
   static globalFilter = {
-    category: "",
+    category: "All",
     brand: [],
     color: [],
   };
 
   static filterWalkieTalkie = [];
   static elementsPerPage = 20;
-  static sortOption = "priceLH";
+  static sortOption = "dateNO";
 
   /**
    * @property {HTMLref} ref points to where main filter location is in website
@@ -62,10 +62,10 @@ class Filter {
     this.generateFilterBtns();
     this.generateSubFilterBtns();
     this.generateSorter();
-    this.allProducts = document.querySelectorAll(".product-card");
-    // way for subFilterBtns to communicate to Filter
+    this.allProducts = [...document.querySelectorAll(".product-card")];
+    this.allProductsArray = [...this.allProducts];
     Filter.filterWalkieTalkie.push(this);
-    this.sortProducts();
+    this.updateFilterCount();
   }
 
   generateFilterBtns() {
@@ -82,18 +82,29 @@ class Filter {
     });
   }
 
+  /**
+   * @property {function} generateSubFilterBtns
+   * Adds eventlistener click to subfilter btns &lt;br>
+   * -> Open en close subfilter selection &lt;br>
+   * -> Change arrow direction &lt;br>
+   * Includes seperate "changeArrow" function&lt;br>
+   * @returns {void}
+   */
   generateSubFilterBtns = () => {
     document.querySelectorAll(".subfilter-btn").forEach((element) => {
       element.addEventListener("click", (e) => {
         if (e.target.nextElementSibling.classList.contains("hidden")) {
+          arrowSwitch(e, "allClose");
           document
             .querySelectorAll(".subfilter__selection")
             .forEach((element) => {
               element.classList.add("hidden");
             });
           e.target.nextElementSibling.classList.remove("hidden");
+          arrowSwitch(e, "open");
         } else {
           e.target.nextElementSibling.classList.add("hidden");
+          arrowSwitch(e, "close");
         }
       });
     });
@@ -104,6 +115,7 @@ class Filter {
           .find((x) => x.classList.contains("subfilter__selection")) &amp;&amp;
         !e.target.classList.contains("general-subfilter-btn")
       ) {
+        arrowSwitch(e, "allClose");
         document
           .querySelectorAll(".subfilter__selection")
           .forEach((element) => {
@@ -129,7 +141,25 @@ class Filter {
       element.addEventListener("change", this.subFilter);
       element.addEventListener("change", this.toggleActiveBrandBtn);
     });
-    // CHANGE TO SINGLE CHECKBOX CLASS?
+
+    function arrowSwitch(e, direction) {
+      if (direction === "close") {
+        e.target.querySelector(".fa-solid").classList.add("fa-chevron-down");
+        e.target.querySelector(".fa-solid").classList.remove("fa-chevron-up");
+      } else if (direction === "open") {
+        e.target.querySelector(".fa-solid").classList.add("fa-chevron-up");
+        e.target.querySelector(".fa-solid").classList.remove("fa-chevron-down");
+      } else if (direction === "allClose") {
+        document
+          .querySelectorAll(".general-subfilter-btn")
+          .forEach((element) => {
+            element
+              .querySelector(".fa-solid")
+              .classList.remove("fa-chevron-up");
+            element.querySelector(".fa-solid").classList.add("fa-chevron-down");
+          });
+      }
+    }
   };
 
   /**
@@ -270,8 +300,6 @@ class Filter {
       }
     });
     this.filterProducts();
-
-    // Price
   };
 
   /**
@@ -297,57 +325,135 @@ class Filter {
         }
       }
       // category
-      if (Filter.globalFilter.category != "") {
+      if (Filter.globalFilter.category != "All") {
         if (element.dataset.category != Filter.globalFilter.category) {
           element.classList.add("hidden");
         }
       }
     });
-    this.sortProducts();
+    this.updateFilterCount();
   };
 
   generateSorter() {
-    document
-      .querySelector(".testBtn")
-      .addEventListener("click", this.sortProducts);
+    document.querySelectorAll(".sort-radio").forEach((element) => {
+      element.addEventListener("change", this.sortProducts);
+    });
   }
 
   /**
    * @property {function} sortProducts
    * Checks global sortOption (either standard one or chosen by user) and sorts allProducts array accordingly &lt;br>
    * inserts HTML in this order. &lt;br>
-   * It has a standard max of products shows on page. This can be increased by user.
    * @returns {void}
    */
-  sortProducts = () => {
-    // this way works but as it always empties html en fills again, it tends to be wonky
-    // certainly at startup, it should be smooth
-    // Although it doesnt matter as first screen is keyboard
+  sortProducts = (e) => {
+    Filter.sortOption = e.target.id;
+    switch (Filter.sortOption) {
+      case "priceLH":
+        this.allProducts = this.allProducts.sort(function (a, b) {
+          return parseInt(a.dataset.price) >= parseInt(b.dataset.price)
+            ? 1
+            : -1;
+        });
+        break;
 
-    if (Filter.sortOption === "priceLH") {
-      this.allProducts = [].slice.call(this.allProducts).sort(function (a, b) {
-        return parseInt(a.dataset.price) >= parseInt(b.dataset.price) ? 1 : -1;
-      });
-    } else if (Filter.sortOption === "priceHL") {
-      this.allProducts = [].slice.call(this.allProducts).sort(function (a, b) {
-        return parseInt(a.dataset.price) &lt;= parseInt(b.dataset.price) ? 1 : -1;
-      });
+      case "priceHL":
+        this.allProducts = this.allProducts.sort(function (a, b) {
+          return parseInt(a.dataset.price) &lt;= parseInt(b.dataset.price)
+            ? 1
+            : -1;
+        });
+        break;
+      case "dateON":
+        this.allProducts = this.allProducts.sort(function (a, b) {
+          return parseInt(a.dataset.order) >= parseInt(b.dataset.order)
+            ? 1
+            : -1;
+        });
+        break;
+      case "dateNO":
+        this.allProducts = this.allProducts.sort(function (a, b) {
+          return parseInt(a.dataset.order) &lt;= parseInt(b.dataset.order)
+            ? 1
+            : -1;
+        });
+        break;
+      default:
+        console.log("test");
+        break;
     }
 
-    let counter = 0;
     document.querySelector(".grid-container").innerHTML = "";
+
     this.allProducts.forEach((element) => {
-      if (
-        !element.classList.contains("hidden") &amp;&amp;
-        counter &lt; Filter.elementsPerPage
-      ) {
-        document
-          .querySelector(".grid-container")
-          .insertAdjacentElement("beforeend", element);
-        counter++;
-      }
+      document
+        .querySelector(".grid-container")
+        .insertAdjacentElement("beforeend", element);
     });
   };
+
+  updateFilterCount = () => {
+    document.querySelectorAll(".subfilter__row").forEach((element) => {
+      element.classList.remove("disabled");
+    });
+    document.querySelectorAll(".color-checkbox").forEach((element) => {
+      element.disabled = false;
+    });
+    document.querySelectorAll(".brand-checkbox").forEach((element) => {
+      element.disabled = false;
+    });
+    document.querySelectorAll(".filterCount").forEach((element) => {
+      const id = element.parentElement.querySelector(".color-checkbox")?.id
+        ? element.parentElement.querySelector(".color-checkbox").id
+        : element.parentElement.querySelector(".brand-checkbox").id;
+      const updatedCount = this.countFilters(id);
+      if (
+        updatedCount === 0 &amp;&amp;
+        !element.parentElement.firstElementChild.firstElementChild.checked
+      ) {
+        element.parentElement.classList.add("disabled");
+        element.parentElement.querySelector(
+          ".filterAndLabel"
+        ).firstElementChild.disabled = true;
+      }
+      element.innerHTML = `${updatedCount}`;
+      // console.log(updatedCount);
+    });
+  };
+
+  countFilters(id) {
+    let count = 0;
+    let arr =
+      Filter.globalFilter.category === "All"
+        ? [...this.allProductsArray]
+        : this.allProductsArray.filter(
+            (x) => x.dataset.category === Filter.globalFilter.category
+          );
+    // in case of colors:  filter arr on active brand and then each color id
+    if (id.startsWith("c")) {
+      if (Filter.globalFilter.brand.length > 0) {
+        arr = arr.filter((x) =>
+          Filter.globalFilter.brand.includes(x.dataset.brand)
+        );
+      }
+      arr = arr.filter((x) => x.dataset.color.split(",").includes(id));
+      count = arr.length;
+    }
+    // in case of brands: filter arr on active colors and then each brand id
+    else if (id.startsWith("b")) {
+      if (Filter.globalFilter.color.length > 0) {
+        arr = arr.filter((x) =>
+          findCommonElement(
+            Filter.globalFilter.color,
+            x.dataset.color.split(",")
+          )
+        );
+      }
+      arr = arr.filter((x) => x.dataset.brand === id);
+      count = arr.length;
+    }
+    return count;
+  }
   /*
     If counter &lt;= elementsPerPage -> all products are shown so "show more" not needed
 
@@ -371,7 +477,7 @@ export default Filter;
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Tue Jan 03 2023 13:54:51 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sun Jan 08 2023 20:21:25 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

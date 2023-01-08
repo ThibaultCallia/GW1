@@ -54,6 +54,14 @@ class Filter {
     });
   }
 
+  /**
+   * @property {function} generateSubFilterBtns
+   * Adds eventlistener click to subfilter btns <br>
+   * -> Open en close subfilter selection <br>
+   * -> Change arrow direction <br>
+   * Includes seperate "changeArrow" function<br>
+   * @returns {void}
+   */
   generateSubFilterBtns = () => {
     document.querySelectorAll(".subfilter-btn").forEach((element) => {
       element.addEventListener("click", (e) => {
@@ -298,6 +306,11 @@ class Filter {
     this.updateFilterCount();
   };
 
+  /**
+   * @property {function} generateSorter
+   * Looks for sort-radio btn and adds eventlistener <br>
+   * @returns {void}
+   */
   generateSorter() {
     document.querySelectorAll(".sort-radio").forEach((element) => {
       element.addEventListener("change", this.sortProducts);

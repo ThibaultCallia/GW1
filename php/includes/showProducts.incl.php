@@ -20,7 +20,9 @@ color col ON pc.color_id = col.id
 WHERE 
   isActive = 1
 group by 
-  p.id';
+  p.id
+order by 
+  p.id DESC';
 $result = $mysqli->query($showProductsQuery);
 
 // Creating array with active products
