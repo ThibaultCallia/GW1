@@ -1,5 +1,6 @@
 import { findCommonElement } from "./helper";
 import SubFilterBtn from "./SubFilterBtn.js";
+import "animate.css";
 
 /**
  * Creates the filter <br>
@@ -57,14 +58,17 @@ class Filter {
     document.querySelectorAll(".subfilter-btn").forEach((element) => {
       element.addEventListener("click", (e) => {
         if (e.target.nextElementSibling.classList.contains("hidden")) {
+          arrowSwitch(e, "allClose");
           document
             .querySelectorAll(".subfilter__selection")
             .forEach((element) => {
               element.classList.add("hidden");
             });
           e.target.nextElementSibling.classList.remove("hidden");
+          arrowSwitch(e, "open");
         } else {
           e.target.nextElementSibling.classList.add("hidden");
+          arrowSwitch(e, "close");
         }
       });
     });
@@ -75,6 +79,7 @@ class Filter {
           .find((x) => x.classList.contains("subfilter__selection")) &&
         !e.target.classList.contains("general-subfilter-btn")
       ) {
+        arrowSwitch(e, "allClose");
         document
           .querySelectorAll(".subfilter__selection")
           .forEach((element) => {
@@ -101,7 +106,24 @@ class Filter {
       element.addEventListener("change", this.toggleActiveBrandBtn);
     });
 
-    document.addEventListener("customFilterEvent", this.updateFilterCount);
+    function arrowSwitch(e, direction) {
+      if (direction === "close") {
+        e.target.querySelector(".fa-solid").classList.add("fa-chevron-down");
+        e.target.querySelector(".fa-solid").classList.remove("fa-chevron-up");
+      } else if (direction === "open") {
+        e.target.querySelector(".fa-solid").classList.add("fa-chevron-up");
+        e.target.querySelector(".fa-solid").classList.remove("fa-chevron-down");
+      } else if (direction === "allClose") {
+        document
+          .querySelectorAll(".general-subfilter-btn")
+          .forEach((element) => {
+            element
+              .querySelector(".fa-solid")
+              .classList.remove("fa-chevron-up");
+            element.querySelector(".fa-solid").classList.add("fa-chevron-down");
+          });
+      }
+    }
   };
 
   /**
@@ -277,9 +299,9 @@ class Filter {
   };
 
   generateSorter() {
-    document
-      .querySelector("#sort")
-      .addEventListener("change", this.sortProducts);
+    document.querySelectorAll(".sort-radio").forEach((element) => {
+      element.addEventListener("change", this.sortProducts);
+    });
   }
 
   /**
@@ -289,7 +311,7 @@ class Filter {
    * @returns {void}
    */
   sortProducts = (e) => {
-    Filter.sortOption = e.target.value;
+    Filter.sortOption = e.target.id;
     switch (Filter.sortOption) {
       case "priceLH":
         this.allProducts = this.allProducts.sort(function (a, b) {
@@ -335,11 +357,29 @@ class Filter {
   };
 
   updateFilterCount = () => {
+    document.querySelectorAll(".subfilter__row").forEach((element) => {
+      element.classList.remove("disabled");
+    });
+    document.querySelectorAll(".color-checkbox").forEach((element) => {
+      element.disabled = false;
+    });
+    document.querySelectorAll(".brand-checkbox").forEach((element) => {
+      element.disabled = false;
+    });
     document.querySelectorAll(".filterCount").forEach((element) => {
       const id = element.parentElement.querySelector(".color-checkbox")?.id
         ? element.parentElement.querySelector(".color-checkbox").id
         : element.parentElement.querySelector(".brand-checkbox").id;
       const updatedCount = this.countFilters(id);
+      if (
+        updatedCount === 0 &&
+        !element.parentElement.firstElementChild.firstElementChild.checked
+      ) {
+        element.parentElement.classList.add("disabled");
+        element.parentElement.querySelector(
+          ".filterAndLabel"
+        ).firstElementChild.disabled = true;
+      }
       element.innerHTML = `${updatedCount}`;
       // console.log(updatedCount);
     });
