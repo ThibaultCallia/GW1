@@ -73,14 +73,14 @@ body {
 .swiper {
   max-height: 50%;
   border-radius: 0.25rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .swiper-wrapper {
 }
 
 .swiper-slide {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 .swiper-slide > img {
