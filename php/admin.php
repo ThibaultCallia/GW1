@@ -33,24 +33,72 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
                 <p>Products</p>
             </div>
             <div class="product-sections">
-                <h2 for="KB">Keyboard</h2>
-                <table id="KB">
-                    <tr>
-                        <th>Active</th>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Brand</th>
-                        <th>Colors</th>
-                        <th>Rating</th>
-                        <th>Spotlight</th>
-                        <th>Description</th>
-                    </tr>
-                    <tr>
+                <table id="KB" border="1" width="100%" celspacing="0">
+                    <thead>
+                        <tr>
+                            <th colspan="9">Keyboards</th>
+                        </tr>
+                        <tr>
+                            <th>Active</th>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Brand</th>
+                            <th>Colors</th>
+                            <th>Rating</th>
+                            <th>Spotlight</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         <?php
                         include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/admin-products.php');
                         ?>
-                    </tr>
+                    </tbody>
+                </table>
+
+                <table id="KC" border="1" width="100%" celspacing="0">
+                    <thead>
+                        <h2 for="KC">Keycaps</h2>
+                        <tr>
+                            <th>Active</th>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Brand</th>
+                            <th>Colors</th>
+                            <th>Rating</th>
+                            <th>Spotlight</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/admin-products.php');
+                        ?>
+                    </tbody>
+                </table>
+
+                <table id="SW" border="1" width="100%" celspacing="0">
+                    <thead>
+                        <h2 for="SW">Switches</h2>
+                        <tr>
+                            <th>Active</th>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Brand</th>
+                            <th>Colors</th>
+                            <th>Rating</th>
+                            <th>Spotlight</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/admin-products.php');
+                        ?>
+                    </tbody>
                 </table>
             </div>
         </section>

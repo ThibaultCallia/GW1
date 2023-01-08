@@ -33,6 +33,8 @@ body {
 // nav bar: admin and add product page
 nav.main{
     background-color: white;
+    position: fixed;
+    z-index: 5;
     height: var(--nav-bar-height);
     display: flex;
     justify-content: center;
@@ -102,77 +104,64 @@ main.admin{
             }
         }
     }
-    // section.products{
-    //     .product-grid{
-    //         display: grid;
-    //         grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    //         column-gap: 1.2rem;
-    //         row-gap: 1.2rem;
-    //         width: min(var(--max-width-general),100vw - 2 * var(--padding-general-sides));
-    //         margin-top: 15px;
-    //         margin-bottom: var(--margin-vert-between-sections);
-    //         margin-inline: auto;
-    //         .card-front{
-    //             margin:0;
-    //             padding:0;
-    //             box-sizing: border-box;
-    //             max-width: 100%;
-    //             min-width: 250px;
-    //             height: 350px;
-    //             border: 1px red solid;
-    //             display:flex;
-    //             flex-direction: column;
-    //             justify-content: space-evenly;
-    //             border: 1px solid #c2c2c2;
-    //             border-radius: var(--br);
-    //             cursor: pointer;
-    //             box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-    //             transition: all 0.2s ease;
-    //             .toggle{
-    //                 align-self: flex-end;
-    //             }
-    //             img{}
-    //             .prodName{
-    //                 font-size: larger;
-    //                 font-weight: 600;
-    //             }
-    //             .price-rat{
-    //                 display: flex;
-    //                 flex-direction: row;
-    //                 justify-content: space-between;
-    //                 .ratings{
-    //                     i{
-    //                         color: #adadad;
-    //                     }
-    //                     i.yellow{
-    //                         color:#fdcc0d;
-    //                     }
-    //                 }
-    //             }
-    //             .labels{
-    //                 display: flex;
-    //                 flex-flow: row wrap;
-    //                 justify-content: center;
-    //                 button.label{
-    //                     font-size: .75rem;
-    //                     padding: .4em .9em;
-    //                     margin: 0.25em;
-    //                     border-radius: 1em;
-    //                     border: none;
-    //                     outline: none;
-    //                     background: #dddddd;
-    //                     cursor: pointer;
-    //                     &:hover{
-    //                         transform: scale(1.02);
-    //                         background: #c5c5c5;
-    //                         transition: transform 50ms ease;
-    //                       }
-    //                   }
-    //             }
-    //             .description{}
-    //         }
-    //     }
-    // }
+    section.products{
+        position: relative;
+        .product-sections {
+            margin: var(--padding-general-sides);
+            table {
+                width: 100%;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                margin-bottom: 2em;
+            }
+            
+            th,
+            td {
+                padding: 15px;
+                background-color: rgba(255,255,255,0.2);
+                color: rgb(0, 0, 0);
+            }
+            
+            th {
+                text-align: left;
+            }
+            
+            thead {
+                    position: sticky;
+                    top: calc(var(--nav-bar-height) - 1px);
+                    z-index: 4;
+                tr{}
+                th {
+                    background-color: #55608f;
+                }
+            }
+            
+            tbody {
+                tr {
+                    &:hover {
+                        background-color: rgba(255,255,255,0.3);
+                    }
+                }
+                td {
+                    position: relative;
+                    &:hover {
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: -9999px;
+                            bottom: -9999px;
+                            background-color: rgba(255,255,255,0.2);
+                            z-index: -1;
+                        }
+                    }
+                    .ratings{
+                        min-width: 91px
+                    }
+                }
+            }
+        }
+        
 }
 
 // overgenomen van login form
@@ -182,9 +171,9 @@ form{
         border-bottom: 2px solid #adadad;
         margin-bottom: 20px;
         
-      }
-      
-      .form_input input{
+    }
+    
+    .form_input input{
         width: 100%;
         padding: 0 5px;
         height: 40px;
@@ -193,8 +182,8 @@ form{
         background: none;
         outline: none;
         flex-grow: 1;
-      }
-      .form_input label{
+    }
+    .form_input label{
         position: absolute;
         top: 50%;
         left: 5px;
@@ -203,7 +192,7 @@ form{
         font-size: 16px;
         pointer-events: none;
         transition: .5s;
-      }
+    }
       
 }
 
@@ -219,7 +208,7 @@ form{
     background: white;
     border-radius: 10px;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
-
+    
     // wrapper of section (h2 + wrap2)
     .wrapper{
         display: flex;
@@ -228,7 +217,7 @@ form{
         row-gap: var(--padding-general-sides);
         border-bottom: 1px lightgray solid;
         padding: 1em 0;
-
+        
         // wrapper of section form fields
         .wrap2{
             display: flex;
@@ -260,53 +249,49 @@ form{
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            span{
-                font-weight: 700;
-                margin-bottom: 3px;
+            input[type=checkbox]{
+                height: 0;
+                width: 0;
+                visibility: hidden;
+            }
+            label {
+                cursor: pointer;
+                text-indent: -9999px;
+                width: calc(var(--toggle-size)*2);
+                height: var(--toggle-size);
+                background: grey;
+                display: block;
+                border-radius: var(--toggle-size);
+                position: relative;
+            }
+            
+            label:after {
+                content: '';
+                position: absolute;
+                top: calc(var(--toggle-size)/20);
+                left: calc(var(--toggle-size)/20);
+                width: calc(var(--toggle-size)/10*9);
+                height: calc(var(--toggle-size)/10*9);
+                background: #fff;
+                border-radius: calc(var(--toggle-size)/10*9);
+                transition: 0.3s;
+            }
+            
+            input:checked + label {
+                background: #bada55;
+            }
+            
+            input:checked + label:after {
+                left: calc(100% - calc(var(--toggle-size)/20));
+                transform: translateX(-100%);
+            }
+            
+            label:active:after {
+                width: calc(var(--toggle-size)/10*13);
             }
         }
     }
-    input[type=checkbox]{
-        height: 0;
-        width: 0;
-        visibility: hidden;
-    }
     
-    label {
-        cursor: pointer;
-        text-indent: -9999px;
-        width: calc(var(--toggle-size)*2);
-        height: var(--toggle-size);
-        background: grey;
-        display: block;
-        border-radius: var(--toggle-size);
-        position: relative;
-    }
-    
-    label:after {
-        content: '';
-        position: absolute;
-        top: calc(var(--toggle-size)/20);
-        left: calc(var(--toggle-size)/20);
-        width: calc(var(--toggle-size)/10*9);
-        height: calc(var(--toggle-size)/10*9);
-        background: #fff;
-        border-radius: calc(var(--toggle-size)/10*9);
-        transition: 0.3s;
-    }
-    
-    input:checked + label {
-        background: #bada55;
-    }
-    
-    input:checked + label:after {
-        left: calc(100% - calc(var(--toggle-size)/20));
-        transform: translateX(-100%);
-    }
-    
-    label:active:after {
-        width: calc(var(--toggle-size)/10*13);
-    }
     
 }
 
@@ -524,4 +509,4 @@ form{
 
 .hidden{
     display: none;
-}
+}}

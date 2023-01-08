@@ -37,7 +37,7 @@ if (!empty($_POST['newBrand'])) {
             VALUES (NULL, '" . $newBrand . "');";
     $result = $mysqli->query($sql);
     // get id of newBrand
-    $sql = "SELECT * FROM brand WHERE id = (SELECT MAX(id) FROM brand);";
+    $sql = "SELECT id FROM brand WHERE id = (SELECT MAX(id) FROM brand);";
     $result = $mysqli->query($sql);
     $row = $result->fetch_assoc();
 
@@ -55,7 +55,7 @@ if (!empty($_POST['newCat'])) {
             VALUES (NULL, '" . $newCat . "');";
     $result = $mysqli->query($sql);
     // get id of newBrand
-    $sql = "SELECT * FROM category WHERE id = (SELECT MAX(id) FROM category);";
+    $sql = "SELECT id FROM category WHERE id = (SELECT MAX(id) FROM category);";
     $result = $mysqli->query($sql);
     $row = $result->fetch_assoc();
 
@@ -80,7 +80,7 @@ $result = $mysqli->query($sql);
 // insert into product_has_color
 
 // get id of newest added product and name it product_id!
-$sql = "SELECT * FROM product WHERE id = (SELECT MAX(id) FROM product);";
+$sql = "SELECT id FROM product WHERE id = (SELECT MAX(id) FROM product);";
 $result = $mysqli->query($sql);
 $row = $result->fetch_assoc();
 $product_id = $row["id"];
