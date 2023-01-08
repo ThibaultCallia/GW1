@@ -114,3 +114,16 @@ body {
 .active-filter-btn :nth-child(2) {
   color: hsl(0, 0%, 25%);
 }
+
+.sort__row-container {
+  overflow-y: hidden;
+}
+
+.subfilter__row-container {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.sort__selection {
+  right: 0;
+}

@@ -237,8 +237,56 @@
                 </div>
               </div>
               <div class="sortDiv">
-                <label for="sort">Sort:</label>
-                <select name="sort" id="sort">
+                <div class="subfilter__section subfilter__sort-section">
+                  <button class="general-subfilter-btn subfilter-btn">
+                    Sort <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                  <div
+                    class="hidden subfilter__selection sort__selection animate__animated"
+                  >
+                    <div class="subfilter__row-container sort__row-container">
+                      <div class="subfilter__row">
+                        <input
+                          class="sort-radio"
+                          type="radio"
+                          id="s1"
+                          name="sort"
+                          checked
+                        />
+                        <label for="s1">Date, new to old</label>
+                      </div>
+                      <div class="subfilter__row">
+                        <input
+                          class="sort-radio"
+                          type="radio"
+                          id="s1"
+                          name="sort"
+                        />
+                        <label for="s1">Date, Old to New</label>
+                      </div>
+                      <div class="subfilter__row">
+                        <input
+                          class="sort-radio"
+                          type="radio"
+                          id="s1"
+                          name="sort"
+                        />
+                        <label for="s1">Price, Low to High</label>
+                      </div>
+                      <div class="subfilter__row">
+                        <input
+                          class="sort-radio"
+                          type="radio"
+                          id="s1"
+                          name="sort"
+                        />
+                        <label for="s1">Price, High to Low</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <label class="hidden" for="sort">Sort:</label>
+                <select class="hidden" name="sort" id="sort">
                   <option value="priceHL">Price, high to low</option>
                   <option value="priceLH">Price, low to high</option>
                   <option value="dateON">Date, old to new</option>

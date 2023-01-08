@@ -73,6 +73,12 @@
     width: max-content;
     display: flex;
     flex-direction: column;
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 0.25rem;
+    height: max-content;
+    background-color: var(--clr-body-light);
+    margin-top: 0.75rem;
   }
   
   .general-subfilter-btn {
@@ -83,20 +89,14 @@
     cursor: pointer;
   }
   
-  .subfilter__selection {
-    z-index: 2;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 0.25rem;
-    height: max-content;
-    background-color: var(--clr-body-light);
-    margin-top: 0.75rem;
-  }
+  
   .subfilter__row-container {
     padding-inline: 1rem;
     max-height: 200px;
     /* CHANGE THIS? */
     overflow-y: scroll;
     padding-right: 3rem;
+    
   }
   
   .subfilter__clear {
@@ -140,8 +140,6 @@
   
   .sortDiv {
     cursor: pointer;
-    
-    padding: 0.5rem 1.5rem;
     margin-left: auto;
   }
 
