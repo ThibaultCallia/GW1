@@ -70,7 +70,9 @@ class SubFilterBtn {
   };
 
   /**
-   * @property {function} delete deletes DOM element, filters out activeFilter from static activeFilters and if last btn is deleted, also hides "clear All"
+   * @property {function} delete
+   * Deletes DOM element <br>
+   * Filters out activeFilter from static activeFilters and if last btn is deleted, also hides "clear All"
    * @returns {void}
    */
   delete = () => {
