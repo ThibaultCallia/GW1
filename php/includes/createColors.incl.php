@@ -1,6 +1,7 @@
 <?php
 
-include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.php');
+include './php/includes/db.php';
+// include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.php');
 
 // All active products query
 $colorsQuery = 'SELECT 
@@ -35,7 +36,10 @@ $mysqli->close();
 
 foreach ($colors as $color) {
   echo  '<div class="subfilter__row">
-        <input class="color-checkbox" type="checkbox" id="c' . $color['colorId'] . '" />
-        <label for="c' . $color['colorId'] . '">' . $color['colorName'] . '</label>
-        </div>';
+  <div class="filterAndLabel">
+    <input class="color-checkbox" type="checkbox" id="c' . $color['colorId'] . '" />
+    <label for="c' . $color['colorId'] . '">' . $color['colorName'] . '</label>
+  </div>
+  <span class="filterCount"></span>
+</div>';
 }
