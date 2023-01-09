@@ -1,0 +1,77 @@
+@import "./reset_tc_collection.css";
+@import "./nav.scss";
+@import "./welcome.scss";
+@import "./filter.scss";
+@import "./product-card.scss";
+
+
+:root {
+  --clr-body-dark: hsl(212, 14%, 27%);
+  --clr-body-light: hsl(0, 0%, 100%);
+
+  --carousel-width: 800px;
+  --carousel-height: 300px;
+  --fs-carousel-img: 3.5rem;
+
+  --ff: "Roboto", sans-serif;
+
+  --padding-general-sides: 2rem;
+  --margin-vert-between-sections: 3rem;
+  --max-width-general: 1200px;
+  --height-header-desktop: 140px;
+}
+
+/* ------ GENERAL STYLING AND BODY ------ */
+
+body {
+  font-family: var(--ff);
+  background-color: var(--clr-body-light);
+  color: var(--clr-body-dark);
+  /* overflow: hidden; */
+  /* transition: all 200ms ease; */
+  /* overflow: hidden; */
+}
+
+/* ------ UTILITIES ------ */
+
+/* ------ MAIN CONTAINER ------ */
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* <- welcome -> */
+.welcome-container {
+  height: calc(100vh - 60px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* <- products -> */
+
+.products__filter {
+  margin-top: var(--margin-vert-between-sections);
+  margin-bottom: var(--margin-vert-between-sections);
+}
+
+.filter__list {
+  width: min(
+    var(--max-width-general),
+    100vw - 2 * var(--padding-general-sides)
+  );
+  margin-inline: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+

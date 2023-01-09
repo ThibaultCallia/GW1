@@ -1,7 +1,8 @@
 <?php
 
-include './php/includes/db.php';
-// include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.php');
+// include './php/includes/db.inc.php';
+
+include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.inc.php');
 
 // All active products query
 $colorsQuery = 'SELECT 

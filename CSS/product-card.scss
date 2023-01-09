@@ -2,7 +2,7 @@
    ---- new PRODUCT CARD ---- 
   **************************/
 :root {
-    --br: 1em;
+    --br: .5em;
     --br-img: 0.3em;
     --fs-title: 1.3rem;
     --fs-price: 1.5rem;
@@ -287,6 +287,7 @@ section.card-front{
       margin: var(--margin-vert-between-sections) 0;
       margin-top: 15px;
       gap: 4em;
+      min-height: 350px;
       
       .product-card{
         padding-top: 30px;

@@ -142,10 +142,10 @@
       this[globalName] = mainExports;
     }
   }
-})({"dwtcI":[function(require,module,exports) {
+})({"LUVNn":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
-var HMR_PORT = null;
+var HMR_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 module.bundle.HMR_BUNDLE_ID = "bc4f42fed93cfd40";
@@ -538,7 +538,8 @@ function hmrAcceptRun(bundle, id) {
  * 2. creates Filter instance
  * 3. Adds nav monile functionality
  */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _styleCss = require("../cssMain/style.css");
+var _styleScss = require("../css/style.scss");
+var _adminScss = require("../css/admin.scss");
 var _filter = require("./Filter");
 var _filterDefault = parcelHelpers.interopDefault(_filter);
 var _animateCss = require("animate.css");
@@ -663,7 +664,7 @@ window.addEventListener("scroll", function(e) {
     else back2prod.style.display = "none";
 });
 
-},{"../cssMain/style.css":"c6DFE","./Filter":"35zl1","animate.css":"8t3va","@parcel/transformer-js/src/esmodule-helpers.js":"fD7H8"}],"c6DFE":[function() {},{}],"35zl1":[function(require,module,exports) {
+},{"./Filter":"35zl1","animate.css":"8t3va","@parcel/transformer-js/src/esmodule-helpers.js":"fD7H8","../css/style.scss":"2tTFS","../css/admin.scss":"cTaLq"}],"35zl1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _helper = require("./helper");
@@ -1118,6 +1119,6 @@ var _filterDefault = parcelHelpers.interopDefault(_filter);
 }
 exports.default = SubFilterBtn;
 
-},{"./Filter":"35zl1","@parcel/transformer-js/src/esmodule-helpers.js":"fD7H8"}],"8t3va":[function() {},{}],"8t3va":[function() {},{}]},["dwtcI","1Z4Rq"], "1Z4Rq", "parcelRequire6e42")
+},{"./Filter":"35zl1","@parcel/transformer-js/src/esmodule-helpers.js":"fD7H8"}],"8t3va":[function() {},{}],"8t3va":[function() {},{}],"2tTFS":[function() {},{}],"cTaLq":[function() {},{}]},["LUVNn","1Z4Rq"], "1Z4Rq", "parcelRequire6e42")
 
 //# sourceMappingURL=index.js.map

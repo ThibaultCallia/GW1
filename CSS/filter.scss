@@ -135,6 +135,15 @@
   .active-filter-btn:hover {
     background-color: rgb(183, 182, 182);
   }
+
+  .subfilter__row {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+  }
+  .subfilter__row-container {
+    padding-right: 10px;
+  }
   
   /* Temp section for sort */
   
@@ -144,3 +153,57 @@
   }
 
   
+  .subfilter-active {
+    min-height: 30px;
+  }
+  .subfilter__selection {
+    --animate-duration: 0.2s;
+  }
+  
+  .products__filter {
+    margin-bottom: 1.3rem;
+  }
+  
+  .subfilter-btn .fa-solid {
+    font-size: smaller;
+    color: hsl(0, 0%, 35%);
+    pointer-events: none;
+  }
+  
+  .subfilter-btn {
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 55%);
+    border-radius: 0.4rem;
+    min-width: max-content;
+  }
+
+  .active-filter-btn {
+    padding: 0.25rem 0.75rem !important;
+    background-color: hsl(0, 0%, 85%);
+    border-radius: 0.25rem;
+  }
+  
+  .active-filter-btn :nth-child(2) {
+    color: hsl(0, 0%, 25%);
+  }
+  
+  .sort__row-container {
+    overflow-y: hidden;
+  }
+  
+  .subfilter__row-container {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  
+  .sort__selection {
+    right: 0;
+  }
+
+.disabled {
+  color: lightgray;
+}
+
+.general-subfilter-btn {
+  color: var(--clr-body-dark);
+}

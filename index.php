@@ -2,25 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Styles -->
-
     <?php
-    include "./php/includes/scripts.incl.php"
+    include "./php/includes/head.inc.php"
     ?>
-
-    <!-- Fonts and icons -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/cdb38844a4.js" crossorigin="anonymous"></script>
-
     <!-- Title -->
     <title>#️⃣ Keykaps</title>
 </head>
@@ -40,7 +24,7 @@
         <header id="header">
             <div class="nav-container">
                 <div class="logo-container">
-                    <a class="logo-btn" href="#"><img class="logo-art" src="./images/welcome/keykaps-logo.jpg" alt="" /></a>
+                    <a class="logo-btn" href="#"><img class="logo-art" src="./images/welcome/keykaps-logo.jpg" alt="keycaps Logo" /></a>
                     <a class="logo-btn" href="#">
                         <h2 class="logo">KEYKAPS</h2>
                     </a>
@@ -106,7 +90,7 @@
                                 </div>
                                 <div class="subfilter__row-container">
                                     <?php
-                                    include('./php/includes/createColors.incl.php');
+                                    include('./php/includes/createColors.inc.php');
                                     ?>
 
                                 </div>
@@ -123,7 +107,7 @@
                                 <div class="subfilter__row-container">
 
                                     <?php
-                                    include('./php/includes/createBrands.incl.php');
+                                    include('./php/includes/createBrands.inc.php');
                                     ?>
 
 
@@ -167,10 +151,7 @@
                 <div class="grid-container">
                     <a href="#products" class="back2prods"><i class="fa-solid fa-circle-chevron-up"></i></a>
                     <!-- include show all products
-              <?php
-                include('./assets/php/includes/showProducts.incl.php');
-                ?>
-            -->
+                    -->
                     <div class="product-card" data-category="Switches" data-color="c1,c4" data-brand="b1" data-price="199" data-order="7">
                         <section class="card-front">
                             <figure>

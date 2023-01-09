@@ -5,7 +5,8 @@
  * 3. Adds nav monile functionality
  */
 
-import "../cssMain/style.css";
+import "../css/style.scss";
+import "../css/admin.scss";
 
 import Filter from "./Filter";
 import "animate.css";

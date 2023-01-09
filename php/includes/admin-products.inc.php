@@ -3,7 +3,7 @@
 $cats = ['Keyboard', 'Keycaps', 'Switches'];
 
 foreach ($cats as $cat) {
-    include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.php');
+    include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.inc.php');
 
     // get all product cards info
     $sql = "SELECT p.id as id, p.name as name, p.description as description, p.image1, 
