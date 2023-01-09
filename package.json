@@ -13,7 +13,8 @@
     "sass": "sass ./scss:CSS --watch --style=compressed",
     "clean:maps": "find ./css -name '*.css.map' -delete",
     "clean:css": "find ./css -name '*.css' -delete",
-    "doc": "jsdoc -c jsdoc.json"
+    "doc": "jsdoc -c jsdoc.json",
+    "parcel": "parcel index.html"
   },
   "keywords": [],
   "author": "",
