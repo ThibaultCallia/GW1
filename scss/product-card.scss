@@ -20,6 +20,16 @@
     margin-top: 15px;
     margin-bottom: var(--margin-vert-between-sections);
     margin-inline: auto;
+    position: relative;
+    .back2prods{
+        color: #98989895;
+        font-size: 55px;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        display: none;
+        z-index: 10;
+    }
 }
 .product-card{
     margin:0;
@@ -48,10 +58,22 @@ section.card-front{
     flex-direction: column;
     justify-content: space-between;
     img{
+        display: none;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: var(--br-img);
+    }
+    figure{
         width: 100%;
         height: 55%;
-        border-radius: var(--br-img);
-        object-fit: cover;
+    }
+    img:first-child{
+        display: block;
+        height: 55%;
+    }
+    figure > img:first-child{
+        height: 100%;
     }
 
     .description{
@@ -238,10 +260,6 @@ section.card-front{
                 .ratings{
                     i{
                         color: #adadad;
-                        &:hover{
-                            color: #fdcc0d;
-        
-                        }
                     }
                     i.yellow{
                         color: #fdcc0d;
@@ -264,30 +282,46 @@ section.card-front{
 // smartphone layout
 @media only screen and (max-width: 603px) {
     .grid-container {
+    overflow: hidden;
       display: flex;
-      flex-direction: column;
+      flex-flow: column nowrap;
       width: 100vw;
       margin: var(--margin-vert-between-sections) 0;
       margin-top: 15px;
       gap: 4em;
       
       .product-card{
+        padding-top: 30px;
         min-height: 350px;
         height: 450px;
+        position: relative;
+        overflow: visible;
         .card-front{
             height: 100%;
             border-radius: 0;
             padding: 0;
             border: none;
             box-shadow: none;
-            img{
-                height: 72%;
-                border-radius: 0;
+            figure{
+                overflow:hidden;
+                width: 100%;
+                height: 40vh;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                img{
+                    overflow:hidden;
+                    width: 100%;
+                    height: 40vh;
+                    border-radius: 0;
+                    object-fit: cover;
+                    object-position: center;
+                }
             }
             .description{
                 padding: 10px 12px;
                 display: flex;
-                flex-flow: row wrap;
+                flex-flow: column nowrap;
                 align-items: flex-start;
                 column-gap: 5%;
                 row-gap: 0;
@@ -296,7 +330,16 @@ section.card-front{
                     display: flex;
                     align-items: flex-start;
                     span{
-
+                        position: absolute;
+                        overflow: visible;
+                        top: 0px;
+                        left: 12px;
+                        font-size: 17px;
+                        font-family: 'PT Sans', sans-serif;
+                        i{
+                            font-size: 15px;
+                        }
+                        vertical-align: middle;
                     }
                     .name{
                         width: 100%;
@@ -306,21 +349,30 @@ section.card-front{
                     }
                 }
                 .ratings{
-                    width: 25%;
-                    display: flex;
-                    justify-content: flex-end;
-                    padding-right: 5px;
+                    i{
+                        color: #adadad;
+                    }
+                    i.yellow{
+                        color: #fdcc0d;
+                    }
                 }
                 .price{
-                    padding-right: 5px;
                     width: 100%;
                     text-align: right;
-                    vertical-align: top;
+                    height: 7px;
+                    position: absolute;
+                    right: 12px;
+                    top: calc(40vh - 1rem);
+                }
+                .desc{
+                    display: block;
+                    text-align: left;
                 }
             }
         }
         dialog.product-modal{
             border: none;
+            margin: 0;
             background: #e0e0e0;
             z-index: 10;
             position: fixed;
@@ -339,6 +391,7 @@ section.card-front{
                 border: 1px solid #888;
                 width: 100%;
                 height: 100%;
+                margin: 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -393,6 +446,7 @@ section.card-front{
                         h3{
                             font-size: 2rem;
                             line-height: 1;
+                            
                         }
                         span{
                             display: none;

@@ -147,3 +147,31 @@ closers.addEventListener("click", () => {
 //     document.elementsFromPoint(e.clientX, e.clientY).map((x) => x.classList)
 //   );
 // }
+
+// back2prods
+
+// only showing button when scrolling up
+let lastScrollTop = 0;
+window.addEventListener("scroll", function (e) {
+  const scrollTop =
+    document.body.scrollTop || document.documentElement.scrollTop;
+  if (scrollTop < lastScrollTop) {
+    back2prod.style.display = "block";
+  } else {
+    back2prod.style.display = "none";
+  }
+  lastScrollTop = scrollTop;
+});
+
+// only showing button when scrolling past 1000px
+const back2prod = document.querySelector(".grid-container > a");
+window.addEventListener("scroll", function (e) {
+  if (
+    document.body.scrollTop > 1000 ||
+    document.documentElement.scrollTop > 1000
+  ) {
+    back2prod.style.display = "block";
+  } else {
+    back2prod.style.display = "none";
+  }
+});
