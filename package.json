@@ -2,7 +2,8 @@
   "name": "keykaps",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  
+  
   "scripts": {
     "start": "vite --host",
     "starto": "vite --host --open",
@@ -13,7 +14,8 @@
     "sass": "sass ./scss:CSS --watch --style=compressed",
     "clean:maps": "find ./css -name '*.css.map' -delete",
     "clean:css": "find ./css -name '*.css' -delete",
-    "doc": "jsdoc -c jsdoc.json"
+    "doc": "jsdoc -c jsdoc.json",
+    "buildo": "parcel build ./keykaps.html --dist-dir public --no-content-hash"
   },
   "keywords": [],
   "author": "",
