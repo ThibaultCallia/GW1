@@ -2,12 +2,14 @@
 
 
 include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.inc.php');
-// include('includes/db.php');
-
 
 // All active products query
+
+$whereStatement = $loggedIn ? "" : "WHERE isActive = 1 ";
+
+
 $showProductsQuery = 'SELECT 
-p.id, p.name, p.description, p.discount, p.image1, p.image2, p.image3, p.image4, p.image5, p.isSpotlight, p.price, p.rating, b.id as brandId, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.id) as colorIds, GROUP_CONCAT(col.color_name) as colors
+p.id, p.name, p.description, p.discount, p.image1, p.image2, p.image3, p.image4, p.image5, p.isSpotlight, p.isActive, p.price, p.rating, b.id as brandId, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.id) as colorIds, GROUP_CONCAT(col.color_name) as colors
 FROM
 product p
       left JOIN
@@ -17,13 +19,13 @@ category cat ON p.category_id = cat.id
 	    left JOIN
 product_has_color pc ON p.id = pc.product_id
 	    left JOIN 
-color col ON pc.color_id = col.id
-WHERE 
-  isActive = 1
-group by 
+color col ON pc.color_id = col.id ' .
+  $whereStatement
+  . 'group by 
   p.id
 order by 
   p.id DESC';
+
 $result = $mysqli->query($showProductsQuery);
 
 // Creating array with active products
@@ -169,8 +171,12 @@ foreach ($products as $product) {
       </div>
     </dialog>';
 
+  $activeClass = '';
+  if ($loggedIn && $product['isActive'] === "1") {
+    $activeClass = 'active';
+  }
 
-  $productCard = '<div class="product-card" data-category="' . $dataCategory . '" data-color="' . $dataColor . '" data-brand="' . $dataBrandId . '" data-price="' . $dataPrice . '" data-order="' . $dataOrder . '">' . $cardFront . $productModal . '</div>';
+  $productCard = '<div class="product-card ' . $activeClass . '" data-category="' . $dataCategory . '" data-color="' . $dataColor . '" data-brand="' . $dataBrandId . '" data-price="' . $dataPrice . '" data-order="' . $dataOrder . '">' . $cardFront . $productModal . '</div>';
 
   echo $productCard;
 }
