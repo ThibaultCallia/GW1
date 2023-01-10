@@ -1,3 +1,11 @@
+<?php
+session_start();
+$loggedIn = false;
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
+    $loggedIn = true;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +36,7 @@
                     <a class="logo-btn" href="#">
                         <h2 class="logo">KEYKAPS</h2>
                     </a>
+
                 </div>
                 <nav class="main-nav">
                     <ul class="nav__list">
@@ -53,8 +62,9 @@
             <section class="welcome-container">
                 <div class="welcome__text">
                     <div class="text-container">
-                        <p class="title title1">Anything For</p>
-                        <p class="title title2">Mechanical Keyboards</p>
+                        <?php
+                        echo $loggedIn ? '<p class="title">Logged in as Admin</p>' : '<p class="title">Anything For <br> Mechanical Keyboards</p>';
+                        ?>
                     </div>
                 </div>
                 <div class="welcome__image-container">
@@ -137,6 +147,15 @@
                                             <label for="priceHL">Price, High to Low</label>
                                             <input class="sort-radio" type="radio" id="priceHL" name="sort" />
                                         </div>
+                                        <?php
+                                        if ($loggedIn) {
+                                            echo
+                                            '<div class="subfilter__row">
+                                                <label for="adminActive">Non active first</label>
+                                                <input class="sort-radio" type="radio" id="adminActive" name="sort" />
+                                            </div>';
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -147,12 +166,17 @@
                             Clear All
                         </button>
                     </div>
+                    <?php
+                    echo $loggedIn ? '<p>Non active products highlighted: </p>' : '';
+                    ?>
                 </div>
+
                 <div class="grid-container">
+
                     <a href="#products" class="back2prods"><i class="fa-solid fa-circle-chevron-up"></i></a>
-                    <!-- <?php
-                            include "./php/includes/showProducts.inc.php"
-                            ?> -->
+                    <?php
+                    include "./php/includes/showProducts.inc.php"
+                    ?>
                     <div class="product-card" data-category="Switches" data-color="c1,c4" data-brand="b1" data-price="199" data-order="7">
                         <section class="card-front">
                             <figure>
@@ -244,7 +268,7 @@
                         </dialog>
                     </div>
                     <div class="product-card" data-category="Switches" data-color="c1,c4" data-brand="b1" data-price="499" data-order="6">
-                        <section class="card-front">
+                        <section class="card-front ">
                             <figure>
                                 <img src="./images/sliderImages/nuphy1.jpg" alt="" />
                                 <img src="./images/sliderImages/keykapsBlue.jpg" alt="" />
@@ -455,7 +479,6 @@
                         </section>
                         <dialog class="product-modal">
                             <div class="product-details">
-                                <!-- <i class="close fa-solid fa-chevron-left"></i> -->
                                 <i class="close fa-solid fa-xmark"></i>
                                 <div class="images">
                                     <figure>
