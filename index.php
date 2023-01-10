@@ -150,9 +150,9 @@
                 </div>
                 <div class="grid-container">
                     <a href="#products" class="back2prods"><i class="fa-solid fa-circle-chevron-up"></i></a>
-                    <!-- <?php
-                            include "./php/includes/showProducts.inc.php"
-                            ?> -->
+                    <?php
+                    include "./php/includes/showProducts.inc.php"
+                    ?>
                     <div class="product-card" data-category="Switches" data-color="c1,c4" data-brand="b1" data-price="199" data-order="7">
                         <section class="card-front">
                             <figure>
@@ -455,7 +455,6 @@
                         </section>
                         <dialog class="product-modal">
                             <div class="product-details">
-                                <!-- <i class="close fa-solid fa-chevron-left"></i> -->
                                 <i class="close fa-solid fa-xmark"></i>
                                 <div class="images">
                                     <figure>
