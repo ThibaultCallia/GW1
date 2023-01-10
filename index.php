@@ -147,6 +147,15 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
                                             <label for="priceHL">Price, High to Low</label>
                                             <input class="sort-radio" type="radio" id="priceHL" name="sort" />
                                         </div>
+                                        <?php
+                                        if ($loggedIn) {
+                                            echo
+                                            '<div class="subfilter__row">
+                                                <label for="adminActive">Non active first</label>
+                                                <input class="sort-radio" type="radio" id="adminActive" name="sort" />
+                                            </div>';
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>

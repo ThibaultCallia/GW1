@@ -90,14 +90,15 @@ foreach ($products as $product) {
   $shortDescription = substr($longDescription, 0, 20) . '...';
 
   // DESCRIPTION DIV -------------------------------
-  $ratingsDiv = '<div class="ratings">';
+  $ratingsDivFront = '<div class="ratings">';
+  $stars = '';
   for ($i = 0; $i < $product['rating']; $i++) {
-    $ratingsDiv = $ratingsDiv . '<i class="fas fa-star yellow"></i>';
+    $stars = $stars . '<i class="fas fa-star yellow"></i>';
   }
   for ($i = 0; $i < 5 - $product['rating']; $i++) {
-    $ratingsDiv = $ratingsDiv . '<i class="fas fa-star"></i>';
+    $stars = $stars . '<i class="fas fa-star"></i>';
   }
-  $ratingsDiv = $ratingsDiv . '</div>';
+  $ratingsDivFront = $ratingsDivFront . $stars . '</div>';
   $descriptionDiv =
     '<div class="description">
       <div class="prod-name">
@@ -106,7 +107,7 @@ foreach ($products as $product) {
         </span>
         <h3 class="name">' . $productName . '</h3>
       </div>
-      ' . $ratingsDiv . '
+      ' . $ratingsDivFront . '
       <h4 class="price">€' . $dataPrice . '</h4>
       <div class="desc">
       ' . $shortDescription . '
@@ -156,11 +157,7 @@ foreach ($products as $product) {
           <div class="ratings">
             <span class="title">RATINGS</span>
             <figure>
-                <i class="fas fa-star yellow"></i>
-                <i class="fas fa-star yellow"></i>
-                <i class="fas fa-star yellow"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                ' . $stars . '
             </figure>
           </div>
           <div class="total-price">
@@ -171,12 +168,14 @@ foreach ($products as $product) {
       </div>
     </dialog>';
 
+  $dataActive = $loggedIn ? 'data-active="' . $product['isActive'] . '"' : '';
+
   $activeClass = '';
   if ($loggedIn && $product['isActive'] === "1") {
     $activeClass = 'active';
   }
 
-  $productCard = '<div class="product-card ' . $activeClass . '" data-category="' . $dataCategory . '" data-color="' . $dataColor . '" data-brand="' . $dataBrandId . '" data-price="' . $dataPrice . '" data-order="' . $dataOrder . '">' . $cardFront . $productModal . '</div>';
+  $productCard = '<div class="product-card ' . $activeClass . '" data-category="' . $dataCategory . '" data-color="' . $dataColor . '" data-brand="' . $dataBrandId . '" data-price="' . $dataPrice . '" data-order="' . $dataOrder . '" ' . $dataActive . '">' . $cardFront . $productModal . '</div>';
 
   echo $productCard;
 }
