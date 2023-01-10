@@ -5,7 +5,7 @@
 // FILTER
 .products__filter {
   width: min(
-      var(--max-width-general),
+      1202px,
       100vw - 2 * var(--padding-general-sides)
     );
   margin-inline: auto;

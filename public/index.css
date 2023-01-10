@@ -2227,7 +2227,7 @@ header {
 }
 
 .products__filter {
-  width: min(var(--max-width-general), 100vw - 2 * var(--padding-general-sides));
+  width: min(1202px, 100vw - 2 * var(--padding-general-sides));
   border-bottom: 1px solid var(--clr-body-dark);
   padding-top: var(--padding-filter);
   padding-bottom: var(--padding-filter);
