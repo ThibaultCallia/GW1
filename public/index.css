@@ -2228,12 +2228,14 @@ header {
 }
 
 .products__filter {
+  width: min(var(--max-width-general), 100vw - 2 * var(--padding-general-sides));
   border-bottom: 1px solid var(--clr-body-dark);
-  border-top: 1px solid var(--clr-body-dark);
   padding-top: var(--padding-filter);
   padding-bottom: var(--padding-filter);
   background-color: var(--clr-body-light);
   z-index: 3;
+  margin-inline: auto;
+  margin-bottom: 1.3rem;
   position: sticky;
   top: 58px;
 }
@@ -2256,9 +2258,9 @@ header {
 .active-filter:after {
   content: "";
   border: 10px solid;
-  border-color: var(--clr-body-dark) #0000 #0000 #0000;
+  border-color: #0000 #0000 var(--clr-body-dark) #0000;
   position: absolute;
-  top: -17px;
+  bottom: -17px;
   right: 50%;
   transform: translateX(50%);
 }
@@ -2310,7 +2312,8 @@ header {
 .subfilter__row-container {
   max-height: 200px;
   padding-inline: 1rem;
-  padding-right: 3rem;
+  padding-top: 4px;
+  padding-bottom: 4px;
   overflow-y: scroll;
 }
 
@@ -2356,25 +2359,12 @@ header {
   display: flex;
 }
 
-.subfilter__row-container {
-  padding-right: 10px;
-}
-
-.sortDiv {
-  cursor: pointer;
-  margin-left: auto;
-}
-
 .subfilter-active {
   min-height: 30px;
 }
 
 .subfilter__selection {
   --animate-duration: .2s;
-}
-
-.products__filter {
-  margin-bottom: 1.3rem;
 }
 
 .subfilter-btn .fa-solid {
@@ -2400,13 +2390,13 @@ header {
   color: #404040;
 }
 
-.sort__row-container {
-  overflow-y: hidden;
+.sortDiv {
+  cursor: pointer;
+  margin-left: auto;
 }
 
-.subfilter__row-container {
-  padding-top: 4px;
-  padding-bottom: 4px;
+.sort__row-container {
+  overflow-y: hidden;
 }
 
 .sort__selection {
@@ -2969,7 +2959,7 @@ body {
 
 .products__filter {
   margin-top: var(--margin-vert-between-sections);
-  margin-bottom: var(--margin-vert-between-sections);
+  margin-bottom: 2rem;
 }
 
 .filter__list {
