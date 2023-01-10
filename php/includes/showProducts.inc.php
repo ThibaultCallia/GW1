@@ -81,7 +81,7 @@ foreach ($products as $product) {
   }
   $imgDiv = '<figure>';
   foreach ($imgList as $img) {
-    $imgDiv = $imgDiv . '<img src="./images/sliderImages/' . $img . '" alt="An image of the ' . $product['name'] . '" />';
+    $imgDiv = $imgDiv . '<img src="./images/products/' . strtolower($dataCategory) . '/' . $img . '" alt="An image of the ' . $product['name'] . '" />';
   }
   $imgDiv = $imgDiv . '</figure>';
 
