@@ -536,7 +536,7 @@ function hmrAcceptRun(bundle, id) {
  * Main index.js file
  * 1. imports Filter,
  * 2. creates Filter instance
- * 3. Adds nav monile functionality
+ * 3. Adds nav mobile functionality
  */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _styleScss = require("../css/style.scss");
 var _filter = require("./Filter");

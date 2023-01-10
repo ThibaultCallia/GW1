@@ -2,7 +2,7 @@
  * Main index.js file
  * 1. imports Filter,
  * 2. creates Filter instance
- * 3. Adds nav monile functionality
+ * 3. Adds nav mobile functionality
  */
 
 import "../css/style.scss";
