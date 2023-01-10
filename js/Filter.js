@@ -355,8 +355,15 @@ class Filter {
             : -1;
         });
         break;
+      case "adminActive":
+        this.allProducts = this.allProducts.sort(function (a, b) {
+          return parseInt(a.dataset.active) <= parseInt(b.dataset.active)
+            ? 1
+            : -1;
+        });
+        break;
       default:
-        console.log("test");
+        console.log("sorting option not known");
         break;
     }
 

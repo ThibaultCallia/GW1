@@ -64,7 +64,7 @@ foreach ($products as $product) {
     $dataColor = "";
   }
   // BRAND
-  $dataBrandId = $product['brandId'];
+  $dataBrandId = 'b' . $product['brandId'];
   $brandName = $product['brandName'];
 
   // PRICE
