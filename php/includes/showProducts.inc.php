@@ -1,12 +1,13 @@
 <?php
 
-include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.php');
+
+include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.inc.php');
 // include('includes/db.php');
 
 
 // All active products query
 $showProductsQuery = 'SELECT 
-p.id, p.name, p.description, p.discount, p.image1, p.image2, p.image3, p.image4, p.image5, p.isSpotlight, p.price, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.color_name) as colors
+p.id, p.name, p.description, p.discount, p.image1, p.image2, p.image3, p.image4, p.image5, p.isSpotlight, p.price, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.id) as colorIds, GROUP_CONCAT(col.color_name) as colors
 FROM
 product p
       left JOIN
@@ -43,6 +44,39 @@ $mysqli->close();
 
 // CREATING PRODUCT CARD DIV FOR EACH PRODUCT IN QUERY RESULT
 foreach ($products as $product) {
+  // PRODUCT NAME-----------------------------------
+  $dataCategory = $product['categoryName'];
+  // COLORS-----------------------------------------
+  if ($product['colorIds']) {
+    $productColorsArray = explode(',', $product['colorIds']);
+    foreach ($productColorsArray as &$value) {
+      $value = 'c' . strval($value);
+    };
+    unset($value);
+
+    $dataColor = join(",", $productColorsArray);
+  } else {
+    $dataColor = "";
+  }
+  echo $dataColor;
+  // BRAND
+  $dataBrand = $product['brandName'];
+  // PRICE
+  $dataPrice = $product['price'];
+  // ORDER
+  $dataOrder = $product['id'];
+  // IMAGES
+  $imgList = [];
+  for ($i = 1; $i <= 5; $i++) {
+    if ($product['image' . $i]) {
+      $imgList[] = $product['image' . $i];
+    }
+  }
+  $imgDiv = '<figure>';
+  foreach ($imgList as $img) {
+    $imgDiv = $imgDiv . '<img src="./images/welcome/kb-rk84.webp" alt="An image of the ' . $product['name'] . '" />';
+  }
+
 
   // div class = card-bg--------------------------
   $cardBg = '<div class="card-bg"></div>';
@@ -66,17 +100,13 @@ foreach ($products as $product) {
   $description = '<p class="product-description">' . $product['description'] . '</p>';
 
   // div class = label---------------------------
-  if ($product['colors']) {
-    $productColors = explode(',', $product['colors']);
-  } else {
-    $productColors = [];
-  }
+
   $productColorsDiv = "";
-  if (count($productColors) > 0) {
-    foreach ($productColors as $productColor) {
-      $productColorsDiv = $productColorsDiv . '<button class="label color">' . $productColor . '</button>';
-    }
-  }
+  // if (count($productColors) > 0) {
+  //   foreach ($productColors as $productColor) {
+  //     $productColorsDiv = $productColorsDiv . '<button class="label color">' . $productColor . '</button>';
+  //   }
+  // }
   $labels = '<div class="labels">
       <button class="label type">' . $product['categoryName'] . '</button>
       <button class="label brand">' . $product['brandName'] . '</button>'
@@ -95,12 +125,7 @@ foreach ($products as $product) {
 </div>';
 
   // product images----------------------------
-  $imgList = [];
-  for ($i = 1; $i <= 5; $i++) {
-    if ($product['image' . $i]) {
-      $imgList[] = $product['image' . $i];
-    }
-  }
+
   $firstImageDiv = '<img
     class="product-img"
     src="./images/' . $imgList[0] . '"
@@ -132,22 +157,26 @@ foreach ($products as $product) {
 
 
   // Creation of product card div-------------
-  echo "<div class = 'product-card " . $product['categoryName'] . "'>";
-  echo $cardBg;
-  echo $discount;
-  echo '<section class="card-back">';
-  echo $rating;
-  echo $description;
-  echo $labels;
-  echo $priceCard;
-  echo '</section>';
-  echo '<section class="card-front">';
-  echo $firstImageDiv;
-  echo $optionalImagesDiv;
-  echo $productName;
-  echo $priceIcon;
-  echo '</section>';
-  echo "</div>";
+
+
+
+
+  // echo '<div class="product-card" data-category="'.$dataCategory.'" data-color="'.$dataColor.'" data-brand="b1" data-price="199" data-order="7">';
+  // echo $cardBg;
+  // echo $discount;
+  // echo '<section class="card-back">';
+  // echo $rating;
+  // echo $description;
+  // echo $labels;
+  // echo $priceCard;
+  // echo '</section>';
+  // echo '<section class="card-front">';
+  // echo $firstImageDiv;
+  // echo $optionalImagesDiv;
+  // echo $productName;
+  // echo $priceIcon;
+  // echo '</section>';
+  // echo "</div>";
 }
 
 

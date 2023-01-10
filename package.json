@@ -13,7 +13,11 @@
     "clean:maps": "find ./css -name '*.css.map' -delete",
     "clean:css": "find ./css -name '*.css' -delete",
     "doc": "jsdoc -c jsdoc.json",
-    "buildo": "parcel build ./js/admin.js --dist-dir public"
+    "buildIndex": "parcel build ./js/index.js --dist-dir public",
+    "buildAdmin": "parcel build ./js/admin.js --dist-dir public",
+    "buildLogin": "parcel build ./js/login.js --dist-dir public",
+    "buildAddProducts": "parcel build ./js/addProducts.js --dist-dir public"
+
   },
   "keywords": [],
   "author": "",

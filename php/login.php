@@ -15,7 +15,8 @@ $errors = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="./../public/admin.css" />
+  <link rel="stylesheet" href="../public/login.css" />
+  <script src="../public/login.js"></script>
 
   <!-- Fonts and icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
