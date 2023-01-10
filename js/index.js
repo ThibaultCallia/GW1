@@ -6,7 +6,6 @@
  */
 
 import "../css/style.scss";
-import "../css/admin.scss";
 
 import Filter from "./Filter";
 import "animate.css";

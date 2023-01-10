@@ -1,3 +1,5 @@
+import "../css/admin.scss";
+
 // ------------ For color buttons to stay clicked ------------
 function toggleClickedClass(event) {
   event.target.classList.toggle("clicked");
