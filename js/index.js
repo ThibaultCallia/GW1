@@ -77,18 +77,22 @@ document.querySelectorAll(".card-front").forEach((element) => {
       .filter((x) => x.classList.contains("product-card"))[0]
       .querySelector(".product-modal")
       .showModal();
+    // document.body.style.overflow = "hidden";
   });
 });
 
 document.querySelectorAll(".close").forEach((element) => {
   element.addEventListener("click", (e) => {
     e.target.closest(".product-modal").close();
+    // document.body.style.overflow = "auto";
   });
 });
 
 window.addEventListener("click", (e) => {
   if (e.target.classList.contains("product-modal")) {
     e.target.close();
+    // document.body.style.overflow = "auto";
+    // ESCAPE must be added separately
   }
 });
 

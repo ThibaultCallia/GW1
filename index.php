@@ -45,7 +45,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
                         </li>
                         <li class="full-nav"><a href="#">Home</a></li>
                         <li class="full-nav"><a href="#products">Products</a></li>
-                        <li class="full-nav">Contact</li>
+                        <li class="full-nav"><a href="#footer">Contact</a></li>
                         <li class="full-nav"><a href="./php/admin.php">Admin</a></li>
                         <li class="full-nav">
                             <i class="fa-solid fa-cart-shopping"></i>
@@ -181,6 +181,43 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
             </section>
         </div>
     </main>
+    <footer id="footer">
+        <div class="footer__background"></div>
+        <div class="footer__content-container">
+            <div class="footer__main-content">
+                <div class="footer__part developers">
+                    <ul>
+                        <li class="footer__heading">DEVELOPERS</li>
+                        <li>Rinzin Tenzin</li>
+                        <li>Thibault Calliauw</li>
+                    </ul>
+                </div>
+                <div class="footer__part get-connected">
+                    <ul>
+                        <li class="footer__heading">CONTACT</li>
+                        <li>calliauw.t@gmail.com</li>
+                        <li>tenzin.rinzin@tenzin.rinzin</li>
+                    </ul>
+                </div>
+                <div class="footer__part pricing">
+                    <ul>
+                        <li class="footer__heading">PRICING</li>
+                        <li>Mechanical keyboards are overpriced </li>
+                        <li>Still cool though</li>
+                    </ul>
+                </div>
+                <div class="footer__part social">
+                    <ul>
+                        <li class="footer__heading">SOCIAL</li>
+                        <li>Facebook</li>
+                        <li>LinkedIn</li>
+                        <li>Instagram</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__sub-content"></div>
+        </div>
+    </footer>
 </body>
 
 </html>
