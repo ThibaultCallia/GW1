@@ -185,7 +185,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
         <div class="footer__background"></div>
         <div class="footer__content-container">
             <div class="footer__logo">
-                <img src="./images/welcome/logoNoBg.svg" width=35px alt="">
+                <img src="./images/welcome/logoNoBg.svg" width=30px alt="">
                 <p class="footer__title">KEYKAPS</p>
             </div>
             <div class="footer__main-content">
