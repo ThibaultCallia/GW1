@@ -21,6 +21,7 @@
   .welcome__text{
     font-family: var(--ff-main-title);
     .title{
+      text-align: center;
       font-size: 3.5rem;
       font-weight: 600;
     }
@@ -39,10 +40,5 @@
 }
 
 
-
-.title {
-  text-align: center;
-  font-size: 3rem;
-}
 
 

@@ -2215,6 +2215,7 @@ header {
 }
 
 .welcome-container .welcome__text .title {
+  text-align: center;
   font-size: 3.5rem;
   font-weight: 600;
 }
@@ -2226,11 +2227,6 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-}
-
-.title {
-  text-align: center;
-  font-size: 3rem;
 }
 
 :root {
@@ -2939,33 +2935,67 @@ section.card-front .description .desc {
 
 footer {
   min-height: 250px;
-  margin-top: 4rem;
-  padding-bottom: 2rem;
-  position: relative;
-}
-
-footer .footer__background {
   background-color: var(--clr-body-dark);
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+  display: flex;
+  position: relative;
 }
 
 footer .footer__content-container {
   width: min(var(--max-width-general), 100vw - 2 * var(--padding-general-sides));
   flex-direction: column;
   margin-inline: auto;
-  padding-top: 4rem;
+  display: flex;
+}
+
+footer .footer__content-container .footer__logo {
+  color: #fff;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 600;
   display: flex;
 }
 
 footer .footer__content-container .footer__main-content {
   color: #fff;
   flex-flow: wrap;
-  justify-content: space-evenly;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 2rem;
   display: flex;
+}
+
+footer .footer__content-container .footer__main-content .footer__part ul .footer__subheading {
+  color: #c5c5c5af;
+  padding-bottom: .5rem;
+}
+
+@media (max-width: 680px) {
+  .footer__main-content {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    display: grid !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .footer__logo {
+    justify-content: center;
+  }
+
+  .footer__main-content {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .footer__main-content .footer__part {
+    text-align: center;
+  }
 }
 
 :root {

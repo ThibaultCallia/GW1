@@ -184,38 +184,44 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
     <footer id="footer">
         <div class="footer__background"></div>
         <div class="footer__content-container">
+            <div class="footer__logo">
+                <img src="./images/welcome/logoNoBg.svg" width=35px alt="">
+                <p class="footer__title">KEYKAPS</p>
+            </div>
             <div class="footer__main-content">
                 <div class="footer__part developers">
                     <ul>
-                        <li class="footer__heading">DEVELOPERS</li>
+                        <li class="footer__subheading">DEVELOPERS</li>
                         <li>Rinzin Tenzin</li>
                         <li>Thibault Calliauw</li>
                     </ul>
                 </div>
                 <div class="footer__part get-connected">
                     <ul>
-                        <li class="footer__heading">CONTACT</li>
+                        <li class="footer__subheading">CONTACT</li>
                         <li>calliauw.t@gmail.com</li>
                         <li>tenzin.rinzin@tenzin.rinzin</li>
                     </ul>
                 </div>
                 <div class="footer__part pricing">
                     <ul>
-                        <li class="footer__heading">PRICING</li>
-                        <li>Mechanical keyboards are overpriced </li>
-                        <li>Still cool though</li>
+                        <li class="footer__subheading">PRICING</li>
+                        <li>Overpriced</li>
+                        <li>Expensive hobby</li>
+                        <li>Prices are fictitious</li>
+
                     </ul>
                 </div>
                 <div class="footer__part social">
                     <ul>
-                        <li class="footer__heading">SOCIAL</li>
+                        <li class="footer__subheading">SOCIAL</li>
                         <li>Facebook</li>
                         <li>LinkedIn</li>
                         <li>Instagram</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer__sub-content"></div>
+
         </div>
     </footer>
 </body>
