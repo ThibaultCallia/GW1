@@ -61,11 +61,11 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
         <div class="main-container">
             <section class="welcome-container">
                 <div class="welcome__text">
-                    <div class="text-container">
-                        <?php
-                        echo $loggedIn ? '<p class="title">Logged in as Admin</p>' : '<p class="title">Anything For <br> Mechanical Keyboards</p>';
-                        ?>
-                    </div>
+                    <!-- <div class="text-container"> -->
+                    <?php
+                    echo $loggedIn ? '<p class="title">Logged in as Admin</p>' : '<p class="title">Anything For <br> Mechanical Keyboards</p>';
+                    ?>
+                    <!-- </div> -->
                 </div>
                 <div class="welcome__image-container">
                     <!-- <img

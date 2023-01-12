@@ -1,6 +1,9 @@
-.welcome-container {
-  
+:root{
+  --ff-main-title: 'Assistant', sans-serif;
+  --ff-subtitle: 'Nunito Sans', sans-serif;
+}
 
+.welcome-container {
   /* How to make height header as variable? */
   
   /* border: 1px solid white; */
@@ -14,22 +17,32 @@
   position: relative;
   display: flex;
   align-items: center;
+
+  .welcome__text{
+    font-family: var(--ff-main-title);
+    .title{
+      font-size: 3.5rem;
+      font-weight: 600;
+    }
+  }
+
+  .welcome__image-container {
+    // border: 2px solid red;
+    height: 500px;
+    width: 60%;
+    background-image: url(../images/welcome/keyboard_light.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
 }
 
-.welcome__image-container {
-  // border: 2px solid red;
-  height: 500px;
-  width: 60%;
-  background-image: url(../images/welcome/keyboard_light.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 
 .title {
   text-align: center;
   font-size: 3rem;
 }
-.welcome__image {
-  width: 400px;
-}
+
 

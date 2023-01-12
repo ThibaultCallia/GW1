@@ -2196,6 +2196,11 @@ header {
   }
 }
 
+:root {
+  --ff-main-title: "Assistant", sans-serif;
+  --ff-subtitle: "Nunito Sans", sans-serif;
+}
+
 .welcome-container {
   width: min(var(--max-width-general), 100vw - 2 * var(--padding-general-sides));
   margin-inline: auto;
@@ -2205,21 +2210,27 @@ header {
   position: relative;
 }
 
-.welcome__image-container {
+.welcome-container .welcome__text {
+  font-family: var(--ff-main-title);
+}
+
+.welcome-container .welcome__text .title {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+.welcome-container .welcome__image-container {
   height: 500px;
   width: 60%;
   background-image: url("keyboard_light.52dc0622.png");
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .title {
   text-align: center;
   font-size: 3rem;
-}
-
-.welcome__image {
-  width: 400px;
 }
 
 :root {
