@@ -7,12 +7,12 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
     exit;
 }
 
-include './includes/db.inc.php';
-include './includes/select_queries.inc.php';
+include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.inc.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/select_queries.inc.php');
 
 // voeg nieuw product toe als productnaam bestaat
 if (isset($_POST["prodname"])) {
-    include './includes/insert_queries.inc.php';
+    include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/insert_queries.inc.php');;
     // var_dump($_POST);
 }
 

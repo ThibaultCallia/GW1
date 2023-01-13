@@ -7,6 +7,6 @@ function makeEditable(td) {
   input.focus();
   input.onblur = function () {
     input.readOnly = true;
-    input.style.backgroundColor = "#eee";
+    input.style.backgroundColor = "#FFC0CB";
   };
 }

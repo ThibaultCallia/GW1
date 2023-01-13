@@ -1,5 +1,6 @@
 <?php
 
+
 $cats = ['Keyboard', 'Keycaps', 'Switches'];
 
 
@@ -22,24 +23,21 @@ WHERE cat.name = '" . $cat . "' GROUP BY p.id ORDER BY p.isActive DESC, p.id DES
 
     $products = $result->fetch_all(MYSQLI_ASSOC);
 
-    // if (isset($_POST["submit"])) {
-    //     echo "submitted!";
-    //     include './update-products.inc.php';
-    //     // var_dump($_POST);
-    // }
+    if (isset($_POST["submit"])) {
+        include($_SERVER['DOCUMENT_ROOT'] . "/php/includes/update-products.inc.php");
+    }
 
     $mysqli->close();
 ?>
 
-    <!-- <form action="#" method="post"> -->
-    <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/php/includes/update-products.inc.php" method="post">
+    <form action="#" method="post">
+        <!-- <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/php/includes/update-products.inc.php" method="post"> -->
         <button name="submit" type="submit">Save</button>
         <h2><?= $cat ?></h2>
-        <table class="<?= $cat ?> hidden">
+        <table class="<?= $cat ?>">
             <thead>
                 <tr>
                     <th>Active</th>
-                    <th>id</th>
                     <th>Name</th>
                     <th>Price</th>
                     <th>Brand</th>
@@ -56,14 +54,13 @@ WHERE cat.name = '" . $cat . "' GROUP BY p.id ORDER BY p.isActive DESC, p.id DES
                     <tr class="row">
                         <td>
                             <div class="toggle">
-                                <input type="checkbox" <?= $product["active"] === "1" ? "checked" : "" ?> id="isActive" name="isActive" value="isActive">
+                                <input type="checkbox" <?= $product["active"] === "1" ? "checked" : "" ?> name="isActive<?= $product["id"] ?>" value="<?= $product["active"] === "1" ? "1" : "0" ?>">
                                 <label for="isActive"></label><br>
                             </div>
                         </td>
                         <input type="hidden" name="product_id[]" value="<?= $product["id"] ?>">
-                        <td><?= $product["id"] ?></td>
                         <td onclick="makeEditable(this)"><input type="text" name="name[]" value="<?= $product['name'] ?>" class="editable name" readonly></td>
-                        <td onclick="makeEditable(this)">€ <input type="number" name="price[]" value="<?= $product['price'] ?>" class="editable price" readonly></td>
+                        <td onclick="makeEditable(this)">€ <input type="number" name="price[]" value="<?= $product['price'] ?>" class="editable price" readonly min="0" max="9999.99" step="0.01"></td>
                         <td><button class="label brand"><?= $product["brandName"] ?></button></td>
                         <td>
                             <div class="colors">
@@ -93,7 +90,7 @@ WHERE cat.name = '" . $cat . "' GROUP BY p.id ORDER BY p.isActive DESC, p.id DES
                         </td>
                         <td>
                             <div class="toggle">
-                                <input type="checkbox" <?= $product["spotlight"] === "1" ? "checked" : "" ?> id="inSpotlight" name="inSpotlight" value="inSpotlight">
+                                <input type="checkbox" <?= $product["spotlight"] === "1" ? "checked" : "" ?> name="inSpotlight<?= $product["id"] ?>" value="inSpotlight">
                                 <label for="inSpotlight"></label><br>
                             </div>
                         </td>
