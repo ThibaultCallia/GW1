@@ -22,20 +22,20 @@ WHERE cat.name = '" . $cat . "' GROUP BY p.id ORDER BY p.isActive DESC, p.id DES
 
     $products = $result->fetch_all(MYSQLI_ASSOC);
 
-    if (isset($_POST["submit"])) {
-        echo "submitted!";
-        include './update-products.inc.php';
-        // var_dump($_POST);
-    }
+    // if (isset($_POST["submit"])) {
+    //     echo "submitted!";
+    //     include './update-products.inc.php';
+    //     // var_dump($_POST);
+    // }
 
     $mysqli->close();
 ?>
 
     <!-- <form action="#" method="post"> -->
     <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/php/includes/update-products.inc.php" method="post">
-        <button type="submit">Save</button>
+        <button name="submit" type="submit">Save</button>
         <h2><?= $cat ?></h2>
-        <table class="<?= $cat ?>">
+        <table class="<?= $cat ?> hidden">
             <thead>
                 <tr>
                     <th>Active</th>
