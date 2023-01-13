@@ -45,7 +45,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
                         </li>
                         <li class="full-nav"><a href="#">Home</a></li>
                         <li class="full-nav"><a href="#products">Products</a></li>
-                        <li class="full-nav">Contact</li>
+                        <li class="full-nav"><a href="#footer">Contact</a></li>
                         <li class="full-nav"><a href="./php/admin.php">Admin</a></li>
                         <li class="full-nav">
                             <i class="fa-solid fa-cart-shopping"></i>
@@ -61,11 +61,11 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
         <div class="main-container">
             <section class="welcome-container">
                 <div class="welcome__text">
-                    <div class="text-container">
-                        <?php
-                        echo $loggedIn ? '<p class="title">Logged in as Admin</p>' : '<p class="title">Anything For <br> Mechanical Keyboards</p>';
-                        ?>
-                    </div>
+                    <!-- <div class="text-container"> -->
+                    <?php
+                    echo $loggedIn ? '<p class="title">Logged in as Admin</p>' : '<p class="title">Anything For <br> Mechanical Keyboards</p>';
+                    ?>
+                    <!-- </div> -->
                 </div>
                 <div class="welcome__image-container">
                     <!-- <img
@@ -181,6 +181,49 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
             </section>
         </div>
     </main>
+    <footer id="footer">
+        <div class="footer__background"></div>
+        <div class="footer__content-container">
+            <div class="footer__logo">
+                <img src="./images/welcome/logoNoBg.svg" width=30px alt="">
+                <p class="footer__title">KEYKAPS</p>
+            </div>
+            <div class="footer__main-content">
+                <div class="footer__part developers">
+                    <ul>
+                        <li class="footer__subheading">DEVELOPERS</li>
+                        <li>Rinzin Tenzin</li>
+                        <li>Thibault Calliauw</li>
+                    </ul>
+                </div>
+                <div class="footer__part get-connected">
+                    <ul>
+                        <li class="footer__subheading">CONTACT</li>
+                        <li>calliauw.t@gmail.com</li>
+                        <li>tenzin.rinzin@tenzin.rinzin</li>
+                    </ul>
+                </div>
+                <div class="footer__part pricing">
+                    <ul>
+                        <li class="footer__subheading">PRICING</li>
+                        <li>Overpriced</li>
+                        <li>Expensive hobby</li>
+                        <li>Prices are fictitious</li>
+
+                    </ul>
+                </div>
+                <div class="footer__part social">
+                    <ul>
+                        <li class="footer__subheading">SOCIAL</li>
+                        <li>Facebook</li>
+                        <li>LinkedIn</li>
+                        <li>Instagram</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </footer>
 </body>
 
 </html>
