@@ -2344,12 +2344,12 @@ header {
 .active-filter-btn {
   color: #000;
   cursor: pointer;
-  background-color: #d3d3d3;
+  background-color: #d9d9d9;
   border: none;
   border-radius: .25rem;
   align-items: center;
   gap: 10px;
-  padding: .5rem 1rem;
+  padding: .25rem .75rem;
   font-size: smaller;
   font-weight: 500;
   display: flex;
@@ -2386,12 +2386,6 @@ header {
   border-radius: .4rem;
 }
 
-.active-filter-btn {
-  background-color: #d9d9d9;
-  border-radius: .25rem;
-  padding: .25rem .75rem !important;
-}
-
 .active-filter-btn :nth-child(2) {
   color: #404040;
 }
@@ -2415,6 +2409,57 @@ header {
 
 .general-subfilter-btn {
   color: var(--clr-body-dark);
+}
+
+@media (max-width: 770px) {
+  .products__filter {
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 470px) {
+  .general-subfilter-btn {
+    padding: .25rem .75rem;
+  }
+
+  .subfilter {
+    flex-wrap: wrap;
+  }
+
+  .filter__list {
+    width: calc(100vw - 40px) !important;
+  }
+
+  .nav-container {
+    width: calc(100vw - 2 * var(--padding-mobile-sides)) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .subfilter {
+    justify-content: space-between;
+  }
+
+  .sortDiv {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .filter__list {
+    width: calc(100vw - 2 * var(--padding-mobile-sides)) !important;
+    font-size: .9rem !important;
+  }
+
+  .subfilter-container {
+    width: calc(100vw - 2 * var(--padding-mobile-sides)) !important;
+  }
+
+  .general-subfilter-btn {
+    font-size: .9rem !important;
+  }
 }
 
 :root {
@@ -3006,6 +3051,7 @@ footer .footer__content-container .footer__main-content .footer__part ul .footer
   --fs-carousel-img: 3.5rem;
   --ff: "Roboto", sans-serif;
   --padding-general-sides: 2rem;
+  --padding-mobile-sides: 1rem;
   --margin-vert-between-sections: 3rem;
   --max-width-general: 1200px;
   --height-header-desktop: 140px;
