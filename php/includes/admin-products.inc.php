@@ -4,7 +4,7 @@ $cats = ['Keyboard', 'Keycaps', 'Switches'];
 
 
 foreach ($cats as $cat) {
-    include('../includes/db.inc.php');
+    include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.inc.php');
 
 
     // get all product cards info
@@ -16,20 +16,27 @@ left JOIN product_has_color pc ON p.id = pc.product_id left JOIN color col ON pc
 WHERE cat.name = '" . $cat . "' GROUP BY p.id ORDER BY p.isActive DESC, p.id DESC;";
     $result = $mysqli->query($sql);
 
-    echo "<pre>";
-    var_dump($cats);
-    exit;
+    // echo "<pre>";
+    // var_dump($cats);
+    // exit;
 
     $products = $result->fetch_all(MYSQLI_ASSOC);
+
+    if (isset($_POST["submit"])) {
+        echo "submitted!";
+        include './update-products.inc.php';
+        // var_dump($_POST);
+    }
 
     $mysqli->close();
 ?>
 
-    <form action="update-products.php" method="post">
+    <!-- <form action="#" method="post"> -->
+    <form action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/php/includes/update-products.inc.php" method="post">
         <button type="submit">Save</button>
+        <h2><?= $cat ?></h2>
         <table class="<?= $cat ?>">
             <thead>
-                <h2><?= $cat ?></h2>
                 <tr>
                     <th>Active</th>
                     <th>id</th>
@@ -55,8 +62,8 @@ WHERE cat.name = '" . $cat . "' GROUP BY p.id ORDER BY p.isActive DESC, p.id DES
                         </td>
                         <input type="hidden" name="product_id[]" value="<?= $product["id"] ?>">
                         <td><?= $product["id"] ?></td>
-                        <td onclick="makeEditable(this)"><input type="text" name="name[]" id="name_<?= $product['id'] ?>" value="<?= $product['name'] ?>" class="editable name" readonly></td>
-                        <td onclick="makeEditable(this)">€ <input type="number" name="price[]" id="price_<?= $product['id'] ?>" value="<?= $product['price'] ?>" class="editable price" readonly></td>
+                        <td onclick="makeEditable(this)"><input type="text" name="name[]" value="<?= $product['name'] ?>" class="editable name" readonly></td>
+                        <td onclick="makeEditable(this)">€ <input type="number" name="price[]" value="<?= $product['price'] ?>" class="editable price" readonly></td>
                         <td><button class="label brand"><?= $product["brandName"] ?></button></td>
                         <td>
                             <div class="colors">
