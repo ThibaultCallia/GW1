@@ -1,12 +1,8 @@
 import "../css/admin.scss";
 
-function makeEditable(td) {
-  var input = td.querySelector(".editable");
-  input.readOnly = false;
-  input.style.backgroundColor = "#fff";
-  input.focus();
-  input.onblur = function () {
-    input.readOnly = true;
-    input.style.backgroundColor = "#FFC0CB";
-  };
-}
+// ----- deleting default submit behaviour on all add image btns ---
+document.querySelectorAll(".add-img").forEach((btn) => {
+  btn.addEventListener("click", function (event) {
+    event.preventDefault();
+  });
+});

@@ -17,7 +17,8 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/admin.css">
-    <script src="../public/admin.js" defer></script>
+    <!-- <script src="../public/admin.js" defer></script> -->
+    <!-- <script src="../js/admin.js" defer></script> -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,18 +48,5 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
         </section>
     </main>
 </body>
-
-<script>
-    function makeEditable(td) {
-        var input = td.querySelector(".editable");
-        input.readOnly = false;
-        input.style.backgroundColor = "#fff";
-        input.focus();
-        input.onblur = function() {
-            input.readOnly = true;
-            input.style.backgroundColor = "#eee";
-        };
-    }
-</script>
 
 </html>
