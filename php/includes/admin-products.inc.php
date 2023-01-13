@@ -2,8 +2,10 @@
 
 $cats = ['Keyboard', 'Keycaps', 'Switches'];
 
+
 foreach ($cats as $cat) {
-    include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/db.inc.php');
+    include('../includes/db.inc.php');
+
 
     // get all product cards info
     $sql = "SELECT p.id as id, p.name as name, p.description as description, p.image1, 
@@ -13,6 +15,10 @@ FROM product p left JOIN brand b ON p.brand_id = b.id left JOIN category cat ON 
 left JOIN product_has_color pc ON p.id = pc.product_id left JOIN color col ON pc.color_id = col.id 
 WHERE cat.name = '" . $cat . "' GROUP BY p.id ORDER BY p.isActive DESC, p.id DESC;";
     $result = $mysqli->query($sql);
+
+    echo "<pre>";
+    var_dump($cats);
+    exit;
 
     $products = $result->fetch_all(MYSQLI_ASSOC);
 
