@@ -19,71 +19,75 @@ WHERE cat.name = '" . $cat . "' GROUP BY p.id ORDER BY p.isActive DESC, p.id DES
     $mysqli->close();
 ?>
 
-    <table class="<?= $cat ?>">
-        <thead>
-            <h2><?= $cat ?></h2>
-            <tr>
-                <th>Active</th>
-                <th>id</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Brand</th>
-                <th>Colors</th>
-                <th>Rating</th>
-                <th>Spotlight</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            foreach ($products as $product) {
-            ?>
-                <tr class="row">
-                    <td>
-                        <div class="toggle">
-                            <input type="checkbox" <?= $product["active"] === "1" ? "checked" : "" ?> id="isActive" name="isActive" value="isActive">
-                            <label for="isActive"></label><br>
-                        </div>
-                    </td>
-                    <td><?= $product["id"] ?></td>
-                    <td><?= $product["name"] ?></td>
-                    <td><?= $product["price"] ?></td>
-                    <td><button class="label brand"><?= $product["brandName"] ?></button></td>
-                    <td>
-                        <div class="colors">
-                            <?php $colors = explode(",", $product["colors"]);
-                            foreach ($colors as $color) { ?>
-                                <button class="label color"><?= $color ?></button>
-                            <?php }
-                            ?>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="ratings">
-                            <?php
-                            for ($i = 1; $i <= 5; $i++) {
-                                if ($product["rating"] === strval($i)) {
-                                    for ($y = 1; $y <= $i; $y++) {
-                                        echo '<i class="fas fa-star yellow"></i>';
-                                    }
-                                    for ($g = 5; $g > $i; $g--) {
-                                        echo '<i class="fas fa-star"></i>';
-                                    }
-                                    break;
-                                }
-                            }
-                            ?>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="toggle">
-                            <input type="checkbox" <?= $product["spotlight"] === "1" ? "checked" : "" ?> id="inSpotlight" name="inSpotlight" value="inSpotlight">
-                            <label for="inSpotlight"></label><br>
-                        </div>
-                    </td>
-                    <td><?= substr($product["description"], 0, 10) . "..." ?></td>
+    <form action="update-products.php" method="post">
+        <button type="submit">Save</button>
+        <table class="<?= $cat ?>">
+            <thead>
+                <h2><?= $cat ?></h2>
+                <tr>
+                    <th>Active</th>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Brand</th>
+                    <th>Colors</th>
+                    <th>Rating</th>
+                    <th>Spotlight</th>
+                    <th>Description</th>
                 </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($products as $product) {
+                ?>
+                    <tr class="row">
+                        <td>
+                            <div class="toggle">
+                                <input type="checkbox" <?= $product["active"] === "1" ? "checked" : "" ?> id="isActive" name="isActive" value="isActive">
+                                <label for="isActive"></label><br>
+                            </div>
+                        </td>
+                        <input type="hidden" name="product_id[]" value="<?= $product["id"] ?>">
+                        <td><?= $product["id"] ?></td>
+                        <td onclick="makeEditable(this)"><input type="text" name="name[]" id="name_<?= $product['id'] ?>" value="<?= $product['name'] ?>" class="editable name" readonly></td>
+                        <td onclick="makeEditable(this)">€ <input type="number" name="price[]" id="price_<?= $product['id'] ?>" value="<?= $product['price'] ?>" class="editable price" readonly></td>
+                        <td><button class="label brand"><?= $product["brandName"] ?></button></td>
+                        <td>
+                            <div class="colors">
+                                <?php $colors = explode(",", $product["colors"]);
+                                foreach ($colors as $color) { ?>
+                                    <button class="label color"><?= $color ?></button>
+                                <?php }
+                                ?>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ratings">
+                                <?php
+                                for ($i = 1; $i <= 5; $i++) {
+                                    if ($product["rating"] === strval($i)) {
+                                        for ($y = 1; $y <= $i; $y++) {
+                                            echo '<i class="fas fa-star yellow"></i>';
+                                        }
+                                        for ($g = 5; $g > $i; $g--) {
+                                            echo '<i class="fas fa-star"></i>';
+                                        }
+                                        break;
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="toggle">
+                                <input type="checkbox" <?= $product["spotlight"] === "1" ? "checked" : "" ?> id="inSpotlight" name="inSpotlight" value="inSpotlight">
+                                <label for="inSpotlight"></label><br>
+                            </div>
+                        </td>
+                        <td><?= substr($product["description"], 0, 10) . "..." ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </form>
 <?php } ?>
