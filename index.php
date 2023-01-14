@@ -40,17 +40,11 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
                 </div>
                 <nav class="main-nav">
                     <ul class="nav__list">
-                        <li class="full-nav">
-                            <i class="theme-btn fa-solid fa-sun"></i>
-                        </li>
+
                         <li class="full-nav"><a href="#">Home</a></li>
                         <li class="full-nav"><a href="#products">Products</a></li>
                         <li class="full-nav"><a href="#footer">Contact</a></li>
                         <li class="full-nav"><a href="./php/admin.php">Admin</a></li>
-                        <li class="full-nav">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </li>
-
                         <li class="mobile-nav-list-item">
                             <i class="mobile-nav-btn fa-solid fa-bars"></i>
                         </li>
