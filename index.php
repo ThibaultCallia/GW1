@@ -170,8 +170,8 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
                 <div class="grid-container">
 
                     <a href="#products" class="back2prods"><i class="fa-solid fa-circle-chevron-up"></i></a>
-                    <!-- <div class="product-card " data-category="Keyboard" data-color="c11" data-brand="b2" data-price="99.00" data-order="2">
-                        <section class="card-front">
+                    <!-- <div class="product-card" data-category="Keyboard" data-color="c11" data-brand="b2" data-price=100.00" data-order="2">
+                        <section class="card-front spotlight">
                             <div class="swiperD swiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
@@ -200,7 +200,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
                                     <i class="fas fa-star" aria-hidden="true"></i>
                                     <i class="fas fa-star" aria-hidden="true"></i>
                                 </div>
-                                <h4 class="price">€99.00</h4>
+                                <h4 class="price">€100.00</h4>
                                 <div class="desc">
                                     This is another keyb...
                                 </div>
@@ -264,7 +264,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
 
                         </dialog>
                     </div>
-                    <div class="product-card " data-category="Keyboard" data-color="c11" data-brand="b2" data-price="99.00" data-order="2">
+                    <div class="product-card " data-category="Keyboard" data-color="c11" data-brand="b2" data-price="100.00" data-order="2">
                         <section class="card-front">
                             <div class="swiperD swiper">
                                 <div class="swiper-wrapper">

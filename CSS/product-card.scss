@@ -38,6 +38,7 @@
     font-family: 'Spartan', sans-serif;
     max-width: 100%;
     min-width: 250px;
+    border-radius: var(--br);
     height: 350px;
 }
 .card-front:hover{
@@ -144,7 +145,11 @@ section.card-front{
 
 // modal only on bigger screens
 @media only screen and (min-width: 604px){
+    .spotlight{
+        background-color: #fb892b;
+    }
     dialog.product-modal{
+
         border: 1px solid lightgray;
         background: #e0e0e0;
         box-shadow:  8px 8px 50px #bcbcbc75, -8px -8px 50px #53525274;

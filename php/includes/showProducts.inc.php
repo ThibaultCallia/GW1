@@ -9,7 +9,7 @@ $whereStatement = $loggedIn ? "" : "WHERE isActive = 1 ";
 
 
 $showProductsQuery = 'SELECT 
-p.id, p.name, p.description, p.discount, p.image1, p.image2, p.image3, p.image4, p.image5, p.isSpotlight, p.isActive, p.price, p.rating, b.id as brandId, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.id) as colorIds, GROUP_CONCAT(col.color_name) as colors
+p.id, p.name, p.description, p.discount, p.image1, p.image2, p.image3, p.image4, p.image5, p.isActive, p.isSpotlight, p.price, p.rating, b.id as brandId, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.id) as colorIds, GROUP_CONCAT(col.color_name) as colors
 FROM
 product p
       left JOIN
@@ -124,8 +124,9 @@ foreach ($products as $product) {
     </div>
   ';
 
+  $spotlight = $product['isSpotlight'] == 1 ? 'spotlight' : '';
 
-  $cardFront = '<section class="card-front">' . $imgDiv . $descriptionDiv . '</section>';
+  $cardFront = '<section class="card-front ' . $spotlight . '">' . $imgDiv . $descriptionDiv . '</section>';
 
 
   $productModal =
