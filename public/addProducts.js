@@ -621,6 +621,24 @@ stars.forEach((star)=>{
         for(let i = 1; i <= e.target.id.charAt(1); i++)document.querySelector(`.ratings i#s${i}`).classList.add("yellow");
     });
 });
+// submit btn
+document.querySelector(".form-container form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.querySelector("#popup").classList.remove("hidden");
+});
+document.querySelectorAll(".popUpBtn").forEach((element)=>{
+    element.addEventListener("click", ()=>{
+        console.log("test");
+        document.querySelector(".form-container form").submit();
+        document.querySelector("#popup").classList.add("hidden");
+    });
+});
+// prevent default
+document.querySelectorAll("table td button.label").forEach((btn)=>{
+    btn.addEventListener("click", (e)=>{
+        e.preventDefault();
+    });
+});
 
 },{"../css/add_products.scss":"hIl0a"}],"hIl0a":[function() {},{}]},["eX6TU","gfMuk"], "gfMuk", "parcelRequire6e42")
 

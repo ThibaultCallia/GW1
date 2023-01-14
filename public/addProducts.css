@@ -6,19 +6,15 @@
   font-size: 100%;
 }
 
-*,
-:before,
-:after {
+*, :before, :after {
   box-sizing: border-box;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   scroll-behavior: smooth;
 }
@@ -38,55 +34,32 @@ a:not([class]) {
     scroll-behavior: auto;
   }
 
-  *,
-  :before,
-  :after {
+  *, :before, :after {
     scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
   }
 }
 
-a:visited,
-a:link,
-a:active {
+a:visited, a:link, a:active {
   color: currentColor;
   text-decoration: none;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-article,
-aside,
-details,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, details, figcaption, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-blockquote,
-q {
+blockquote, q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: "";
   content: none;
 }
@@ -100,8 +73,8 @@ nav.main {
   z-index: 5;
   height: var(--nav-bar-height);
   background-color: #fff;
-  border-top: 0.4px solid #2d343c;
-  border-bottom: 0.4px solid #2d343c;
+  border-top: .4px solid #2d343c;
+  border-bottom: .4px solid #2d343c;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -165,8 +138,7 @@ body {
   color: var(--clr-body-dark);
 }
 
-body h1,
-body h2 {
+body h1, body h2 {
   font-weight: 600;
 }
 
@@ -174,7 +146,7 @@ body h2 {
   box-sizing: border-box;
   appearance: none;
   background-color: #fff;
-  border: 0.5px solid gray;
+  border: .5px solid gray;
   border-radius: 4px;
   margin-bottom: 5px;
   padding: 5px 35px 5px 10px;
@@ -193,7 +165,7 @@ body h2 {
   position: relative;
   top: 0;
   left: 0;
-  transform: scale(0.01);
+  transform: scale(.01);
 }
 
 form .form_input {
@@ -217,7 +189,7 @@ form .form_input label {
   color: #adadad;
   pointer-events: none;
   font-size: 16px;
-  transition: all 0.5s;
+  transition: all .5s;
   position: absolute;
   top: 50%;
   left: 5px;
@@ -305,7 +277,7 @@ form .form_input label {
   height: calc(var(--toggle-size) / 10 * 9);
   border-radius: calc(var(--toggle-size) / 10 * 9);
   background: #fff;
-  transition: all 0.3s;
+  transition: all .3s;
   position: absolute;
 }
 
@@ -338,35 +310,27 @@ form .form_input label {
   padding: 0;
 }
 
-.product-wrap .form_input-prodname,
-.product-wrap .form_input-price {
+.product-wrap .form_input-prodname, .product-wrap .form_input-price {
   margin-top: 15px;
 }
 
-.product-wrap .form_input-prodname span:before,
-.product-wrap .form_input-price span:before {
+.product-wrap .form_input-prodname span:before, .product-wrap .form_input-price span:before {
   content: "";
   width: 0%;
   height: 2px;
   background: #2d343c;
-  transition: all 0.5s;
+  transition: all .5s;
   position: absolute;
   top: 40px;
   left: 0;
 }
 
-.product-wrap .form_input-prodname input:focus ~ label,
-.product-wrap .form_input-prodname input:valid ~ label,
-.product-wrap .form_input-price input:focus ~ label,
-.product-wrap .form_input-price input:valid ~ label {
+.product-wrap .form_input-prodname input:focus ~ label, .product-wrap .form_input-prodname input:valid ~ label, .product-wrap .form_input-price input:focus ~ label, .product-wrap .form_input-price input:valid ~ label {
   color: #2d343c;
   top: -5px;
 }
 
-.product-wrap .form_input-prodname input:focus ~ span:before,
-.product-wrap .form_input-prodname input:valid ~ span:before,
-.product-wrap .form_input-price input:focus ~ span:before,
-.product-wrap .form_input-price input:valid ~ span:before {
+.product-wrap .form_input-prodname input:focus ~ span:before, .product-wrap .form_input-prodname input:valid ~ span:before, .product-wrap .form_input-price input:focus ~ span:before, .product-wrap .form_input-price input:valid ~ span:before {
   width: 100%;
 }
 
@@ -387,13 +351,10 @@ form .form_input label {
 .form_input-description textarea {
   width: 100%;
   border: none;
-  padding: 0.5em 0.3em;
+  padding: .5em .3em;
 }
 
-.form_input-description textarea:focus,
-.form_input-description textarea:valid,
-.form_input-description textarea:active,
-.form_input-description textarea::selection {
+.form_input-description textarea:focus, .form_input-description textarea:valid, .form_input-description textarea:active, .form_input-description textarea::selection {
   border: none;
 }
 
@@ -403,8 +364,7 @@ form .form_input label {
   left: -5px;
 }
 
-.filter-wrap .select_input,
-.filter-wrap label {
+.filter-wrap .select_input, .filter-wrap label {
   width: 30%;
 }
 
@@ -425,8 +385,7 @@ form .form_input label {
   color: #adadad;
 }
 
-.filter-wrap .ratings figure i:hover,
-.filter-wrap .ratings figure i.yellow {
+.filter-wrap .ratings figure i:hover, .filter-wrap .ratings figure i.yellow {
   color: #fdcc0d;
 }
 
@@ -445,7 +404,7 @@ form .form_input label {
 .filter-wrap button.add:hover span {
   opacity: 1;
   border-color: #2d343c;
-  transition: all 0.5s;
+  transition: all .5s;
 }
 
 .filter-wrap button.add span {
@@ -467,9 +426,9 @@ form .form_input label {
   border: none;
   border-radius: 1em;
   outline: none;
-  margin: 0.25em;
-  padding: 0.4em 0.9em;
-  font-size: 0.75rem;
+  margin: .25em;
+  padding: .4em .9em;
+  font-size: .75rem;
 }
 
 .filter-wrap .colors button:has(label) label {
@@ -520,7 +479,7 @@ form .form_input label {
 
 .img-wrap.wrapper .wrap2 button:hover {
   border-color: #2d343c;
-  transition: all 0.5s;
+  transition: all .5s;
 }
 
 .submit-btn {
@@ -547,10 +506,54 @@ form .form_input label {
 
 .submit-btn input[type="submit"]:hover {
   border-color: #2d343c;
-  transition: all 0.5s;
+  transition: all .5s;
 }
 
-.filter-wrap input[type="checkbox"],
+.filter-wrap input[type="checkbox"] {
+  display: none;
+}
+
+.submit-pop-up {
+  width: 400px;
+  text-align: center;
+  color: #333;
+  background: #fff;
+  border-radius: 6px;
+  padding: 0 30px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 7px 29px #64646f33;
+}
+
+.submit-pop-up img {
+  width: 100px;
+  border-radius: 50%;
+  margin-top: -50px;
+  box-shadow: 0 2px 5px #0003;
+}
+
+.submit-pop-up h2 {
+  margin: 30px 0 10px;
+  font-size: 38px;
+  font-weight: 500;
+}
+
+.submit-pop-up button {
+  width: 70%;
+  color: #fff;
+  cursor: pointer;
+  background: #2d343c;
+  border: 0;
+  border-radius: 4px;
+  outline: none;
+  margin-top: 2rem;
+  padding: 10px 0;
+  font-size: 18px;
+  box-shadow: 0 5px 5px #0003;
+}
+
 .hidden {
   display: none;
 }

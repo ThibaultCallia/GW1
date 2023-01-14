@@ -165,28 +165,13 @@ $mysqli->close();
 
     <div class="submit-pop-up hidden" id="popup">
         <img src="../images/tick.png" alt="check icon">
-        <h2>Submitted</h2>
-        <p>Your product has been successfully added to the database. Thank you!</p>
-        <button type="button">Add another product</button>
-        <button type="button">Back to Admin</button>
+        <h2>About to submit</h2>
+        <p>Are you sure?</p>
+        <button class="popUpBtn" type="button"><a href="#">Submit</a></button>
+        <button class="popUpBtn" type="button"><a href="./admin.php">Cancel</a></button>
     </div>
 
-    <script>
-        document.querySelector(".form-container form").addEventListener("submit", function(e) {
-            event.preventDefault();
-            document.querySelector("#popup").classList.remove("hidden");
-            // showPopUp();
-        })
 
-        // function showPopUp(){
-        // }
-
-        document.querySelectorAll("table td button.label").forEach((btn) => {
-            btn.addEventListener("click", function(event) {
-                event.preventDefault();
-            });
-        });
-    </script>
 
 </body>
 

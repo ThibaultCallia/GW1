@@ -122,7 +122,7 @@ form {
         }
     }
   }
-}
+
 // Title section
 .title-wrap.wrapper {
   --toggle-size: 20px;
@@ -411,6 +411,7 @@ form {
   text-align: center;
   padding: 0 30px 30px;
   color: #333;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   img {
     width: 100px;
     margin-top: -50px;
@@ -423,10 +424,10 @@ form {
     margin: 30px 0 10px;
   }
   button {
-    width: 100%;
-    margin-top: 50px;
+    width: 70%;
+    margin-top: 2rem;
     padding: 10px 0;
-    background: #6fd649;
+    background: #2d343c;
     color: #fff;
     border: 0;
     outline: none;
