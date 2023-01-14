@@ -70,7 +70,7 @@ foreach ($products as $product) {
   // PRICE
   $dataPrice = strval($product['price']);
   // ORDER
-  $dataOrder = $product['id'];
+  $dataId = $product['id'];
 
   // IMAGES FIGURE DIV
   $imgList = [];
@@ -176,7 +176,7 @@ foreach ($products as $product) {
     $activeClass = 'active';
   }
 
-  $productCard = '<div class="product-card ' . $activeClass . '" data-category="' . $dataCategory . '" data-color="' . $dataColor . '" data-brand="' . $dataBrandId . '" data-price="' . $dataPrice . '" data-order="' . $dataOrder . '" ' . $dataActive . '>' . $cardFront . $productModal . '</div>';
+  $productCard = '<div class="product-card ' . $activeClass . '" data-category="' . $dataCategory . '" data-color="' . $dataColor . '" data-brand="' . $dataBrandId . '" data-price="' . $dataPrice . '" data-id="' . $dataId . '" ' . $dataActive . '>' . $cardFront . $productModal . '</div>';
 
   echo $productCard;
 }

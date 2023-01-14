@@ -20,7 +20,7 @@ textarea.addEventListener("input", () => {
   charCount.textContent = textarea.value.length;
 });
 // char count limit
-const charLimit = 100;
+const charLimit = 500;
 
 textarea.addEventListener("input", () => {
   charCount.textContent = textarea.value.length;
