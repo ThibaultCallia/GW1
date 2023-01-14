@@ -13,7 +13,7 @@ import "animate.css";
 // import Swiper JS
 import Swiper from "swiper";
 // import Swiper styles
-import "swiper/css";
+// import "swiper/css";
 
 swiper = new Swiper(".swiper");
 

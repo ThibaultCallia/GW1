@@ -13,6 +13,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
     <?php
     include "./php/includes/head.inc.php"
     ?>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <!-- Title -->
     <title>#️⃣ Keykaps</title>
 </head>
