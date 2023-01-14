@@ -2,7 +2,6 @@
   "name": "keykaps",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "vite --host",
     "starto": "vite --host --open",
@@ -11,9 +10,13 @@
     "deploy": "surge ./dist keykaps.surge.sh",
     "clean": "rm -rf ./dist ./node_modules ./package-lock.json",
     "sass": "sass ./scss:CSS --watch --style=compressed",
-    "clean:maps": "find ./css -name '*.css.map' -delete",
-    "clean:css": "find ./css -name '*.css' -delete",
-    "doc": "jsdoc -c jsdoc.json"
+    "clean:maps": "find ./public -name '*.map' -delete",
+    "doc": "jsdoc -c jsdoc.json",
+    "buildIndex": "parcel build ./js/index.js --dist-dir public",
+    "buildAdmin": "parcel build ./js/admin.js --dist-dir public",
+    "buildLogin": "parcel build ./js/login.js --dist-dir public",
+    "buildAddProducts": "parcel build ./js/addProducts.js --dist-dir public"
+
   },
   "keywords": [],
   "author": "",

@@ -15,7 +15,8 @@ $errors = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="./../CSS/login_page.css" />
+  <link rel="stylesheet" href="../public/login.css" />
+  <script src="../public/login.js"></script>
 
   <!-- Fonts and icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,7 +37,7 @@ $errors = [
         echo $errors[$_GET["error"]];
       } ?>
     </p>
-    <form method="post" action="./includes/auth.php">
+    <form method="post" action="./includes/auth.inc.php">
       <div class="form_input">
         <input type="text" name="username" required />
         <span></span>

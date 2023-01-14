@@ -3,16 +3,16 @@ session_start();
 
 // ik check of dat sessionlogin bestaat en of die op TRUE staat
 if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
-    header("Location: ./login.php");
+    header("Location: ./includes/login.php");
     exit;
 }
 
-include './includes/db.php';
-include './includes/select_queries.php';
+include './includes/db.inc.php';
+include './includes/select_queries.inc.php';
 
 // voeg nieuw product toe als productnaam bestaat
 if (isset($_POST["prodname"])) {
-    include './includes/insert_queries.php';
+    include './includes/insert_queries.inc.php';
     // var_dump($_POST);
 }
 
@@ -28,16 +28,15 @@ $mysqli->close();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./../CSS/admin.css" />
-    <link rel="stylesheet" href="./../CSS/select.css" />
-    <link rel="stylesheet" href="./../cssMain/hidden.css" />
+    <link rel="stylesheet" href="../public/addProducts.css">
+
     <script src="https://kit.fontawesome.com/cdb38844a4.js" crossorigin="anonymous"></script>
-    <script src="./../js/admin.js" type="module"></script>
+    <script src="../public/addProducts.js" type="module"></script>
     <title>New Products</title>
 </head>
 
 <body>
-    <?php include './includes/nav.php'; ?>
+    <?php include './includes/nav.inc.php'; ?>
     <div class="form-container">
         <form method="post" action="#">
             <!-- The title section -->
@@ -76,7 +75,7 @@ $mysqli->close();
                     <div class="form_input form_input-description">
                         <textarea rows="6" placeholder="Description..." name="description" id="description" required /></textarea>
                         <p class="char-container">
-                        <div class="label"><span id="char-count">0</span> / 500 ch</div>
+                        <div class="label"><span id="char-count">0</span> / 500</div>
                         </p>
                     </div>
                 </div>

@@ -2,31 +2,15 @@
  * Main index.js file
  * 1. imports Filter,
  * 2. creates Filter instance
- * 3. Adds nav monile functionality
+ * 3. Adds nav mobile functionality
  */
+
+import "../css/style.scss";
 
 import Filter from "./Filter";
 import "animate.css";
 
 const mainFilter = new Filter();
-
-// var flkty = new Flickity(elem, {
-//   // options
-//   cellAlign: "left",
-//   contain: true,
-//   pageDots: false,
-//   dragThreshold: 10,
-//   imagesLoaded: true,
-//   setGallerySize: false,
-//   arrowShape: {
-//     x0: 15,
-//     x1: 60,
-//     y1: 40,
-//     x2: 70,
-//     y2: 40,
-//     x3: 40,
-//   },
-// });
 
 // Mobile nav
 document
@@ -84,72 +68,35 @@ function closeMobileNav() {
   }
 }
 
-/* Test environment for product card carousel ---------
--------------------------------------------------------*/
-// const rightBtn = document.querySelector(".right-btn");
-
-// rightBtn.addEventListener("click", slide);
-
-// function slide() {
-//   document.querySelector(".carousel").style.transform = `translateX(-100%)`;
-// }
-
-// document.querySelector(".theme-btn").addEventListener("click", themeSwitch);
-
-// WELCOME;
-// const welcomeContainer = document.querySelector(".welcome-container");
-// const left = document.querySelector(".welcome__left");
-// const moveEvent = (e) => {
-//   const welcomeWidth = welcomeContainer.clientWidth;
-//   const x = ((e.pageX - welcomeContainer.offsetLeft) / welcomeWidth) * 100;
-//   console.log(x);
-//   left.style.width = `${x}%`;
-// };
-
-// document.onmousemove = (e) => moveEvent(e);
-
 // ---------- MODAL -------->
 // Get the modal
-const modals = document.querySelector(".product-modal");
-// Get productCard that opens the modal
-const productCards = document.querySelector(".card-front");
-// Get element that closes the modal
-const closers = document.querySelector(".close");
-
-productCards.addEventListener("click", () => {
-  modals.showModal();
-});
-closers.addEventListener("click", () => {
-  modals.close();
-  console.dir(modals);
+document.querySelectorAll(".card-front").forEach((element) => {
+  element.addEventListener("click", (e) => {
+    document
+      .elementsFromPoint(e.clientX, e.clientY)
+      .filter((x) => x.classList.contains("product-card"))[0]
+      .querySelector(".product-modal")
+      .showModal();
+    // document.body.style.overflow = "hidden";
+  });
 });
 
-// ISSUE: ZET IF STATEMENT ERBIJ IF MODALS.OPEN == TRUE
-// document.body.addEventListener("click", closeOnClick);
-// function closeOnClick(e) {
-//   if (
-//     e.clientX < modals.getBoundingClientRect().x ||
-//     e.clientY < modals.getBoundingClientRect().y ||
-//     e.clientX >
-//       modals.getBoundingClientRect().x + modals.getBoundingClientRect().width ||
-//     e.clientY >
-//       modals.getBoundingClientRect().y + modals.getBoundingClientRect().height
-//   ) {
-//     modals.close();
-//   }
-// }
+document.querySelectorAll(".close").forEach((element) => {
+  element.addEventListener("click", (e) => {
+    e.target.closest(".product-modal").close();
+    // document.body.style.overflow = "auto";
+  });
+});
 
-// document.querySelectorAll(".product-card").forEach((element) => {
-//   element.addEventListener("click", openModel);
-// });
-// function openModel(e) {
-//   console.log(
-//     document.elementsFromPoint(e.clientX, e.clientY).map((x) => x.classList)
-//   );
-// }
+window.addEventListener("click", (e) => {
+  if (e.target.classList.contains("product-modal")) {
+    e.target.close();
+    // document.body.style.overflow = "auto";
+    // ESCAPE must be added separately
+  }
+});
 
-// back2prods
-
+// ---------- BACK TO PRODUCTS -------->
 // only showing button when scrolling up
 let lastScrollTop = 0;
 window.addEventListener("scroll", function (e) {

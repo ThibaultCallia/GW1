@@ -1,0 +1,44 @@
+:root{
+  --ff-main-title: 'Assistant', sans-serif;
+  --ff-subtitle: 'Nunito Sans', sans-serif;
+}
+
+.welcome-container {
+  /* How to make height header as variable? */
+  
+  /* border: 1px solid white; */
+  width: min(
+    var(--max-width-general),
+    100vw - 2 * var(--padding-general-sides)
+  );
+  margin-inline: auto;
+  // overflow: hidden;
+  margin-top: var(--margin-vert-between-sections);
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .welcome__text{
+    font-family: var(--ff-main-title);
+    .title{
+      text-align: center;
+      font-size: 3.5rem;
+      font-weight: 600;
+    }
+  }
+
+  .welcome__image-container {
+    // border: 2px solid red;
+    height: 500px;
+    width: 60%;
+    background-image: url(../images/welcome/keyboard_light.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+}
+
+
+
+

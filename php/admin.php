@@ -16,7 +16,7 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../CSS/admin.css" />
+    <link rel="stylesheet" href="../public/admin.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
 </head>
 
 <body>
-    <?php include './includes/nav.php'; ?>
+    <?php include './includes/nav.inc.php'; ?>
     <main class="admin">
         <section class="welcome">
             <h1>Hallo <?= $_SESSION["username"] ?>.</h1>
@@ -40,7 +40,7 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
             </div>
             <div class="product-sections">
                 <?php
-                include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/admin-products.php');
+                include './includes/admin-products.inc.php';
                 ?>
             </div>
         </section>
