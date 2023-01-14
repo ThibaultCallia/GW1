@@ -343,16 +343,12 @@ class Filter {
         break;
       case "dateON":
         this.allProducts = this.allProducts.sort(function (a, b) {
-          return parseInt(a.dataset.order) >= parseInt(b.dataset.order)
-            ? 1
-            : -1;
+          return parseInt(a.dataset.id) >= parseInt(b.dataset.id) ? 1 : -1;
         });
         break;
       case "dateNO":
         this.allProducts = this.allProducts.sort(function (a, b) {
-          return parseInt(a.dataset.order) <= parseInt(b.dataset.order)
-            ? 1
-            : -1;
+          return parseInt(a.dataset.id) <= parseInt(b.dataset.id) ? 1 : -1;
         });
         break;
       case "adminActive":

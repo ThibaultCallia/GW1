@@ -53,6 +53,9 @@ document
   .querySelector(".mobile-products-btn")
   .addEventListener("click", openCloseMobileNav);
 document
+  .querySelector(".mobile-contact-btn")
+  .addEventListener("click", openCloseMobileNav);
+document
   .querySelector(".overlay")
   .addEventListener("click", openCloseMobileNav);
 

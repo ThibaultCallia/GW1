@@ -28,7 +28,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
             <ul class="mobile-nav-list">
                 <li><a class="mobile-home-btn" href="#">Home</a></li>
                 <li><a class="mobile-products-btn" href="#products">Products</a></li>
-                <li>Contact</li>
+                <li><a class="mobile-contact-btn" href="#footer">Contact</a></li>
             </ul>
         </div>
         <header id="header">
