@@ -28,10 +28,10 @@ $mysqli->close();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="../public/addProducts.css">
 
     <script src="https://kit.fontawesome.com/cdb38844a4.js" crossorigin="anonymous"></script>
-    <script src="../public/addProducts.js" type="module"></script>
+    <script src="../public/addProducts.js" defer></script>
+    <link rel="stylesheet" href="../public/addProducts.css">
     <title>New Products</title>
 </head>
 
@@ -160,11 +160,12 @@ $mysqli->close();
             <div class="submit-btn">
                 <input type="submit" value="Add Product">
             </div>
+        </form>
     </div>
 
-    </form>
-    <?php unset($_SESSION['message']); ?>
-    </div>
+
+    <!-- <?php unset($_SESSION['message']); ?>
+    </div> -->
 </body>
 
 </html>

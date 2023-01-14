@@ -17,6 +17,7 @@
 }
 
 body {
+    
     font-family: var(--ff);
     background-color: var(--clr-body-light);
     color: var(--clr-body-dark);
@@ -26,6 +27,8 @@ body {
     h2{
         font-weight: 600;
     }
+
+    
 }
 
 .filter-wrap{
@@ -97,6 +100,7 @@ form{
 
 // General wrapper css
 .form-container{
+    margin-top: 75px;
     padding: 2em var(--padding-general-sides) 1em var(--padding-general-sides);
     position: absolute;
     top: 50%;
