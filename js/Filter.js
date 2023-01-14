@@ -283,6 +283,7 @@ class Filter {
   filterProducts = () => {
     this.allProducts.forEach((element) => {
       element.classList.remove("hidden");
+
       // brand
       if (Filter.globalFilter.brand.length > 0) {
         if (!Filter.globalFilter.brand.includes(element.dataset.brand)) {
@@ -304,6 +305,7 @@ class Filter {
       }
     });
     this.updateFilterCount();
+    document.querySelector("#emptyFilter").classList.add("hidden");
   };
 
   /**
@@ -405,8 +407,8 @@ class Filter {
     let count = 0;
     let arr =
       Filter.globalFilter.category === "All"
-        ? [...this.allProductsArray]
-        : this.allProductsArray.filter(
+        ? [...this.allProducts]
+        : this.allProducts.filter(
             (x) => x.dataset.category === Filter.globalFilter.category
           );
     // in case of colors:  filter arr on active brand and then each color id

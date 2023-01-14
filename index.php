@@ -57,18 +57,11 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
         <div class="main-container">
             <section class="welcome-container">
                 <div class="welcome__text">
-                    <!-- <div class="text-container"> -->
                     <?php
-                    echo $loggedIn ? '<p class="title">Logged in as Admin</p>' : '<p class="title">Anything For <br> Mechanical Keyboards</p>';
+                    echo $loggedIn ? '<p class="title">Logged in as Admin</p>' : '<p class="title">Anything For Mechanical Keyboards</p>';
                     ?>
-                    <!-- </div> -->
                 </div>
                 <div class="welcome__image-container">
-                    <!-- <img
-              class="welcome__image"
-              src="images/welcome/keykapsWelcome.jpg"
-              alt=""
-            /> -->
                 </div>
             </section>
             <section class="products" id="products">
@@ -115,8 +108,6 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
                                     <?php
                                     include('./php/includes/createBrands.inc.php');
                                     ?>
-
-
                                 </div>
                             </div>
                         </div>
@@ -363,6 +354,26 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
                     <?php
                     include "./php/includes/showProducts.inc.php"
                     ?>
+
+                    <div class="empty-card" id="emptyFilter">
+                        <section class="card-front ">
+                            <div class="swiperD swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="./images/welcome/oops.jpg" alt="An image of the Nuphy 2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <div class="prod-name">
+                                    <h3 class="name">It seems like we don't have your wishes in stock</h3>
+                                    <p>Check again soon!</p>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
                 </div>
             </section>
         </div>

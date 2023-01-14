@@ -883,6 +883,7 @@ var _animateCss = require("animate.css");
             }
         });
         this.updateFilterCount();
+        document.querySelector("#emptyFilter").classList.add("hidden");
     };
     /**
    * @property {function} generateSorter
@@ -959,8 +960,8 @@ var _animateCss = require("animate.css");
     countFilters(id) {
         let count = 0;
         let arr = Filter.globalFilter.category === "All" ? [
-            ...this.allProductsArray
-        ] : this.allProductsArray.filter((x)=>x.dataset.category === Filter.globalFilter.category);
+            ...this.allProducts
+        ] : this.allProducts.filter((x)=>x.dataset.category === Filter.globalFilter.category);
         // in case of colors:  filter arr on active brand and then each color id
         if (id.startsWith("c")) {
             if (Filter.globalFilter.brand.length > 0) arr = arr.filter((x)=>Filter.globalFilter.brand.includes(x.dataset.brand));
