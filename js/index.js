@@ -15,7 +15,22 @@ import Swiper from "swiper";
 // import Swiper styles
 // import "swiper/css";
 
-swiper = new Swiper(".swiper");
+let init = false;
+var swiper = Swiper;
+
+function swiperCard() {
+  if (window.innerWidth <= 500) {
+    if (!init) {
+      init = true;
+      swiper = new Swiper(".swiper");
+    }
+  } else if (init) {
+    swiper.destroy();
+    init = false;
+  }
+}
+swiperCard();
+window.addEventListener("resize", swiperCard);
 
 const mainFilter = new Filter();
 
