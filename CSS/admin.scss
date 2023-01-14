@@ -1,188 +1,190 @@
 @import "./reset_tc_collection.css";
 
-
 :root {
-    --clr-body-dark: hsl(212, 14%, 27%);
-    --clr-body-light: hsl(225, 100%, 98%);
-    --clr-body-darker: hsl(233, 22%, 92%);
-    
-    --ff: "Roboto", sans-serif;
-    
-    --padding-general-sides: 2rem;
-    --margin-vert-between-sections: 3rem;
-    --max-width-general: 1200px;
-    --height-header-desktop: 140px;
+  --clr-body-dark: hsl(212, 14%, 27%);
+  --clr-body-light: hsl(225, 100%, 98%);
+  --clr-body-darker: hsl(233, 22%, 92%);
 
-    --nav-bar-height: 50px;
+  --ff: "Roboto", sans-serif;
+
+  --padding-general-sides: 2rem;
+  --margin-vert-between-sections: 3rem;
+  --max-width-general: 1200px;
+  --height-header-desktop: 140px;
+
+  --nav-bar-height: 50px;
 }
 
 /* ------ GENERAL STYLING AND BODY ------ */
 
 body {
-    font-family: var(--ff);
-    background-color: var(--clr-body-light);
-    color: var(--clr-body-dark);
-    h1{
-        font-weight: 600;
-    }
-    h2{
-        font-weight: 600;
-    }
+  font-family: var(--ff);
+  background-color: var(--clr-body-light);
+  color: var(--clr-body-dark);
+  h1 {
+    font-weight: 600;
+  }
+  h2 {
+    font-weight: 600;
+  }
 }
 
 @import "./nav_admin.scss";
 
 // adminpage
-main.admin{
-    section.welcome{
-        width: 100%;
-        height: 100vh;
-        border-bottom: .4px solid #2d343c;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+main.admin {
+  section.welcome {
+    width: 100%;
+    height: 100vh;
+    border-bottom: 0.4px solid #2d343c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
-        h1 {
-            padding: 0 0 0 var(--padding-general-sides);
-            font-size: 120px;
-            margin-bottom: .5em;
-            font-weight: 700;
-            font-family: 'Courier Prime', monospace;
-            overflow: hidden; /* Ensures the content is not revealed until the animation */
-            border-right: .15em solid orange; /* The typwriter cursor */
-            white-space: nowrap; /* Keeps the content on a single line */
-            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-            letter-spacing: .05em; /* Adjust as needed */
-            animation: 
-              typing 3.5s steps(30, end),
-              blink-caret .5s step-end infinite;
-          }
-          
-          /* The typing effect */
-          @keyframes typing {
-            from { width: 0 }
-            to { width: 80% }
-          }
-          
-          /* The typewriter cursor effect */
-          @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: orange }
-          }
-        .btns{
-            margin-top: .5em;
-            display: flex;
-            width: 100%;
-            padding: 0 var(--padding-general-sides);
-            justify-content: center;
-            column-gap: 5em;
-            a{
-                background-color: white;
-                border-radius: .5em;
-                padding: 1em 2.5em;
-                font-size: x-large;
-                font-weight: 700;
-                box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
-                &:hover{
-                    transform: scale(1.05);
-                    transition: all ease-out 350ms;
-                    box-shadow: 15px 15px 20px rgba(1, 1, 1, 0.05);
-                }
-            }
-        }
+    h1 {
+      padding: 0 0 0 var(--padding-general-sides);
+      font-size: 120px;
+      margin-bottom: 0.5em;
+      font-weight: 700;
+      font-family: "Courier Prime", monospace;
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+      border-right: 0.15em solid orange; /* The typwriter cursor */
+      white-space: nowrap; /* Keeps the content on a single line */
+      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+      letter-spacing: 0.05em; /* Adjust as needed */
+      animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
     }
-    section.products{
-        min-height: calc(100vh - var(--nav-bar-height));
-        position: relative;
-        .product-sections {
-            margin: var(--padding-general-sides);
-            table {
-                width: 100%;
-                box-shadow: 0 0 20px rgba(0,0,0,0.1);
-                margin-bottom: 2em;
-            }
-            
-            th,
-            td {
-                padding: 10px;
-                background-color: rgba(255,255,255,0.2);
-                color: rgb(0, 0, 0);
-                text-align: left;
-                vertical-align: middle;
-            }
-            
-            thead {
-                    position: sticky;
-                    top: calc(var(--nav-bar-height) - 2px);
-                    z-index: 4;
-                    h2{
-                        width: max-content;
-                        height: 0;
-                        position: absolute;
-                        top: 38px;
-                        left: -57px;
-                        transform: rotate(-90deg);
-                        text-align: end;
-                    }
-                th {
-                    background-color: #679cc0;
-                    font-weight: bold;
-                    padding: 10px 10px;
-                }
-            }
-            
-            tbody {
-                .toggle{
-                    width: 25px;
-                    input[type="checkbox"] {
-                        pointer-events: none;
-                     }
-                     
-                }
-                button{
-                    &:has(label) {
-                        font-size: 0.75rem;
-                        padding: 0.4em 0.9em;
-                        margin: 0.25em;
-                        border-radius: 1em;
-                        border: none;
-                        outline: none;
-                        background: #dddddd;
-                        cursor: default;
-                        label{
-                            cursor: pointer;
-                        }
-                      }
-                    &:has(label:hover) {
-                        transform: scale(1.02);
-                        background: #c5c5c5;
-                        transition: transform 50ms ease;
-                    }
-                    &:has(label.clicked) {
-                        transform: scale(1.02);
-                        background: #b5b5b5;
-                        transition: transform 50ms ease;
-                    }
-                }
-                .ratings{
-                    min-width: 91px;
-                    i{
-                        color: #adadad;
-                    }
-                    i.yellow{
-                        color: #fdcc0d;
-                    }
-                }
-            }
+
+    /* The typing effect */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 80%;
+      }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+      from,
+      to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: orange;
+      }
+    }
+    .btns {
+      margin-top: 0.5em;
+      display: flex;
+      width: 100%;
+      padding: 0 var(--padding-general-sides);
+      justify-content: center;
+      column-gap: 5em;
+      a {
+        background-color: white;
+        border-radius: 0.5em;
+        padding: 1em 2.5em;
+        font-size: x-large;
+        font-weight: 700;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+        &:hover {
+          transform: scale(1.05);
+          transition: all ease-out 350ms;
+          box-shadow: 15px 15px 20px rgba(1, 1, 1, 0.05);
         }
-        
+      }
+    }
+  }
+  section.products {
+    min-height: calc(100vh - var(--nav-bar-height));
+    position: relative;
+    .product-sections {
+      margin: var(--padding-general-sides);
+      table {
+        width: 100%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2em;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: rgb(0, 0, 0);
+        text-align: left;
+        vertical-align: middle;
+      }
+
+      thead {
+        position: sticky;
+        top: calc(var(--nav-bar-height) - 2px);
+        z-index: 4;
+        h2 {
+          width: max-content;
+          height: 0;
+          position: absolute;
+          top: 38px;
+          left: -57px;
+          transform: rotate(-90deg);
+          text-align: end;
+        }
+        th {
+          background-color: #679cc0;
+          font-weight: bold;
+          padding: 10px 10px;
+        }
+      }
+
+      tbody {
+        .toggle {
+          width: 25px;
+          // input[type="checkbox"] {
+            
+          // }
+        }
+        button {
+          &:has(label) {
+            font-size: 0.75rem;
+            padding: 0.4em 0.9em;
+            margin: 0.25em;
+            border-radius: 1em;
+            border: none;
+            outline: none;
+            background: #dddddd;
+            cursor: default;
+            label {
+              cursor: pointer;
+            }
+          }
+          &:has(label:hover) {
+            transform: scale(1.02);
+            background: #c5c5c5;
+            transition: transform 50ms ease;
+          }
+          &:has(label.clicked) {
+            transform: scale(1.02);
+            background: #b5b5b5;
+            transition: transform 50ms ease;
+          }
+        }
+        .ratings {
+          min-width: 91px;
+          i {
+            color: #adadad;
+          }
+          i.yellow {
+            color: #fdcc0d;
+          }
+        }
+      }
+    }
+  }
 }
-}
 
-
-
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
