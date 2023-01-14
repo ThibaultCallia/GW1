@@ -79,11 +79,17 @@ foreach ($products as $product) {
       $imgList[] = $product['image' . $i];
     }
   }
-  $imgDiv = '<figure>';
+  $imgDiv = '<div class="swiper"><div class="swiper-wrapper">';
   foreach ($imgList as $img) {
-    $imgDiv = $imgDiv . '<img src="./images/products/' . strtolower($dataCategory) . '/' . $img . '" alt="An image of the ' . $product['name'] . '" />';
+    $imgDiv .= '<div class="swiper-slide"><img src="./images/products/' . strtolower($dataCategory) . '/' . $img . '" alt="An image of the ' . $product['name'] . '" /></div>';
   }
-  $imgDiv = $imgDiv . '</figure>';
+  $imgDiv .= '</div></div>';
+
+  $imgDivModal = '<figure>';
+  foreach ($imgList as $img) {
+    $imgDivModal .= '<img src="./images/products/' . strtolower($dataCategory) . '/' . $img . '" alt="An image of the ' . $product['name'] . '" />';
+  }
+  $imgDivModal .= '</figure>';
 
 
   $longDescription = $product['description'];
@@ -127,7 +133,7 @@ foreach ($products as $product) {
       <div class="product-details">
         <i class="close fa-solid fa-xmark"></i>
         <div class="images">
-        ' . $imgDiv . '
+        ' . $imgDivModal . '
         </div>
         <div class="text">
           <div class="product">
@@ -175,7 +181,7 @@ foreach ($products as $product) {
     $activeClass = 'active';
   }
 
-  $productCard = '<div class="product-card ' . $activeClass . '" data-category="' . $dataCategory . '" data-color="' . $dataColor . '" data-brand="' . $dataBrandId . '" data-price="' . $dataPrice . '" data-order="' . $dataOrder . '" ' . $dataActive . '">' . $cardFront . $productModal . '</div>';
+  $productCard = '<div class="product-card ' . $activeClass . '" data-category="' . $dataCategory . '" data-color="' . $dataColor . '" data-brand="' . $dataBrandId . '" data-price="' . $dataPrice . '" data-order="' . $dataOrder . '" ' . $dataActive . '>' . $cardFront . $productModal . '</div>';
 
   echo $productCard;
 }

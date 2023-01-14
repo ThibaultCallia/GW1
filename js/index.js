@@ -10,6 +10,33 @@ import "../css/style.scss";
 import Filter from "./Filter";
 import "animate.css";
 
+// import Swiper JS
+import Swiper from "swiper";
+
+// import Swiper styles
+// import "swiper/css";
+
+let init = false;
+var swiper = Swiper;
+
+function swiperCard() {
+  if (window.innerWidth <= 500) {
+    if (!init) {
+      init = true;
+      swiper = new Swiper(".swiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    }
+  } else if (init) {
+    swiper.destroy();
+    init = false;
+  }
+}
+swiperCard();
+window.addEventListener("resize", swiperCard);
+
 const mainFilter = new Filter();
 
 // Mobile nav

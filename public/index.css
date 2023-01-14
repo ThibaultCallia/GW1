@@ -2522,17 +2522,22 @@ section.card-front {
   box-shadow: 20px 20px 30px #00000005;
 }
 
+section.card-front .swiper {
+  width: 100%;
+  height: 55%;
+  border-radius: .25rem;
+}
+
+section.card-front .swiper .swiper-wrapper, section.card-front .swiper .swiper-wrapper .swiper-slide {
+  height: 100%;
+}
+
 section.card-front img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: var(--br-img);
   display: none;
-}
-
-section.card-front figure {
-  width: 100%;
-  height: 55%;
 }
 
 section.card-front img:first-child {
@@ -2613,7 +2618,7 @@ section.card-front .description .desc {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -45%);
-    box-shadow: 8px 8px 50px #bcbcbc, -8px -8px 50px #fff;
+    box-shadow: 8px 8px 50px #bcbcbc75, -8px -8px 50px #53525274;
   }
 
   dialog.product-modal .product-details {
@@ -2776,24 +2781,6 @@ section.card-front .description .desc {
     border: none;
     border-radius: 0;
     padding: 0;
-  }
-
-  .grid-container .product-card .card-front figure {
-    width: 100%;
-    height: 40vh;
-    align-items: center;
-    padding: 0;
-    display: flex;
-    overflow: hidden;
-  }
-
-  .grid-container .product-card .card-front figure img {
-    width: 100%;
-    height: 40vh;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 0;
-    overflow: hidden;
   }
 
   .grid-container .product-card .card-front .description {

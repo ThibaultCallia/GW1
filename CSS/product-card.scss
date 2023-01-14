@@ -57,6 +57,18 @@ section.card-front{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    .swiper {
+        border-radius: 0.25rem;
+        width: 100%;
+        height: 55%;
+        .swiper-wrapper {
+          height: 100%;
+          .swiper-slide {
+            height: 100%;
+            }
+        }
+    }
     img{
         display: none;
         height: 100%;
@@ -64,10 +76,7 @@ section.card-front{
         object-fit: cover;
         border-radius: var(--br-img);
     }
-    figure{
-        width: 100%;
-        height: 55%;
-    }
+    
     img:first-child{
         display: block;
         
@@ -135,7 +144,7 @@ section.card-front{
     dialog.product-modal{
         border: 1px solid lightgray;
         background: #e0e0e0;
-        box-shadow:  8px 8px 50px #bcbcbc, -8px -8px 50px #ffffff;
+        box-shadow:  8px 8px 50px #bcbcbc75, -8px -8px 50px #53525274;
         z-index: 3;
         position: fixed;
         left: 50%;
@@ -301,22 +310,9 @@ section.card-front{
             padding: 0;
             border: none;
             box-shadow: none;
-            figure{
-                overflow:hidden;
-                width: 100%;
-                height: 40vh;
-                padding: 0;
-                display: flex;
-                align-items: center;
-                img{
-                    overflow:hidden;
-                    width: 100%;
-                    height: 40vh;
-                    border-radius: 0;
-                    object-fit: cover;
-                    object-position: center;
-                }
-            }
+            
+              
+            
             .description{
                 padding: 10px 12px;
                 display: flex;
