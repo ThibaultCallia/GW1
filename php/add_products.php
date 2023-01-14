@@ -125,7 +125,7 @@ $mysqli->close();
                         <input type="text" class="hidden" id="newCol1" name="newCol1">
                         <input type="text" class="hidden" id="newCol2" name="newCol2">
                         <input type="text" class="hidden" id="newCol3" name="newCol3">
-                        <button type="button" class="addNewCol">
+                        <button id="newCol" type="button" class="addNewCol">
                             <label for="newCol">Add new color</label>
                         </button>
                     </div>

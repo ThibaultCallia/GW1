@@ -16,16 +16,17 @@
     "buildAdmin": "parcel build ./js/admin.js --dist-dir public",
     "buildLogin": "parcel build ./js/login.js --dist-dir public",
     "buildAddProducts": "parcel build ./js/addProducts.js --dist-dir public"
-
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "animate.css": "^4.1.1",
-    "jsdoc": "^4.0.0"
+    "jsdoc": "^4.0.0",
+    "swiper": "^8.4.5"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.2",
     "sass": "^1.57.1"
   }
 }

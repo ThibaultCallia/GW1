@@ -10,6 +10,36 @@ import "../css/style.scss";
 import Filter from "./Filter";
 import "animate.css";
 
+// import Swiper JS
+// import Swiper, { Navigation } from "swiper";
+
+// import Swiper styles
+// import "swiper/css";
+
+new Swiper(".swiperM", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+let init = false;
+var swiper = Swiper;
+
+function swiperCard() {
+  if (window.innerWidth <= 800) {
+    if (!init) {
+      init = true;
+      swiper = new Swiper(".swiperD");
+    }
+  } else if (init) {
+    swiper.destroy();
+    init = false;
+  }
+}
+swiperCard();
+window.addEventListener("resize", swiperCard);
+
 const mainFilter = new Filter();
 
 // Mobile nav
@@ -21,6 +51,9 @@ document
   .addEventListener("click", openCloseMobileNav);
 document
   .querySelector(".mobile-products-btn")
+  .addEventListener("click", openCloseMobileNav);
+document
+  .querySelector(".mobile-contact-btn")
   .addEventListener("click", openCloseMobileNav);
 document
   .querySelector(".overlay")

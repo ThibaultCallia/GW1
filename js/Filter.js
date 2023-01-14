@@ -283,6 +283,7 @@ class Filter {
   filterProducts = () => {
     this.allProducts.forEach((element) => {
       element.classList.remove("hidden");
+
       // brand
       if (Filter.globalFilter.brand.length > 0) {
         if (!Filter.globalFilter.brand.includes(element.dataset.brand)) {
@@ -304,6 +305,7 @@ class Filter {
       }
     });
     this.updateFilterCount();
+    document.querySelector("#emptyFilter").classList.add("hidden");
   };
 
   /**
@@ -343,16 +345,12 @@ class Filter {
         break;
       case "dateON":
         this.allProducts = this.allProducts.sort(function (a, b) {
-          return parseInt(a.dataset.order) >= parseInt(b.dataset.order)
-            ? 1
-            : -1;
+          return parseInt(a.dataset.id) >= parseInt(b.dataset.id) ? 1 : -1;
         });
         break;
       case "dateNO":
         this.allProducts = this.allProducts.sort(function (a, b) {
-          return parseInt(a.dataset.order) <= parseInt(b.dataset.order)
-            ? 1
-            : -1;
+          return parseInt(a.dataset.id) <= parseInt(b.dataset.id) ? 1 : -1;
         });
         break;
       case "adminActive":
@@ -409,8 +407,8 @@ class Filter {
     let count = 0;
     let arr =
       Filter.globalFilter.category === "All"
-        ? [...this.allProductsArray]
-        : this.allProductsArray.filter(
+        ? [...this.allProducts]
+        : this.allProducts.filter(
             (x) => x.dataset.category === Filter.globalFilter.category
           );
     // in case of colors:  filter arr on active brand and then each color id

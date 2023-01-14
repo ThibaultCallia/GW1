@@ -542,11 +542,37 @@ var _styleScss = require("../css/style.scss");
 var _filter = require("./Filter");
 var _filterDefault = parcelHelpers.interopDefault(_filter);
 var _animateCss = require("animate.css");
+// import Swiper JS
+// import Swiper, { Navigation } from "swiper";
+// import Swiper styles
+// import "swiper/css";
+new Swiper(".swiperM", {
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    }
+});
+let init = false;
+var swiper = Swiper;
+function swiperCard() {
+    if (window.innerWidth <= 800) {
+        if (!init) {
+            init = true;
+            swiper = new Swiper(".swiperD");
+        }
+    } else if (init) {
+        swiper.destroy();
+        init = false;
+    }
+}
+swiperCard();
+window.addEventListener("resize", swiperCard);
 const mainFilter = new (0, _filterDefault.default)();
 // Mobile nav
 document.querySelector(".mobile-nav-btn").addEventListener("click", openCloseMobileNav);
 document.querySelector(".mobile-home-btn").addEventListener("click", openCloseMobileNav);
 document.querySelector(".mobile-products-btn").addEventListener("click", openCloseMobileNav);
+document.querySelector(".mobile-contact-btn").addEventListener("click", openCloseMobileNav);
 document.querySelector(".overlay").addEventListener("click", openCloseMobileNav);
 document.querySelectorAll(".logo-btn").forEach((element)=>{
     element.addEventListener("click", closeMobileNav);
@@ -857,6 +883,7 @@ var _animateCss = require("animate.css");
             }
         });
         this.updateFilterCount();
+        document.querySelector("#emptyFilter").classList.add("hidden");
     };
     /**
    * @property {function} generateSorter
@@ -887,12 +914,12 @@ var _animateCss = require("animate.css");
                 break;
             case "dateON":
                 this.allProducts = this.allProducts.sort(function(a, b) {
-                    return parseInt(a.dataset.order) >= parseInt(b.dataset.order) ? 1 : -1;
+                    return parseInt(a.dataset.id) >= parseInt(b.dataset.id) ? 1 : -1;
                 });
                 break;
             case "dateNO":
                 this.allProducts = this.allProducts.sort(function(a, b) {
-                    return parseInt(a.dataset.order) <= parseInt(b.dataset.order) ? 1 : -1;
+                    return parseInt(a.dataset.id) <= parseInt(b.dataset.id) ? 1 : -1;
                 });
                 break;
             case "adminActive":
@@ -933,8 +960,8 @@ var _animateCss = require("animate.css");
     countFilters(id) {
         let count = 0;
         let arr = Filter.globalFilter.category === "All" ? [
-            ...this.allProductsArray
-        ] : this.allProductsArray.filter((x)=>x.dataset.category === Filter.globalFilter.category);
+            ...this.allProducts
+        ] : this.allProducts.filter((x)=>x.dataset.category === Filter.globalFilter.category);
         // in case of colors:  filter arr on active brand and then each color id
         if (id.startsWith("c")) {
             if (Filter.globalFilter.brand.length > 0) arr = arr.filter((x)=>Filter.globalFilter.brand.includes(x.dataset.brand));
