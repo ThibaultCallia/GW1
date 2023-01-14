@@ -10,6 +10,13 @@ import "../css/style.scss";
 import Filter from "./Filter";
 import "animate.css";
 
+// import Swiper JS
+import Swiper from "swiper";
+// import Swiper styles
+import "swiper/css";
+
+swiper = new Swiper(".swiper");
+
 const mainFilter = new Filter();
 
 // Mobile nav

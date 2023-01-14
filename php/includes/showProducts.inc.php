@@ -175,7 +175,7 @@ foreach ($products as $product) {
     $activeClass = 'active';
   }
 
-  $productCard = '<div class="product-card ' . $activeClass . '" data-category="' . $dataCategory . '" data-color="' . $dataColor . '" data-brand="' . $dataBrandId . '" data-price="' . $dataPrice . '" data-order="' . $dataOrder . '" ' . $dataActive . '">' . $cardFront . $productModal . '</div>';
+  $productCard = '<div class="product-card ' . $activeClass . '" data-category="' . $dataCategory . '" data-color="' . $dataColor . '" data-brand="' . $dataBrandId . '" data-price="' . $dataPrice . '" data-order="' . $dataOrder . '" ' . $dataActive . '>' . $cardFront . $productModal . '</div>';
 
   echo $productCard;
 }
