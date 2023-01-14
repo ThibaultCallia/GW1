@@ -170,8 +170,8 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
 
                     <a href="#products" class="back2prods"><i class="fa-solid fa-circle-chevron-up"></i></a>
 
-                    <div class="product-card " data-category="Keyboard" data-color="c11" data-brand="b2" data-price="99.00" data-order="2">
-                        <section class=" card-front">
+                    <!-- <div class="product-card " data-category="Keyboard" data-color="c11" data-brand="b2" data-price="99.00" data-order="2">
+                        <section class="card-front">
                             <div class="swiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
@@ -243,77 +243,10 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
                                 </div>
                             </div>
                         </dialog>
-                    </div>
-                    <div class="product-card " data-category="Keyboard" data-color="c11" data-brand="b2" data-price="99.00" data-order="2">
-                        <section class=" card-front">
-                            <figure>
-                                <img src="./images/products/keyboard/nuphyAir75_1.jpg" alt="An image of the Nuphy 2"><img src="./images/products/keyboard/nuphyAir75_2.jpg" alt="An image of the Nuphy 2"><img src="./images/products/keyboard/nuphyAir75_3.jpg" alt="An image of the Nuphy 2">
-                            </figure>
-                            <div class="description">
-                                <div class="prod-name">
-                                    <span><i class="fa-solid fa-tags"></i>
-                                        NUPHY
-                                    </span>
-                                    <h3 class="name">Nuphy 2</h3>
-                                </div>
-                                <div class="ratings"><i class="fas fa-star yellow" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
-                                <h4 class="price">€99.00</h4>
-                                <div class="desc">
-                                    This is another keyb...
-                                </div>
-                            </div>
-                        </section>
-                        <dialog class="product-modal">
-                            <div class="product-details">
-                                <i class="close fa-solid fa-xmark"></i>
-                                <div class="images">
-                                    <figure><img src="./images/products/keyboard/nuphyAir75_1.jpg" alt="An image of the Nuphy 2"><img src="./images/products/keyboard/nuphyAir75_2.jpg" alt="An image of the Nuphy 2"><img src="./images/products/keyboard/nuphyAir75_3.jpg" alt="An image of the Nuphy 2"></figure>
-                                </div>
-                                <div class="text">
-                                    <div class="product">
-                                        <h3 class="name">Nuphy 2</h3>
-                                        <span class="title brand">NUPHY</span>
-                                    </div>
-                                    <div class="price-container">
-                                        <div class="price-wrapper wrap">
-                                            <span class="title">PRICE</span>
-                                            <h4 class="price">€99.00</h4>
-                                        </div>
-                                        <div class="amount-wrapper wrap">
-                                            <span class="title">QUANTITY</span>
-                                            <div class="counter">
-                                                <span class="minus">-</span>
-                                                <span class="amount">1</span>
-                                                <span class="plus">+</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="description">
-                                        <span class="title">DESCRIPTION</span>
-                                        <p class="description">
-                                            This is another keyboard from Nuphy. They have grown in the past years with their Nuphy lightweight lineup. Check this out!
-                                        </p>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="title">RATINGS</span>
-                                        <figure>
-                                            <i class="fas fa-star yellow" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
-                                        </figure>
-                                    </div>
-                                    <div class="total-price">
-                                        <span class="title">TOTAL PRICE</span>
-                                        <h4>...</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </dialog>
-                    </div>
-
-                    <!-- <?php
-                            include "./php/includes/showProducts.inc.php"
-                            ?> -->
-
-
+                    </div> -->
+                    <?php
+                        include "./php/includes/showProducts.inc.php"
+                    ?>
                 </div>
             </section>
         </div>

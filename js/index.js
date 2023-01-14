@@ -12,6 +12,7 @@ import "animate.css";
 
 // import Swiper JS
 import Swiper from "swiper";
+
 // import Swiper styles
 // import "swiper/css";
 
@@ -22,7 +23,11 @@ function swiperCard() {
   if (window.innerWidth <= 500) {
     if (!init) {
       init = true;
-      swiper = new Swiper(".swiper");
+      swiper = new Swiper(".swiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
     }
   } else if (init) {
     swiper.destroy();
