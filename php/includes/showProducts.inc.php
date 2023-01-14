@@ -9,7 +9,7 @@ $whereStatement = $loggedIn ? "" : "WHERE isActive = 1 ";
 
 
 $showProductsQuery = 'SELECT 
-p.id, p.name, p.description, p.discount, p.image1, p.image2, p.image3, p.image4, p.image5, p.isSpotlight, p.isActive, p.price, p.rating, b.id as brandId, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.id) as colorIds, GROUP_CONCAT(col.color_name) as colors
+p.id, p.name, p.description, p.discount, p.image1, p.image2, p.image3, p.image4, p.image5, p.isActive, p.isSpotlight, p.price, p.rating, b.id as brandId, b.name as brandName, cat.name as categoryName, GROUP_CONCAT(col.id) as colorIds, GROUP_CONCAT(col.color_name) as colors
 FROM
 product p
       left JOIN
@@ -79,17 +79,20 @@ foreach ($products as $product) {
       $imgList[] = $product['image' . $i];
     }
   }
-  $imgDiv = '<div class="swiper"><div class="swiper-wrapper">';
+  $imgDiv = '<div class="swiperD swiper"><div class="swiper-wrapper">';
   foreach ($imgList as $img) {
     $imgDiv .= '<div class="swiper-slide"><img src="./images/products/' . strtolower($dataCategory) . '/' . $img . '" alt="An image of the ' . $product['name'] . '" /></div>';
   }
   $imgDiv .= '</div></div>';
 
-  $imgDivModal = '<figure>';
+  $imgDivModal = '<div class="swiperM swiper"><div class="swiper-wrapper">';
   foreach ($imgList as $img) {
-    $imgDivModal .= '<img src="./images/products/' . strtolower($dataCategory) . '/' . $img . '" alt="An image of the ' . $product['name'] . '" />';
+    $imgDivModal .= '<div class="swiper-slide"><img src="./images/products/' . strtolower($dataCategory) . '/' . $img . '" alt="An image of the ' . $product['name'] . '" /></div>';
   }
-  $imgDivModal .= '</figure>';
+  $imgDivModal .= '</div><div class="swiper-button-prev"><i class="fa-solid fa-chevron-left"></i></div>
+  <div class="swiper-button-next"><i class="fa-solid fa-chevron-right"></i></div></div>';
+
+
 
 
   $longDescription = $product['description'];
@@ -121,20 +124,16 @@ foreach ($products as $product) {
     </div>
   ';
 
+  $spotlight = $product['isSpotlight'] == 1 ? 'spotlight' : '';
 
-  $cardFront = '<section class="card-front">' . $imgDiv . $descriptionDiv . '</section>';
-
-
-
+  $cardFront = '<section class="card-front ' . $spotlight . '">' . $imgDiv . $descriptionDiv . '</section>';
 
 
   $productModal =
     '<dialog class="product-modal">
       <div class="product-details">
         <i class="close fa-solid fa-xmark"></i>
-        <div class="images">
         ' . $imgDivModal . '
-        </div>
         <div class="text">
           <div class="product">
             <h3 class="name">' . $productName . '</h3>
@@ -146,12 +145,8 @@ foreach ($products as $product) {
                 <h4 class="price">€' . $dataPrice . '</h4>
             </div>
             <div class="amount-wrapper wrap">
-              <span class="title">QUANTITY</span>
-              <div class="counter">
-                  <span class="minus">-</span>
-                  <span class="amount">1</span>
-                  <span class="plus">+</span>
-              </div>
+              
+              
             </div>
           </div>
           <div class="description">
@@ -166,10 +161,10 @@ foreach ($products as $product) {
                 ' . $stars . '
             </figure>
           </div>
-          <div class="total-price">
-            <span class="title">TOTAL PRICE</span>
-            <h4>...</h4>
-          </div>
+          
+            
+            
+          
         </div>
       </div>
     </dialog>';

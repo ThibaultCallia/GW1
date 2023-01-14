@@ -11,23 +11,26 @@ import Filter from "./Filter";
 import "animate.css";
 
 // import Swiper JS
-import Swiper from "swiper";
+// import Swiper, { Navigation } from "swiper";
 
 // import Swiper styles
 // import "swiper/css";
+
+new Swiper(".swiperM", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
 let init = false;
 var swiper = Swiper;
 
 function swiperCard() {
-  if (window.innerWidth <= 500) {
+  if (window.innerWidth <= 800) {
     if (!init) {
       init = true;
-      swiper = new Swiper(".swiper", {
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      });
+      swiper = new Swiper(".swiperD");
     }
   } else if (init) {
     swiper.destroy();

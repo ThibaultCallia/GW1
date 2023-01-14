@@ -2497,6 +2497,7 @@ header {
   box-sizing: border-box;
   max-width: 100%;
   min-width: 250px;
+  border-radius: var(--br);
   height: 350px;
   margin: 0;
   padding: 0;
@@ -2587,8 +2588,12 @@ section.card-front .description .ratings {
 }
 
 section.card-front .description .ratings i {
-  color: #1a1a1a;
+  color: #adadad;
   font-size: 12px;
+}
+
+section.card-front .description .ratings i.yellow {
+  color: #fdcc0d;
 }
 
 section.card-front .description .price {
@@ -2604,12 +2609,15 @@ section.card-front .description .desc {
 }
 
 @media only screen and (min-width: 604px) {
+  .spotlight {
+    background-color: #fb892b;
+  }
+
   dialog.product-modal {
     z-index: 3;
     width: 90vw;
     max-width: 1500px;
-    min-height: -moz-fit-content;
-    min-height: fit-content;
+    min-height: 490px;
     height: 70vh;
     max-height: 1000px;
     background: #e0e0e0;
@@ -2617,7 +2625,7 @@ section.card-front .description .desc {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -50%);
     box-shadow: 8px 8px 50px #bcbcbc75, -8px -8px 50px #53525274;
   }
 
@@ -2652,34 +2660,20 @@ section.card-front .description .desc {
     text-decoration: none;
   }
 
-  dialog.product-modal .product-details .images {
-    width: 48%;
+  dialog.product-modal .product-details .swiperM {
+    aspect-ratio: 4 / 3;
+    width: 45%;
+  }
+
+  dialog.product-modal .product-details .swiperM .swiper-wrapper, dialog.product-modal .product-details .swiperM .swiper-wrapper .swiper-slide {
     height: 100%;
-    flex-direction: column;
-    gap: 5px;
-    padding-right: 4%;
-    display: flex;
   }
 
-  dialog.product-modal .product-details .images > img {
-    object-fit: cover;
-    width: 100%;
-    height: 80%;
-  }
-
-  dialog.product-modal .product-details .images figure {
-    width: 100%;
-    height: 20%;
-    justify-content: space-between;
-    gap: 5px;
-    display: flex;
-  }
-
-  dialog.product-modal .product-details .images figure img {
-    object-fit: cover;
-    object-position: center;
-    width: calc(25% - 3.75px);
+  dialog.product-modal .product-details img {
     height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--br-img);
   }
 
   dialog.product-modal .product-details .text {
@@ -2783,11 +2777,16 @@ section.card-front .description .desc {
     padding: 0;
   }
 
+  .grid-container .product-card .card-front:hover {
+    box-shadow: none;
+    transform: none;
+  }
+
   .grid-container .product-card .card-front .description {
     flex-flow: column;
     align-items: flex-start;
-    gap: 0 5%;
-    padding: 10px 12px;
+    row-gap: .25rem;
+    padding: 0 10px 12px;
     display: flex;
   }
 
@@ -2828,11 +2827,9 @@ section.card-front .description .desc {
 
   .grid-container .product-card .card-front .description .price {
     width: 100%;
-    text-align: right;
-    height: 7px;
-    position: absolute;
-    top: calc(40vh - 1rem);
-    right: 12px;
+    text-align: left;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   .grid-container .product-card .card-front .description .desc {
@@ -2842,11 +2839,14 @@ section.card-front .description .desc {
 
   .grid-container .product-card dialog.product-modal {
     z-index: 10;
+    max-width: 100vw;
+    max-height: 100vh;
     width: 100vw;
     height: 100vh;
     background: #e0e0e0;
     border: none;
     margin: 0;
+    padding: 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -2862,7 +2862,7 @@ section.card-front .description .desc {
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding: 40px 15px;
+    padding: 0;
     display: flex;
     position: absolute;
   }
@@ -2874,43 +2874,37 @@ section.card-front .description .desc {
     font-size: 28px;
     line-height: 0;
     position: relative;
-    top: -10px;
-    left: 5px;
+    top: 30px;
+    left: 15px;
   }
 
-  .grid-container .product-card dialog.product-modal .product-details .close:hover, .grid-container .product-card dialog.product-modal .product-details .close:focus {
-    color: #000;
-    cursor: pointer;
-    text-decoration: none;
+  .grid-container .product-card dialog.product-modal .product-details .swiperM {
+    aspect-ratio: 4 / 3;
+    width: 45%;
+    margin: 3rem 0;
   }
 
-  .grid-container .product-card dialog.product-modal .product-details .images {
-    width: 85%;
-    height: 30vh;
-    flex-direction: column;
-    gap: 5px;
-    margin: 0 7.5%;
-    display: flex;
-    position: absolute;
-    top: 100px;
-    left: 0;
-  }
-
-  .grid-container .product-card dialog.product-modal .product-details .images > img {
-    object-fit: cover;
-    width: 100%;
+  .grid-container .product-card dialog.product-modal .product-details .swiperM .swiper-wrapper, .grid-container .product-card dialog.product-modal .product-details .swiperM .swiper-wrapper .swiper-slide {
     height: 100%;
   }
 
-  .grid-container .product-card dialog.product-modal .product-details .images figure {
+  .grid-container .product-card dialog.product-modal .product-details .swiperM .swiper-button-prev, .grid-container .product-card dialog.product-modal .product-details .swiperM .swiper-button-next {
     display: none;
+  }
+
+  .grid-container .product-card dialog.product-modal .product-details .swiperM img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--br-img);
   }
 
   .grid-container .product-card dialog.product-modal .product-details .text {
     width: 85%;
     height: 100%;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    gap: 3rem;
     display: flex;
   }
 
@@ -2955,13 +2949,47 @@ section.card-front .description .desc {
     color: #adadad;
   }
 
-  .grid-container .product-card dialog.product-modal .product-details .text .ratings i:hover, .grid-container .product-card dialog.product-modal .product-details .text .ratings i.yellow {
+  .grid-container .product-card dialog.product-modal .product-details .text .ratings i.yellow {
     color: #fdcc0d;
   }
 
   .grid-container .product-card dialog.product-modal .product-details .text .total-price {
     font-size: 2.2rem;
     line-height: 1;
+  }
+}
+
+.swiper-button-prev, .swiper-button-next {
+  background-color: #ffffff42;
+  border-radius: .25rem;
+}
+
+.swiper-button-prev:focus, .swiper-button-prev:active, .swiper-button-next:focus, .swiper-button-next:active {
+  border: none;
+}
+
+.swiper-button-prev i, .swiper-button-next i {
+  color: #000;
+  font-size: x-large;
+}
+
+@media (max-aspect-ratio: 3 / 2) and (max-width: 1200px) {
+  .product-modal .product-details {
+    flex-direction: column;
+    display: flex;
+  }
+
+  .swiperM {
+    aspect-ratio: 4 / 3;
+    width: 80% !important;
+  }
+
+  .swiperM .swiper-wrapper, .swiperM .swiper-wrapper .swiper-slide {
+    height: 100%;
+  }
+
+  .text {
+    width: 80% !important;
   }
 }
 
