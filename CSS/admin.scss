@@ -142,9 +142,9 @@ main.admin {
       tbody {
         .toggle {
           width: 25px;
-          input[type="checkbox"] {
-            // pointer-events: none;
-          }
+          // input[type="checkbox"] {
+            
+          // }
         }
         button {
           &:has(label) {

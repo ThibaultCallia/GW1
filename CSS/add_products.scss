@@ -92,32 +92,34 @@ form {
 }
 
 // General wrapper css
-.form-container {
-  padding: 2em var(--padding-general-sides) 1em var(--padding-general-sides);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60vw;
-  min-width: 500px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
-
-  // wrapper of section (h2 + wrap2)
-  .wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    row-gap: var(--padding-general-sides);
-    border-bottom: 1px lightgray solid;
-    padding: 1em 0;
-
-    // wrapper of section form fields
-    .wrap2 {
-      display: flex;
-      flex-flow: row wrap;
-      width: 70%;
+.form-container{
+    margin-top: 75px;
+    padding: 2em var(--padding-general-sides) 1em var(--padding-general-sides);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    min-width: 500px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+    
+    // wrapper of section (h2 + wrap2)
+    .wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        row-gap: var(--padding-general-sides);
+        border-bottom: 1px lightgray solid;
+        padding: 1em 0;
+        
+        // wrapper of section form fields
+        .wrap2{
+            display: flex;
+            flex-flow: row wrap;
+            width: 70%;
+        }
     }
   }
 }

@@ -59,8 +59,8 @@ WHERE cat.name = '" . $cat . "' GROUP BY p.id ORDER BY p.isActive DESC, p.id DES
                             </div>
                         </td>
                         <input type="hidden" name="product_id[]" value="<?= $product["id"] ?>">
-                        <td><input type="text" name="name[]" value="<?= $product['name'] ?>" class="editable name" readonly></td>
-                        <td>€ <input type="number" name="price[]" value="<?= $product['price'] ?>" class="editable price" readonly min="0" max="9999.99" step="0.01"></td>
+                        <td><input type="text" name="name[]" value="<?= $product['name'] ?>" class="editable name"></td>
+                        <td>€ <input type="number" name="price[]" value="<?= $product['price'] ?>" class="editable price" min="0" max="9999.99" step="0.01"></td>
                         <td><button class="label brand"><?= $product["brandName"] ?></button></td>
                         <td>
                             <div class="colors">
