@@ -355,7 +355,7 @@ class Filter {
         break;
       case "adminActive":
         this.allProducts = this.allProducts.sort(function (a, b) {
-          return parseInt(a.dataset.active) <= parseInt(b.dataset.active)
+          return parseInt(a.dataset.active) >= parseInt(b.dataset.active)
             ? 1
             : -1;
         });
