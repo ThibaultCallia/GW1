@@ -94,7 +94,7 @@ WHERE cat.name = '" . $cat . "' GROUP BY p.id ORDER BY p.isActive DESC, p.id DES
                                 <label for="inSpotlight"></label><br>
                             </div>
                         </td>
-                        <td><?= substr($product["description"], 0, 10) . "..." ?></td>
+                        <td><?= substr($product["description"], 0, 30) . "..." ?></td>
                     </tr>
                 <?php } ?>
             </tbody>

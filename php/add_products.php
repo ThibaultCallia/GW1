@@ -163,12 +163,16 @@ $mysqli->close();
         </form>
     </div>
 
+    <div class="submit-pop-up hidden" id="popup">
+        <img src="../images/tick.png" alt="check icon">
+        <h2>About to submit</h2>
+        <p>Are you sure?</p>
+        <button class="popUpBtn" type="button"><a href="#">Submit</a></button>
+        <button class="popUpBtn" type="button"><a href="./admin.php">Cancel</a></button>
+    </div>
 
-    <!-- <?php unset($_SESSION['message']); ?>
-    </div> -->
+
+
 </body>
 
 </html>
-<script>
-
-</script>
