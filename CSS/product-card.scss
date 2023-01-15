@@ -319,6 +319,10 @@ section.card-front {
         }
         .swiper {
           height: 62%;
+          border-radius: 0;
+          img {
+            border-radius: 0;
+          }
         }
 
         .description {
