@@ -10,9 +10,10 @@
         "monospaceLinks": true
     },
     "opts": {
+        "sort":false,
         "recurse": true,
-        "destination": "./docs/",
-        "sort":false
+        "destination": "./docs/"
+        
     }
 }
 
