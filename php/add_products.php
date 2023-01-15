@@ -35,7 +35,7 @@ $mysqli->close();
 </head>
 
 <body>
-    <?php include './includes/nav.inc.php'; ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/nav.inc.php') ?>
     <div class="form-container">
         <form method="post" action="#" enctype="multipart/form-data">
             <!-- The title section -->
@@ -169,8 +169,6 @@ $mysqli->close();
         <button class="popUpBtn" type="button"><a href="#">Submit</a></button>
         <button class="popUpBtn" type="button"><a href="./admin.php">Cancel</a></button>
     </div>
-
-
 
 </body>
 
