@@ -4,30 +4,30 @@
 }
 
 .welcome-container {
-  /* How to make height header as variable? */
   
-  /* border: 1px solid white; */
   width: min(
     var(--max-width-general),
     100vw - 2 * var(--padding-general-sides)
   );
   margin-inline: auto;
-  // overflow: hidden;
-  margin-top: var(--margin-vert-between-sections);
+  
+  
   position: relative;
   display: flex;
   flex-direction: column;
-  gap:3rem;
+  gap:1rem;
   justify-content: center;
   align-items: center;
 
   .welcome__text{
     font-family: var(--ff-main-title);
     
+    
     .title{
       text-align: center;
       font-size: 3.5rem;
       font-weight: 600;
+      
     }
   }
 
@@ -46,6 +46,8 @@
 
 @media(max-width: 770px){
   .welcome-container{
+    margin-top: 0 !important;
+    gap:2rem;
     
     .welcome__text{
       .title{
