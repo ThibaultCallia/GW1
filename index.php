@@ -4,6 +4,13 @@ $loggedIn = false;
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
     $loggedIn = true;
 }
+
+function getRandomElement($arr)
+{
+    $randomIndex = array_rand($arr);
+    return $arr[$randomIndex];
+}
+$slogans = ["KeyKaps, where typing becomes art", "Type with precision with KeyKaps", "Upgrade your typing game with KeyKaps", "KeyKaps, where typing meets art", "Need keyboards? Go KeyKaps.", "Keykaps, for all your keycaps", "ChatGPT made this slogan", "Am I alive?", "Type like a boss with KeyKaps", "Type like you mean it", "AWSD with Keykaps", "Unleash your typing potential"]
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +65,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]) {
             <section class="welcome-container">
                 <div class="welcome__text">
                     <?php
-                    echo $loggedIn ? '<p class="title">Logged in as Admin</p>' : '<p class="title">Anything For Mechanical Keyboards</p>';
+                    echo $loggedIn ? '<p class="title">Logged in as Admin</p>' : '<p class="title">' . getRandomElement($slogans) . '</p>';
                     ?>
                 </div>
                 <div class="welcome__image-container">
