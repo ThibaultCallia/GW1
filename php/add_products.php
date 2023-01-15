@@ -3,7 +3,7 @@ session_start();
 
 // ik check of dat sessionlogin bestaat en of die op TRUE staat
 if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
-    header("Location: ./includes/login.php");
+    header('Location:' . $_SERVER['DOCUMENT_ROOT'] . '/php/login.php');
     exit;
 }
 

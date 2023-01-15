@@ -2,7 +2,7 @@
 session_start();
 session_destroy();
 
-header("Location:../../index.php");
+header('Location:' . $_SERVER['DOCUMENT_ROOT'] . '/php/index.php');
 
 
 exit;

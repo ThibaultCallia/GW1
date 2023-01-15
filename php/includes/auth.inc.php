@@ -1,7 +1,7 @@
 <?php
 // rechtsreeks naar auth.php
 if (!isset($_POST["username"], $_POST["password"])) {
-  header("Location: ../login.php?error=1");
+  header('Location:' . $_SERVER['DOCUMENT_ROOT'] . '/php/login.php?error=1');
   exit;
 }
 
@@ -30,10 +30,11 @@ if ($result && $result->num_rows > 0) {
   $_SESSION["id"] = $user["id"];
   $_SESSION["firstname"] = $user["firstname"];
 
-  header("Location: ./../admin.php");
+  header('Location:' . $_SERVER['DOCUMENT_ROOT'] . '/php/admin.php');
+
   exit;
 }
 
 // Nee, login was fout
-header("Location: ../login.php?error=1");
+header('Location:' . $_SERVER['DOCUMENT_ROOT'] . '/php/login.php?error=1');
 exit;
