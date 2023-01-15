@@ -16,7 +16,13 @@ import "animate.css";
 // import Swiper styles
 // import "swiper/css";
 
-new Swiper(".swiperM", {
+/**
+ * Swiper
+ * @type {object}
+ * @summary creates swiper as instance of Swiper class.
+ */
+
+const mobileSwiper = new Swiper(".swiperM", {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -25,6 +31,12 @@ new Swiper(".swiperM", {
 
 let init = false;
 var swiper = Swiper;
+
+/**
+ * Swiper
+ * @function swiperCard
+ * @summary Creates swiper instance if window width is less than 800px. Swiper in product card not necessary on desktop.
+ */
 
 function swiperCard() {
   if (window.innerWidth <= 800) {
@@ -40,6 +52,11 @@ function swiperCard() {
 swiperCard();
 window.addEventListener("resize", swiperCard);
 
+/**
+ * Main filter
+ * @type {object}
+ * @summary creates main filter as instance of Filter class.
+ */
 const mainFilter = new Filter();
 
 // Mobile nav
@@ -62,6 +79,12 @@ document
 document.querySelectorAll(".logo-btn").forEach((element) => {
   element.addEventListener("click", closeMobileNav);
 });
+
+/**
+ * OpenCloseMobileNav
+ * @function openCloseMobileNav
+ * @summary Opens and closes mobile nav and takes care of overlay.
+ */
 
 function openCloseMobileNav() {
   document.querySelector(".nav-container-mobile").classList.toggle("open");
