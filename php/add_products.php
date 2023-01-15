@@ -38,7 +38,7 @@ $mysqli->close();
 <body>
     <?php include './includes/nav.inc.php'; ?>
     <div class="form-container">
-        <form method="post" action="#">
+        <form method="post" action="#" enctype="multipart/form-data">
             <!-- The title section -->
             <div class="title-wrap wrapper">
                 <h1>New product</h1>
