@@ -13,9 +13,13 @@
     "clean:maps": "find ./public -name '*.map' -delete",
     "doc": "jsdoc -c jsdoc.json",
     "buildIndex": "parcel build ./js/index.js --dist-dir public",
+    "watchIndex": "parcel watch ./js/index.js --dist-dir public",
     "buildAdmin": "parcel build ./js/admin.js --dist-dir public",
+    "watchAdmin": "parcel watch ./js/admin.js --dist-dir public",
     "buildLogin": "parcel build ./js/login.js --dist-dir public",
-    "buildAddProducts": "parcel build ./js/addProducts.js --dist-dir public"
+    "watchLogin": "parcel watch ./js/login.js --dist-dir public",
+    "buildAddProducts": "parcel build ./js/addProducts.js --dist-dir public",
+    "watchAddProducts": "parcel watch ./js/addProducts.js --dist-dir public"
   },
   "keywords": [],
   "author": "",
