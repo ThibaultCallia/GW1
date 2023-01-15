@@ -94,12 +94,12 @@ form {
 
 // General wrapper css
 .form-container {
-  margin-top: 75px;
+  margin: calc(var(--nav-bar-height) * 2) 0;
   padding: 2em var(--padding-general-sides) 1em var(--padding-general-sides);
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   width: 60vw;
   min-width: 500px;
   background: white;
@@ -262,12 +262,14 @@ form {
 
 // filter section
 .filter-wrap {
-  .select_input,
-  label {
+  .select_input {
     width: 30%;
+    margin-bottom: 10px;
   }
   .ratings {
     min-width: 91px;
+    margin-bottom: 10px;
+    margin-left: 2%;
     input {
       display: none;
     }
@@ -440,6 +442,63 @@ form {
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// tablet
+@media only screen and (max-width: 980px) {
+  .form-container {
+    margin: calc(var(--nav-bar-height) * 1.5) 0;
+    width: 88vw;
+  }
+}
+
+// mobile
+@media only screen and (max-width: 560px) {
+  .form-container {
+    margin: 0;
+    margin: var(--nav-bar-height);
+    width: 100vw;
+    min-width: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+
+    // wrapper of section (h2 + wrap2)
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      row-gap: var(--padding-general-sides);
+      border-bottom: 1px lightgray solid;
+      padding: 1em 0;
+
+      // wrapper of section form fields
+      .wrap2 {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+      }
+    }
+  }
+
+  .title-wrap.wrapper {
+    .toggles {
+      justify-content: center;
+    }
+  }
+  .product-input .wrap2 {
+    display: flex;
+    flex-direction: column;
+    .form_input-price {
+      width: 50%;
+    }
+  }
+
+  .filter-wrap .wrap {
+    .select_input {
+      flex-grow: 1;
+    }
   }
 }
 
