@@ -96,3 +96,14 @@
     border-color: #f8855a;
   }
 }
+
+.footer__part.social {
+  li.col {
+    display: flex;
+    flex-direction: row;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

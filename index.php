@@ -215,7 +215,7 @@ $slogans = ["KeyKaps, where typing becomes art", "Type with precision with KeyKa
                     <ul>
                         <li class="footer__subheading">CONTACT</li>
                         <li>calliauw.t@gmail.com</li>
-                        <li>tenzin.rinzin@tenzin.rinzin</li>
+                        <li>rinzin.tenzin@outlook.com</li>
                     </ul>
                 </div>
                 <div class="footer__part pricing">
@@ -230,9 +230,9 @@ $slogans = ["KeyKaps, where typing becomes art", "Type with precision with KeyKa
                 <div class="footer__part social">
                     <ul>
                         <li class="footer__subheading">SOCIAL</li>
-                        <li>Facebook</li>
-                        <li>LinkedIn</li>
-                        <li>Instagram</li>
+                        <li><i class="fa-brands fa-facebook"></i> Facebook</li>
+                        <li><i class="fa-brands fa-linkedin"></i> LinkedIn</li>
+                        <li><i class="fa-brands fa-instagram"></i> Instagram</li>
                     </ul>
                 </div>
             </div>
