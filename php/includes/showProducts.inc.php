@@ -96,7 +96,7 @@ foreach ($products as $product) {
 
 
   $longDescription = $product['description'];
-  $shortDescription = substr($longDescription, 0, 20) . '...';
+  $shortDescription = substr($longDescription, 0, 50) . '...';
 
   // DESCRIPTION DIV -------------------------------
   $ratingsDivFront = '<div class="ratings">';
