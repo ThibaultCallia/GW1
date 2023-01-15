@@ -42,7 +42,7 @@ if (!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]) {
             </div>
             <div class="product-sections">
                 <?php
-                include './includes/admin-products.inc.php';
+                include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/admin-products.inc.php');
                 ?>
             </div>
         </section>

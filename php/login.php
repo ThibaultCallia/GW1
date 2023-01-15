@@ -1,7 +1,6 @@
 <?php
 $errors = [
   "Error",
-  "Please, log in first!",
   "Incorrect username or password."
 ];
 ?>
