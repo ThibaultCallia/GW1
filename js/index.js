@@ -1,27 +1,12 @@
-/**
- * Main index.js file
- * 1. imports Filter,
- * 2. creates Filter instance
- * 3. Adds nav mobile functionality
- */
-
 import "../css/style.scss";
-
 import Filter from "./Filter";
 import "animate.css";
-
-// import Swiper JS
-// import Swiper, { Navigation } from "swiper";
-
-// import Swiper styles
-// import "swiper/css";
 
 /**
  * Swiper
  * @type {object}
  * @summary creates swiper as instance of Swiper class.
  */
-
 const mobileSwiper = new Swiper(".swiperM", {
   navigation: {
     nextEl: ".swiper-button-next",
@@ -108,6 +93,12 @@ function openCloseMobileNav() {
       .classList.remove("fa-bars-staggered");
   }
 }
+
+/**
+ * closeMobileNav
+ * @function closeMobileNav
+ * @summary Separate function for closing mobile nav. Used for logo button and overlay.
+ */
 
 function closeMobileNav() {
   if (

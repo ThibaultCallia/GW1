@@ -11,7 +11,8 @@
     },
     "opts": {
         "recurse": true,
-        "destination": "./docs/"
+        "destination": "./docs/",
+        "sort":false
     }
 }
 
