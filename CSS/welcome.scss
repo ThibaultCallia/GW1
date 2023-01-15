@@ -1,33 +1,29 @@
-:root{
-  --ff-main-title: 'Assistant', sans-serif;
-  --ff-subtitle: 'Nunito Sans', sans-serif;
+:root {
+  --ff-main-title: "Assistant", sans-serif;
+  --ff-subtitle: "Nunito Sans", sans-serif;
 }
 
 .welcome-container {
-  
   width: min(
     var(--max-width-general),
     100vw - 2 * var(--padding-general-sides)
   );
   margin-inline: auto;
-  
-  
+
   position: relative;
   display: flex;
   flex-direction: column;
-  gap:1rem;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
 
-  .welcome__text{
+  .welcome__text {
     font-family: var(--ff-main-title);
-    
-    
-    .title{
+
+    .title {
       text-align: center;
       font-size: 3.5rem;
       font-weight: 600;
-      
     }
   }
 
@@ -39,24 +35,22 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
-    
   }
-
 }
 
-@media(max-width: 770px){
-  .welcome-container{
+@media (max-width: 770px) {
+  .welcome-container {
     margin-top: 0 !important;
-    gap:2rem;
-    
-    .welcome__text{
-      .title{
+    gap: 2rem;
+
+    .welcome__text {
+      .title {
         font-size: 2.5rem;
       }
     }
-    .welcome__image-container{
+    .welcome__image-container {
       background-image: url(../images/welcome/tooKeykaps.jpg);
-      
+
       width: 100%;
       height: 400px;
       background-position: top;
@@ -64,6 +58,41 @@
   }
 }
 
+@media only screen and (min-width: 1000px) {
+  .welcome-container {
+    .welcome__text {
+      .title {
+        font-weight: 700;
+        font-size: 3em;
+        font-family: "Courier Prime", monospace;
+        overflow: hidden;
+        border-right: 0.15em solid #f8855a;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: 0;
+        animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end 35;
+      }
+    }
+  }
+}
 
+// typing keyframe
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: max-content;
+  }
+}
 
-
+// cursor keyframe
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #f8855a;
+  }
+}
