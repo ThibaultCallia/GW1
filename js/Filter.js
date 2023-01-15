@@ -306,6 +306,9 @@ class Filter {
     });
     this.updateFilterCount();
     document.querySelector("#emptyFilter").classList.add("hidden");
+    document.querySelectorAll(".product-card:not(.hidden)").length === 0
+      ? document.querySelector("#emptyFilter").classList.remove("hidden")
+      : null;
   };
 
   /**
