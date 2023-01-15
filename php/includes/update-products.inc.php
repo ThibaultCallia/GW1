@@ -1,14 +1,4 @@
 <?php
-
-// errors
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
-// echo "<pre>";
-// var_dump($_POST);
-// echo "</pre>";
-// exit();
-
 $sql = '';
 foreach ($_POST['product_id'] as $index => $product_id) {
     $isActive = isset($_POST['isActive' . $product_id]) ? 1 : 0;
@@ -19,7 +9,3 @@ foreach ($_POST['product_id'] as $index => $product_id) {
 }
 
 $mysqli->multi_query($sql);
-
-
-// $description = $_POST['description'][$index];
-// `description` = '" . $description . "',
