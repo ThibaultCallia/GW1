@@ -15,9 +15,6 @@ if (isset($_POST["prodname"])) {
     include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/insert_queries.inc.php');;
     // var_dump($_POST);
 }
-echo "test";
-echo "<pre>";
-var_dump($_FILES);
 
 
 $mysqli->close();
@@ -139,22 +136,22 @@ $mysqli->close();
                 <h2>Images</h2>
                 <div class="images wrap2">
                     <label id="img-container-1">
-                        <input type="file" id="img1" name="img1" required>
+                        <input type="file" id="img1" name="img1" accept="img/*" required>
                     </label>
                     <label id="img-container-2" style="display: none;">
-                        <input type="file" id="img2" name="img2">
+                        <input type="file" id="img2" name="img2" accept="img/*">
                     </label>
                     <button class="add-img" id="add-img2" onclick="document.getElementById('img-container-2').style.display = 'block'; document.getElementById('add-img3').style.display = 'inline-block';this.style.display = 'none';">Add Image</button>
                     <label id="img-container-3" style="display: none;">
-                        <input type="file" id="img3" name="img3">
+                        <input type="file" id="img3" name="img3" accept="img/*">
                     </label>
                     <button style="display: none;" class="add-img" id="add-img3" onclick="document.getElementById('img-container-3').style.display = 'block';document.getElementById('add-img4').style.display = 'inline-block'; this.style.display = 'none';">Add Image</button>
                     <label id="img-container-4" style="display: none;">
-                        <input type="file" id="img4" name="img4">
+                        <input type="file" id="img4" name="img4" accept="img/*">
                     </label>
                     <button style="display: none;" class="add-img" id="add-img4" onclick="document.getElementById('img-container-4').style.display = 'block';document.getElementById('add-img5').style.display = 'inline-block'; this.style.display = 'none';">Add Image</button>
                     <label id="img-container-5" style="display: none;">
-                        <input type="file" id="img5" name="img5">
+                        <input type="file" id="img5" name="img5" accept="img/*">
                     </label>
                     <button style="display: none;" class="add-img" id="add-img5" onclick="document.getElementById('img-container-5').style.display = 'block'; this.style.display = 'none';">Add Image</button>
                 </div>

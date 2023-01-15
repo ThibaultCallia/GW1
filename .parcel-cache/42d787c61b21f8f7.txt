@@ -1,4 +1,10 @@
-6787
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+6784
 98C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\msgpackr\dist\index.js133178502606456194 0
 96C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\php\includes\createBrands.inc.php133182590814122398 0
 118C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\@parcel\markdown-ansi\lib\markdown-ansi.js133178502602036768 0
@@ -91,9 +97,9 @@
 107C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\@parcel\transformer-css\LICENSE133178502601439259 0
 101C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\lodash\_baseDifference.js133176750562761113 0
 101C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\underscore\amd\isEqual.js133176750568497639 0
-84C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public\addProducts.js133182677709598572 0
+84C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public\addProducts.js133182625387179663 0
 95C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\regenerator-runtime133178502603683921 1
-66C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS133182676681673903 1
+66C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS133182590812309957 1
 97C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\underscore\amd\now.js133176750570090894 0
 89C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\jsdoc\plugins133176750565703848 1
 109C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\css-tree\lib\syntax\pseudo\common133178502613679680 1
@@ -108,7 +114,7 @@
 108C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\@parcel\core\src\ParcelConfig.js133178502613501390 0
 117C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\caniuse-lite\data\features\videotracks.js133178502625804944 0
 96C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\posthtml-render\dist133178502604766408 1
-83C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\php\add_products.php133182698440656966 0
+83C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\php\add_products.php133182597887724773 0
 103C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\lodash\sortedLastIndexOf.js133176750579651533 0
 119C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\caniuse-lite\data\features\trusted-types.js133178502625122017 0
 103C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\underscore\modules\first.js133176750567117721 0
@@ -172,14 +178,14 @@
 95C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\lodash\cloneDeep.js133176750570031940 0
 93C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public\tooKeykaps.d3f7ca0c.jpg133182590815803982 0
 103C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\type-fest\source\merge.d.ts133178502608585816 0
-69C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public133182677709639271 1
+69C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public133182625387261954 1
 97C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\underscore\amd\_cb.js133176750561975527 0
 79C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public\admin.css133182590815693019 0
 103C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\source-map-js\lib\base64.js133166398721497741 0
 96C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\source-map\README.md133178502602001000 0
 106C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\underscore\modules\isNumber.js133176750568906181 0
 93C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\lodash\_Symbol.js133176750568802482 0
-85C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public\addProducts.css133182677707842309 0
+85C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public\addProducts.css133182625387179663 0
 95C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\weak-lru-cache\dist133178502601337579 1
 114C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\@babel\highlight\node_modules\has-flag133178502602951881 1
 112C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\@parcel\core\test\serializer.test.js133178502614295142 0
@@ -193,10 +199,10 @@
 97C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\lodash\flatMapDeep.js133176750572585221 0
 91C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\braces\index.js133166398721396561 0
 115C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\caniuse-lite\data\features\wake-lock.js133178502625895052 0
-89C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public\addProducts.css.map133182677707882416 0
+89C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public\addProducts.css.map133182625387241806 0
 117C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\@types\markdown-it\lib\parser_inline.d.ts133176750566821735 0
 104C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\underscore\modules\before.js133176750565460764 0
-88C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public\addProducts.js.map133182677709629155 0
+88C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\public\addProducts.js.map133182625387241806 0
 80C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\svgo133178502612840412 1
 160C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\side-effects-false\package.json133178502613521590 0
 95C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\lodash\dropRight.js133176750571462762 0
@@ -1863,7 +1869,6 @@
 99C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\lodash\_countHolders.js133176750566079002 0
 105C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\underscore\cjs\reduceRight.js133176750570715307 0
 100C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\underscore\cjs\reject.js133176750570776536 0
-104C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\images\products\keycaps\clearAurora_1.jpg133182676681694494 0
 101C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\underscore\amd\isEmpty.js133176750568423876 0
 139C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\jsdoc\templates\default\static\fonts\OpenSans-Bold-webfont.woff133176750567071924 0
 107C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\underscore\cjs\restArguments.js133176750570882926 0
@@ -3587,7 +3592,6 @@
 122C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\caniuse-lite\data\features\css-supports-api.js133178502616303304 0
 106C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\lodash\_baseMatchesProperty.js133176750564434009 0
 109C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\css-tree\lib\syntax\pseudo\dir.js133178502610785344 0
-104C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\images\products\keycaps\clearAurora_3.jpg133182676681730213 0
 96C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\lodash\_baseMerge.js133176750564492282 0
 128C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\caniuse-lite\data\features\contentsecuritypolicy2.js133178502613817091 0
 100C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\lodash\_baseMergeDeep.js133176750564538789 0
@@ -4531,7 +4535,7 @@
 97C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\jsdoc\lib\jsdoc\fs.js133176750564270299 0
 99C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\jsdoc\lib\jsdoc\name.js133176750564710884 0
 102C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\jsdoc\lib\jsdoc\package.js133176750564812005 0
-81C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS\nav_admin.scss133182693343847390 0
+81C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS\nav_admin.scss133182590812329968 0
 92C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\chalk\index.d.ts133178502605498095 0
 102C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\jsdoc\lib\jsdoc\plugins.js133176750564924114 0
 99C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\browserslist\error.d.ts133178502606371587 0
@@ -4979,7 +4983,6 @@
 106C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\cosmiconfig\dist\readFile.d.ts133178502610369243 0
 104C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\cosmiconfig\dist\readFile.js133178502606222178 0
 108C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\cosmiconfig\dist\readFile.js.map133178502609339153 0
-104C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\images\products\keycaps\clearAurora_2.jpg133182676681704655 0
 101C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\cosmiconfig\dist\types.js133178502606466698 0
 98C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\commander\CHANGELOG.md133178502604720666 0
 132C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\foo133178502613101219 1
@@ -5708,7 +5711,7 @@
 116C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\@parcel\watcher\src\windows\win_utils.hh133178502609702100 0
 116C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\animate.css\source\flippers\flipOutX.css133176750564084621 0
 119C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\animate.css\source\fading_exits\fadeOut.css133176750563583954 0
-86C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\images\products\keycaps133182676681719717 1
+86C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\images\products\keycaps133182590812568413 1
 130C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\animate.css\source\fading_exits\fadeOutBottomRight.css133176750563639998 0
 174C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\side-effects-package-redirect-up\package.json133178502613791932 0
 123C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\node_modules\animate.css\source\fading_exits\fadeOutDown.css133176750563680655 0
@@ -6780,9 +6783,24 @@
 99C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\dist\assets\keykapsBlue-e78e833e.jpg133179511956494863 0
 94C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\dist\assets\nuphy1-1bd38bd9.jpg133179511956500146 0
 99C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\dist\assets\switchBrown-7acb909c.jpg133179511956500146 0
-84C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS\add_products.scss133182693255712234 0
+84C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS\add_products.scss133182623722975769 0
 78C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS\filter.scss133182590812309957 0
 78C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS\footer.scss133182590812380167 0
-75C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS\nav.scss133182693300404547 0
+75C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS\nav.scss133182590812319963 0
 77C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS\style.scss133182590812400252 0
 79C:\0_Programming\Full_Stack_Development\Groepswerken\1.keykaps\CSS\welcome.scss133182590812390250 0
+=======
+151152929
+1673793626810435000
+>>>>>>> Stashed changes
+=======
+151152929
+1673793626810435000
+>>>>>>> Stashed changes
+<<<<<<< Updated upstream
+=======
+=======
+151152929
+1673793626810435000
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
