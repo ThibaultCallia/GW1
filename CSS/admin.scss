@@ -49,15 +49,15 @@ main.admin {
       margin-bottom: 0.5em;
       font-weight: 700;
       font-family: "Courier Prime", monospace;
-      overflow: hidden; /* Ensures the content is not revealed until the animation */
-      border-right: 0.15em solid orange; /* The typwriter cursor */
-      white-space: nowrap; /* Keeps the content on a single line */
-      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-      letter-spacing: 0.05em; /* Adjust as needed */
+      overflow: hidden;
+      border-right: 0.15em solid #87cdfc;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 0.05em;
       animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
     }
 
-    /* The typing effect */
+    // typing keyframe
     @keyframes typing {
       from {
         width: 0;
@@ -67,14 +67,14 @@ main.admin {
       }
     }
 
-    /* The typewriter cursor effect */
+    // cursor keyframe
     @keyframes blink-caret {
       from,
       to {
         border-color: transparent;
       }
       50% {
-        border-color: orange;
+        border-color: #87cdfc;
       }
     }
     .btns {
@@ -143,7 +143,7 @@ main.admin {
         .toggle {
           width: 25px;
           // input[type="checkbox"] {
-            
+
           // }
         }
         button {

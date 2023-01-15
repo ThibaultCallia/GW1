@@ -1,18 +1,18 @@
 @import "./reset_tc_collection.css";
 
-*{
-    font-family: "Roboto", sans-serif;
+* {
+  font-family: "Roboto", sans-serif;
 }
 
-body{
-    /* background: linear-gradient(120deg,#2d343c, #dfdcdc); */
-    background-color: #8BC6EC;
-    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
-    height: 100vh;
-    overflow: hidden;
+body {
+  /* background: linear-gradient(120deg,#2d343c, #dfdcdc); */
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  height: 100vh;
+  overflow: hidden;
 }
 
-.login-container{
+.login-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -20,37 +20,37 @@ body{
   width: 400px;
   background: white;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
 }
-.login-container h1{
+.login-container h1 {
   text-align: center;
   font-weight: 600;
-  font-size:x-large;
+  font-size: x-large;
   letter-spacing: 0.15ch;
   padding: 30px 0;
   border-bottom: 1px solid silver;
 }
-.login-container p{
+.login-container p {
   text-align: center;
   color: rebeccapurple;
 }
-.login-container form{
+.login-container form {
   padding: 0 40px 50px 40px;
   box-sizing: border-box;
 }
-form .form_input{
+form .form_input {
   position: relative;
   border-bottom: 2px solid #adadad;
   margin: 50px 0;
 }
-.form_input:has(input[type="text"]){
-  margin-bottom: 80px;
+.form_input:has(input[type="text"]) {
+  margin-bottom: 65px;
 }
-.form_input:has(input[type="password"]){
+.form_input:has(input[type="password"]) {
   margin-bottom: 70px;
 }
 
-.form_input input{
+.form_input input {
   width: 100%;
   padding: 0 5px;
   height: 40px;
@@ -59,7 +59,7 @@ form .form_input{
   background: none;
   outline: none;
 }
-.form_input label{
+.form_input label {
   position: absolute;
   top: 50%;
   left: 5px;
@@ -67,29 +67,29 @@ form .form_input{
   transform: translateY(-50%);
   font-size: 16px;
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
-.form_input span::before{
-  content: '';
+.form_input span::before {
+  content: "";
   position: absolute;
   top: 40px;
   left: 0;
   width: 0%;
   height: 2px;
   background: #2d343c;
-  transition: .5s;
+  transition: 0.5s;
 }
 .form_input input:focus ~ label,
-.form_input input:valid ~ label{
+.form_input input:valid ~ label {
   top: -5px;
   color: #2d343c;
 }
 .form_input input:focus ~ span::before,
-.form_input input:valid ~ span::before{
+.form_input input:valid ~ span::before {
   width: 100%;
 }
 
-input[type="submit"]{
+input[type="submit"] {
   width: 100%;
   height: 50px;
   border: 1px solid;
@@ -102,9 +102,9 @@ input[type="submit"]{
   outline: none;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
   border-color: #2d343c;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 @media only screen and (max-width: 500px) {
