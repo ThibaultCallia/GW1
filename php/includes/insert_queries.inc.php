@@ -71,8 +71,9 @@ if (!empty($_POST['newCat'])) {
 
 // -------- Insert new Product into DB - insert into product -------------
 $sql = "INSERT INTO `product` (`id`, `brand_id`, `category_id`, `name`, `price`, `description`, `rating`, `isActive`, `isSpotlight`, `image1`, `image2`, `image3`, `image4`, `image5`, `date_added`) 
-VALUES (NULL, '" . $brand_id . "', '" . $cat_id . "', '" . $name . "', '" . $price . "', '" . $desc . "', '" . $rating_id . "', b'" . $isActive . "', b'" . $inSpotlight . "', '.path/to/path', NULL, NULL, NULL, NULL, CURRENT_TIMESTAMP);";
+VALUES (NULL, '" . $brand_id . "', '" . $cat_id . "', '" . $name . "', '" . $price . "', '" . $desc . "', '" . $rating_id . "', b'" . $isActive . "', b'" . $inSpotlight . "', '" . $_FILES["img1"]["name"] . "', '" . $_FILES["img2"]["name"] . "', '" . $_FILES["img3"]["name"] . "', '" . $_FILES["img4"]["name"] . "', '" . $_FILES["img5"]["name"] . "', CURRENT_TIMESTAMP);";
 $result = $mysqli->query($sql);
+
 
 
 // ---------------- INSERT colors from new Product ------------

@@ -38,7 +38,7 @@ $mysqli->close();
 <body>
     <?php include './includes/nav.inc.php'; ?>
     <div class="form-container">
-        <form method="post" action="#">
+        <form method="post" action="#" enctype="multipart/form-data">
             <!-- The title section -->
             <div class="title-wrap wrapper">
                 <h1>New product</h1>
@@ -93,7 +93,7 @@ $mysqli->close();
                             <?php } ?>
                             <option value="0">- Add new brand -</option>
                         </select>
-                        <input type="text" class="newBrand hidden" name="newBrand">
+                        <input type="text" class="newBrand hidden" name="newBrand" placeholder="New brand">
                     </div>
                     <div class="select_input select_input-category">
                         <label for="category-select">Category</label>
@@ -103,7 +103,7 @@ $mysqli->close();
                             <?php } ?>
                             <option value="0">- Add new category -</option>
                         </select>
-                        <input type="text" class="newCat hidden" name="newCat">
+                        <input type="text" class="newCat hidden" name="newCat" placeholder="New category">
                     </div>
                     <div class="ratings">
                         <span class="title">Ratings</span>
