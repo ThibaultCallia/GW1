@@ -70,7 +70,7 @@
         white-space: nowrap;
         margin: 0 auto;
         letter-spacing: 0;
-        animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end 35;
+        animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end 30;
       }
     }
   }
@@ -82,7 +82,7 @@
     width: 0;
   }
   to {
-    width: max-content;
+    width: 80%;
   }
 }
 
