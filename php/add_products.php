@@ -12,7 +12,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/select_queries.inc.php');
 
 // voeg nieuw product toe als productnaam bestaat
 if (isset($_POST["prodname"])) {
-    include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/insert_queries.inc.php');
+    include($_SERVER['DOCUMENT_ROOT'] . '/php/includes/insert_queries.inc.php');;
+    // var_dump($_POST);
 }
 
 
@@ -37,7 +38,7 @@ $mysqli->close();
 <body>
     <?php include './includes/nav.inc.php'; ?>
     <div class="form-container">
-        <form method="post" action="#" enctype="multipart/form-data">
+        <form method="post" action="#">
             <!-- The title section -->
             <div class="title-wrap wrapper">
                 <h1>New product</h1>
