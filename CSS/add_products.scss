@@ -26,7 +26,6 @@ body {
   h2 {
     font-weight: 600;
   }
-  
 }
 
 .filter-wrap {
@@ -95,7 +94,7 @@ form {
 // General wrapper css
 .form-container {
   margin: calc(var(--nav-bar-height) * 2) 0;
-  
+
   padding: 2em var(--padding-general-sides) 1em var(--padding-general-sides);
   position: absolute;
   top: 0;
@@ -479,6 +478,7 @@ form {
         display: flex;
         flex-flow: row wrap;
         width: 100%;
+        overflow: scroll;
       }
     }
   }
@@ -496,11 +496,12 @@ form {
     }
   }
 
-  .filter-wrap .wrap {
+  .filter-wrap .wrap2 {
     .select_input {
       flex-grow: 1;
     }
   }
+  .
 }
 
 .hidden {
