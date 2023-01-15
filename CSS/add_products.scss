@@ -26,7 +26,7 @@ body {
   h2 {
     font-weight: 600;
   }
-  height: 115vh;
+  
 }
 
 .filter-wrap {
@@ -95,6 +95,7 @@ form {
 // General wrapper css
 .form-container {
   margin: calc(var(--nav-bar-height) * 2) 0;
+  
   padding: 2em var(--padding-general-sides) 1em var(--padding-general-sides);
   position: absolute;
   top: 0;
@@ -457,7 +458,7 @@ form {
 @media only screen and (max-width: 560px) {
   .form-container {
     margin: 0;
-    margin: var(--nav-bar-height);
+    margin-top: var(--nav-bar-height);
     width: 100vw;
     min-width: 0;
     background: white;
